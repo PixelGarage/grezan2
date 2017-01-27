@@ -1,0 +1,527 @@
+/*
+ *  Webform Addons component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+// field size
+@webform-max-width: 100%;
+@webform-inline-input-width: 55%;
+
+// label colors
+@webform-color-label: @text-color;
+@webform-color-required: @pxl-color-main;
+
+// field colors
+@webform-color-input: @text-color;
+@webform-color-input-bg: rgba(255,255,255,0.0);
+@webform-color-placeholder: @text-color-placeholder;
+@webform-color-border: @pxl-color-main;
+@webform-color-border-active: @pxl-color-main;
+
+// field box
+@webform-control-height: 30px;
+@webform-border-radius: 0;
+@webform-color-shadow: @pxl-color-main;
+
+// button colors
+@webform-color-submit: @pxl-color-body-bg;
+@webform-color-submit-bg: @pxl-color-main;
+
+
+// Mixins
+// -------------------------
+.form-label() {
+  width: auto;
+  font-family: @pxl-text-font;
+  #pxl-mixins.font-size-responsive(19px, 14px);
+  font-weight: normal;
+  letter-spacing: normal;
+  text-align: left;
+  text-transform: none;
+  color: @webform-color-label;
+
+  span.form-required {
+    color: @webform-color-required;
+  }
+}
+
+.resp-submit-button(@color: @webform-color-submit; @bg-color: @webform-color-submit-bg; @radius: @webform-border-radius) {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 7px 27px;
+  font-family: @pxl-text-font-bold;
+  #pxl-mixins.font-size-responsive(27px, 20px);
+  line-height: 27px;
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+  color: @color;
+  outline: none;
+  #pxl-mixins.border-radius(@radius);
+  border: 1px solid @bg-color;
+  background-color: @bg-color;
+
+  &:hover, &:focus {
+    color: @bg-color;
+    background: none;
+  }
+}
+
+
+// Webform settings
+// -------------------------
+form.webform-client-form {
+  margin-top: 20px;
+
+  // all fieldsets
+  fieldset.panel {
+    margin: 0 auto 30px;
+    border: none;
+    background:none;
+    box-shadow: none;
+
+    .panel-heading {
+      padding: 0;
+      border-bottom: none;
+      background: none;
+
+      .panel-title {
+        display: block;
+        font-family: @pxl-text-font-bold;
+        #pxl-mixins.font-size-responsive(30px, 22px);
+        color: @webform-color-label;
+        text-align: left;
+      }
+    }
+
+    .panel-body {
+      padding: 0;
+
+      .help-block {
+        display: block;
+        margin: 10px 0 0;
+        font-family: @pxl-text-font-light;
+        color: @webform-color-label;
+        font-size: 13px;
+        line-height: 17px;
+      }
+
+      // contains all webform-components of fieldset
+      .webform-component {
+        margin: 0 auto 10px;
+        width: 100%;
+
+        &[class*="-plz"] {
+          display: inline-block;
+          margin: 0 -2px 30px;
+          padding-right: 20px;
+          width: 30%;
+        }
+        &[class*="-city"] {
+          display: inline-block;
+          margin: 0 -2px 30px;
+          width: 70%;
+        }
+
+      }
+
+      fieldset.panel {
+        // second level
+        margin-top: 80px;
+
+        .panel-body {
+          fieldset.panel {
+            // third level
+            margin-top: 30px;
+            padding: 0 20px;
+            #pxl-mixins.border-radius(0);
+            border-left: 2px solid @pxl-color-main;
+          }
+        }
+      }
+
+      //
+      // ADD MORE buttons
+      .btn.btn-default {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        padding: 0 20px 0 0;
+        font-family: @pxl-text-font;
+        #pxl-mixins.font-size-responsive(19px, 14px);
+        letter-spacing: normal;
+        text-align: left;
+        text-transform: none;
+        color: @pxl-color-main;
+        border: none;
+        background: none;
+
+        &:before {
+          display: inline-block;
+          vertical-align: middle;
+          padding-right: 10px;
+          font-family: @pxl-icon-font;
+          font-size: 30px;
+        }
+
+        &:hover, &:focus {
+          color: @pxl-color-active;
+        }
+      }
+      [id*='webform-addmore-add']:before {
+        content: '\f0fe';
+      }
+      [id*='webform-addmore-remove']:before {
+        content: '\f146';
+      }
+    }
+  }
+
+  // file field wrapper and  multi-file upload (table etc.)
+  [id$=ajax-wrapper] {
+    /* file upload container */
+    overflow: auto;
+    margin: 0 auto;
+    max-width: @webform-max-width;
+    background: none;
+
+    .table-responsive {
+      cursor: all-scroll;
+      max-width: 236px;
+
+      @media @narrow {
+        max-width: 356px;
+      }
+      @media @tablet {
+        max-width: none;
+      }
+
+      table {
+        tbody {
+          tr.draggable {
+            position: relative;
+
+            td {
+              display: inline-block;
+              button {
+                position: absolute;
+                right: 2px;
+                width: auto;
+                height: auto;
+                .resp-submit-button();
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .webform-component-multiple-file {
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+
+      label.control-label {
+        display: none;
+      }
+
+      .form-managed-file {
+        .input-group-btn {
+          display: inline-block;
+          position: absolute;
+          top: 2px;
+          bottom: 2px;
+          right: 2px;
+          width: auto;
+          height: auto;
+
+          button {
+            .resp-submit-button();
+            font-size: 16px;
+            z-index: 10; // goes over file description
+          }
+        }
+      }
+    }
+  }
+
+  .webform-component {
+    margin: 0 auto 30px;
+    padding: 0;
+    max-width: @webform-max-width;
+    background: none;
+
+    &[class*="-plz"] {
+      display: inline-block;
+      margin: 0 -2px 30px;
+      padding-right: 20px;
+      width: 30%;
+    }
+    &[class*="-city"] {
+      display: inline-block;
+      margin: 0 -2px 30px;
+      width: 70%;
+    }
+
+    label {
+      .form-label;
+    }
+
+    div.description, div.help-block {
+      display: block;
+      margin: 10px 0 0;
+      font-family: @pxl-text-font-light;
+      color: @webform-color-label;
+      font-size: 13px;
+      line-height: 17px;
+
+      strong {
+        font-family: @pxl-text-font;
+      }
+    }
+
+    .form-control,
+    .form-managed-file {
+      height: @webform-control-height;
+    }
+
+    input.form-text, textarea {
+      padding: 0 10px;
+      font-family: @pxl-text-font;
+      #pxl-mixins.font-size-responsive(17px, 14px);
+      color: @webform-color-input;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      #pxl-mixins.border-radius(@webform-border-radius);
+      border: none;
+      border-bottom: 1px solid @webform-color-border;
+      background-color: @webform-color-input-bg;
+      .box-shadow(none);
+      #pxl-mixins.placeholder();
+    }
+    input.form-text:focus, input.form-text:hover,
+    textarea:focus, textarea:hover {
+      border: 1px solid @webform-color-border-active;
+      .box-shadow(0 0 3px @webform-color-shadow inset);
+    }
+
+    .form-textarea-wrapper {
+      div.grippie {
+        display: none;
+      }
+    }
+
+    &.webform-component-select {
+      position: relative;
+
+      select {
+        #pxl-mixins.no-appearance();
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 10px;
+        max-width: 65%;
+        width: auto;
+        height: auto;
+        font-family: @pxl-text-font-light;
+        #pxl-mixins.font-size-responsive(17px, 14px);
+        color: @webform-color-input;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: left;
+        #pxl-mixins.border-radius(@webform-border-radius);
+        border: 1px solid @webform-color-border;
+        background-color: @webform-color-input-bg;
+        outline: none;
+        .box-shadow(none);
+
+        &:focus, &:active {
+          outline: none;
+          border: 1px solid @webform-color-border-active;
+        }
+      }
+
+      //
+      // custom style ofselect box
+      &:after {
+        content: '\f0d7';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 5px;
+        bottom: 0;
+        font-family: @pxl-icon-font;
+        color: @pxl-color-main;
+        line-height: @webform-control-height;
+        pointer-events: none; // let mouse clicks through
+      }
+    }
+
+    .form-radios, .form-checkboxes {
+      vertical-align: top;
+
+      .radio, .checkbox {
+        > label {
+          padding-left: 20px;
+          font-family: @pxl-text-font-light;
+          font-size: 13px;
+          //#pxl-mixins.font-size-responsive(19px, 14px);
+          text-align: left;
+          vertical-align: top;
+
+          > input.form-radio {
+            //display: none;
+            margin: 3px 7px 0 -20px;
+            vertical-align: top;
+          }
+        }
+      }
+    }
+
+    .form-managed-file {
+      display:block;
+      position: relative;
+      overflow-x: auto;
+      white-space: nowrap;
+      #pxl-mixins.border-radius(@webform-border-radius);
+      background-color: @webform-color-input-bg;
+
+      // button and label to select file
+      input {
+        position: relative;
+        float: none;
+        padding: 0;
+        width: 75%;
+        #pxl-mixins.font-size-responsive(17px, 14px);
+        color: @webform-color-input;
+        text-align: left;
+        border: none;
+        background-color: @webform-color-input-bg;
+        .box-shadow(none);
+      }
+
+      // image and name of uploaded file
+      span.file {
+        display: inline-block;
+        vertical-align: middle;
+        >img {
+          vertical-align: middle;
+        }
+        a {
+          vertical-align: middle;
+        }
+      }
+
+      // upload button
+      button.btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        .resp-submit-button();
+        padding: 0 12px;
+        #pxl-mixins.font-size-responsive(17px, 14px);
+        line-height: 1.2;
+      }
+    }
+
+    &.webform-component-markup {
+      margin-bottom: 25px;
+      padding-top: 15px;
+
+      h2, strong {
+        font-family: @pxl-text-font;
+        font-weight: normal;
+        color: @webform-color-input;
+        font-size: 13px;
+        line-height: 17px;
+        text-align: left;
+      }
+      p {
+        font-family: @pxl-text-font-light;
+        font-size: 13px;
+        color: @webform-color-input;
+        line-height: 17px;
+        text-align: left;
+        background: none;
+      }
+    }
+
+    //
+    // inline components
+    &.webform-container-inline {
+      position: relative;
+
+      label, input {
+        display: block;
+
+        @media @narrow {
+          display: inline-block;
+        }
+      }
+
+      input.form-text, select {
+        position: relative;
+        right: auto;
+        width: 100%;
+
+        @media @narrow {
+          position: absolute;
+          right: 0;
+          width: @webform-inline-input-width;
+        }
+      }
+
+      .form-radios {
+        display: inline-block;
+
+        .radio {
+          display: inline-block;
+
+          >label {
+            display: block;
+
+            >input.form-radio {
+              display: inline-block;
+            }
+
+            @media @narrow {
+              display: inline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  div.form-actions {
+    button.webform-submit {
+      .resp-submit-button();
+    }
+    a.back-link {
+      .resp-submit-button(@text-color);
+      #pxl-mixins.font-size-responsive(24px, 18px);
+      padding-left: 0;
+      border: none;
+      background: none;
+      text-decoration: none;
+    }
+    a.done-link {
+      .resp-submit-button(@text-color);
+      #pxl-mixins.font-size-responsive(24px, 18px);
+      color: @webform-color-submit-bg;
+      padding-left: 0;
+      border: none;
+      background: none;
+      text-decoration: none;
+
+      &:hover {
+        color: @text-color;
+      }
+    }
+  }
+}

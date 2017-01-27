@@ -1,0 +1,146 @@
+/*
+ *  Text mixins
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+
+
+// Mixins
+// -------------------------
+#pxl-mixins {
+  //
+  //  TEXT optimisation
+  //
+
+  // Language dependant word hyphenation (language has to be set in html element)
+  .hyphenate(@mode: auto) {
+    // Non standard for webkit, breaks between words
+    word-break: break-word;
+
+    // uses dictionaries for correct word breaking in supported languages
+    -webkit-hyphens: @mode;
+    -moz-hyphens: @mode;
+    -ms-hyphens: @mode;
+    -o-hyphens: @mode;
+    hyphens: @mode;
+  }
+
+  // Sharper font smoothing for modern browsers
+  .sharp-fonts() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // Subpixel Rendering -> https://www.mobomo.com/2014/05/better-font-smoothing-in-chrome-on-mac-os-x
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.25),
+    only screen and ( min-device-pixel-ratio: 1.25),
+    only screen and ( min-resolution: 200dpi),
+    only screen and ( min-resolution: 1.25dppx) {
+      -webkit-font-smoothing: subpixel-antialiased;
+    }
+  }
+
+
+  .placeholder(@color: @input-color-placeholder; @text-align: left) {
+    // Firefox
+    &::-moz-placeholder {
+      text-align: @text-align;
+      color: @color;
+      opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+    }
+    &:-ms-input-placeholder { text-align: @text-align; color: @color; } // Internet Explorer 10+
+    &::-webkit-input-placeholder  { text-align: @text-align; color: @color; } // Safari and Chrome
+  }
+
+  // responsive font size with minimum and maximum size
+  .font-size-responsive(@max-size: @resp-font-size-max; @med-size: @resp-font-size-med; @min-size: @resp-font-size-min) {
+    @min-font-size: max(@min-size, @max-size*5/8); // min = 480 / 768 * max
+    @min-max-breakpoint: unit((48 * @min-font-size / @max-size), em);
+    @font-break:  ~"screen and (min-width: @{min-max-breakpoint})";
+
+    // min font size
+    font-size: @min-font-size;
+
+    // dynamic font size
+    @media @font-break {
+      font-size: unit(@max-size/7.68, vw);
+    }
+
+    // maed.font size
+    @media @tablet {
+      font-size: @med-size;
+    }
+    // max.font size
+    @media @normal {
+      font-size: @max-size;
+    }
+  }
+
+
+  .wysiwyg-body(@text-size: @resp-font-size-max; @title-size: @resp-title-size-max; @subtitle-size: @resp-subtitle-size-max) {
+    h1, h2, h3 {
+      font-family: @pxl-title-font;
+      .font-size-responsive(@title-size, @resp-title-size-med, @resp-title-size-min);
+    }
+
+    h4, h5, h6 {
+      font-family: @pxl-text-font;
+      .font-size-responsive(@subtitle-size, @resp-subtitle-size-med, @resp-subtitle-size-min);
+    }
+
+    p, tbody td {
+      font-family: @pxl-text-font;
+      .font-size-responsive(@text-size);
+      .hyphenate;
+    }
+
+    a {
+      font-family: @pxl-text-font;
+      .font-size-responsive(@text-size);
+      color: @link-color;
+
+      &:hover, &:focus {
+        color: @link-hover-color;
+        text-decoration: none;
+        background: none;
+      }
+    }
+
+    pre, address {
+      font-family: @pxl-text-font-italic;
+      .font-size-responsive(@text-size);
+    }
+
+    strong {
+      font-family: @pxl-text-font-bold;
+      .font-size-responsive(@text-size);
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 2px solid @text-color;
+      background: none;
+    }
+
+    img {
+      display: block;
+      overflow: hidden;
+      margin: 20px auto;
+      padding: 0;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+    }
+
+    embed, video, audio, iframe {
+      display: block;
+      overflow: hidden;
+      margin: 20px auto;
+      padding: @grid-gutter-width/2;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      min-height: 350px;
+    }
+  }
+
+}

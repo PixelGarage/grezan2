@@ -1,0 +1,900 @@
+<?php
+/**
+ * Module file to implement a stripe button.
+ * @file
+ */
+
+define('STRIPE_CHECKOUT_JS_PATH', 'https://checkout.stripe.com/checkout.js');
+
+//
+// Loads the Stripe function library
+require_once 'includes/stripe.lib.inc';
+
+
+
+/* =============================================================================
+ *   Stripe checkout callbacks
+ * ========================================================================== */
+/**
+ * Implements hook_menu().
+ */
+function stripe_button_menu() {
+  // handles AJAX token request
+  $items['stripe/ajax/token'] = array(
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    'page callback' => 'stripe_button_token_callback',
+  );
+
+  // handles AJAX stripe button request
+  $items['stripe/ajax/button'] = array(
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    'page callback' => 'stripe_button_custom_form_callback',
+  );
+
+  // handles AJAX stripe button fees
+  $items['stripe/ajax/fee'] = array(
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    'page callback' => 'stripe_button_fee_callback',
+  );
+
+  // AJAX: manages user subscriptions
+  $items['stripe/user/%user/delete_subscription'] = array(
+    'type' => MENU_CALLBACK,
+    'access callback' => 'user_is_logged_in',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('stripe_button_user_subscription_delete_confirm', 2),
+    'file' => 'includes/stripe.lib.inc',
+  );
+  return $items;
+}
+
+/**
+ * AJAX callback function of the stripe token creation.
+ */
+function stripe_button_token_callback() {
+  // get charge details
+  $token = $_POST['stripeToken'];
+  $button_id = $_POST['btnID'];
+  $amount = $_POST['amount'];
+  $currency = $_POST['currency'];
+  $email = $_POST['email'];
+  $recurring_billing = $_POST['recurringBilling'];
+  $date = date('r'); // e.g. Thu, 21 Dec 2000 16:01:07 +0200
+  $desc = t('@site charged you (@user) with @amount @curr on @date', array(
+    '@site' => variable_get('site_name'),
+    '@user' => $email,
+    '@amount' => $amount/100, // amount in francs again
+    '@curr' => $currency,
+    '@date' => $date,
+  ));
+
+  //
+  // load stripe php library or return error, if no library is available
+  if (!stripe_button_library_loaded()) {
+    // create error button with message
+    $button = theme('stripe_button_fix_value', array(
+        'field_id' => $button_id,
+        'amount' => -1,
+        'currency' => $currency,
+        'message' => t("NO charge!\nStripe API is missing"),
+      )
+    );
+
+    // exit with error button
+    drupal_add_http_header('Content-Type', 'text/html; charset=utf-8');
+    print $button;
+    drupal_exit();
+  }
+
+  //
+  // Perform the charge process
+  try {
+    $msg = false;
+    $stripe_cust_id = false;
+
+    //
+    // get fee percentage for pressed stripe button
+    $app_fee = 0;
+    $app_fee_percentage = 0;
+    $stripe_button_relations = array();
+    drupal_alter('stripe_button_fee_button_relation', $stripe_button_relations);
+    if (!empty($stripe_button_relations)) {
+      // get fee button field id
+      $len = strpos($button_id, '--');
+      $stripe_button_id = substr($button_id, 0, $len);
+      $fee_button_id = $stripe_button_relations[$stripe_button_id];
+      $app_fee_percentages = &stripe_button_session_data()['fee_buttons'];
+      $app_fee_percentage = $app_fee_percentages[$fee_button_id];
+      $app_fee = $amount * $app_fee_percentage;
+    }
+    $stripe_fee = stripe_button_stripe_fee($amount);
+
+
+    //
+    // charge customer card according to recurrent billing settings
+    if ($recurring_billing == 'one-time') {
+      //
+      // charge the user's card once and send confirmation email to user
+      stripe_button_charge_card_once($amount, $currency, $token, $email, $desc);
+    }
+    else {
+      //
+      // Recurring billing
+      // get registered user, if available
+      $registered_user = stripe_button_registered_user($email);
+
+      // get/create Stripe subscription plan
+      $plan = stripe_button_subscription_plan($amount, $currency, $recurring_billing);
+
+      // create recurring payment for user and bill it immediately
+      $stripe_cust_id = stripe_button_subscribe_user_to_plan($registered_user, $plan, $email, $token, $app_fee_percentage);
+
+    }
+
+    // invoke charge_completed hook for all modules, if charge was successful
+    $params = array (
+      'stripe_api_mode' => strtolower(variable_get('stripe_api_mode', 'test')),
+      'recurring_billing' => $recurring_billing,
+      'currency' => $currency,
+      'amount' => ($amount / 100),
+      'stripe_fee' => ($stripe_fee / 100),
+      'app_fee' => ($app_fee / 100),
+      'stripe_cust_id' => $stripe_cust_id ? $stripe_cust_id : '',
+    );
+    module_invoke_all('stripe_button_charge_completed', $params);
+    watchdog('stripe_button', 'After charge completed: ' . date('d-m-Y H:i:s'), array(), WATCHDOG_DEBUG);
+  }
+  catch(\Stripe\Error\Card $e) {
+    // The card has been declined
+    $e_json = $e->getJsonBody();
+    $error = $e_json['error'];
+    $msg = t($error['message']);
+  }
+  catch(\Stripe\Error\Base $e) {
+    $e_json = $e->getJsonBody();
+    $error = $e_json['error'];
+    $msg = t($error['message']);
+  }
+  catch(Exception $e) {
+    $msg = $e->getMessage();
+  }
+  finally {
+  }
+
+  //
+  // create response button (amount == 0 means success button, amount < 0 means failure button)
+  $success = !$msg ? 0 : -1;
+  $box_title = !$msg ? t('Thank you,') : t('Whoops,');
+  $box_text = !$msg ? t('for your contribution') : t('something went wrong');
+  $button = theme('stripe_button_fix_value', array(
+      'field_id' => $button_id,
+      'amount' => $success,
+      'currency' => $currency,
+      'message' => $msg,
+      'box_title' => $box_title,
+      'box_text' => $box_text,
+    )
+  );
+
+  // send answer to client
+  drupal_add_http_header('Content-Type', 'text/html; charset=utf-8');
+  print $button;
+  drupal_exit();
+}
+
+/**
+ * AJAX callback of the stripe button custom form.
+ */
+function stripe_button_custom_form_callback () {
+  // update the user specified amount
+  $button_id = $_POST['btnID'];
+  $new_amount = $_POST['newAmount'];
+  $currency = $_POST['currency'];
+  $recurring_billing = $_POST['recurringBilling'];
+
+  // check user input
+  $input_error = false;
+  if (!empty($new_amount) && is_numeric($new_amount)) {
+    if (floatval($new_amount) < 1.0) {
+      $input_error = true;
+    }
+  }
+  else {
+    $input_error = true;
+  }
+
+  // create predefined stripe button with the new user amount
+  if ($input_error) {
+    // incorrect user input, return custom button again with error message
+    $button = theme('stripe_button_custom_value', array(
+        'field_id' => $button_id,
+        'amount' => '10.00',
+        'currency' => $currency,
+        'box_title' => t('Custom amount'),
+        'box_text' => t('Please correct your input'),
+        'message' => t('Number must be greater equals 1.00'),
+      )
+    );
+  }
+  else {
+    // correct user input, return button with fixed value
+    $button = theme('stripe_button_fix_value', array(
+        'field_id' => $button_id,
+        'amount' => $new_amount,
+        'currency' => $currency,
+        'box_title' => t('Custom amount'),
+        'box_text' => t('Press button to complete donation'),
+        'recurring_billing' => $recurring_billing,
+      )
+    );
+  }
+
+  // send answer to client
+  drupal_add_http_header('Content-Type', 'text/html; charset=utf-8');
+  print $button;
+  drupal_exit();
+}
+
+/**
+ * AJAX callback on click of fee radios. Used to set user selected fee percentage.
+ */
+function stripe_button_fee_callback() {
+  // update the selected fee in session data
+  $fee_button_id = $_POST['feeButtonID'];
+  $selected_fee_percentage = floatval($_POST['selectedFeePercentage']);
+  $session_data = &stripe_button_session_data();
+  $session_data['fee_buttons'][$fee_button_id] = $selected_fee_percentage;
+
+  // create feedbacks
+  $default_feedback = t('<strong>Thank you!</strong> Your contribution shows us that you appreciate our work.');
+  $feedbacks = array (
+    'default' => $default_feedback,
+  );
+  drupal_alter('stripe_button_fee_select_feedback', $feedbacks, $fee_button_id);
+
+  // get feedback depending on selected fee button
+  if (isset($feedbacks["$selected_fee_percentage"])) {
+    $feedback = $feedbacks["$selected_fee_percentage"];
+  }
+  else {
+    $feedback = $default_feedback;
+  }
+
+  // send answer to client
+  drupal_add_http_header('Content-Type', 'text/html; charset=utf-8');
+  print $feedback;
+  drupal_exit();
+}
+
+
+/* =============================================================================
+ *   Stripe button themes
+ * ========================================================================== */
+/**
+ * Session wide data container.
+ *
+ * @return array Returns the session data array.
+ */
+function &stripe_button_session_data() {
+  if (!isset($_SESSION['stripe_button'])) {
+    $_SESSION['stripe_button'] = array();
+  }
+  return $_SESSION['stripe_button'];
+}
+
+/**
+ * Implements hook_theme().
+ */
+function stripe_button_theme($existing, $type, $theme, $path) {
+  return array(
+    'stripe_button_fix_value' => array(
+      'function' => 'theme_stripe_button_fix_value',
+      'variables' => array(
+        'field_id' => NULL,
+        'box_title' => NULL,
+        'box_text' => NULL,
+        'amount' => NULL,
+        'currency' => NULL,
+        'csp' => FALSE,
+        'recurring_billing' => 'one-time',
+        'message' => NULL,
+      ),
+    ),
+    'stripe_button_custom_value' => array(
+      'function' => 'theme_stripe_button_custom_value',
+      'variables' => array(
+        'field_id' => NULL,
+        'box_title' => NULL,
+        'box_text' => NULL,
+        'amount' => NULL,
+        'currency' => NULL,
+        'csp' => FALSE,
+        'recurring_billing' => 'one-time',
+        'message' => NULL,
+      ),
+    ),
+    'stripe_button_fee_percentage' => array(
+      'variables' => array(
+        'field_id' => NULL,
+        'fee_items' => NULL,
+        'default_button_index' => '0',
+        'top_text' => '',
+        'bottom_text' => '',
+        'stripe_fee_text' => '',
+      ),
+      'file' => 'templates/stripe_button_fee_percentage.vars.php',
+      'template' => 'templates/stripe_button_fee_percentage',
+    ),
+  );
+}
+
+/**
+ * Themes a Stripe Checkout button with a predefined amount in a given currency.
+ */
+function theme_stripe_button_fix_value($variables) {
+  // Render Stripe Checkout button
+  $field_id = $variables['field_id'];
+  $box_title = $variables['box_title'] ? t($variables['box_title']) : t('Fill');
+  $box_text = $variables['box_text'] ? t($variables['box_text']) : t('the basic income pot with');
+
+  if ($variables['amount'] > 0) {
+    //
+    // Create initial button
+    // Enforce strict content security policy
+    if ($variables['csp'] == true) {
+      header("Content-Security-Policy: default-src 'self' https://checkout.stripe.com;");
+    }
+
+    // create HTML button
+    $currency = strtoupper($variables['currency']);
+    $amount = $variables['amount'] * 100 / 100; // no decimal value if not needed
+    $label = t('@amount @currency', array('@amount' => $amount, '@currency' => $currency));
+    switch ($variables['recurring_billing']) {
+      case 'one-time':
+      default:
+        $recurring_billing_text = t('@text (single payment)', array('@text' => $box_text));
+        break;
+      case 'daily':
+        $recurring_billing_text = t('@text (daily billed)', array('@text' => $box_text));
+        break;
+      case 'weekly':
+        $recurring_billing_text = t('@text (weekly billed)', array('@text' => $box_text));
+        break;
+      case 'monthly':
+        $recurring_billing_text = t('@text (monthly billed)', array('@text' => $box_text));
+        break;
+      case 'yearly':
+        $recurring_billing_text = t('@text (yearly billed)', array('@text' => $box_text));
+        break;
+    }
+
+    // create theme output
+    $output = '<div class="stripe-button-container">' .
+      '<div class="stripe-button-title">' . $box_title . '</div>' .
+      '<div class="stripe-button-text">' . $recurring_billing_text . '</div>' .
+      '<button id="' . $field_id . '" type="button" class="btn btn-normal stripe-button">' .
+      $label .
+      '</button></div>';
+  }
+  else if ($variables['amount'] == 0) {
+    //
+    // successful payment, create success button (disabled)
+    $label = t("Done");
+    $output = '<div class="stripe-button-container">' .
+      '<div class="stripe-button-title">' . $box_title . '</div>' .
+      '<div class="stripe-button-text">' . $box_text . '</div>' .
+      '<button id="' . $field_id . '" type="button" class="btn btn-success stripe-button" disabled>' .
+      '<span class="fa fa-check"></span>' . $label .
+      '</button></div>';
+  }
+  else {
+    //
+    // failed payment, create fail button (disabled)
+    $label = t("Nope");
+    $output = '<div class="stripe-button-container">' .
+      '<div class="stripe-button-title">' . $box_title . '</div>' .
+      '<div class="stripe-button-text">' . $box_text . '</div>' .
+      '<button id="' . $field_id . '" type="button" class="btn btn-error stripe-button">' .
+      '<span class="fa fa-times"></span>' . $label .
+      '</button>' .
+      '<div class="stripe-button-error">' . t($variables['message']) . '</div></div>';
+  }
+
+  return $output;
+}
+
+
+
+/**
+ * Themes a Stripe Checkout button with a customizable amount in a given currency.
+ *
+ * The custom button is an AJAX form collecting a user defined amount. The process:
+ * 1) The form submission sends the collected amount to the server
+ * 2) a predefined Stripe button with the given value is created and sent back to the client browser
+ * 3) The button is clicked programmatically in the AJAX response.
+ * 4) The predefined button process starts.
+ */
+function theme_stripe_button_custom_value($variables) {
+  // store theme variables in session
+  $session_data = &stripe_button_session_data();
+  $session_data['button_id'] = $variables['field_id'];
+  $session_data['amount'] = $variables['amount'];
+  $session_data['currency'] = $variables['currency'];
+
+  // create custom amount form
+  $box_title = $variables['box_title'] ? t($variables['box_title']) : t('Custom amount');
+  $box_text = $variables['box_text'] ? t($variables['box_text']) : t('Donate an amount of your choice');
+  switch ($variables['recurring_billing']) {
+    case 'one-time':
+    default:
+      $recurring_billing_text = $box_text;
+      break;
+    case 'daily':
+      $recurring_billing_text = t('@text each day', array('@text' => $box_text));
+      break;
+    case 'weekly':
+      $recurring_billing_text = t('@text each week', array('@text' => $box_text));
+      break;
+    case 'monthly':
+      $recurring_billing_text = t('@text each month', array('@text' => $box_text));
+      break;
+    case 'yearly':
+      $recurring_billing_text = t('@text each year', array('@text' => $box_text));
+      break;
+  }
+  $render_form = drupal_get_form('stripe_button_custom_form');
+
+  // create theme output
+  $output = '<div class="stripe-button-container">' .
+    '<div class="stripe-button-title">' . $box_title . '</div>' .
+    '<div class="stripe-button-text">' . $recurring_billing_text . '</div>' .
+    drupal_render($render_form);
+  $output .= !empty($variables['message']) ? '<div class="stripe-button-error">' . t($variables['message']) . '</div></div>' : '</div>';
+
+  return $output;
+}
+
+/**
+ * Creates the form presenting a customizable amount field and button.
+ */
+function stripe_button_custom_form($form, &$form_state) {
+  // get form values
+  $session_data = &stripe_button_session_data();
+  $form_id = $session_data['button_id'];
+  $amount = $session_data['amount'];
+  $currency = $session_data['currency'];
+  unset($session_data['button_id']);
+  unset($session_data['amount']);
+  unset($session_data['currency']);
+
+  // add wrapper to entire form
+  $form['#prefix'] = '<div id="form-' . $form_id . '" class="stripe-button-custom-form">';
+  $form['#suffix'] = '</div>';
+  $form['stripe_button_custom_amount'] = array(
+    '#type' => 'textfield',
+    '#default_value' => $amount,
+    '#title' => t('Amount'),
+    '#title_display' => 'invisible',
+    '#size' => 7,
+    '#weight' => 0,
+    '#prefix' => '<div class="input-group"><div class="input-group-addon">'. $currency . '</div>',
+    '#suffix' => '</div>',
+  );
+  $form['stripe_button_custom_submit'] = array(
+    '#type' => 'button',
+    '#value' => t('Pay'),
+    '#weight' => 1,
+  );
+
+  return $form;
+}
+
+
+
+/* =============================================================================
+ *   DecimalNumber formatter (as Stripe button)
+ * ========================================================================== */
+/**
+ * Implements hook_field_formatter_info().
+ *
+ * Two formatters for the decimal number field are added:
+ *    stripe_button:  This formatter displays and charges a fixed value via the Stripe payment gateway.
+ *    stripe_button_custom:  This formatter displays a user definable value via the Stripe payment gateway.
+ **/
+function stripe_button_field_formatter_info() {
+  return array(
+    'stripe_button_fixed' => array(
+      'label' => t('Stripe button - predefined value'),
+      'field types' => array('number_decimal'),
+      'settings'  => array(
+        // Array of the settings to be defined
+        // billing type
+        'stripe_button_recurring_billing' => 'one-time',
+        // button box
+        'stripe_button_box_title' => '',
+        'stripe_button_box_text' => '',
+        // stripe checkout dialog
+        'stripe_button_name' => '',
+        'stripe_button_description' => '',
+        'stripe_button_currency' => 'CHF',
+        'stripe_button_prefix' => '',
+        'stripe_button_billing' => 0,
+        'stripe_button_shipping' => 0,
+        'stripe_button_remember' => 0,
+      ),
+    ),
+    'stripe_button_custom' => array(
+      'label' => t('Stripe button - customizable value'),
+      'field types' => array('number_decimal'),
+      'settings'  => array(
+        // Array of the settings to be defined
+        // billing type
+        'stripe_button_recurring_billing' => 'one-time',
+        // button box
+        'stripe_button_box_title' => '',
+        'stripe_button_box_text' => '',
+        // stripe checkout dialog
+        'stripe_button_name' => '',
+        'stripe_button_description' => '',
+        'stripe_button_currency' => 'CHF',
+        'stripe_button_prefix' => '',
+        'stripe_button_billing' => 0,
+        'stripe_button_shipping' => 0,
+        'stripe_button_remember' => 0,
+      ),
+    ),
+    'stripe_button_fee_percentage' => array(
+      'label' => t('Stripe button - fee percentage'),
+      'field types' => array('number_decimal'),
+      'settings'  => array(
+        // Array of the settings to be defined
+        // button box
+        'stripe_button_default_index' => '0',
+        'stripe_button_top_text' => '',
+        'stripe_button_bottom_text' => '',
+        'stripe_button_stripe_fee_text' => '',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function stripe_button_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $element = array();
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  if ($display['type'] == 'stripe_button_fixed' || $display['type'] == 'stripe_button_custom') {
+    // define available currencies
+    $currencies = array(
+      'CHF'  => t('CHF'),
+      'EUR' => t('EUR'),
+      'USD' => t('USD'),
+      'GBP' => t('GBP'),
+      'DKK' => t('DKK'),
+      'NOK' => t('NOK'),
+      'SEK' => t('SEK'),
+      'AUD' => t('AUD'),
+      'CAD' => t('CAD'),
+    );
+
+    // define available intervals for recurring billing
+    $intervals = array(
+      'one-time' => t('Once'),
+      'daily' => t('Daily'),
+      'weekly' => t('Weekly'),
+      'monthly' => t('Monthly'),
+      'yearly' => t('Per year'),
+    );
+
+    // define formatter settings form
+    $element['stripe_button_recurring_billing'] = array(
+      '#type'          => 'select',
+      '#title'         => t('Recurring billing'),
+      '#options' => $intervals,
+      '#default_value' => $settings['stripe_button_recurring_billing'],
+      '#description'   => t('Defines the frequency with which the amount is billed. Default: Once'),
+    );
+    $element['stripe_button_box_title'] = array(
+      '#type'          => 'textfield',
+      '#title'         => t('Box title'),
+      '#default_value' => $settings['stripe_button_box_title'],
+      '#description'   => t('Define the title of the button box. Default: Donate'),
+    );
+    $element['stripe_button_box_text'] = array(
+      '#type'          => 'textfield',
+      '#title'         => t('Box text'),
+      '#default_value' => $settings['stripe_button_box_text'],
+      '#description'   => t('Define the text of the button box. Default: none'),
+    );
+    $element['stripe_button_currency'] = array(
+      '#type' => 'select',
+      '#title' => t('Currency'),
+      '#options' => $currencies,
+      '#default_value' => $settings['stripe_button_currency'],
+    );
+    $element['stripe_button_name'] = array(
+      '#type'          => 'textfield',
+      '#title'         => t('Company name'),
+      '#default_value' => $settings['stripe_button_name'],
+      '#description'   => t('Define the company name shown in the dialog. Default: Site name'),
+    );
+    $element['stripe_button_description'] = array(
+      '#type'          => 'textfield',
+      '#title'         => t('Description'),
+      '#default_value' => $settings['stripe_button_description'],
+      '#description'   => t('Define the description shown in the dialog. Default: none'),
+    );
+    $element['stripe_button_prefix'] = array(
+      '#type'          => 'textfield',
+      '#title'         => t('Button label prefix'),
+      '#default_value' => $settings['stripe_button_prefix'],
+      '#description'   => t("Define the prefix of the Stripe dialog submit button label. Default: none"),
+    );
+    $element['stripe_button_billing'] = array(
+      '#type' => 'checkbox',
+      '#title' => t("Collect user's billing address."),
+      '#default_value' => $settings['stripe_button_billing'],
+      '#description'   => t("Specify whether Checkout should collect the user's billing address. Default: false"),
+    );
+    $element['stripe_button_shipping'] = array(
+      '#type' => 'checkbox',
+      '#title' => t("Collect user's shipping address."),
+      '#default_value' => $settings['stripe_button_shipping'],
+      '#description'   => t("Specify whether Checkout should collect the user's shipping address. Default: false"),
+    );
+    $element['stripe_button_remember'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Remember the customer.'),
+      '#default_value' => $settings['stripe_button_remember'],
+      '#description'   => t("Specify whether to include the option to 'Remember Me' for future purchases (one click payment). Default: false"),
+    );
+  }
+  else if ($display['type'] == 'stripe_button_fee_percentage') {
+    $element['stripe_button_default_index'] = array(
+      '#type'          => 'textfield',
+      '#title'         => t('Default button index'),
+      '#default_value' => $settings['stripe_button_default_index'],
+      '#description'   => t('Define button index, that is selected at display time. Default: 0'),
+    );
+    $element['stripe_button_top_text'] = array(
+      '#type'          => 'textfield',
+      '#title'         => t('Top text'),
+      '#default_value' => $settings['stripe_button_top_text'],
+      '#description'   => t('Define the text, that is displayed above the fee radio buttons. Default: none'),
+    );
+    $element['stripe_button_bottom_text'] = array(
+      '#type'          => 'textfield',
+      '#title'         => t('Bottom text'),
+      '#default_value' => $settings['stripe_button_bottom_text'],
+      '#description'   => t('Define the text, that is displayed below the fee radio buttons. Default: none'),
+    );
+    $element['stripe_button_stripe_fee_text'] = array(
+      '#type'          => 'textfield',
+      '#title'         => t('Stripe fee text'),
+      '#default_value' => $settings['stripe_button_stripe_fee_text'],
+      '#description'   => t('Define the text, that informs about the regular Stripe transaction fees. Default: none'),
+    );
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function stripe_button_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $summary = array();
+  if ($display['type'] == 'stripe_button_fixed' || $display['type'] == 'stripe_button_custom') {
+    $summary[] = t('Recurring billing:    @recur', array('@recur' => $settings['stripe_button_recurring_billing']));
+    $summary[] = t('Box title:            @title', array('@title' => $settings['stripe_button_box_title']));
+    $summary[] = t('Box text:             @text', array('@text' => $settings['stripe_button_box_text']));
+    $summary[] = t('Currency:             @curr', array('@curr' => $settings['stripe_button_currency']));
+    $summary[] = t('Company name:         @name', array('@name' => $settings['stripe_button_name']));
+    $summary[] = t('Product description:  @desc', array('@desc' => $settings['stripe_button_description']));
+    $summary[] = t('Billing address:      @desc', array('@desc' => ($settings['stripe_button_billing'] == 1) ? 'yes' : 'no'));
+    $summary[] = t('Shipping address:     @desc', array('@desc' => ($settings['stripe_button_shipping'] == 1) ? 'yes' : 'no'));
+    $summary[] = t('Remember user:        @desc', array('@desc' => ($settings['stripe_button_remember'] == 1) ? 'yes' : 'no'));
+    $summary[] = t('Button label prefix:  @curr', array('@curr' => $settings['stripe_button_prefix']));
+  }
+  else if ($display['type'] == 'stripe_button_fee_percentage') {
+    $summary[] = t('Default button index:@text', array('@text' => $settings['stripe_button_default_index']));
+    $summary[] = t('Top text:            @text', array('@text' => $settings['stripe_button_top_text']));
+    $summary[] = t('Bottom text:         @text', array('@text' => $settings['stripe_button_bottom_text']));
+    $summary[] = t('Stripe fee text:     @text', array('@text' => $settings['stripe_button_stripe_fee_text']));
+  }
+
+  return implode('<br />', $summary);
+}
+
+
+/**
+ * Implements hook_field_formatter_view().
+ *
+ * A Stripe button formatter for a number field is implemented.
+ *
+ */
+function stripe_button_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+  $settings = $display['settings'];
+  $field_name = $instance['field_name'];
+
+  // create stripe button render array
+  switch ($display['type']) {
+    // This formatter outputs a button with the number as label.
+    case 'stripe_button_fixed':
+      $stripe_buttons = array();
+      $custom_buttons = array();
+      $box_title = t($settings['stripe_button_box_title']);
+      $box_text = t($settings['stripe_button_box_text']);
+      $recurring_billing = $settings['stripe_button_recurring_billing'];
+      $button_settings = _prepare_stripe_button_js_settings($settings);
+
+      foreach ($items as $delta => $item) {
+        // set button specific values
+        $amount = $item['value'];
+        $button_id = drupal_clean_css_identifier($field_name . '--' . $delta);
+
+        // add button with its settings
+        $button_settings['amount'] = $amount*100;  // Stripe needs cents (Rappen) as value
+        $stripe_buttons[$button_id] = $button_settings;
+
+        // create button render array
+        $element[$delta] = array(
+          '#theme' => 'stripe_button_fix_value',
+          '#field_id' => $button_id,
+          '#box_title' =>  $box_title,
+          '#box_text' =>  $box_text,
+          '#amount' => $amount,
+          '#currency' => $button_settings['currency'],
+          '#recurring_billing' => $recurring_billing,
+          '#csp' => false,
+        );
+      }
+
+      // add Stripe Checkout and stripe button javascript and js settings
+      _add_stripe_button_js_settings($stripe_buttons, $custom_buttons);
+      break;
+
+    case 'stripe_button_custom':
+      $stripe_buttons = array();
+      $custom_buttons = array();
+      $box_title = t($settings['stripe_button_box_title']);
+      $box_text = t($settings['stripe_button_box_text']);
+      $recurring_billing = $settings['stripe_button_recurring_billing'];
+      $button_settings = _prepare_stripe_button_js_settings($settings);
+
+      foreach ($items as $delta => $item) {
+        // prevent more than one item for customizable button
+        //if ($delta > 0) break;
+
+        // set button specific values
+        $amount = $item['value']; // default value possibly changed by user
+        $button_id = drupal_clean_css_identifier($field_name . '--' . $delta);
+
+        // add button with its  (no amount set)
+        //$button_settings['amount'] = $amount*100;  // will be filled in javascript (value from form)
+        $stripe_buttons[$button_id] = $button_settings;
+        $custom_buttons[$button_id] = array(
+          'currency' => $button_settings['currency'],
+          'recurringBilling' => $recurring_billing,
+        );
+
+        // create button render array
+        $element[$delta] = array(
+          '#theme' => 'stripe_button_custom_value',
+          '#field_id' => $button_id,
+          '#box_title' =>  $box_title,
+          '#box_text' =>  $box_text,
+          '#amount' => $amount,
+          '#currency' => $button_settings['currency'],
+          '#recurring_billing' => $recurring_billing,
+          '#csp' => false,
+        );
+      }
+
+      // add Stripe Checkout and stripe button javascript and js settings
+      _add_stripe_button_js_settings($stripe_buttons, $custom_buttons);
+      break;
+
+    case 'stripe_button_fee_percentage':
+      $button_id = drupal_clean_css_identifier($field_name);
+      $fees = array();
+      foreach ($items as $delta => $item) {
+        $fees[$delta] = $item['value'];
+      }
+      $element[0] = array(
+        '#theme' => 'stripe_button_fee_percentage',
+        '#field_id' => $button_id,
+        '#fee_items' => $fees,
+        '#default_button_index' => $settings['stripe_button_default_index'],
+        '#top_text' => $settings['stripe_button_top_text'],
+        '#bottom_text' => $settings['stripe_button_bottom_text'],
+        '#stripe_fee_text' => $settings['stripe_button_stripe_fee_text'],
+      );
+      break;
+  }
+
+  return $element;
+}
+
+/**
+ * Prepares the js button settings.
+ *
+ * @param $settings array
+ *    The given button settings.
+ * @return array
+ *    Returns the corrected and updated button settings for the js.
+ */
+function _prepare_stripe_button_js_settings($settings) {
+  $recurring_billing = $settings['stripe_button_recurring_billing'];
+  switch ($recurring_billing) {
+    case 'one-time':
+    default:
+      $description = t('One-time billing of card');
+      break;
+    case 'daily':
+      $description = t('Daily billing of card');
+      break;
+    case 'weekly':
+      $description = t('Weekly billing of card');
+      break;
+    case 'monthly':
+      $description = t('Monthly billing of card');
+      break;
+    case 'yearly':
+      $description = t('Yearly billing of card');
+      break;
+  }
+  $button_settings = array(
+    'name' => $settings['stripe_button_name'] ? t($settings['stripe_button_name']) : variable_get('site_name'),
+    'description' => $settings['stripe_button_description'] ? t($settings['stripe_button_description']) : $description,
+    'currency' => $settings['stripe_button_currency'],
+    'buttonPrefix' => $settings['stripe_button_prefix'] ? t($settings['stripe_button_prefix']) : '',
+    'zipCode' => 0,
+    'billingAddress' => $settings['stripe_button_billing'],
+    'shippingAddress' => $settings['stripe_button_shipping'],
+    'allowRememberMe' => $settings['stripe_button_remember'],
+    'recurringBilling' => $recurring_billing,
+  );
+
+  return $button_settings;
+}
+
+/**
+ * Add the javascript files and settings to be loaded.
+ */
+function _add_stripe_button_js_settings($stripe_buttons, $custom_buttons) {
+  // check if user is logged in
+  global $user;
+  $email = ($user->uid == 0) ? '' : $user->mail;
+
+  // add the Stripe and the stripe_button javascript
+  $path = drupal_get_path('module', 'stripe_button');
+  drupal_add_js(STRIPE_CHECKOUT_JS_PATH, 'external');
+  drupal_add_js($path . '/js/stripe_button.js');
+
+  // add Drupal js settings (Drupal settings are merged for multiple buttons)
+  $logo = $path . '/images/stripe_logo.png';
+  $loader_img = $path . '/images/ajax_loader.svg';
+  $js_settings = array (
+    'stripe_button' => array(
+      'stripe_public_key' => _stripe_api_public_key(),
+      'icon' => $logo ? file_create_url($logo) : '',
+      'processing_img' => $loader_img ? file_create_url($loader_img) : '',
+      'email' => $email,
+    ),
+  );
+  $js_settings['stripe_button']['stripe_buttons'] = $stripe_buttons;
+  $js_settings['stripe_button']['custom_buttons'] = $custom_buttons;
+  drupal_add_js($js_settings, 'setting');
+}
+

@@ -1,0 +1,10 @@
+name = Availability form
+description = "Block providing a form with calendar dropdown managing the availability of a product in the booking system."
+core = 7.x
+package = Pixelgarage
+;configure = admin/PxlBooking/availability
+
+dependencies[] = fullcalendar (>=7.x-2.0)
+dependencies[] = pxl_shop
+
+version = "7.x-1.0-beta"

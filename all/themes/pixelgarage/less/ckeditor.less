@@ -1,0 +1,83 @@
+/*
+ *  CKEditor styles
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+@pxl-text-font: 'CallunaRegular', sans-serif;
+@pxl-text-font-italic: 'CallunaIt', sans-serif;
+@pxl-text-font-bold: 'CallunaBold', sans-serif;
+@pxl-text-font-bold-italic: 'CallunaBold', sans-serif;
+
+@text-color: #222;
+
+@narrow:  ~"screen and (min-width: 480px)";
+@tablet:  ~"screen and (min-width: 768px)";
+
+// Mixins
+// -------------------------
+.font-size-responsive(@max-size: @resp-font-size-max; @min-size: @resp-font-size-min) {
+  font-size: max(@min-size, @max-size*5/8);   // min = 480 / 768 * max
+
+  @media @narrow {
+    font-size: max(unit(@max-size/7.68, vw), unit(@min-size/4.8, vw));
+  }
+  @media @tablet {
+    font-size: @max-size;
+  }
+}
+
+
+
+// Main settings
+// -------------------------
+.pxl-normal {
+  font-family: @pxl-text-font;
+  line-height: 1.15em;
+  text-align: left;
+  color: @text-color;
+  .font-size-responsive(16px, 15px);
+}
+
+.pxl-style1 {
+  font-family: @pxl-text-font-bold;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  text-align: left;
+  color: @text-color;
+  .font-size-responsive(24px, 19px);
+}
+
+.pxl-style2 {
+  font-family: @pxl-text-font-bold;
+  line-height: 1.23em;
+  text-transform: uppercase;
+  text-align: left;
+  color: @text-color;
+  .font-size-responsive(21px, 17px);
+}
+
+.pxl-style3 {
+  font-family: @pxl-text-font-bold;
+  line-height: 1.15em;
+  text-transform: uppercase;
+  text-align: left;
+  color: @text-color;
+  .font-size-responsive(46px, 29px);
+}
+
+.pxl-style4 {
+  font-family: @pxl-text-font-bold;
+  line-height: 1.15em;
+  text-align: left;
+  color: @text-color;
+  .font-size-responsive(16px, 15px);
+}
+
+.pxl-style5 {
+  font-family: @pxl-text-font-bold;
+  line-height: 1.23em;
+  text-align: center;
+  color: @text-color;
+  .font-size-responsive(21px, 17px);
+}

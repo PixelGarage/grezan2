@@ -1,0 +1,195 @@
+/*
+ *  ShareThis component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+@ss-font-path: "@{pxl-font-path}/ss-social";
+@ss-sub-font: "Circle"; // supported sub-fonts are "Circle" and "Regular"
+@ss-sub-font-hover: "Regular";
+
+@pxl-share-color: @text-color;
+@pxl-share-align: left;
+@pxl-follow-color: @text-color;
+
+@pxl-share-icon-size: 40px;
+
+
+// Social icon Fonts
+// -------------------------
+@font-face {
+  font-family: "SSSocial-Circle";
+  src: url('@{ss-font-path}/ss-social-circle.eot');
+  src: url('@{ss-font-path}/ss-social-circle.eot?#iefix') format('embedded-opentype'),
+  url('@{ss-font-path}/ss-social-circle.woff') format('woff'),
+  url('@{ss-font-path}/ss-social-circle.ttf') format('truetype'),
+  url('@{ss-font-path}/ss-social-circle.svg#SSSocialCircle') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SSSocial-Regular";
+  src: url('@{ss-font-path}/ss-social-regular.eot');
+  src: url('@{ss-font-path}/ss-social-regular.eot?#iefix') format('embedded-opentype'),
+  url('@{ss-font-path}/ss-social-regular.woff') format('woff'),
+  url('@{ss-font-path}/ss-social-regular.ttf') format('truetype'),
+  url('@{ss-font-path}/ss-social-regular.svg#SSSocialRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// Mixins
+// -------------------------
+.ss-social(@sub-font) {
+  font-family: "SSSocial-@{sub-font}";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+// General settings
+// -------------------------
+//
+// Add2Any buttons floating
+.a2a_kit {
+  &.a2a_floating_style {
+    display: none;
+    #pxl-mixins.center-vertically(fixed);
+    right: 0;
+    #pxl-mixins.border-radius(5);
+    .border-right-radius(0);
+    background: white;
+
+    @media @tablet {
+      display: block;
+    }
+  }
+
+  &.a2a_vertical_style {}
+  &.a2a_horizontal_style {}
+
+  a {
+    margin: 0 0 10px;
+    padding: 0;
+
+    .a2a_label {
+      display: none;
+    }
+
+    .a2a_svg {
+      .ss-social(@ss-sub-font);
+      width: @pxl-share-icon-size;
+      height: @pxl-share-icon-size;
+      font-size: (@pxl-share-icon-size - 4px);
+      color: @pxl-color-main;
+      text-align: center;
+      line-height: @pxl-share-icon-size;
+      background: none !important;
+
+      &:hover {
+        .ss-social(@ss-sub-font-hover);
+        opacity: 1.0;
+      }
+
+      &:before {
+        display: inline-block;
+        vertical-align: text-bottom;
+      }
+
+    }
+  }
+
+  a.a2a_button_facebook {
+    .a2a_svg:before {
+      content: "\f610";
+    }
+  }
+  a.a2a_button_twitter {
+    .a2a_svg:before {
+      content: "\f611";
+    }
+  }
+  a.a2a_button_google_plus {
+    .a2a_svg:before {
+      content: "\f613";
+    }
+  }
+  a.a2a_button_email {
+    .a2a_svg:before {
+      content:'✉'
+    }
+  }
+  a.a2a_button_pinterest {
+    .a2a_svg:before {
+      content: "\f650";
+    }
+  }
+}
+
+//
+// Follow site block settings
+// --------------------------
+#block-follow-site {
+  display: inline-block;
+
+  .block-title {
+    display: none;
+    margin: 0;
+    vertical-align: middle;
+    font-family: @pxl-text-font-bold;
+    font-size: 18px;
+    line-height: 18px;
+    color: white;
+
+    @media @narrow {
+      display: inline-block;
+    }
+    @media @normal {
+      font-size: 23px;
+      line-height: 23px;
+    }
+  }
+
+  .follow-links {
+    display: inline-block;
+    vertical-align: top;
+
+    .follow-link-wrapper {
+      display: inline-block;
+      vertical-align: middle;
+
+      margin: 0;
+
+      a.follow-link {
+        padding: 0 5px;
+        .ss-social(@ss-sub-font);
+        font-size: 30px;
+        line-height: 30px;
+        color: white;
+        background: none !important;
+
+        &:hover {
+          .ss-social(@ss-sub-font-hover);
+        }
+
+        &.follow-link-facebook:before {
+          content: "\f610";
+        }
+        &.follow-link-twitter:before {
+          content: "\f611";
+        }
+
+      }
+    }
+  }
+}

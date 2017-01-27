@@ -1,0 +1,53 @@
+/*
+ *  Webform confirmation component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+
+
+// Mixins
+// -------------------------
+
+
+
+// Confirmation settings
+// -------------------------
+.webform-confirmation {
+  // in-block display of webform confirmation
+  margin: 50px auto;
+  padding: 15px 30px;
+  width: 80%;
+  color: #fff;
+  border: 1px solid @pxl-color-main;
+  #pxl-mixins.border-radius(5px);
+  background-color: @pxl-color-main;
+
+  .confirmation-title {
+    font-family: @pxl-text-font-bold;
+    #pxl-mixins.font-size-responsive(25px, 20px);
+    line-height: 30px;
+    text-align: center;
+  }
+  .confirmation-message {
+    font-family: @pxl-text-font;
+    #pxl-mixins.font-size-responsive(18px, 14px);
+    line-height: 20px;
+    text-align: center;
+  }
+}
+
+.links {
+  text-align: center;
+  margin: 30px 20px 50px;
+
+  @media @tablet {
+    text-align: left;
+    margin-left: 80px;
+  }
+
+  @media @normal {
+    margin-left: 100px;
+  }
+}
+

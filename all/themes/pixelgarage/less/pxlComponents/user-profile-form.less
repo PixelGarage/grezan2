@@ -1,0 +1,269 @@
+/*
+ *  User profile form component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+@panel-separator-height: 30px;
+@container-inner-margin:  0;
+@fieldset-bg-color: #fff;
+@form-max-width: 960px;
+
+
+// Mixins
+// -------------------------
+.resp-user-button(@size: @font-size-large; @color: #fff; @bg-color: @pxl-color-main; @radius: @border-radius-large) {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 20px;
+  font-family: @pxl-text-font-bold;
+  font-size: @size;
+  line-height: 1;
+  letter-spacing: 0;
+  color: @color;
+  outline: none;
+  #pxl-mixins.border-radius(@radius);
+  border: none;
+  background-color: @bg-color;
+  opacity: 1.0;
+
+  &:hover, &:focus {
+    opacity: 0.7;
+  }
+}
+
+
+
+
+// General settings
+// -------------------------
+form#user-profile-form {
+  margin: 0 auto @panel-separator-height;
+  max-width: @form-max-width;
+
+  @media @normal {
+    width: 50%;
+  }
+
+  div {
+    //
+    // fieldset
+    fieldset.panel, #edit-account {
+      margin: 20px @container-inner-margin @panel-separator-height;
+      padding: 0;
+      border: none;
+      #pxl-mixins.border-radius(6px);
+      background-color: @fieldset-bg-color;
+      #pxl-mixins.box-shadow(none);
+
+      &.collapsed {
+
+      }
+
+      .panel-heading {
+        margin: 20px 0;
+        padding: 0;
+        border: none;
+        background: none;
+        text-align: left;
+
+        .panel-title {
+          .paragraph-item-title();
+
+          &.collapsed {
+
+          }
+        }
+      }
+
+      .panel-body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .summary {
+
+      }
+    }
+
+    //
+    // form element
+    .form-wrapper {
+      margin-bottom: 30px;
+
+      .form-item {
+        label.control-label {
+          display: block;
+          font-weight: normal;
+        }
+
+        input.form-control {
+          margin: 0;
+          height: @pxl-form-control-height;
+          //max-width: @pxl-form-control-width;
+          font-family: @pxl-text-font;
+          font-size: @font-size-base;
+          color: @text-color;
+          border: none;
+          border-bottom: 2px solid @text-color;
+          #pxl-mixins.border-radius(0);
+          #pxl-mixins.box-shadow(none);
+          background-color: @fieldset-bg-color;
+          .placeholder(@text-color-placeholder);
+
+          &:focus {
+            #pxl-mixins.box-shadow(0 0 2px rgba(100, 100, 100, 0.75) inset);
+            border: 2px solid @text-color;
+          }
+        }
+
+        .help-block {
+          font-family: @pxl-text-font;
+          font-size: 11px;
+          color: @pxl-color-gray;
+        }
+
+        .form-textarea-wrapper {
+          textarea {
+            border: none;
+            border-bottom: 2px solid @text-color;
+            #pxl-mixins.border-radius(0);
+            #pxl-mixins.box-shadow(none);
+            background-color: @fieldset-bg-color;
+            .placeholder(@text-color-placeholder);
+
+            &:focus {
+              #pxl-mixins.box-shadow(0 0 2px rgba(100, 100, 100, 0.75) inset);
+              border: 2px solid @text-color;
+            }
+          }
+
+          .grippie {
+            display: none;
+          }
+        }
+
+        .form-select {
+          // see chosen.less
+        }
+
+        .form-radios, .form-checkboxes {
+          vertical-align: top;
+
+          .radio, .checkbox {
+            > .control-label {
+              padding-left: 20px;
+              font-family: @pxl-text-font-light;
+              font-size: 17px;
+              //#pxl-mixins.font-size-responsive(19px, 14px);
+              text-align: left;
+              vertical-align: middle;
+
+              > input {
+                //display: none;
+                margin: 5px 7px 0 -20px;
+                vertical-align: top;
+              }
+            }
+          }
+        }
+
+        .form-managed-file {
+          display:block;
+          position: relative;
+          #pxl-mixins.border-radius(0);
+          background-color: @fieldset-bg-color;
+
+          // button and label to select file
+          .image-widget-data {
+            //
+            // input group before file upload
+            .input-group {
+              display: block;
+              position: relative;
+
+              input {
+                display: inline-block;
+                float: none;
+                margin: 0 -2px;
+                padding: 0;
+                width: 100%;
+                border-bottom: 1px solid @text-color;
+                #pxl-mixins.border-radius(0);
+                #pxl-mixins.box-shadow(none);
+                background-color: @fieldset-bg-color;
+                .placeholder(@text-color-placeholder);
+              }
+
+              // upload button
+              .input-group-btn {
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: 0 -2px;
+                width: auto;
+                z-index: 10;
+
+                button.form-submit {
+                  .resp-user-button(20px, #fff, #000, 0);
+                  #pxl-mixins.font-size-responsive(16px, 15px);
+                }
+              }
+            }
+
+            //
+            // form after file upload
+            .form-group {
+              display: inline-block;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: normal;
+
+              // image and name of uploaded file
+              span.file {
+                display: inline-block;
+                vertical-align: middle;
+                >img {
+                  display: none;
+                }
+                a {
+                  vertical-align: middle;
+                }
+              }
+
+              span.file-size {
+
+              }
+            }
+            button.form-submit {
+              .resp-user-button(20px, #fff, #000, 0);
+              #pxl-mixins.font-size-responsive(16px, 15px);
+              display: block;
+            }
+
+          }
+        }
+      }
+    }
+
+    //
+    // form actions
+    .form-actions {
+      text-align: right;
+      margin-left: @container-inner-margin;
+      padding-left: 15px;
+
+      .form-submit {
+        .resp-user-button(28px, #fff, #000, 0);
+
+        .icon {
+          display: none;
+        }
+      }
+
+    }
+  }
+
+}

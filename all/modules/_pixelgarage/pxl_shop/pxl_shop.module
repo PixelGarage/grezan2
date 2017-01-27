@@ -1,0 +1,89 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ralph
+ * Date: 06.12.16
+ * Time: 13:16
+ */
+
+/**
+ * Defines the Stripe booking platform admin menu path.
+ */
+define('PXL_SHOP_ADMIN_MENU_PATH', 'admin/pxl_shop');
+
+//
+// Loads the shopping cart library
+require_once 'includes/pxl_shop.cart.inc';
+
+
+/**
+ * Session wide data container.
+ *
+ * @return array Returns the session data array.
+ */
+function &pxl_shop_session_data() {
+  if (!isset($_SESSION['pxl_shop'])) {
+    $_SESSION['pxl_shop'] = array();
+  }
+  return $_SESSION['pxl_shop'];
+}
+
+
+/**
+ * Implements hook_views_api.
+ */
+function pxl_shop_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'pxl_shop') .'/views',
+  );
+}
+
+
+/**
+ * Define the Pixelshop menu as top node of the admin menu.
+ * All administration of the Stripe Booking platform is added below this menu.
+ * @return mixed
+ */
+function pxl_shop_menu() {
+  $items[PXL_SHOP_ADMIN_MENU_PATH] = array(
+    'title' => 'Stripe Booking',
+    'description' => 'Stripe Booking - a booking plattform with Stripe payments.',
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('access administration pages'),
+    'file path' => drupal_get_path('module', 'system'),
+    'file' => 'system.admin.inc',
+    'weight' => -7,
+  );
+
+  /* Booking actions */
+  $items['node/%pxlnode/cancel_booking'] = array(
+    'access callback' => 'cancel_booking_access',
+    'access arguments' => array(1),
+    'page callback' => 'cancel_booking_check',
+    'page arguments' => array(1),
+    'title' => 'Cancel booking',
+    'title callback' => 'cancel_booking_action_link_title',
+    'title arguments' => array(1),
+    'weight' => 5,
+    'file' => 'inc/cancel_booking.action.inc',
+    'type' => MENU_LOCAL_ACTION,
+    'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
+  );
+  return $items;
+}
+
+/**
+ * Menu loader callback.
+ */
+function pxlnode_load($nid) {
+  if (!is_numeric($nid)) {
+    return FALSE;
+  }
+  $node = node_load($nid);
+  if (!isset($node->type)) {
+    return FALSE;
+  }
+  return $node;
+}
+

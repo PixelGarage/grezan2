@@ -1,0 +1,78 @@
+/* --------------------------------------------------
+ * Pixelgarage fonts
+ * --------------------------------------------------*/
+//
+// webfont licences
+//@import '../fonts/BrandonGrotesque/BrandonGrotesque-Licence.css';
+
+//
+// Google fonts
+//@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+
+//
+// Awesome icon font
+@import '../fonts/font-awesome/less/font-awesome';
+@fa-font-path: '@{pxl-font-path}/font-awesome/fonts'; // override fa font path (lazy loading)
+
+//
+// Define customer specific fonts
+@pxl-font-path: '../fonts';
+
+// icon font
+@pxl-icon-font: 'fontawesome';
+
+// title font
+@pxl-title-font: 'SohoGothicProBold';
+
+// text fonts
+@pxl-text-font: 'SohoGothicProRegular';
+@pxl-text-font-light: 'SohoGothicProLight';
+@pxl-text-font-medium: @pxl-text-font;
+@pxl-text-font-bold: 'SohoGothicProBold';
+@pxl-text-font-italic: 'SohoGothicProRegular';
+@pxl-text-font-light-italic: 'SohoGothicProLight';
+@pxl-text-font-medium-italic: @pxl-text-font;
+@pxl-text-font-bold-italic: 'SohoGothicProBold';
+
+// form font
+@pxl-form-font: @pxl-text-font;
+
+// overrides
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// overrides
+@font-family-base: @pxl-text-font;
+
+//
+// font faces
+//
+@font-face {
+  font-family: 'SohoGothicProRegular';
+  src: url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.eot');
+  src: url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.eot') format('embedded-opentype'),
+  url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.woff2') format('woff2'),
+  url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.woff') format('woff'),
+  url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.ttf') format('truetype'),
+  url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.svg#SohoGothicProRegular') format('svg');
+}
+@font-face {
+  font-family: 'SohoGothicProLight';
+  src: url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.eot');
+  src: url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.eot') format('embedded-opentype'),
+  url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.woff2') format('woff2'),
+  url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.woff') format('woff'),
+  url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.ttf') format('truetype'),
+  url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.svg#SohoGothicProLight') format('svg');
+}
+@font-face {
+  font-family: 'SohoGothicProBold';
+  src: url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.eot');
+  src: url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.eot') format('embedded-opentype'),
+  url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.woff2') format('woff2'),
+  url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.woff') format('woff'),
+  url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.ttf') format('truetype'),
+  url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.svg#SohoGothicProBold') format('svg');
+}

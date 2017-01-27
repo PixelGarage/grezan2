@@ -1,0 +1,245 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ralph
+ * Date: 06.12.16
+ * Time: 13:16
+ */
+
+
+/**
+ * Session wide data container.
+ *
+ * @return array Returns the session data array.
+ */
+function &pxl_availability_session_data() {
+  if (!isset($_SESSION['pxl_availability'])) {
+    $_SESSION['pxl_availability'] = array();
+  }
+  return $_SESSION['pxl_availability'];
+}
+
+
+/* =============================================================================
+ *   Availability hooks
+ * ========================================================================== */
+/**
+ * Implements hook_views_api.
+ */
+function pxl_availability_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'pxl_availability') .'/views',
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function pxl_availability_menu() {
+  // handles AJAX avaiability submission
+  $items['ajax/availability/submit'] = array(
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    'page callback' => 'pxl_availability_submit_callback',
+  );
+  return $items;
+}
+
+/**
+ * AJAX callback from the availability block submit button.
+ *
+ * This callback returns the shopping cart filled with the product (SKU) information
+ * of all added items.
+ */
+function pxl_availability_submit_callback() {
+  //
+  // get the time range and the available product SKUs for this time range
+  $start_date = $_POST['startVal'];
+  $end_date = $_POST['endVal'];
+  $avail_skus = $_POST['availableSKUs'];
+
+  //
+  // create a cart item for each available product SKU and add them to the shopping cart
+  foreach ($avail_skus as $avail_sku) {
+    $item = pxl_shop_create_cart_item($avail_sku, $start_date, $end_date);
+    pxl_shop_cart_add_item($avail_sku, $item);
+  }
+
+  //
+  // get the shopping cart and render it
+  $shopping_cart = array();
+
+  // exit with shopping cart block
+  drupal_add_http_header('Content-Type', 'text/html; charset=utf-8');
+  print drupal_render($shopping_cart);
+  drupal_exit();
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function pxl_availability_theme($existing, $type, $theme, $path) {
+  return array(
+    'pxl_availability_form' => array(
+      'variables' => array(
+        'block_id' => null,
+        'counter' => 0,
+        'date_format' => 'short',
+        'calendar_view' => null,  // string view-name:view-display
+        'selectable_days' => null, // associative array with values = 0 for unselectable days and values = day for selectable days
+        'start_placeholder' => 'check-in',
+        'end_placeholder' => 'check-out'
+      ),
+      'file' => 'templates/pxl_availability_form.vars.php',
+      'template' => 'templates/pxl-availability-form',
+    ),
+  );
+}
+
+
+/* =============================================================================
+ *   Availability Block (Form with fullcalendar dropdown managing booked events)
+ * ========================================================================== */
+/**
+ * Implements hook_block_info().
+ **/
+function pxl_availability_block_info() {
+  $blocks['pxl_availability_form'] = array(
+    'info' => t('Availability form block'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+
+
+/**
+ * Implements hook_block_configure().
+ */
+function pxl_availability_block_configure($delta = 0) {
+  switch ($delta) {
+    case 'pxl_availability_form':
+      return _pxl_availability_settings_form($delta);
+      break;
+  }
+}
+
+function _pxl_availability_settings_form($delta = 0) {
+  $form['pxl_availability'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Availability block settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#weight' => 0,
+  );
+
+  $form['pxl_availability']['pxl_availability_format_type'] = array(
+    '#title' => t('Choose how users view dates and times:'),
+    '#type' => 'select',
+    '#options' => date_format_type_options(),
+    '#default_value' => variable_get($delta . '_format_type', ''),
+    '#description' => t('To add or edit available date and time formats, visit <a href="@date-time-page">Date and time settings</a>.', array('@date-time-page' => url('admin/config/regional/date-time'))),
+    '#weight' => 0,
+  );
+
+  $calendar_views = views_get_views_as_options(false, 'enabled');
+  $form['pxl_availability']['pxl_availability_calendar_view'] = array(
+    '#title' => t('Choose a fullcalendar view'),
+    '#type' => 'select',
+    '#options' => $calendar_views,
+    '#default_value' => variable_get($delta . '_calendar_view', ''),
+    '#description' => t('Select the calendar view to be displayed as dropdown.'),
+    '#weight' => 1,
+  );
+
+  $days = array('0' => t('Sunday'),'1' => t('Monday'),'2' => t('Tuesday'),'3' => t('Wednesday'),'4' => t('Thursday'),'5' => t('Friday'),'6' => t('Saturday'),);
+  $form['pxl_availability']['pxl_availability_selectable_days'] = array(
+    '#title' => t('Selectable days'),
+    '#type' => 'checkboxes',
+    '#options' => $days,
+    '#default_value' => variable_get($delta . '_selectable_days', ''),
+    '#description' => t('Select all week days that can be selected in the calendar view.'),
+    '#weight' => 2,
+  );
+  $form['pxl_availability']['pxl_availability_start_placeholder'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Start field placeholder'),
+    '#default_value' => variable_get($delta . '_start_placeholder', 'check-in'),
+    '#description'   => t('Define the placeholder of the start date field. Default: check-in'),
+  );
+  $form['pxl_availability']['pxl_availability_end_placeholder'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('End field placeholder'),
+    '#default_value' => variable_get($delta . '_end_placeholder', 'check-out'),
+    '#description'   => t('Define the placeholder of the end date field. Default: check-out'),
+  );
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function pxl_availability_block_save($delta = 0, $settings = array()) {
+  switch ($delta) {
+    case 'pxl_availability_form':
+      variable_set($delta . '_format_type', $settings['pxl_availability_format_type']);
+      variable_set($delta . '_calendar_view', $settings['pxl_availability_calendar_view']);
+      variable_set($delta . '_selectable_days', $settings['pxl_availability_selectable_days']);
+      variable_set($delta . '_start_placeholder', $settings['pxl_availability_start_placeholder']);
+      variable_set($delta . '_end_placeholder', $settings['pxl_availability_end_placeholder']);
+      break;
+  }
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function pxl_availability_block_view($delta = 0) {
+  static $counter = 0;
+  $counter++;
+  $block = array();
+
+  switch ($delta) {
+    case 'pxl_availability_form':
+      $block['subject'] = null;
+      $block['content'] = array (
+        '#theme' => 'pxl_availability_form',
+        '#block_id' => 'block-availability-form-' . $counter,
+        '#counter' => $counter,
+        '#date_format' => variable_get($delta . '_format_type'),
+        '#calendar_view' => variable_get($delta . '_calendar_view'),
+        '#selectable_days' => variable_get($delta . '_selectable_days'),
+        '#start_placeholder' => variable_get($delta . '_start_placeholder'),
+        '#end_placeholder' => variable_get($delta . '_end_placeholder'),
+      );
+      break;
+  }
+
+  return $block;
+}
+
+
+/* =============================================================================
+ *   Fullcalendar option definition
+ * ========================================================================== */
+
+function pxl_availability_fullcalendar_api() {
+  return array(
+    'api' => fullcalendar_api_version(),
+  );
+}
+
+
+/**
+ * Implements hook_fullcalendar_options_info().
+ */
+function pxl_availability_fullcalendar_options_info() {
+  return array(
+    'pxl_availability' => array(
+      'name' => t('Check Availability'),
+      'js' => TRUE,
+    ),
+  );
+}

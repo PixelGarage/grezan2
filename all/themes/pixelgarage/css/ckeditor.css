@@ -1,0 +1,108 @@
+/*
+ *  CKEditor styles
+ * --------------------------------------------------*/
+.pxl-normal {
+  font-family: 'CallunaRegular', sans-serif;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222222;
+  font-size: 15px;
+}
+@media screen and (min-width: 480px) {
+  .pxl-normal {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .pxl-normal {
+    font-size: 16px;
+  }
+}
+.pxl-style1 {
+  font-family: 'CallunaBold', sans-serif;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  text-align: left;
+  color: #222222;
+  font-size: 19px;
+}
+@media screen and (min-width: 480px) {
+  .pxl-style1 {
+    font-size: 3.95833333vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .pxl-style1 {
+    font-size: 24px;
+  }
+}
+.pxl-style2 {
+  font-family: 'CallunaBold', sans-serif;
+  line-height: 1.23em;
+  text-transform: uppercase;
+  text-align: left;
+  color: #222222;
+  font-size: 17px;
+}
+@media screen and (min-width: 480px) {
+  .pxl-style2 {
+    font-size: 3.54166667vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .pxl-style2 {
+    font-size: 21px;
+  }
+}
+.pxl-style3 {
+  font-family: 'CallunaBold', sans-serif;
+  line-height: 1.15em;
+  text-transform: uppercase;
+  text-align: left;
+  color: #222222;
+  font-size: 29px;
+}
+@media screen and (min-width: 480px) {
+  .pxl-style3 {
+    font-size: 6.04166667vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .pxl-style3 {
+    font-size: 46px;
+  }
+}
+.pxl-style4 {
+  font-family: 'CallunaBold', sans-serif;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222222;
+  font-size: 15px;
+}
+@media screen and (min-width: 480px) {
+  .pxl-style4 {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .pxl-style4 {
+    font-size: 16px;
+  }
+}
+.pxl-style5 {
+  font-family: 'CallunaBold', sans-serif;
+  line-height: 1.23em;
+  text-align: center;
+  color: #222222;
+  font-size: 17px;
+}
+@media screen and (min-width: 480px) {
+  .pxl-style5 {
+    font-size: 3.54166667vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .pxl-style5 {
+    font-size: 21px;
+  }
+}

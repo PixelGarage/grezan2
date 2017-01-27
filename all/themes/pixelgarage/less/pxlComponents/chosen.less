@@ -1,0 +1,93 @@
+/*
+ *  Chosen select component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+
+
+// Mixins
+// -------------------------
+
+
+
+// Main settings
+// -------------------------
+.form-select.chosen-container-single {
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  border: none;
+  border-bottom: 2px solid @text-color;
+  #pxl-mixins.border-radius(0);
+  background: none;
+  #pxl-mixins.box-shadow(none);
+
+  a.chosen-single {
+    white-space: normal;
+    max-width: 100%;
+    padding: 0 0 0 8px;
+    height: @pxl-form-control-height;
+    color: #444;
+    border: none;
+    background: none;
+    #pxl-mixins.box-shadow(none);
+
+    span {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+      height: @pxl-form-control-height;
+      line-height: @pxl-form-control-height;
+    }
+
+    div {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 18px;
+      height: 100%;
+
+      b {
+        background-position: 0 7px;
+      }
+    }
+  }
+
+  &.chosen-with-drop {
+    a.chosen-single {
+      div {
+        b {
+          background-position: -18px 7px;
+        }
+      }
+    }
+  }
+
+  .chosen-drop {
+    border: 2px solid @text-color;
+    #pxl-mixins.border-radius(0);
+    #pxl-mixins.box-shadow(none);
+    background: #fff;
+
+    .chosen-search {
+      input {
+
+      }
+    }
+
+    ul.chosen-results {
+      li.active-result {
+
+        &.highlighted {
+          color: @text-color;
+          background: #f4f4f4;
+        }
+      }
+    }
+  }
+
+
+}
