@@ -79,6 +79,27 @@ function hook_stripe_button_user_unsubscribed($user, $params) {
 }
 
 /**
+ * This hook is called right before the charging (subscribing) takes place.
+ * All charging parameters are input so that a last check can be performed.
+ * To prevent  the charging, throw an exception with a corresponding message.
+ *
+ * @param $charge_params
+ *    The associative array with the following charge parameters as key-value pairs:
+ *      stripe_api_mode:  The stripe API mode, e.g. test | live.
+ *      currency:         The currency of the charged amount.
+ *      amount:           The charged amount in currency.
+ *      stripe_fee:       The stripe fee in currency.
+ *      app_fee:          The application fees in currency.
+ *      recurring_billing:The recurring payment interval, e.g. daily|weekly|monthly|yearly
+ * @throws \Exception
+ */
+function hook_stripe_button_charge_completing($charge_params) {
+  if (empty($charge_params['currency'])) {
+    throw new Exception('No currency set. No charge can be performed.');
+  }
+}
+
+/**
  * This hook is called, after a stripe transaction has been successfully performed.
  * It's called inside a try-catch clause catching all Stripe exceptions, so no
  * special exception handling has to be done in this hook.
@@ -93,7 +114,8 @@ function hook_stripe_button_user_unsubscribed($user, $params) {
  *      stripe_fee:       The stripe fee in currency.
  *      app_fee:          The application fees in currency.
  *      recurring_billing:The recurring payment interval, e.g. daily|weekly|monthly|yearly
- *      stripe_cust_id:   The Stripe customer id holding the subscription.
+ *      stripe_cust_id:   The Stripe customer id holding the subscription, not existing for single payment.
+ *      charge_id:        The Stripe charge id for a single payment, not existing for a subscription.
  */
 function hook_stripe_button_charge_completed($charge_params) {
   watchdog(

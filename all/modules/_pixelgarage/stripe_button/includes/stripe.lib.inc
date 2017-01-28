@@ -52,6 +52,8 @@ function stripe_button_charge_card_once($amount, $currency, $token, $email, $des
     "receipt_email" => $email
   ));
 
+  // return charge id
+  return $charge->id;
 }
 
 
