@@ -8,7 +8,7 @@
   /**
    * Guarantees full area clickable proximity items in case of disabled AJAX.
    */
-  Drupal.behaviors.fullSizeClickableItems = {
+  Drupal.behaviors.proximityItemFullSizeClick = {
     attach: function () {
       // Iterate through all proximity container instances
       $.each(Drupal.settings.proximity, function (container, settings) {

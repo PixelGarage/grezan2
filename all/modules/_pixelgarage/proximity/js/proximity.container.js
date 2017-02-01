@@ -11,7 +11,7 @@
    *  Opens the modal dialog, if a full page request is performed (no ajax involved) and
    *  guarantees, that all content is cleared (audio, video stopped) on modal dialog closing.
    */
-  Drupal.behaviors.modalDialogHandling = {
+  Drupal.behaviors.proximityModalHandling = {
     attach: function () {
       // Iterate through all proximity container instances
       $.each(Drupal.settings.proximity, function (container, settings) {
