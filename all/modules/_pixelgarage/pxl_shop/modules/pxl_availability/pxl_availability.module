@@ -29,7 +29,7 @@ function &pxl_availability_session_data() {
 function pxl_availability_views_api() {
   return array(
     'api' => 3,
-    'path' => drupal_get_path('module', 'pxl_availability') .'/views',
+    'path' => drupal_get_path('module', 'pxl_availability') .'/structures/views',
   );
 }
 
@@ -55,24 +55,31 @@ function pxl_availability_menu() {
 function pxl_availability_submit_callback() {
   //
   // get the time range and the available product SKUs for this time range
-  $start_date = $_POST['startVal'];
-  $end_date = $_POST['endVal'];
+  $start_date = $_POST['startDateVal'];
+  $end_date = $_POST['endDateVal'];
   $avail_skus = $_POST['availableSKUs'];
 
   //
   // create a cart item for each available product SKU and add them to the shopping cart
   foreach ($avail_skus as $avail_sku) {
     $item = pxl_shop_create_cart_item($avail_sku, $start_date, $end_date);
-    pxl_shop_cart_add_item($avail_sku, $item);
+    pxl_shop_cart_add_item($item);
   }
 
   //
-  // get the shopping cart and render it
-  $shopping_cart = array();
+  // get the shopping cart and render it with its js settings (js files already loaded)
+  drupal_static_reset('drupal_add_js');
+  $shopping_cart = drupal_render(pxl_shop_block_view('pxl_shop_cart_form'));
+  $js_settings = array(
+    'settings' => drupal_add_js()['settings'],
+    'dummy.js' => 0,
+  );
+  $rendered_js = drupal_get_js('header', $js_settings, true);
 
   // exit with shopping cart block
   drupal_add_http_header('Content-Type', 'text/html; charset=utf-8');
-  print drupal_render($shopping_cart);
+  print $rendered_js;
+  print $shopping_cart;
   drupal_exit();
 }
 
@@ -84,13 +91,10 @@ function pxl_availability_theme($existing, $type, $theme, $path) {
   return array(
     'pxl_availability_form' => array(
       'variables' => array(
-        'block_id' => null,
-        'counter' => 0,
-        'date_format' => 'short',
         'calendar_view' => null,  // string view-name:view-display
-        'selectable_days' => null, // associative array with values = 0 for unselectable days and values = day for selectable days
-        'start_placeholder' => 'check-in',
-        'end_placeholder' => 'check-out'
+        'check_in_time' => '15',
+        'check_out_time' => '12',
+        'selectable_days' => array(0,1,2,3,4,5,6), // array with all selectable days (0=Sunday, ... 6=Saturday)
       ),
       'file' => 'templates/pxl_availability_form.vars.php',
       'template' => 'templates/pxl-availability-form',
@@ -107,7 +111,7 @@ function pxl_availability_theme($existing, $type, $theme, $path) {
  **/
 function pxl_availability_block_info() {
   $blocks['pxl_availability_form'] = array(
-    'info' => t('Availability form block'),
+    'info' => t('Pixel availability calendar'),
     'cache' => DRUPAL_NO_CACHE,
   );
   return $blocks;
@@ -129,51 +133,47 @@ function pxl_availability_block_configure($delta = 0) {
 function _pxl_availability_settings_form($delta = 0) {
   $form['pxl_availability'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Availability block settings'),
+    '#title' => t('Availability calendar settings'),
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
-    '#weight' => 0,
-  );
-
-  $form['pxl_availability']['pxl_availability_format_type'] = array(
-    '#title' => t('Choose how users view dates and times:'),
-    '#type' => 'select',
-    '#options' => date_format_type_options(),
-    '#default_value' => variable_get($delta . '_format_type', ''),
-    '#description' => t('To add or edit available date and time formats, visit <a href="@date-time-page">Date and time settings</a>.', array('@date-time-page' => url('admin/config/regional/date-time'))),
-    '#weight' => 0,
   );
 
   $calendar_views = views_get_views_as_options(false, 'enabled');
-  $form['pxl_availability']['pxl_availability_calendar_view'] = array(
+  $form['pxl_availability']['calendar_view'] = array(
     '#title' => t('Choose a fullcalendar view'),
     '#type' => 'select',
     '#options' => $calendar_views,
     '#default_value' => variable_get($delta . '_calendar_view', ''),
-    '#description' => t('Select the calendar view to be displayed as dropdown.'),
+    '#description' => t('Select the calendar view to be displayed.'),
     '#weight' => 1,
   );
 
-  $days = array('0' => t('Sunday'),'1' => t('Monday'),'2' => t('Tuesday'),'3' => t('Wednesday'),'4' => t('Thursday'),'5' => t('Friday'),'6' => t('Saturday'),);
-  $form['pxl_availability']['pxl_availability_selectable_days'] = array(
+  $form['pxl_availability']['check_in_time'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Check-in time'),
+    '#default_value' => variable_get($delta . '_check_in_time', '15'),
+    '#field_suffix' => t('h'),
+    '#size' => 4,
+    '#description'   => t('Define the check-in time in hours. Default: 15h'),
+    '#weight' => 2,
+  );
+  $form['pxl_availability']['check_out_time'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Check-out time'),
+    '#default_value' => variable_get($delta . '_check_out_time', '12'),
+    '#field_suffix' => t('h'),
+    '#size' => 4,
+    '#description'   => t('Define the check-out time in hours. Default: 12h'),
+    '#weight' => 3,
+  );
+  $days = array(0 => t('Sunday'),1 => t('Monday'),2 => t('Tuesday'),3 => t('Wednesday'),4 => t('Thursday'),5 => t('Friday'),6 => t('Saturday'),);
+  $form['pxl_availability']['selectable_days'] = array(
     '#title' => t('Selectable days'),
     '#type' => 'checkboxes',
     '#options' => $days,
-    '#default_value' => variable_get($delta . '_selectable_days', ''),
-    '#description' => t('Select all week days that can be selected in the calendar view.'),
-    '#weight' => 2,
-  );
-  $form['pxl_availability']['pxl_availability_start_placeholder'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('Start field placeholder'),
-    '#default_value' => variable_get($delta . '_start_placeholder', 'check-in'),
-    '#description'   => t('Define the placeholder of the start date field. Default: check-in'),
-  );
-  $form['pxl_availability']['pxl_availability_end_placeholder'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('End field placeholder'),
-    '#default_value' => variable_get($delta . '_end_placeholder', 'check-out'),
-    '#description'   => t('Define the placeholder of the end date field. Default: check-out'),
+    '#default_value' => variable_get($delta . '_selectable_days', array(0,1,2,3,4,5,6)),
+    '#description' => t('Select all week days that are visible in the calendar view.'),
+    '#weight' => 4,
   );
   return $form;
 }
@@ -184,11 +184,10 @@ function _pxl_availability_settings_form($delta = 0) {
 function pxl_availability_block_save($delta = 0, $settings = array()) {
   switch ($delta) {
     case 'pxl_availability_form':
-      variable_set($delta . '_format_type', $settings['pxl_availability_format_type']);
-      variable_set($delta . '_calendar_view', $settings['pxl_availability_calendar_view']);
-      variable_set($delta . '_selectable_days', $settings['pxl_availability_selectable_days']);
-      variable_set($delta . '_start_placeholder', $settings['pxl_availability_start_placeholder']);
-      variable_set($delta . '_end_placeholder', $settings['pxl_availability_end_placeholder']);
+      variable_set($delta . '_calendar_view', $settings['calendar_view']);
+      variable_set($delta . '_check_in_time', $settings['check_in_time']);
+      variable_set($delta . '_check_out_time', $settings['check_out_time']);
+      variable_set($delta . '_selectable_days', $settings['selectable_days']);
       break;
   }
 }
@@ -197,8 +196,6 @@ function pxl_availability_block_save($delta = 0, $settings = array()) {
  * Implements hook_block_view().
  */
 function pxl_availability_block_view($delta = 0) {
-  static $counter = 0;
-  $counter++;
   $block = array();
 
   switch ($delta) {
@@ -206,13 +203,10 @@ function pxl_availability_block_view($delta = 0) {
       $block['subject'] = null;
       $block['content'] = array (
         '#theme' => 'pxl_availability_form',
-        '#block_id' => 'block-availability-form-' . $counter,
-        '#counter' => $counter,
-        '#date_format' => variable_get($delta . '_format_type'),
         '#calendar_view' => variable_get($delta . '_calendar_view'),
+        '#check_in_time' => variable_get($delta . '_check_in_time'),
+        '#check_out_time' => variable_get($delta . '_check_out_time'),
         '#selectable_days' => variable_get($delta . '_selectable_days'),
-        '#start_placeholder' => variable_get($delta . '_start_placeholder'),
-        '#end_placeholder' => variable_get($delta . '_end_placeholder'),
       );
       break;
   }
@@ -222,7 +216,7 @@ function pxl_availability_block_view($delta = 0) {
 
 
 /* =============================================================================
- *   Fullcalendar option definition
+ *   Fullcalendar options definition
  * ========================================================================== */
 
 function pxl_availability_fullcalendar_api() {
@@ -242,4 +236,47 @@ function pxl_availability_fullcalendar_options_info() {
       'js' => TRUE,
     ),
   );
+}
+
+
+/* =============================================================================
+ *   Calendar events
+ * ========================================================================== */
+/**
+ * Create a calendar event from a given shopping cart item.
+ *
+ * @param $item   object
+ *    Shopping cart item to be booked.
+ */
+function pxl_availability_create_calendar_event_from_cart_item($item) {
+  $node = new stdClass();
+  $node->type = 'calendar_event';
+  $node->language = LANGUAGE_NONE;
+  $node->uid = 1;
+  $node->status = 1;
+  node_object_prepare($node);
+
+  // fill fields
+  $node->title = 'Booked';
+  $node->field_state[LANGUAGE_NONE][0]['tid'] = _pxl_availabilty_calendar_event_state_tid('booked');
+  $node->field_sku_id[LANGUAGE_NONE][0]['value'] = $item->id;
+  $node->field_event_date[LANGUAGE_NONE][0]['value'] = $item->start;
+  $node->field_event_date[LANGUAGE_NONE][0]['value2'] = $item->end;
+  $node->field_order_id[LANGUAGE_NONE][0]['value'] = isset($item->chargeID) ? $item->chargeID : '';
+  node_save($node);
+
+}
+
+function _pxl_availabilty_calendar_event_state_tid ($name) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'taxonomy_term')
+    ->entityCondition('bundle', 'calendar_event_state')
+    ->propertyCondition('name', $name)
+    ->range(0, 1);
+
+  $result = $query->execute();
+  if (isset($result['taxonomy_term'])) {
+    return key($result['taxonomy_term']);
+  }
+  return 1; // pending
 }

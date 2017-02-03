@@ -1,4 +1,4 @@
-name = Availability form
+name = Time range availability of products
 description = "Block providing a form with calendar dropdown managing the availability of a product in the booking system."
 core = 7.x
 package = Pixelgarage
@@ -7,4 +7,4 @@ package = Pixelgarage
 dependencies[] = fullcalendar (>=7.x-2.0)
 dependencies[] = pxl_shop
 
-version = "7.x-1.0-beta"
+version = "7.x-1.0"

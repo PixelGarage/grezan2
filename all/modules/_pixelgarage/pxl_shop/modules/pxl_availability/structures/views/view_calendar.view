@@ -27,9 +27,9 @@ $handler->display->display_options['exposed_form']['type'] = 'basic';
 $handler->display->display_options['pager']['type'] = 'none';
 $handler->display->display_options['style_plugin'] = 'fullcalendar';
 $handler->display->display_options['style_options']['firstDay'] = '1';
-$handler->display->display_options['style_options']['left'] = 'title';
-$handler->display->display_options['style_options']['center'] = 'basicWeek';
-$handler->display->display_options['style_options']['right'] = 'prevYear,prev today next,nextYear';
+$handler->display->display_options['style_options']['left'] = 'prev';
+$handler->display->display_options['style_options']['center'] = 'title, today';
+$handler->display->display_options['style_options']['right'] = 'next';
 $handler->display->display_options['style_options']['timeformat'] = 'HH:mm{ - HH:mm}';
 $handler->display->display_options['style_options']['advanced'] = TRUE;
 $handler->display->display_options['style_options']['axisFormat'] = 'HH(:mm)';
@@ -42,6 +42,8 @@ $handler->display->display_options['style_options']['titleformatDay'] = 'dddd, d
 $handler->display->display_options['style_options']['columnformatDay'] = 'dddd, d.M.';
 $handler->display->display_options['style_options']['theme'] = FALSE;
 $handler->display->display_options['style_options']['editable'] = TRUE;
+$handler->display->display_options['style_options']['fullcalendar_options']['disableDragging'] = TRUE;
+$handler->display->display_options['style_options']['fullcalendar_options']['disableResizing'] = TRUE;
 /* Field: Content: Event date */
 $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
 $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
@@ -56,6 +58,22 @@ $handler->display->display_options['fields']['field_event_date']['settings'] = a
   'multiple_to' => '',
   'show_remaining_days' => 0,
 );
+/* Contextual filter: Content: SKU ID (field_sku_id) */
+$handler->display->display_options['arguments']['field_sku_id_value']['id'] = 'field_sku_id_value';
+$handler->display->display_options['arguments']['field_sku_id_value']['table'] = 'field_data_field_sku_id';
+$handler->display->display_options['arguments']['field_sku_id_value']['field'] = 'field_sku_id_value';
+$handler->display->display_options['arguments']['field_sku_id_value']['default_action'] = 'default';
+$handler->display->display_options['arguments']['field_sku_id_value']['default_argument_type'] = 'node';
+$handler->display->display_options['arguments']['field_sku_id_value']['summary']['number_of_records'] = '0';
+$handler->display->display_options['arguments']['field_sku_id_value']['summary']['format'] = 'default_summary';
+$handler->display->display_options['arguments']['field_sku_id_value']['summary_options']['items_per_page'] = '25';
+$handler->display->display_options['arguments']['field_sku_id_value']['specify_validation'] = TRUE;
+$handler->display->display_options['arguments']['field_sku_id_value']['validate']['type'] = 'node';
+$handler->display->display_options['arguments']['field_sku_id_value']['validate_options']['types'] = array(
+  'apartment' => 'apartment',
+);
+$handler->display->display_options['arguments']['field_sku_id_value']['validate']['fail'] = 'ignore';
+$handler->display->display_options['arguments']['field_sku_id_value']['limit'] = '0';
 /* Filter criterion: Content: Published */
 $handler->display->display_options['filters']['status']['id'] = 'status';
 $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -92,6 +110,7 @@ $translatables['calendar_view'] = array(
   t('Sort by'),
   t('Asc'),
   t('Desc'),
+  t('All'),
   t('Page'),
   t('Availability Block'),
 );

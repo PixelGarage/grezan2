@@ -1,5 +1,5 @@
 <?php
-$export_time = 1481060365;
+$export_time = 1486126128;
 $data = array(
   'bundles' => array(
     'calendar_event' => (object) array(
@@ -93,6 +93,7 @@ $data = array(
           0 => 'page',
           1 => 'article',
           2 => 'calendar_event',
+          3 => 'apartment',
         ),
       ),
     ),
@@ -239,11 +240,11 @@ $data = array(
         ),
       ),
     ),
-    'field_room_sku' => array(
+    'field_sku_id' => array(
       'translatable' => '0',
       'entity_types' => array(),
       'settings' => array(
-        'max_length' => '255',
+        'max_length' => '100',
       ),
       'storage' => array(
         'type' => 'field_sql_storage',
@@ -253,15 +254,15 @@ $data = array(
         'details' => array(
           'sql' => array(
             'FIELD_LOAD_CURRENT' => array(
-              'field_data_field_room_sku' => array(
-                'value' => 'field_room_sku_value',
-                'format' => 'field_room_sku_format',
+              'field_data_field_sku_id' => array(
+                'value' => 'field_sku_id_value',
+                'format' => 'field_sku_id_format',
               ),
             ),
             'FIELD_LOAD_REVISION' => array(
-              'field_revision_field_room_sku' => array(
-                'value' => 'field_room_sku_value',
-                'format' => 'field_room_sku_format',
+              'field_revision_field_sku_id' => array(
+                'value' => 'field_sku_id_value',
+                'format' => 'field_sku_id_format',
               ),
             ),
           ),
@@ -280,7 +281,7 @@ $data = array(
           0 => 'format',
         ),
       ),
-      'field_name' => 'field_room_sku',
+      'field_name' => 'field_sku_id',
       'type' => 'text',
       'module' => 'text',
       'active' => '1',
@@ -290,7 +291,7 @@ $data = array(
       'columns' => array(
         'value' => array(
           'type' => 'varchar',
-          'length' => '255',
+          'length' => '100',
           'not null' => FALSE,
         ),
         'format' => array(
@@ -522,9 +523,9 @@ $data = array(
         'deleted' => '0',
       ),
     ),
-    'field_room_sku' => array(
+    'field_sku_id' => array(
       0 => array(
-        'label' => 'Room SKU',
+        'label' => 'SKU ID',
         'widget' => array(
           'weight' => '4',
           'type' => 'text_textfield',
@@ -549,7 +550,7 @@ $data = array(
             'type' => 'text_default',
             'settings' => array(),
             'module' => 'text',
-            'weight' => 3,
+            'weight' => 5,
           ),
           'teaser' => array(
             'type' => 'hidden',
@@ -559,9 +560,9 @@ $data = array(
           ),
         ),
         'required' => 0,
-        'description' => '',
+        'description' => 'ID of referenced SKU object.',
         'default_value' => NULL,
-        'field_name' => 'field_room_sku',
+        'field_name' => 'field_sku_id',
         'entity_type' => 'node',
         'bundle' => 'calendar_event',
         'deleted' => '0',

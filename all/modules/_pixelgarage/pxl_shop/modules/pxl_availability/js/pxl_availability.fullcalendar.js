@@ -20,10 +20,10 @@
 
         //
         // set start and end time for date range
-        // add 15 hours to start date (check-in time)
-        start += 15*3600*1000;
-        // add 12 hours to end date (check-out time)
-        end += 12*3600*1000;
+        // add check-in time
+        start += Drupal.settings.pxl_availability.checkInTime*3600*1000;
+        // add check-out time
+        end += Drupal.settings.pxl_availability.checkOutTime*3600*1000;
 
         return [start, end];
       };
@@ -77,13 +77,19 @@
        * in the fullcalendar (two single day clicks or a dragged selection), the dialog is closed and the form fields
        * are filled with the valid formatted dates.
        */
+      var locale = 'de-CH',
+        hiddenDays = Drupal.settings.pxl_availability.hiddenDays;
+
       return {
         selectable: true,
+
+        hiddenDays: hiddenDays,
 
         select: function( startDate, endDate, allDay, jsEvent, view ) {
           // handle only ranges
           var startDateVal = startDate.getTime(),
             endDateVal = endDate.getTime();
+
           if (startDateVal === endDateVal) return;
 
           //
@@ -92,18 +98,18 @@
             $endFormField = Drupal.settings.pxl_availability.endFormField,
             $submitButton = Drupal.settings.pxl_availability.submitButton,
             range = _harmonizeRange(startDateVal, endDateVal);
-          startDateVal = range[0];
-          endDateVal = range[1];
 
           //
-          // validate range
-          var startDate = new Date(startDateVal),
-            endDate = new Date(endDateVal);
+          // validate datetime range
+          startDateVal = range[0];
+          endDateVal = range[1];
+          startDate = new Date(startDateVal);
+          endDate = new Date(endDateVal);
 
           if (_dateRangeIsValid(startDateVal, endDateVal)) {
-            $startFormField.val(startDate.toLocaleString('de-CH'));
+            $startFormField.val(startDate.toLocaleString(locale));
             $startFormField.attr('data-time', startDateVal);
-            $endFormField.val(endDate.toLocaleString('de-CH'));
+            $endFormField.val(endDate.toLocaleString(locale));
             $endFormField.attr('data-time', endDateVal);
 
             //
@@ -156,9 +162,9 @@
             //
             // set date range on fields
             if (isSecondDateSelection) {
-              $startFormField.val(startDate.toLocaleString('de-CH'));
+              $startFormField.val(startDate.toLocaleString(locale));
               $startFormField.attr('data-time', startDateVal);
-              $endFormField.val(endDate.toLocaleString('de-CH'));
+              $endFormField.val(endDate.toLocaleString(locale));
               $endFormField.attr('data-time', endDateVal);
 
               //
@@ -167,11 +173,11 @@
               $submitButton.attr('disabled', false);
             }
             else if (clickedFormFieldIsStartField) {
-              $startFormField.val(startDate.toLocaleString('de-CH'));
+              $startFormField.val(startDate.toLocaleString(locale));
               $startFormField.attr('data-time', startDateVal);
             }
             else {
-              $endFormField.val(startDate.toLocaleString('de-CH'));
+              $endFormField.val(startDate.toLocaleString(locale));
               $endFormField.attr('data-time', startDateVal);
             }
 

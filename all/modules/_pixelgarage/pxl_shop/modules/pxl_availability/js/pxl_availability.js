@@ -54,6 +54,9 @@
             //
             // open calendar
             Drupal.settings.pxl_availability.modalCalendarDialog = $modal;
+            Drupal.settings.pxl_availability.checkInTime = settings.check_in_time;
+            Drupal.settings.pxl_availability.checkOutTime = settings.check_out_time;
+            Drupal.settings.pxl_availability.hiddenDays = settings.hidden_days;
             $modal.fadeIn(300).modal('show');
 
             // Trigger a window resize so that calendar will redraw itself.
@@ -66,7 +69,8 @@
         $submitButton.attr('disabled', true);
         $submitButton.once('button-click', function () {
           $(this).on('click', function (e) {
-            var startVal = Drupal.settings.pxl_availability.startFormField.attr('data-time') / 1000, // unix timestamp in seconds
+            var $blockContainer = $block.parent(),
+              startVal = Drupal.settings.pxl_availability.startFormField.attr('data-time') / 1000, // unix timestamp in seconds
               endVal = Drupal.settings.pxl_availability.endFormField.attr('data-time') / 1000,
               params = {
                 startDateVal: startVal,
@@ -75,15 +79,15 @@
               };
 
             //
-            // load shopping cart with stripe payment
-            $block.load('/ajax/availability/submit', params, function (response, status, xhr) {
+            // load shopping cart with stripe payment (replace entire availability form)
+            $blockContainer.load('/ajax/availability/submit', params, function (response, status, xhr) {
               if (status == "error") {
                 var msg = "Server error " + xhr.status + ": " + xhr.statusText;
                 $errorLabel.html(msg);
               }
               else {
                 // attach behaviours to new block content
-                Drupal.attachBehaviors($block);
+                Drupal.attachBehaviors($blockContainer);
               }
             });
 

@@ -15,6 +15,10 @@ define('PXL_SHOP_ADMIN_MENU_PATH', 'admin/pxl_shop');
 // Loads the shopping cart library
 require_once 'includes/pxl_shop.cart.inc';
 
+//
+// Loads the sku library
+require_once 'includes/pxl_shop.sku.inc';
+
 
 /**
  * Session wide data container.
@@ -29,26 +33,19 @@ function &pxl_shop_session_data() {
 }
 
 
-/**
- * Implements hook_views_api.
- */
-function pxl_shop_views_api() {
-  return array(
-    'api' => 3,
-    'path' => drupal_get_path('module', 'pxl_shop') .'/views',
-  );
-}
-
+/* =============================================================================
+ *   Pxl-shop hooks
+ * ========================================================================== */
 
 /**
  * Define the Pixelshop menu as top node of the admin menu.
- * All administration of the Stripe Booking platform is added below this menu.
+ * All administration of the Pixelshop platform is added below this menu.
  * @return mixed
  */
 function pxl_shop_menu() {
   $items[PXL_SHOP_ADMIN_MENU_PATH] = array(
-    'title' => 'Stripe Booking',
-    'description' => 'Stripe Booking - a booking plattform with Stripe payments.',
+    'title' => 'Pixelshop',
+    'description' => 'Pixel shop - a shopping plattform with integrated Stripe payments.',
     'page callback' => 'system_admin_menu_block_page',
     'access arguments' => array('access administration pages'),
     'file path' => drupal_get_path('module', 'system'),
@@ -56,34 +53,271 @@ function pxl_shop_menu() {
     'weight' => -7,
   );
 
-  /* Booking actions */
-  $items['node/%pxlnode/cancel_booking'] = array(
-    'access callback' => 'cancel_booking_access',
-    'access arguments' => array(1),
-    'page callback' => 'cancel_booking_check',
-    'page arguments' => array(1),
-    'title' => 'Cancel booking',
-    'title callback' => 'cancel_booking_action_link_title',
-    'title arguments' => array(1),
-    'weight' => 5,
-    'file' => 'inc/cancel_booking.action.inc',
-    'type' => MENU_LOCAL_ACTION,
-    'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
+  /* Shopping cart ajax callbacks */
+  $items['ajax/pxl-shop/cart-item/%/delete'] = array(
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    'page callback' => 'pxl_shop_cart_ajax_callback',
+    'page arguments' => array(3,4),
   );
   return $items;
 }
 
 /**
- * Menu loader callback.
+ * AJAX callback of shopping cart.
  */
-function pxlnode_load($nid) {
-  if (!is_numeric($nid)) {
-    return FALSE;
+function pxl_shop_cart_ajax_callback($item_key, $op) {
+  $shopping_cart_empty = false;
+  if ($op == 'delete') {
+    // delete item(s)
+    $shopping_cart_empty = pxl_shop_cart_remove_item($item_key);
   }
-  $node = node_load($nid);
-  if (!isset($node->type)) {
-    return FALSE;
+
+  // return availability block, if shopping cart is empty and availability module is enabled
+  $block = pxl_shop_block_view('pxl_shop_cart_form');
+  if ($shopping_cart_empty && module_exists('pxl_availability')) {
+    $block = pxl_availability_block_view('pxl_availability_form');
   }
-  return $node;
+  drupal_static_reset('drupal_add_js');
+  $rendered_block = drupal_render($block);
+  $js_settings = array(
+    'settings' => drupal_add_js()['settings'],
+    'dummy.js' => 0,
+  );
+  $rendered_js = drupal_get_js('header', $js_settings, true);
+
+
+  // return block, js already loaded
+  drupal_add_http_header('Content-Type', 'text/html; charset=utf-8');
+  print $rendered_js;
+  print $rendered_block;
+  drupal_exit();
 }
 
+
+/**
+ * Implements hook_theme().
+ */
+function pxl_shop_theme($existing, $type, $theme, $path) {
+  return array(
+    'pxl_shop_cart_form' => array(
+      'variables' => array(
+        'currency' => null,
+        'pay_button_title' => '',
+        'pay_button_text' => '',
+        'pay_dialog_title' => '',
+        'pay_dialog_description' => '',
+        'billing_address' => 0,
+      ),
+      'file' => 'templates/pxl_shop_cart_form.vars.php',
+      'template' => 'templates/pxl-shop-cart-form',
+    ),
+  );
+}
+
+
+/* =============================================================================
+ *   Shopping cart Block (Form with cart items table and stripe payment button)
+ * ========================================================================== */
+/**
+ * Implements hook_block_info().
+ **/
+function pxl_shop_block_info() {
+  $blocks['pxl_shop_cart_form'] = array(
+    'info' => t('Pixel shopping cart'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+
+
+/**
+ * Implements hook_block_configure().
+ */
+function pxl_shop_block_configure($delta = 0) {
+  switch ($delta) {
+    case 'pxl_shop_cart_form':
+      return _pxl_shop_cart_settings_form($delta);
+  }
+  return array();
+}
+
+function _pxl_shop_cart_settings_form($delta = 0) {
+  // define available currencies
+  $currencies = array(
+    'CHF'  => t('CHF'),
+    'EUR' => t('EUR'),
+    'USD' => t('USD'),
+    'GBP' => t('GBP'),
+    'DKK' => t('DKK'),
+    'NOK' => t('NOK'),
+    'SEK' => t('SEK'),
+    'AUD' => t('AUD'),
+    'CAD' => t('CAD'),
+  );
+
+  $form['pxl_shop'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Shopping cart settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#weight' => 0,
+  );
+
+  $form['pxl_shop']['currency'] = array(
+    '#type' => 'select',
+    '#title' => t('Payment currency'),
+    '#options' => $currencies,
+    '#default_value' => variable_get($delta . '_currency', 'CHF'),
+    '#description'   => t('Define the currency of the payment.'),
+  );
+  $form['pxl_shop']['pay_button_title'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Pay button title'),
+    '#default_value' => variable_get($delta . '_pay_button_title', ''),
+    '#description'   => t('Define the title of the pay button box. Default: none'),
+  );
+  $form['pxl_shop']['pay_button_text'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Pay button text'),
+    '#default_value' => variable_get($delta . '_pay_button_text', ''),
+    '#description'   => t('Define the text of the pay button box. Default: none'),
+  );
+  $form['pxl_shop']['pay_dialog_title'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Payment dialog title'),
+    '#default_value' => variable_get($delta . '_pay_dialog_title', variable_get('site_name')),
+    '#description'   => t('Define the company name shown in the payment dialog. Default: Site name'),
+  );
+  $form['pxl_shop']['pay_dialog_description'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Payment dialog short description'),
+    '#default_value' => variable_get($delta . '_pay_dialog_description'),
+    '#description'   => t('Define the short description shown in the payment dialog. Default: none'),
+  );
+  $form['pxl_shop']['billing_address'] = array(
+    '#type' => 'checkbox',
+    '#title' => t("Collect user's billing address."),
+    '#default_value' => variable_get($delta . '_billing_address', false),
+    '#description'   => t("Specify whether the payment dialog should collect the user's billing address. Default: false"),
+  );
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function pxl_shop_block_save($delta = 0, $settings = array()) {
+  switch ($delta) {
+    case 'pxl_shop_cart_form':
+      variable_set($delta . '_currency', $settings['currency']);
+      variable_set($delta . '_pay_button_title', $settings['pay_button_title']);
+      variable_set($delta . '_pay_button_text', $settings['pay_button_text']);
+      variable_set($delta . '_pay_dialog_title', $settings['pay_dialog_title']);
+      variable_set($delta . '_pay_dialog_description', $settings['pay_dialog_description']);
+      variable_set($delta . '_billing_address', $settings['billing_address']);
+      break;
+  }
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function pxl_shop_block_view($delta = 0) {
+  $block = array();
+
+  switch ($delta) {
+    case 'pxl_shop_cart_form':
+      $block['subject'] = null;
+      $block['content'] = array (
+        '#theme' => 'pxl_shop_cart_form',
+        '#currency' => variable_get($delta . '_currency'),
+        '#pay_button_title' => variable_get($delta . '_pay_button_title'),
+        '#pay_button_text' => variable_get($delta . '_pay_button_text'),
+        '#pay_dialog_title' => variable_get($delta . '_pay_dialog_title'),
+        '#pay_dialog_description' => variable_get($delta . '_pay_dialog_description'),
+        '#billing_address' => variable_get($delta . '_billing_address'),
+      );
+      break;
+  }
+
+  return $block;
+}
+
+
+/* =============================================================================
+ *   Stripe button hooks
+ * ========================================================================== */
+
+/**
+ * Implements hook_stripe_button_charge_completing.
+ *
+ * Check here again, if the selected time range for each item
+ * in the shopping cart is available.
+ * Throw an exception when check for an item fails to prevent payment and booking.
+ *
+ * @param $charge_params
+ * @throws \Exception
+ */
+function pxl_shop_stripe_button_charge_completing($charge_params) {
+  //
+  // loop over all cart items, and check availability
+  foreach (pxl_shop_cart_items() as $key => $item) {
+    if (!_pxl_shop_date_range_available($key, $item->start, $item->end)) {
+      // remove item from shopping cart
+      pxl_shop_cart_remove_item($key);
+
+      // throw not available exception
+      $startDate = date('j. M y, H:i', $item->start);
+      $endDate = date('j. M y, H:i', $item->end);
+      $msg = t('Sorry! The time range from @start to @end for @name has just been taken by another user.', array(
+        '@start' => $startDate,
+        '@end' => $endDate,
+        '@name' => $item->title,
+      ));
+      throw new Exception($msg);
+    }
+  }
+}
+
+/**
+ * @param $key  string
+ *    Key of SKU object.
+ * @return bool
+ *    Returns true, if the given time range is still available for the SKU object.
+ */
+function _pxl_shop_date_range_available($key, $startDate, $endDate) {
+  //
+  // check if a calendar event of the given SKU (key) intersects with the given time range
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'calendar_event')
+    ->fieldCondition('field_sku_id', 'value', $key)
+    ->fieldCondition('field_event_date', 'value', $endDate, '<')
+    ->fieldCondition('field_event_date', 'value2', $startDate, '>');
+  $result = $query->execute();
+
+  return !isset($result['node']);
+}
+
+
+/**
+ * Implements hook_stripe_button_charge_completed.
+ * @param $charge_params
+ */
+function pxl_shop_stripe_button_charge_completed($charge_params) {
+  //
+  // loop over all cart items, and finish booking
+  if (module_exists('pxl_availability')) {
+    foreach (pxl_shop_cart_items() as $key => $item) {
+      //
+      // create a calendar event for each item in the shopping cart
+      $item->chargeID = $charge_params['charge_id'];
+      pxl_availability_create_calendar_event_from_cart_item($item);
+    }
+
+    // reset shopping cart
+    pxl_shop_cart_remove_item('all');
+  }
+}

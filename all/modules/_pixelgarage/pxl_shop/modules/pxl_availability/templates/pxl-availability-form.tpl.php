@@ -12,7 +12,7 @@
   <div class="availability-form-container"><?php print drupal_render($availability_form); ?></div>
 
   <!-- Modal dialog containing the calendar -->
-  <div id="calendar-modal-<?php print $counter; ?>" class="modal" tabindex="-1" role="dialog" aria-labelledby="pe-modal-label" aria-hidden="true">
+  <div id="calendar-modal-<?php print $id; ?>" class="modal" tabindex="-1" role="dialog" aria-labelledby="pe-modal-label" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <!-- Header -->
