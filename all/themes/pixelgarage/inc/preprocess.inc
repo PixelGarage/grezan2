@@ -23,7 +23,7 @@ function pixelgarage_preprocess_page(&$vars) {
   // hide titles on login forms
   pg_login_preprocess_page($vars);
 
-  $vars['logo'] = str_replace(array('.jpg', '.png'), '.svg', $vars['logo']);
+  //$vars['logo'] = str_replace(array('.jpg', '.png'), '.svg', $vars['logo']);
 }
 
 

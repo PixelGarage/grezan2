@@ -1,0 +1,996 @@
+<?php
+$export_time = 1486150587;
+$data = array(
+  'bundles' => array(
+    'event' => (object) array(
+      'type' => 'event',
+      'name' => 'Event',
+      'base' => 'node_content',
+      'module' => 'node',
+      'description' => 'Describes an event taking place at the Grezan castle. It covers the changing part of all offers in the castle.',
+      'help' => '',
+      'has_title' => '1',
+      'title_label' => 'Title',
+      'custom' => '1',
+      'modified' => '1',
+      'locked' => '0',
+      'disabled' => '0',
+      'orig_type' => 'event',
+      'disabled_changed' => FALSE,
+      'bc_entity_type' => 'node',
+    ),
+  ),
+  'fields' => array(
+    'field_event_date' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'granularity' => array(
+          'month' => 'month',
+          'day' => 'day',
+          'hour' => 'hour',
+          'minute' => 'minute',
+          'year' => 'year',
+          'second' => 0,
+        ),
+        'tz_handling' => 'site',
+        'timezone_db' => 'UTC',
+        'cache_enabled' => 0,
+        'cache_count' => '4',
+        'repeat' => '0',
+        'todate' => 'optional',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_event_date' => array(
+                'value' => 'field_event_date_value',
+                'value2' => 'field_event_date_value2',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_event_date' => array(
+                'value' => 'field_event_date_value',
+                'value2' => 'field_event_date_value2',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'field_name' => 'field_event_date',
+      'type' => 'datetime',
+      'module' => 'date',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'datetime',
+          'mysql_type' => 'datetime',
+          'pgsql_type' => 'timestamp without time zone',
+          'sqlite_type' => 'varchar',
+          'sqlsrv_type' => 'smalldatetime',
+          'not null' => FALSE,
+          'sortable' => TRUE,
+          'views' => TRUE,
+        ),
+        'value2' => array(
+          'type' => 'datetime',
+          'mysql_type' => 'datetime',
+          'pgsql_type' => 'timestamp without time zone',
+          'sqlite_type' => 'varchar',
+          'sqlsrv_type' => 'smalldatetime',
+          'not null' => FALSE,
+          'sortable' => TRUE,
+          'views' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'calendar_event',
+          1 => 'event',
+        ),
+      ),
+    ),
+    'field_event_description' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_event_description' => array(
+                'value' => 'field_event_description_value',
+                'summary' => 'field_event_description_summary',
+                'format' => 'field_event_description_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_event_description' => array(
+                'value' => 'field_event_description_value',
+                'summary' => 'field_event_description_summary',
+                'format' => 'field_event_description_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'field_name' => 'field_event_description',
+      'type' => 'text_with_summary',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => FALSE,
+        ),
+        'summary' => array(
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'event',
+        ),
+      ),
+    ),
+    'field_event_images' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'uri_scheme' => 'public',
+        'default_image' => 0,
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_event_images' => array(
+                'fid' => 'field_event_images_fid',
+                'alt' => 'field_event_images_alt',
+                'title' => 'field_event_images_title',
+                'width' => 'field_event_images_width',
+                'height' => 'field_event_images_height',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_event_images' => array(
+                'fid' => 'field_event_images_fid',
+                'alt' => 'field_event_images_alt',
+                'title' => 'field_event_images_title',
+                'width' => 'field_event_images_width',
+                'height' => 'field_event_images_height',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'fid' => array(
+          'table' => 'file_managed',
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'field_name' => 'field_event_images',
+      'type' => 'image',
+      'module' => 'image',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'columns' => array(
+        'fid' => array(
+          'description' => 'The {file_managed}.fid being referenced in this field.',
+          'type' => 'int',
+          'not null' => FALSE,
+          'unsigned' => TRUE,
+        ),
+        'alt' => array(
+          'description' => 'Alternative image text, for the image\'s \'alt\' attribute.',
+          'type' => 'varchar',
+          'length' => 512,
+          'not null' => FALSE,
+        ),
+        'title' => array(
+          'description' => 'Image title text, for the image\'s \'title\' attribute.',
+          'type' => 'varchar',
+          'length' => 1024,
+          'not null' => FALSE,
+        ),
+        'width' => array(
+          'description' => 'The width of the image in pixels.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+        ),
+        'height' => array(
+          'description' => 'The height of the image in pixels.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'event',
+        ),
+      ),
+    ),
+    'field_event_link' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'attributes' => array(
+          'target' => 'default',
+          'class' => '',
+          'rel' => '',
+        ),
+        'url' => 0,
+        'title' => 'optional',
+        'title_value' => '',
+        'title_maxlength' => 128,
+        'enable_tokens' => 1,
+        'display' => array(
+          'url_cutoff' => 80,
+        ),
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_event_link' => array(
+                'url' => 'field_event_link_url',
+                'title' => 'field_event_link_title',
+                'attributes' => 'field_event_link_attributes',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_event_link' => array(
+                'url' => 'field_event_link_url',
+                'title' => 'field_event_link_title',
+                'attributes' => 'field_event_link_attributes',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'field_name' => 'field_event_link',
+      'type' => 'link_field',
+      'module' => 'link',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'url' => array(
+          'type' => 'varchar',
+          'length' => 2048,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'title' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'sortable' => TRUE,
+        ),
+        'attributes' => array(
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'event',
+        ),
+      ),
+    ),
+    'field_event_location' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'profile2_private' => FALSE,
+        'target_type' => 'node',
+        'handler' => 'base',
+        'handler_settings' => array(
+          'target_bundles' => array(
+            'locality' => 'locality',
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+        ),
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_event_location' => array(
+                'target_id' => 'field_event_location_target_id',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_event_location' => array(
+                'target_id' => 'field_event_location_target_id',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'node' => array(
+          'table' => 'node',
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'field_name' => 'field_event_location',
+      'type' => 'entityreference',
+      'module' => 'entityreference',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'target_id' => array(
+          'description' => 'The id of the target entity.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'event',
+        ),
+      ),
+    ),
+    'field_event_organizer' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_event_organizer' => array(
+                'value' => 'field_event_organizer_value',
+                'format' => 'field_event_organizer_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_event_organizer' => array(
+                'value' => 'field_event_organizer_value',
+                'format' => 'field_event_organizer_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'field_name' => 'field_event_organizer',
+      'type' => 'text',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => '255',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'event',
+        ),
+      ),
+    ),
+  ),
+  'instances' => array(
+    'field_event_date' => array(
+      0 => array(
+        'label' => 'Event date',
+        'widget' => array(
+          'weight' => '2',
+          'type' => 'date_popup',
+          'module' => 'date',
+          'active' => 1,
+          'settings' => array(
+            'input_format' => 'd.m.Y - H:i:s',
+            'input_format_custom' => '',
+            'year_range' => '-0:+3',
+            'increment' => '15',
+            'label_position' => 'above',
+            'text_parts' => array(),
+            'display_all_day' => 1,
+            'repeat_collapsed' => 0,
+          ),
+        ),
+        'settings' => array(
+          'default_value' => 'now',
+          'default_value_code' => '',
+          'default_value2' => 'same',
+          'default_value_code2' => '',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'hidden',
+            'type' => 'date_default',
+            'weight' => '2',
+            'settings' => array(
+              'format_type' => 'long',
+              'multiple_number' => '',
+              'multiple_from' => '',
+              'multiple_to' => '',
+              'fromto' => 'both',
+              'show_repeat_rule' => 'show',
+              'show_remaining_days' => FALSE,
+            ),
+            'module' => 'date',
+          ),
+          'full' => array(
+            'label' => 'above',
+            'type' => 'date_default',
+            'weight' => '2',
+            'settings' => array(
+              'format_type' => 'short',
+              'fromto' => 'both',
+              'multiple_number' => '',
+              'multiple_from' => '',
+              'multiple_to' => '',
+              'show_repeat_rule' => 'show',
+              'show_remaining_days' => FALSE,
+            ),
+            'module' => 'date',
+          ),
+          'teaser' => array(
+            'label' => 'above',
+            'type' => 'date_default',
+            'weight' => '0',
+            'settings' => array(
+              'format_type' => 'medium',
+              'fromto' => 'both',
+              'multiple_number' => '',
+              'multiple_from' => '',
+              'multiple_to' => '',
+              'show_repeat_rule' => 'show',
+              'show_remaining_days' => FALSE,
+            ),
+            'module' => 'date',
+          ),
+          'teaser_front' => array(
+            'label' => 'inline',
+            'type' => 'date_default',
+            'weight' => '1',
+            'settings' => array(
+              'format_type' => 'short',
+              'fromto' => 'both',
+              'multiple_number' => '',
+              'multiple_from' => '',
+              'multiple_to' => '',
+              'show_repeat_rule' => 'show',
+              'show_remaining_days' => FALSE,
+            ),
+            'module' => 'date',
+          ),
+          'rss' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+          'checkout_pane' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 1,
+        'description' => 'Enter the date and time of the event. End date can be given for a period of time.',
+        'ds_extras_field_template' => '',
+        'field_name' => 'field_event_date',
+        'entity_type' => 'node',
+        'bundle' => 'event',
+        'deleted' => '0',
+      ),
+    ),
+    'field_event_description' => array(
+      0 => array(
+        'label' => 'Event description',
+        'widget' => array(
+          'weight' => '6',
+          'type' => 'text_textarea_with_summary',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'rows' => '20',
+            'summary_rows' => 5,
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '1',
+          'display_summary' => 1,
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'hidden',
+            'type' => 'text_default',
+            'weight' => '7',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'full' => array(
+            'label' => 'hidden',
+            'type' => 'text_default',
+            'weight' => '5',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'teaser' => array(
+            'label' => 'hidden',
+            'type' => 'text_summary_or_trimmed',
+            'weight' => '3',
+            'settings' => array(
+              'trim_length' => 600,
+            ),
+            'module' => 'text',
+          ),
+          'rss' => array(
+            'label' => 'hidden',
+            'type' => 'text_summary_or_trimmed',
+            'weight' => '4',
+            'settings' => array(
+              'trim_length' => '300',
+            ),
+            'module' => 'text',
+          ),
+          'teaser_front' => array(
+            'label' => 'hidden',
+            'type' => 'text_summary_or_trimmed',
+            'weight' => '4',
+            'settings' => array(
+              'trim_length' => '300',
+            ),
+            'module' => 'text',
+          ),
+          'checkout_pane' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 1,
+        'description' => 'Describes the event.',
+        'ds_extras_field_template' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_event_description',
+        'entity_type' => 'node',
+        'bundle' => 'event',
+        'deleted' => '0',
+      ),
+    ),
+    'field_event_images' => array(
+      0 => array(
+        'label' => 'Images',
+        'widget' => array(
+          'weight' => '7',
+          'type' => 'image_image',
+          'module' => 'image',
+          'active' => 1,
+          'settings' => array(
+            'progress_indicator' => 'throbber',
+            'preview_image_style' => 'thumbnail',
+          ),
+        ),
+        'settings' => array(
+          'file_directory' => 'events',
+          'file_extensions' => 'png gif jpg jpeg',
+          'max_filesize' => '',
+          'max_resolution' => '',
+          'min_resolution' => '',
+          'alt_field' => 1,
+          'title_field' => 1,
+          'default_image' => 0,
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'hidden',
+            'type' => 'image',
+            'weight' => '9',
+            'settings' => array(
+              'image_style' => '',
+              'image_link' => '',
+            ),
+            'module' => 'image',
+          ),
+          'full' => array(
+            'label' => 'hidden',
+            'type' => 'image',
+            'weight' => '8',
+            'settings' => array(
+              'image_style' => 'large',
+              'image_link' => '',
+            ),
+            'module' => 'image',
+          ),
+          'teaser' => array(
+            'label' => 'hidden',
+            'type' => 'image',
+            'weight' => '4',
+            'settings' => array(
+              'image_style' => 'large',
+              'image_link' => 'content',
+            ),
+            'module' => 'image',
+          ),
+          'rss' => array(
+            'label' => 'hidden',
+            'type' => 'picture',
+            'weight' => '1',
+            'settings' => array(
+              'picture_group' => 'grezan_theme',
+              'fallback_image_style' => '',
+              'image_link' => 'content',
+              'colorbox' => '',
+              'colorbox_settings' => array(
+                'colorbox_group' => '',
+                'colorbox_gallery' => 'none',
+                'colorbox_gallery_custom' => '',
+                'colorbox_caption' => 'none',
+                'colorbox_caption_custom' => '',
+                'colorbox_multivalue_index' => NULL,
+              ),
+              'picture_mapping' => 'grezan_theme',
+              'lazyload' => '',
+              'lazyload_aspect_ratio' => '',
+            ),
+            'module' => 'picture',
+          ),
+          'teaser_front' => array(
+            'label' => 'hidden',
+            'type' => 'image',
+            'weight' => '0',
+            'settings' => array(
+              'image_style' => 'large',
+              'image_link' => 'content',
+            ),
+            'module' => 'image',
+          ),
+          'checkout_pane' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => 'Add one or more images of the event.',
+        'ds_extras_field_template' => '',
+        'field_name' => 'field_event_images',
+        'entity_type' => 'node',
+        'bundle' => 'event',
+        'deleted' => '0',
+      ),
+    ),
+    'field_event_link' => array(
+      0 => array(
+        'label' => 'Organizer web site',
+        'widget' => array(
+          'weight' => '4',
+          'type' => 'link_field',
+          'module' => 'link',
+          'active' => 0,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'validate_url' => 1,
+          'url' => 0,
+          'title' => 'value',
+          'title_value' => 'Go to the organizer\'s web site to book the event',
+          'title_maxlength' => '128',
+          'enable_tokens' => 0,
+          'display' => array(
+            'url_cutoff' => '80',
+          ),
+          'attributes' => array(
+            'target' => '_blank',
+            'rel' => 'nofollow',
+            'class' => '',
+            'configurable_title' => 0,
+            'title' => '',
+          ),
+          'rel_remove' => 'default',
+          'user_register_form' => FALSE,
+          'title_label_use_field_label' => FALSE,
+          'absolute_url' => 1,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'hidden',
+            'type' => 'link_default',
+            'weight' => '8',
+            'settings' => array(),
+            'module' => 'link',
+          ),
+          'full' => array(
+            'label' => 'hidden',
+            'type' => 'link_default',
+            'weight' => '6',
+            'settings' => array(),
+            'module' => 'link',
+          ),
+          'teaser' => array(
+            'label' => 'above',
+            'type' => 'hidden',
+            'weight' => '19',
+            'settings' => array(),
+          ),
+          'rss' => array(
+            'label' => 'hidden',
+            'type' => 'hidden',
+            'weight' => '21',
+            'settings' => array(),
+          ),
+          'teaser_front' => array(
+            'label' => 'above',
+            'type' => 'hidden',
+            'weight' => '17',
+            'settings' => array(),
+          ),
+          'checkout_pane' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => 'Optionally add a link to the organizer / artist web site for further information or direct booking of the event.',
+        'ds_extras_field_template' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_event_link',
+        'entity_type' => 'node',
+        'bundle' => 'event',
+        'deleted' => '0',
+      ),
+    ),
+    'field_event_location' => array(
+      0 => array(
+        'label' => 'Location',
+        'widget' => array(
+          'weight' => '3',
+          'type' => 'options_select',
+          'module' => 'options',
+          'active' => 1,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'hidden',
+            'type' => 'entityreference_label',
+            'weight' => '10',
+            'settings' => array(
+              'link' => FALSE,
+            ),
+            'module' => 'entityreference',
+          ),
+          'full' => array(
+            'label' => 'above',
+            'type' => 'entityreference_label',
+            'weight' => '1',
+            'settings' => array(
+              'link' => 0,
+            ),
+            'module' => 'entityreference',
+          ),
+          'teaser_front' => array(
+            'label' => 'inline',
+            'type' => 'entityreference_label',
+            'weight' => '2',
+            'settings' => array(
+              'link' => 1,
+            ),
+            'module' => 'entityreference',
+          ),
+          'teaser' => array(
+            'label' => 'above',
+            'type' => 'entityreference_label',
+            'weight' => '1',
+            'settings' => array(
+              'link' => 1,
+            ),
+            'module' => 'entityreference',
+          ),
+          'rss' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+          'checkout_pane' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => 'Set the location where the event takes place.',
+        'ds_extras_field_template' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_event_location',
+        'entity_type' => 'node',
+        'bundle' => 'event',
+        'deleted' => '0',
+      ),
+    ),
+    'field_event_organizer' => array(
+      0 => array(
+        'label' => 'Organizer / artist',
+        'widget' => array(
+          'weight' => '1',
+          'type' => 'text_textfield',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'size' => '60',
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '0',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'inline',
+            'type' => 'text_default',
+            'weight' => '1',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'full' => array(
+            'label' => 'inline',
+            'type' => 'text_default',
+            'weight' => '3',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'teaser' => array(
+            'label' => 'above',
+            'type' => 'hidden',
+            'weight' => '17',
+            'settings' => array(),
+          ),
+          'rss' => array(
+            'label' => 'inline',
+            'type' => 'hidden',
+            'weight' => '19',
+            'settings' => array(),
+          ),
+          'teaser_front' => array(
+            'label' => 'above',
+            'type' => 'hidden',
+            'weight' => '15',
+            'settings' => array(),
+          ),
+          'checkout_pane' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 1,
+        'description' => 'Add the organizer or artist of the event.',
+        'ds_extras_field_template' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_event_organizer',
+        'entity_type' => 'node',
+        'bundle' => 'event',
+        'deleted' => '0',
+      ),
+    ),
+  ),
+);

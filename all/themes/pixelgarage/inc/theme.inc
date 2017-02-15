@@ -6,6 +6,24 @@
  * Time: 17:22
  */
 
+/* =============================================================================
+ *      Language block theme
+ * ========================================================================== */
+
+function pixelgarage_links__locale_block(&$vars) {
+  foreach($vars['links'] as $language => $langInfo) {
+    $abbr = $langInfo['language']->language;
+    $vars['links'][$language]['title'] = substr($abbr, 0, 2);
+  }
+  $content = theme_links($vars);
+  return $content;
+}
+
+
+/* =============================================================================
+ *      Image field carousel
+ * ========================================================================== */
+
 /**
  * Bootstrap carousel image field theme override function.
  */
