@@ -69,7 +69,8 @@ function pxl_availability_submit_callback() {
   //
   // get the shopping cart and render it with its js settings (js files already loaded)
   drupal_static_reset('drupal_add_js');
-  $shopping_cart = drupal_render(pxl_shop_block_view('pxl_shop_cart_form'));
+  $cart_block = pxl_shop_block_view('pxl_shop_cart_form');
+  $shopping_cart = drupal_render($cart_block);
   $js_settings = array(
     'settings' => drupal_add_js()['settings'],
     'dummy.js' => 0,

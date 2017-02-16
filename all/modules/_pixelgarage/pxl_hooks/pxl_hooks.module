@@ -1,0 +1,245 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ralph
+ * Date: 16.02.17
+ * Time: 17:08
+ */
+
+/* --------------------------------------------------
+ * Themes and field formatters for date-time ranges
+ * --------------------------------------------------*/
+/**
+ * Implements hook_field_formatter_info().
+ */
+function pxl_hooks_field_formatter_info() {
+  return array(
+    // the key must be unique, so it's best to prefix with your module's name.
+    'pxl_hooks_date_von_bis' => array(
+      // the label is is what is displayed in the select box in the UI.
+      'label' => t('Date Von Bis'),
+      // field types is the important bit!! List the field types your formatter is for.
+      'field types' => array('datetime'),
+      // You can usually leave 'multiple values' as follows:
+      'multiple values' => FIELD_BEHAVIOR_DEFAULT,
+    ),
+    'pxl_hooks_date_start_ende' => array(
+      // the label is is what is displayed in the select box in the UI.
+      'label' => t('Date Start Ende'),
+      // field types is the important bit!! List the field types your formatter is for.
+      'field types' => array('datetime'),
+      // You can usually leave 'multiple values' as follows:
+      'multiple values' => FIELD_BEHAVIOR_DEFAULT,
+    ),
+  );
+}
+/**
+ * Implements hook_field_formatter_view().
+ */
+function pxl_hooks_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $elements = array();
+  foreach ($items as $delta => $item) {
+    $elements[$delta] = array(
+      '#markup' => theme($display['type'] . '_formatter', array('element' => $item, 'field' => $instance)),
+    );
+  }
+  return $elements;
+}
+/**
+ * Implements hook_theme().
+ */
+function pxl_hooks_theme() {
+  return array(
+    // The theme function that our formatter uses:
+    'pxl_hooks_date_von_bis_formatter' => array(
+      // Don't forget that all Drupal 7 theme functions have only one argument,
+      // so you declare what variables get passed within that argument instead.
+      // See http://drupal.org/node/224333#theme_changes
+      'variables' => array('element' => NULL),
+    ),
+    'pxl_hooks_date_start_ende_formatter' => array(
+      // Don't forget that all Drupal 7 theme functions have only one argument,
+      // so you declare what variables get passed within that argument instead.
+      // See http://drupal.org/node/224333#theme_changes
+      'variables' => array('element' => NULL),
+    ),
+  );
+}
+
+function theme_pxl_hooks_date_vom_bis_formatter($element) {
+  $from_date = strtotime($element['element']['value']);
+  $date_start = explode(' ', $element['element']['value']);
+  $date_end = explode(' ', $element['element']['value2']);
+  $to_date = strtotime($element['element']['value2']);
+  $has_end_date = $from_date != $to_date && !empty($date_end[0]);
+
+  if ($has_end_date) {
+    $string = '<strong>' . t('Von') . '</strong> ';
+  } else {
+    $string = '<strong>' . t('Am') . '</strong> ';
+  }
+  if (date('H:i', $from_date) == '00:00') {
+    $string .= date('d.m.Y', $from_date);
+  } else {
+    $string .= date('d.m.Y, H:i', $from_date);
+  }
+  if ($has_end_date) {
+    $string .= ' <strong>' . t('bis') . '</strong> ' . date('d.m.Y', strtotime($element['element']['value2']));
+  }
+  return $string;
+}
+
+function theme_pxl_hooks_date_start_ende_formatter($element) {
+  $from_date = strtotime($element['element']['value']);
+  $string = t('Start') . ': ';
+  if (date('H:i', $from_date) == '00:00') {
+    $string .= date('d.m.Y', $from_date);
+  } else {
+    $string .= date('d.m.Y, H:i', $from_date);
+  }
+  if ($element['element']['value2']) {
+    $end_date = strtotime($element['element']['value2']);
+    if ($from_date != $end_date) {
+      $string .= '<br />' . t('Ende') . ': ' . date('d.m.Y', $end_date);
+    }
+  }
+  return $string;
+}
+
+
+/* --------------------------------------------------
+ * Social media node importer
+ * (see Twitter and Instagram_social_feed modules)
+ * --------------------------------------------------*/
+/**
+ * Saves all imported tweets to a Tweet node.
+ *
+ * @param array $statuses
+ *   The statuses that were saved.
+ * @param object $account
+ *   User account object.
+ *
+ * @see twitter_fetch_user_timeline()
+ */
+function pxl_hooks_twitter_insert_statuses($statuses, $account) {
+  //
+  // import all new tweets (statuses) of an account into tweet nodes
+  $full_name = $account->name;
+  $screen_name = $account->screen_name;
+  $filename = $screen_name . '_profile_image';
+  $profile_image = _import_picture($filename, $account->profile_image_url);
+
+  foreach ($statuses as $tweet) {
+    //
+    // check if tweet is already imported
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'tweet')
+      ->fieldCondition('field_twitter_id', 'value', $tweet->id);
+    $result = $query->execute();
+
+    // import new tweets
+    if (!isset($result['node'])) {
+      $node = new stdClass();
+      $node->type = 'tweet';
+      $node->language = LANGUAGE_NONE;
+      $node->uid = 1;
+      $node->status = 1;
+      node_object_prepare($node);
+
+      // assign all fields
+      $node->title = $full_name;
+      $node->field_profile_image[LANGUAGE_NONE][0]['fid'] = $profile_image->fid;
+      $node->field_twitter_id[LANGUAGE_NONE][0]['value'] = $tweet->id;
+      $node->field_screen_name[LANGUAGE_NONE][0]['value'] = $screen_name;
+      $node->field_created_time[LANGUAGE_NONE][0]['value'] = strtotime($tweet->created_at);
+      $node->created = strtotime($tweet->created_at);
+      $node->body[LANGUAGE_NONE][0]['value'] = $tweet->text;
+
+      // save node
+      $node = node_submit($node);
+      node_save($node);
+    }
+  }
+
+  // delete tweet nodes older than configured time
+  if ($age = variable_get('twitter_expire', 0)) {
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'tweet')
+      ->fieldCondition('field_screen_name', 'value', $screen_name)
+      ->fieldCondition('field_created_time', 'value', REQUEST_TIME - $age, '<');
+    $result = $query->execute();
+
+    if (isset($result['node'])) {
+      node_delete_multiple(array_keys($result['node']));
+    }
+  }
+
+}
+
+
+/**
+ * Notifies of a newly saved instagram media item.
+ *
+ * @param $type  string
+ *    The type of the instagram media (image, video)
+ * @param $item
+ *    The instagram media item object
+ *   stdClass containing the instagram media item.
+ * @see https://www.instagram.com/developer/endpoints/media/ for details about the contents of $item.
+ */
+function pxl_hooks_instagram_media_save($type, $item) {
+  //
+  // save only image (no video)
+  if ($type != 'image') return;
+
+  $filename = $type . $item->instagram_id;
+  $picture = _import_picture($filename, $item->standard_resolution);
+  $caption = ($item->caption && $item->caption->text) ? $item->caption->text : '';
+
+  $node = new stdClass();
+  $node->type = 'instagram';
+  $node->language = LANGUAGE_NONE;
+  $node->uid = 1;
+  $node->status = 1;
+  node_object_prepare($node);
+
+  // assign all fields
+  $node->title = $filename;
+  $node->field_post_id[LANGUAGE_NONE][0]['value'] = $item->instagram_id;
+  $node->field_picture[LANGUAGE_NONE][0]['fid'] = $picture->fid;
+  $node->field_created_time[LANGUAGE_NONE][0]['value'] = $item->created_time;
+  $node->created = $item->created_time;
+  $node->field_link[LANGUAGE_NONE][0]['url'] = $item->instagram_link;
+  $node->field_instagram_user[LANGUAGE_NONE][0]['value'] = $item->instagram_user;
+  $node->field_instagram_tags[LANGUAGE_NONE][0]['value'] = $item->tags;
+  $node->body[LANGUAGE_NONE][0]['value'] = $caption;
+
+  // save node
+  $node = node_submit($node);
+  node_save($node);
+}
+
+
+function _import_picture($unique_name, $uri) {
+  // download file and manage it
+  $ext = '.' . pathinfo($uri, PATHINFO_EXTENSION);
+  $filename = $unique_name . $ext;
+
+  // get or create user picture object
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'file')
+    ->propertyCondition('filename', $filename)
+    ->range(0, 1);
+  $result = $query->execute();
+
+  if (isset($result['file'])) {
+    // get existing
+    $file = file_load(key($result['file']));
+
+  } else {
+    $file = system_retrieve_file($uri, 'public://images/' . $filename, TRUE, FILE_EXISTS_REPLACE);
+  }
+  return $file;
+}

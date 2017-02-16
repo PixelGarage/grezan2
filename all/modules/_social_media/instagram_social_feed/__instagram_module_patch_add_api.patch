@@ -1,0 +1,64 @@
+Index: instagram_social_feed.api.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- instagram_social_feed.api.php	(revision )
++++ instagram_social_feed.api.php	(revision )
+@@ -0,0 +1,37 @@
++<?php
++/**
++ * Created by PhpStorm.
++ * User: ralph
++ * Date: 22.09.16
++ * Time: 18:17
++ */
++
++/**
++ * Notifies of a newly saved instagram media item.
++ *
++ * @param $type  string
++ *    The type of the instagram media (image, video)
++ * @param $item
++ *    The instagram media item object
++ *   stdClass containing the instagram media item.
++ * @see https://www.instagram.com/developer/endpoints/media/ for details about the contents of $item.
++ */
++function hook_instagram_media_save($type, $item) {
++  //
++  // add a node for all new items
++  $node = new stdClass();
++  $node->type = 'instagram';
++  $node->language = LANGUAGE_NONE;
++  $node->uid = 1;
++  $node->status = 1;
++  node_object_prepare($node);
++
++  // assign all fields
++  $node->body[LANGUAGE_NONE][0]['value'] = $item->caption;
++
++  // save node
++  $node = node_submit($node);
++  node_save($node);
++
++}
++
+Index: instagram_social_feed.module
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- instagram_social_feed.module	(revision 42ee09f21f4618e96f4e66ac1a3b1c8c1aeab1fe)
++++ instagram_social_feed.module	(revision )
+@@ -207,6 +207,11 @@
+ 
+       // Insert data into table.
+       $result = db_insert($table)->fields($data)->execute();
++
++      // Let other modules know that a instagram media has been saved.
++      $type = $feed->type;
++      module_invoke_all('instagram_media_save', $type, (object)$data);
++
+       $total++;
+     }
+ 

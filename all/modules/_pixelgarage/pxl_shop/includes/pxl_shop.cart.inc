@@ -16,7 +16,7 @@
  * Creates shopping cart item for the given product SKU.
  *
  * @param $sku_id  string
- *    The product SKU ID.
+ *    The product SKU ID (master id of translation set).
  * @param $startDate  int
  *    Unix timestamp of the start date. Only used for bookable items in a time period.
  * @param $endDate  int

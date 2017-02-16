@@ -1,0 +1,6 @@
+name = Pixelgarage hook implementation
+description = "Provides general enhancements of Drupal for a Pixelgarage project."
+core = 7.x
+package = Pixelgarage
+
+version = "7.x-1.0"

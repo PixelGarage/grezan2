@@ -23,14 +23,17 @@
  *      - view_display_id:  the display id of view
  *      - intl_url:  The current internal URL.
  * @return string
- *    Returns the sku id for the given context.
+ *    Returns the sku id for the given context (master id of translation set).
  */
 function pxl_shop_pxl_availability_filter_by_sku_alter(&$sku_filters, $context) {
   $session_data = &pxl_shop_session_data();
   $url_split = explode('/', $context['intl_url']);
+
   if ($url_split[0] == 'node') {
-    $session_data['sku']['current_sku_id'] = $url_split[1];
-    $sku_filters = array($url_split[1]);
+    $node = node_load($url_split[1]);
+    $sku_id = isset($node->tnid) ? $node->tnid : $node->nid;
+    $session_data['sku']['current_sku_id'] = $sku_id;
+    $sku_filters = array($sku_id);
   }
   else if ($url_split[0] == 'ajax'){
     $sku_filters = array($session_data['sku']['current_sku_id']);
@@ -42,21 +45,35 @@ function pxl_shop_pxl_availability_filter_by_sku_alter(&$sku_filters, $context) 
  *
  * Throws an exception, if the SKU object does not exist.
  *
- * @param $sku_id
+ * @param $sku_id   string    The SKU node id (master id of translation set)
  * @return \stdClass  The fully populated SKU object.
  * @throws \Exception
  */
 function pxl_shop_retrieve_sku($sku_id) {
-  $apartment = node_load($sku_id);
-  if (!$apartment) {
+  $sku = node_load($sku_id);
+  if (!$sku) {
     $msg = t('No SKU with id = @skuid found', array('@skuid' => $sku_id));
     throw new Exception($msg);
   }
 
+  //
+  // get translated title, if multi-language is enabled
+  if (module_exists('pxl_availability')) {
+    global $language;
+    $lang = $language->language;
+    $translations = translation_node_get_translations($sku_id);
+    $title = isset($translations[$lang]) ? $translations[$lang]->title : $sku->title;
+  }
+  else {
+    $title = $sku->title;
+  }
+
+  //
+  // create SKU object
   $sku_obj = new stdClass();
-  $sku_obj->id = $sku_id;
-  $sku_obj->title = $apartment->title;
-  $sku_obj->price_per_day = $apartment->field_price[LANGUAGE_NONE][0]['value'];
+  $sku_obj->id = isset($sku->tnid) ? $sku->tnid : $sku->nid;
+  $sku_obj->title = $title;
+  $sku_obj->price_per_day = $sku->field_price[LANGUAGE_NONE][0]['value'];
 
   return $sku_obj;
 }

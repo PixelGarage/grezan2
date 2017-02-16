@@ -1,5 +1,5 @@
 <?php
-$export_time = 1486150054;
+$export_time = 1487261039;
 $data = array(
   'bundles' => array(
     'locality' => (object) array(
@@ -91,10 +91,12 @@ $data = array(
       'bundles' => array(
         'node' => array(
           0 => 'page',
-          1 => 'unit_description',
-          2 => 'locality',
-          3 => 'blog',
-          4 => 'webform',
+          1 => 'article',
+          2 => 'calendar_event',
+          3 => 'apartment',
+          4 => 'blog',
+          5 => 'locality',
+          6 => 'call2action',
         ),
       ),
     ),
@@ -189,13 +191,80 @@ $data = array(
         ),
       ),
     ),
+    'field_price_tag' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_price_tag' => array(
+                'value' => 'field_price_tag_value',
+                'format' => 'field_price_tag_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_price_tag' => array(
+                'value' => 'field_price_tag_value',
+                'format' => 'field_price_tag_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'field_name' => 'field_price_tag',
+      'type' => 'text',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => '255',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'apartment',
+          1 => 'locality',
+        ),
+      ),
+    ),
   ),
   'instances' => array(
     'body' => array(
       0 => array(
         'label' => 'Location description',
         'widget' => array(
-          'weight' => '31',
+          'weight' => '2',
           'type' => 'text_textarea_with_summary',
           'module' => 'text',
           'active' => 1,
@@ -213,16 +282,16 @@ $data = array(
           'default' => array(
             'label' => 'hidden',
             'type' => 'text_default',
-            'weight' => '1',
+            'weight' => '2',
             'settings' => array(),
             'module' => 'text',
           ),
           'teaser' => array(
             'label' => 'hidden',
             'type' => 'text_summary_or_trimmed',
-            'weight' => '2',
+            'weight' => '3',
             'settings' => array(
-              'trim_length' => 600,
+              'trim_length' => '300',
             ),
             'module' => 'text',
           ),
@@ -255,9 +324,9 @@ $data = array(
       0 => array(
         'label' => 'Images',
         'widget' => array(
-          'weight' => '32',
-          'type' => 'image_image',
-          'module' => 'image',
+          'weight' => '3',
+          'type' => 'image_miw',
+          'module' => 'multiupload_imagefield_widget',
           'active' => 1,
           'settings' => array(
             'progress_indicator' => 'throbber',
@@ -278,13 +347,21 @@ $data = array(
         'display' => array(
           'default' => array(
             'label' => 'hidden',
-            'type' => 'image',
-            'weight' => '2',
+            'type' => 'bootstrap_carousel_if',
+            'weight' => '0',
             'settings' => array(
-              'image_style' => 'large',
-              'image_link' => '',
+              'interval' => '8000',
+              'pause' => 'hover',
+              'wrap' => '1',
+              'keyboard' => '1',
+              'indicators' => '1',
+              'image_style' => '0',
+              'background' => '1',
+              'background_pos' => 'center center',
+              'width' => '100%',
+              'height' => '300px',
             ),
-            'module' => 'image',
+            'module' => 'bootstrap_carousel_if',
           ),
           'full' => array(
             'label' => 'hidden',
@@ -299,10 +376,10 @@ $data = array(
           'teaser' => array(
             'label' => 'hidden',
             'type' => 'image',
-            'weight' => '0',
+            'weight' => '2',
             'settings' => array(
-              'image_style' => 'large',
-              'image_link' => 'content',
+              'image_style' => 'teaser',
+              'image_link' => '',
             ),
             'module' => 'image',
           ),
@@ -317,6 +394,52 @@ $data = array(
         'description' => 'Describes a location of the castle, e.g. the café, the restaurant, the gallery, the garden etc.',
         'ds_extras_field_template' => '',
         'field_name' => 'field_locality_images',
+        'entity_type' => 'node',
+        'bundle' => 'locality',
+        'deleted' => '0',
+      ),
+    ),
+    'field_price_tag' => array(
+      0 => array(
+        'label' => 'Price tag',
+        'widget' => array(
+          'weight' => '1',
+          'type' => 'text_textfield',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'size' => '60',
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '0',
+          'linkit' => array(
+            'enable' => 0,
+            'profile' => '',
+            'button_text' => 'Search',
+          ),
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'hidden',
+            'type' => 'text_default',
+            'weight' => '3',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'teaser' => array(
+            'label' => 'hidden',
+            'type' => 'text_default',
+            'weight' => '1',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_price_tag',
         'entity_type' => 'node',
         'bundle' => 'locality',
         'deleted' => '0',
