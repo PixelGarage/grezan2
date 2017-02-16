@@ -63,11 +63,11 @@ class views_plugin_style_proximity extends views_plugin_style {
         '<li>Proximity effects can be overridden in code (event handler). Implemented effects are opacity and scaling.</li>' .
         '<li>An item description can be displayed, when the pointer is hovering the item.</li>' .
         '<li><strong>Item action: </strong>Defined alter hooks (see API) allow a fully customizable item click action.</li>' .
-        '<li>The click action response is displayable in a configurable container (modal dialog, page container).</li>' .
+        '<li>The click action response is displayable in a configurable container (modal dialog, new page).</li>' .
         '<li>The modal dialog is implemented with the bootstrap framework, but of course can be themed differently (e.g. jQuery). See the views-view-proximity theme template.</li>' .
         '<li>The item click action can be performed with AJAX or as full page load. The AJAX calls create deep links, so that all user actions create a history.</li>' .
         '<li>The AJAX mode fully supports ajaxified elements in the action response like a form, a button or a link.</li>' .
-        '<li>Proximity and AJAX can be disabled seperately.</li>' .
+        '<li>Proximity effects and AJAX can be disabled seperately.</li>' .
         '</ul>'
       ),
       '#weight' => 5,
@@ -149,9 +149,10 @@ class views_plugin_style_proximity extends views_plugin_style {
       '#options' => array(
         'modal_fix' => t('Modal dialog fixed position'),
         'modal_rel' => t('Modal dialog relative to item'),
+        'page_new' => t('New page (no ajax)'),
         'page_cont' => t('Page container'),
       ),
-      '#description' => t('Select one of the given action response containers to display the item content. Options are: modal dialog relative to item position, fixed positioned modal dialog (CSS) and a flexible page container.'),
+      '#description' => t('Select one of the given action response containers to display the item content. Options are: modal dialog relative to item position, fixed positioned modal dialog (CSS) and a new page.'),
       '#default_value' => $default_values['proximity_action_container'],
       '#weight' => 2,
       '#fieldset' => 'action',

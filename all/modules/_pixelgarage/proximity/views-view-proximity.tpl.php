@@ -55,13 +55,15 @@
   </div>
   <?php endif; ?>
 
-  <!--
-  Content container that can be used to add any loaded content (via AJAX or direct call)
-  -->
-  <div id="pe-content-container-<?php print $container_index; ?>" class="pe-content-container" role="page">
-    <div class="content">
-      <?php if (!$use_modal_dlg && $rendered_item) print $rendered_item ; ?>
+  <?php if ($use_page_cont): ?>
+    <!--
+    Content container that can be used to add any loaded content (via AJAX or direct call)
+    -->
+    <div id="pe-content-container-<?php print $container_index; ?>" class="pe-content-container" role="page">
+      <div class="content">
+        <?php if (!$use_modal_dlg && $rendered_item) print $rendered_item ; ?>
+      </div>
     </div>
-  </div>
+  <?php endif; ?>
 
 </div>

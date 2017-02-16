@@ -224,8 +224,10 @@ function template_preprocess_views_view_proximity(&$vars) {
   $options = $vars['options'];
 
   // parameters for modal dialog
-  $ajax_enabled = $options['proximity_ajax_enabled'];
-  $use_modal_dlg = $options['proximity_action_container'] <> 'page_cont';
+  $load_new_page = $options['proximity_action_container'] == 'page_new';
+  $ajax_enabled = $options['proximity_ajax_enabled'] && !$load_new_page;
+  $use_modal_dlg = ($options['proximity_action_container'] == 'modal_fix') || ($options['proximity_action_container'] == 'modal_rel');
+  $vars['use_page_cont'] = ($options['proximity_action_container'] == 'page_cont');
   $vars['use_modal_dlg'] = $use_modal_dlg;
   $vars['close_text'] = t('Schliessen');
 
@@ -270,7 +272,7 @@ function template_preprocess_views_view_proximity(&$vars) {
   }
 
   //
-  // add additional proximity options for use in javascript
+  // add additional proximity options for ajax use in javascript
   global $base_url;
   $ajax_base_url = $base_url . '/' . PROXIMITY_ITEM_AJAX_PATH . $pe_container_index . '/';
   $item_base_url = '/' . PROXIMITY_ITEM_URL_BASE_PATH . $pe_container_index . '/';
@@ -316,7 +318,7 @@ function template_preprocess_views_view_proximity(&$vars) {
       ),
     ),
   );
-  $vars['item_base_url'] = $item_base_url;
+  $vars['item_base_url'] = $load_new_page ? '/node/' : $item_base_url; //TODO: only nodes supported, enhance for other entities
   $vars['pe_container_id'] = $pe_container_id;
   $vars['container_index'] = $pe_container_index++;
 
