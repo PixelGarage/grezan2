@@ -1,0 +1,109 @@
+/*
+ *  Fullcalendar component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+@fc-selection-bg-color: @pxl-color-rentals;
+@fc-past-bg-color: #efefef;
+
+@fc-event-height: 20px;
+@fc-event-bg-color: darken(@pxl-color-rentals, 10%);
+
+
+// Mixins
+// -------------------------
+
+
+
+// General settings
+// -------------------------
+.fullcalendar {
+  .fc-header {
+    .fc-header-left {
+
+    }
+    .fc-header-center {
+
+    }
+    .fc-header-right {
+
+    }
+    .fc-header-title {
+      h2 {
+
+      }
+    }
+
+    .fc-button-prev {
+
+    }
+    .fc-button-next {
+
+    }
+    .fc-button-today {
+
+    }
+  }
+
+  .fc-content {
+    .fc-view-month {
+      .fc-cell-overlay {
+        // selection
+        background-color: @fc-selection-bg-color;
+      }
+
+      .fc-event-container {
+        .fc-event {
+          height: @fc-event-height;
+          background-color: @fc-event-bg-color;
+
+          .fc-event-title {
+            display: none;
+          }
+        }
+      }
+
+      table {
+        thead {
+          tr {
+            th.fc-day-header {
+
+            }
+          }
+        }
+
+        tbody {
+          tr.fc-week {
+            td.fc-day {
+              .fc-day-number {
+
+              }
+
+              .fc-day-content {
+
+              }
+
+              &.fc-past {
+                background-color: @fc-past-bg-color;
+              }
+
+              &.fc-today {
+
+              }
+
+              &.fc-future {
+
+              }
+
+              &.fc-other-month {
+
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

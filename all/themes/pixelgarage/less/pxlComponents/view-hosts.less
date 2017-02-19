@@ -1,0 +1,64 @@
+/*
+ *  Host view component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+
+
+
+// Mixins
+// -------------------------
+
+
+
+// General settings
+// -------------------------
+.view.view-hosts.view-display-id-block_hosts {
+  margin: 0 auto;
+  width: 100%;
+
+  .view-content {
+    margin: 0 -@grid-gutter-dist/2;
+    padding: 20px 0 50px;
+
+    .views-row {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 -2px;
+      padding: 0;
+      width: 100%;
+      overflow: visible;
+
+      @media @tablet {
+        padding: 0 @grid-gutter-dist/2;
+        width: 50%;
+      }
+
+      .views-field-field-address-name-line {
+        .field-content {
+
+        }
+      }
+
+      .views-field-field-portrait {
+        .field-content {
+          img {
+
+          }
+        }
+      }
+
+      .views-field-field-biography {
+        .views-label {
+
+        }
+
+        .field-content {
+
+        }
+      }
+
+    }
+  }
+}

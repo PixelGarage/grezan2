@@ -1,0 +1,92 @@
+/*
+ *  Node apartment component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+
+
+// Mixins
+// -------------------------
+
+
+
+// General settings
+// -------------------------
+.node.node-apartment.view-mode-teaser {
+  .row {
+    .col-sm-12 {
+      .group-header-left {
+
+      }
+
+      .group-header-right {
+
+      }
+
+
+    }
+  }
+}
+
+
+.node.node-apartment.view-mode-full,
+.node.node-apartment.view-mode-default {
+  .row {
+    .col-sm-12 {
+      .group-header-left,
+      .group-header-right {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 -2px;
+        padding: @block-padding-top 0 @block-padding-bottom;
+        width: 100%;
+      }
+
+      @media @tablet {
+        .group-header-left {
+          width: 50%;
+          padding-right: @grid-gutter-width/2;
+        }
+        .group-header-right {
+          width: 50%;
+          padding-left: @grid-gutter-width/2;
+        }
+      }
+
+      @media @normal {
+        .group-header-left {
+          width: 33.3333333%;
+        }
+        .group-header-right {
+          width: 66.6666666%;
+        }
+      }
+
+      .field-name-title {
+        h2 {
+          margin: 0 0 @field-margin-bottom;
+
+        }
+      }
+
+      .field-name-body {
+        .field-item {
+          margin: 0 0 @field-margin-bottom;
+          #pxl-mixins.wysiwyg-body(16px);
+        }
+      }
+
+      .field-name-field-images {
+        .field-item {
+          .carousel {
+            #pxl-mixins.carousel();
+          }
+        }
+      }
+
+    }
+  }
+}
+
+

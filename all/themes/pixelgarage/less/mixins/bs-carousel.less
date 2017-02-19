@@ -18,29 +18,37 @@
   //
   // Bootstrap carousel
   .carousel() {
+    display: block;
     position: relative;
-    margin: 0;
+    margin: 0 auto 11%;
     padding: 0;
+    width: 100%;
     height: auto;
 
     // fading carousel
     &.carousel-fade {
       > .carousel-inner {
-        .item {
-          opacity: 0;
-          #pxl-mixins.transition(opacity 1.5s);
+        background: #000000;
 
-          &.active {
-            opacity: 1.0;
+        @media all and (transform-3d), (-webkit-transform-3d) {
+          .item {
+            opacity: 0;
+            #pxl-mixins.transition(opacity ease 1s);
 
-            &.left, &.right {
-              left: 0;
-              opacity: 0;
-              z-index: 1;
+            &.active {
+              opacity: 1.0;
+
+              &.left, &.right {
+                left: 0;
+                opacity: 0;
+                .translate3d(0,0,0);
+                z-index: 1;
+              }
             }
-          }
-          &.left.next, &.right.prev {
-            opacity: 1.0;
+            &.left.next, &.right.prev {
+              opacity: 1.0;
+              .translate3d(0,0,0);
+            }
           }
         }
       }
@@ -50,6 +58,14 @@
       margin-top: 0;
 
       .item {
+        width: 100%;
+
+        >div {
+          overflow: hidden;
+          width: 100%;
+          height: 0 !important;
+          padding-bottom: 66.66666%;
+        }
 
         &.active {
 
@@ -58,23 +74,34 @@
     }
 
     > .carousel-indicators {
-      position: fixed;
-      top: 20px;
-      bottom: auto;
-      margin-left: -40%;
-      width: 80%;
-      overflow-x: auto;
-      white-space: nowrap;
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 -5px -10%;
+      width: auto;
+      z-index: 3;
 
       li {
-        margin: 0 5px;
-        width: 14px;
-        height: 14px;
-        border-color: #aaa;
+        display: inline-block;
+        vertical-align: top;
+        overflow: hidden;
+        margin: 0;
+        padding: 0 5px;
+        border: none;
+        #pxl-mixins.border-radius(0);
+        background: none;
+        opacity: 1.0;
 
-        &.active {
-          width: 17px;
-          height: 17px;
+        &:hover, &.active {
+          opacity: 0.6;
+        }
+
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
         }
       }
     }
@@ -86,13 +113,16 @@
       bottom: 0;
       padding: 0;
       width: 50%;
-      #pxl-mixins.font-size-responsive(80px, 50px);
-      text-shadow: 0 0 2px #222;
+      #pxl-mixins.font-size-responsive(40px, 30px, 20px);
+      text-shadow: 0 0 4px #000;
       text-align: unset;
       color: #fff;
       #pxl-mixins.border-radius(0);
       border: none;
       background: none;
+      #pxl-mixins.transition(opacity ease 0.5s);
+      opacity: 0;
+      z-index: 2;
 
       &.left {
         left: 0;
@@ -103,6 +133,10 @@
           display: inline-block;
           #pxl-mixins.center-vertically(absolute);
           left: 5%;
+        }
+
+        &:hover {
+          opacity: 1.0;
         }
       }
 
@@ -115,6 +149,10 @@
           display: inline-block;
           #pxl-mixins.center-vertically(absolute);
           right: 5%;
+        }
+
+        &:hover {
+          opacity: 1.0;
         }
       }
     }
