@@ -5,40 +5,11 @@
 // Variables
 // -------------------------
 @paragraph-max-width: 1000px;
-@paragraph-margin-bottom: 20px;
+@paragraph-margin-bottom: 30px;
 
 
 // Mixins
 // -------------------------
-.paragraph-title () {
-  font-family: @pxl-text-font;
-  #pxl-mixins.font-size-responsive(82px, 37px);
-  letter-spacing: 0.02em;
-  line-height: 2.5;
-  color: @text-color;
-}
-
-.paragraph-subtitle () {
-  margin: 20px 0 10px;
-  padding: 0;
-  font-family: @pxl-text-font;
-  #pxl-mixins.font-size-responsive(46px, 28px);
-  letter-spacing: 0.02em;
-  line-height: 1.1;
-  color: @text-color;
-}
-
-.paragraph-item-title () {
-  margin: 20px 0 10px;
-  padding: 0;
-  font-family: @pxl-text-font-bold;
-  letter-spacing: 0.02em;
-  text-transform: none;
-  color: @text-color;
-  line-height: 1.2;
-  #pxl-mixins.font-size-responsive(28px, 23px);
-}
-
 
 
 // General settings
@@ -52,20 +23,22 @@
 
       >.field-name-title {
         h2 {
-          .paragraph-title();
+          #pxl-mixins.title();
         }
       }
 
       >.field-name-body {
         margin: 0 0 20px;
-        #pxl-mixins.wysiwyg-body(16px);
+        #pxl-mixins.wysiwyg-body();
       }
 
       >.paragraphs-items {
         .field-name-field-paragraphs {
-            //margin: 0 auto;
+          .field-item {
+            margin-bottom: @paragraph-margin-bottom;
 
             // see paragraph-item-... less files
+          }
         }
       }
 

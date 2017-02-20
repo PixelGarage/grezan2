@@ -28,11 +28,7 @@
 
       .field-name-title {
         h2 {
-          font-family: @pxl-text-font-bold;
-          #pxl-mixins.font-size-responsive(30px, 22px);
-          letter-spacing: normal;
-          text-transform: none;
-          color: @text-color;
+          #pxl-mixins.title();
         }
       }
 
@@ -47,7 +43,7 @@
       }
 
       .field-name-body {
-        #pxl-mixins.wysiwyg-body(17px);
+        #pxl-mixins.wysiwyg-body();
 
         p {
           line-height: 22px;

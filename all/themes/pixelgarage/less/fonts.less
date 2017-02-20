@@ -22,57 +22,47 @@
 @pxl-icon-font: 'fontawesome';
 
 // title font
-@pxl-title-font: 'SohoGothicProBold';
+@pxl-title-font: 'MaisonNeueBook';
+@pxl-subtitle-font: 'MaisonNeueBook';
 
 // text fonts
-@pxl-text-font: 'SohoGothicProRegular';
-@pxl-text-font-light: 'SohoGothicProLight';
+@pxl-text-font: 'MaisonNeueBook';
+@pxl-text-font-light: @pxl-text-font;
 @pxl-text-font-medium: @pxl-text-font;
-@pxl-text-font-bold: 'SohoGothicProBold';
-@pxl-text-font-italic: 'SohoGothicProRegular';
-@pxl-text-font-light-italic: 'SohoGothicProLight';
-@pxl-text-font-medium-italic: @pxl-text-font;
-@pxl-text-font-bold-italic: 'SohoGothicProBold';
+@pxl-text-font-bold: @pxl-text-font;
+@pxl-text-font-italic: 'MaisonNeueBookItalic';
+@pxl-text-font-light-italic: @pxl-text-font-italic;
+@pxl-text-font-medium-italic: @pxl-text-font-italic;
+@pxl-text-font-bold-italic: @pxl-text-font-italic;
 
 // form font
 @pxl-form-font: @pxl-text-font;
 
 // overrides
+@font-family-base: @pxl-text-font;
 @font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 
-// overrides
-@font-family-base: @pxl-text-font;
-
 //
 // font faces
 //
 @font-face {
-  font-family: 'SohoGothicProRegular';
-  src: url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.eot');
-  src: url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.eot') format('embedded-opentype'),
-  url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.woff2') format('woff2'),
-  url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.woff') format('woff'),
-  url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.ttf') format('truetype'),
-  url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.svg#SohoGothicProRegular') format('svg');
+  font-family: 'MaisonNeueBook';
+  src: url('@{pxl-font-path}/MaisonNeueBook/MaisonNeueBook.eot');
+  src: url('@{pxl-font-path}/MaisonNeueBook/MaisonNeueBook.eot') format('embedded-opentype'),
+  url('@{pxl-font-path}/MaisonNeueBook/MaisonNeueBook.woff2') format('woff2'),
+  url('@{pxl-font-path}/MaisonNeueBook/MaisonNeueBook.woff') format('woff'),
+  url('@{pxl-font-path}/MaisonNeueBook/MaisonNeueBook.ttf') format('truetype'),
+  url('@{pxl-font-path}/MaisonNeueBook/MaisonNeueBook.svg#MaisonNeueBook') format('svg');
 }
 @font-face {
-  font-family: 'SohoGothicProLight';
-  src: url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.eot');
-  src: url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.eot') format('embedded-opentype'),
-  url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.woff2') format('woff2'),
-  url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.woff') format('woff'),
-  url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.ttf') format('truetype'),
-  url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.svg#SohoGothicProLight') format('svg');
-}
-@font-face {
-  font-family: 'SohoGothicProBold';
-  src: url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.eot');
-  src: url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.eot') format('embedded-opentype'),
-  url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.woff2') format('woff2'),
-  url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.woff') format('woff'),
-  url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.ttf') format('truetype'),
-  url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.svg#SohoGothicProBold') format('svg');
+  font-family: 'MaisonNeueBookItalic';
+  src: url('@{pxl-font-path}/MaisonNeueBookItalic/MaisonNeueBookItalic.eot');
+  src: url('@{pxl-font-path}/MaisonNeueBookItalic/MaisonNeueBookItalic.eot') format('embedded-opentype'),
+  url('@{pxl-font-path}/MaisonNeueBookItalic/MaisonNeueBookItalic.woff2') format('woff2'),
+  url('@{pxl-font-path}/MaisonNeueBookItalic/MaisonNeueBookItalic.woff') format('woff'),
+  url('@{pxl-font-path}/MaisonNeueBookItalic/MaisonNeueBookItalic.ttf') format('truetype'),
+  url('@{pxl-font-path}/MaisonNeueBookItalic/MaisonNeueBookItalic.svg#MaisonNeueBookItalic') format('svg');
 }

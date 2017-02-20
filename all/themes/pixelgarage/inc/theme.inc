@@ -46,14 +46,20 @@ function pixelgarage_bootstrap_carousel_if($vars) {
     }
   }
 
+  //
+  // calc indicator image dimensions
   $filecount = count($files);
-  $img_width = 100 / $filecount;
+  $indicator_img_w = 100 / $filecount;
+  $indicator_img_h = $indicator_img_w * 2 / 3;
+  $indicator_margin = ($indicator_img_h+2);
 
   //
-  // create carousel
+  // create carousel output
   $output = '<div id="' . $vars['id'] . '" class="carousel carousel-fade slide" data-ride="carousel" data-interval="' . $vars['interval'] .
-    '" data-pause="' . $vars['pause'] . '" data-wrap="' . $vars['wrap'] .'" data-keyboard="' . $vars['keyboard'] . '">';
+    '" data-pause="' . $vars['pause'] . '" data-wrap="' . $vars['wrap'] .'" data-keyboard="' . $vars['keyboard'];
+  $output .= ($vars['indicators'] && $filecount > 1) ? '" style="margin-bottom: ' . $indicator_margin . '%">' : '">';
   $output .= '<div class="carousel-inner" role="listbox">';
+
   // Files/slides
   for ($i = 0; $i < $filecount; $i++) {
     $output .= (!$i) ? '<div class="item active">' : '<div class="item">';
@@ -62,19 +68,23 @@ function pixelgarage_bootstrap_carousel_if($vars) {
   }
   $output .= '</div>';
 
+  //
+  // carousel indicators
   if ($vars['indicators'] && $filecount > 1) {
     $output .= '<!-- Indicators -->
-        <ol class="carousel-indicators">';
+        <ol class="carousel-indicators" style="margin-bottom: ' . -$indicator_margin . '%">';
     for ($i = 0; $i < $filecount; $i++) {
       if (!$i) {
-        $output .= '<li data-target="#' . $vars['id'] . '" data-slide-to="0" class="active" style="overflow: hidden; width: ' . $img_width . '%; height: 0; padding-bottom: 9%"><img src="' . $indicators_img[$i] . '"></li>';
+        $output .= '<li data-target="#' . $vars['id'] . '" data-slide-to="0" class="active" style="overflow: hidden; width: ' . $indicator_img_w . '%; height: 0; padding-bottom: ' . $indicator_img_h . '%"><img src="' . $indicators_img[$i] . '"></li>';
       } else {
-        $output .= '<li data-target="#' . $vars['id'] . '" data-slide-to="' . $i . '" style="overflow: hidden; width: ' . $img_width . '%; height: 0; padding-bottom: 9%"><img src="' . $indicators_img[$i] . '"></li>';
+        $output .= '<li data-target="#' . $vars['id'] . '" data-slide-to="' . $i . '" style="overflow: hidden; width: ' . $indicator_img_w . '%; height: 0; padding-bottom: ' . $indicator_img_h . '%"><img src="' . $indicators_img[$i] . '"></li>';
       }
     }
     $output .= '</ol>';
   }
 
+  //
+  // carousel controls
   if ($filecount > 1) {
     $output .= '<!-- Controls -->
           <a class="left carousel-control" href="#' . $vars['id'] . '" role="button" data-slide="prev">

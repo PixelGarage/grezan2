@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'MaisonNeueBookItalic';
+    src: url('fonts/MaisonNeueBookItalic.eot');
+    src: url('fonts/MaisonNeueBookItalic.eot') format('embedded-opentype'),
+         url('fonts/MaisonNeueBookItalic.woff2') format('woff2'),
+         url('fonts/MaisonNeueBookItalic.woff') format('woff'),
+         url('fonts/MaisonNeueBookItalic.ttf') format('truetype'),
+         url('fonts/MaisonNeueBookItalic.svg#MaisonNeueBookItalic') format('svg');
+}

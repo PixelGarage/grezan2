@@ -16,17 +16,13 @@
   .content {
     .field-name-field-title {
       .field-item {
-        font-family: @pxl-text-font-bold;
-        letter-spacing: 1.2px;
-        text-transform: uppercase;
-        color: @text-color;
-        #pxl-mixins.font-size-responsive(30px, 24px);
+        #pxl-mixins.title();
       }
     }
 
     .field-name-field-text {
       .field-item {
-        #pxl-mixins.wysiwyg-body(20px);
+        #pxl-mixins.wysiwyg-body();
       }
     }
   }

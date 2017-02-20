@@ -51,18 +51,18 @@
     &::-webkit-input-placeholder  { text-align: @text-align; color: @color; } // Safari and Chrome
   }
 
+  //
   // responsive font size with minimum and maximum size
   .font-size-responsive(@max-size: @resp-font-size-max; @med-size: @resp-font-size-med; @min-size: @resp-font-size-min) {
-    @min-font-size: max(@min-size, @max-size*5/8); // min = 480 / 768 * max
-    @min-max-breakpoint: unit((48 * @min-font-size / @max-size), em);
+    @min-max-breakpoint: unit((48 * @min-size / @med-size), em);
     @font-break:  ~"screen and (min-width: @{min-max-breakpoint})";
 
     // min font size
-    font-size: @min-font-size;
+    font-size: @min-size;
 
     // dynamic font size
     @media @font-break {
-      font-size: unit(@max-size/7.68, vw);
+      font-size: unit(@med-size/7.68, vw);
     }
 
     // maed.font size
@@ -75,27 +75,60 @@
     }
   }
 
+  //
+  // title, subtitle, text styles
+  .title() {
+    font-family: @pxl-title-font;
+    //font-weight: 700;
+    #pxl-mixins.font-size-responsive(@resp-title-size-max, @resp-title-size-med, @resp-title-size-min);
+    text-transform: @title-text-transform;
+    letter-spacing: @title-letter-spacing;
+    line-height: @title-line-height;
+    text-align: @title-text-align;
+    color: @text-color;
+  }
 
-  .wysiwyg-body(@text-size: @resp-font-size-max; @title-size: @resp-title-size-max; @subtitle-size: @resp-subtitle-size-max) {
-    h1, h2, h3 {
-      font-family: @pxl-title-font;
-      .font-size-responsive(@title-size, @resp-title-size-med, @resp-title-size-min);
+  .subtitle() {
+    font-family: @pxl-subtitle-font;
+    //font-weight: 500;
+    #pxl-mixins.font-size-responsive(@resp-subtitle-size-max, @resp-subtitle-size-med, @resp-subtitle-size-min);
+    text-transform: @subtitle-text-transform;
+    letter-spacing: @subtitle-letter-spacing;
+    line-height: @subtitle-line-height;
+    text-align: @subtitle-text-align;
+    color: @text-color;
+  }
+
+  .text() {
+    font-family: @pxl-text-font;
+    #pxl-mixins.font-size-responsive();
+    letter-spacing: @font-letter-spacing;
+    line-height: @font-line-height;
+    text-align: @font-text-align;
+    color: @text-color;
+  }
+
+  //
+  // WYSIWYG body
+  .wysiwyg-body() {
+    h1, h2, h3, .pxl-title {
+      margin: 10px auto 20px;
+      .title();
     }
 
-    h4, h5, h6 {
-      font-family: @pxl-text-font;
-      .font-size-responsive(@subtitle-size, @resp-subtitle-size-med, @resp-subtitle-size-min);
+    h4, h5, h6, .pxl-subtitle {
+      margin: 10px auto;
+      .subtitle();
     }
 
     p, tbody td {
-      font-family: @pxl-text-font;
-      .font-size-responsive(@text-size);
+      margin: 0 0 10px;
+      .text();
       .hyphenate;
     }
 
     a {
-      font-family: @pxl-text-font;
-      .font-size-responsive(@text-size);
+      .text();
       color: @link-color;
 
       &:hover, &:focus {
@@ -106,18 +139,18 @@
     }
 
     pre, address {
+      .text();
       font-family: @pxl-text-font-italic;
-      .font-size-responsive(@text-size);
     }
 
     strong {
+      .text();
       font-family: @pxl-text-font-bold;
-      .font-size-responsive(@text-size);
     }
 
     hr {
       border: 0;
-      border-bottom: 2px solid @text-color;
+      border-bottom: 2px solid @pxl-color-border-active;
       background: none;
     }
 
@@ -127,7 +160,6 @@
       margin: 20px auto;
       padding: 0;
       max-width: 100%;
-      width: auto;
       height: auto;
     }
 

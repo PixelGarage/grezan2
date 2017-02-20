@@ -50,6 +50,36 @@
   };
 
   /**
+   * Make equal column heights on front page.
+   */
+  Drupal.behaviors.equalColumnHeights = {
+    attach: function (context) {
+
+      var maxHeight = 0,
+        calcMaxHeight = function () {
+          // context is column
+          $(this).height('auto');
+          var height = $(this).height();
+          if (height > maxHeight) {
+            maxHeight = height;
+          }
+        },
+        makeEqualColumns = function () {
+          // equal heights in nodes
+          maxHeight = 0;
+          var apartmentColumns = $('.view.view-call2action .node-call2action > .row > .col-sm-12');
+          apartmentColumns.each(calcMaxHeight);
+          apartmentColumns.height(maxHeight);
+
+        };
+
+      $(window).on('load resize', function(ev) {
+        makeEqualColumns();
+      });
+    }
+  };
+
+  /**
    * Allows full size clickable items.
    Drupal.behaviors.fullSizeClickableItems = {
     attach: function () {

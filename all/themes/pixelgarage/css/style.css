@@ -1072,7 +1072,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 16px;
   line-height: 1.42857143;
   color: #222;
@@ -5967,7 +5967,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6085,7 +6085,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -8840,19 +8840,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   content: "\f196";
 }
 @font-face {
-  font-family: 'SohoGothicProRegular';
-  src: url('../fonts/SohoGothicProRegular/SohoGothicProRegular.eot');
-  src: url('../fonts/SohoGothicProRegular/SohoGothicProRegular.eot') format('embedded-opentype'), url('../fonts/SohoGothicProRegular/SohoGothicProRegular.woff2') format('woff2'), url('../fonts/SohoGothicProRegular/SohoGothicProRegular.woff') format('woff'), url('../fonts/SohoGothicProRegular/SohoGothicProRegular.ttf') format('truetype'), url('../fonts/SohoGothicProRegular/SohoGothicProRegular.svg#SohoGothicProRegular') format('svg');
+  font-family: 'MaisonNeueBook';
+  src: url('../fonts/MaisonNeueBook/MaisonNeueBook.eot');
+  src: url('../fonts/MaisonNeueBook/MaisonNeueBook.eot') format('embedded-opentype'), url('../fonts/MaisonNeueBook/MaisonNeueBook.woff2') format('woff2'), url('../fonts/MaisonNeueBook/MaisonNeueBook.woff') format('woff'), url('../fonts/MaisonNeueBook/MaisonNeueBook.ttf') format('truetype'), url('../fonts/MaisonNeueBook/MaisonNeueBook.svg#MaisonNeueBook') format('svg');
 }
 @font-face {
-  font-family: 'SohoGothicProLight';
-  src: url('../fonts/SohoGothicProLight/SohoGothicProLight.eot');
-  src: url('../fonts/SohoGothicProLight/SohoGothicProLight.eot') format('embedded-opentype'), url('../fonts/SohoGothicProLight/SohoGothicProLight.woff2') format('woff2'), url('../fonts/SohoGothicProLight/SohoGothicProLight.woff') format('woff'), url('../fonts/SohoGothicProLight/SohoGothicProLight.ttf') format('truetype'), url('../fonts/SohoGothicProLight/SohoGothicProLight.svg#SohoGothicProLight') format('svg');
-}
-@font-face {
-  font-family: 'SohoGothicProBold';
-  src: url('../fonts/SohoGothicProBold/SohoGothicProBold.eot');
-  src: url('../fonts/SohoGothicProBold/SohoGothicProBold.eot') format('embedded-opentype'), url('../fonts/SohoGothicProBold/SohoGothicProBold.woff2') format('woff2'), url('../fonts/SohoGothicProBold/SohoGothicProBold.woff') format('woff'), url('../fonts/SohoGothicProBold/SohoGothicProBold.ttf') format('truetype'), url('../fonts/SohoGothicProBold/SohoGothicProBold.svg#SohoGothicProBold') format('svg');
+  font-family: 'MaisonNeueBookItalic';
+  src: url('../fonts/MaisonNeueBookItalic/MaisonNeueBookItalic.eot');
+  src: url('../fonts/MaisonNeueBookItalic/MaisonNeueBookItalic.eot') format('embedded-opentype'), url('../fonts/MaisonNeueBookItalic/MaisonNeueBookItalic.woff2') format('woff2'), url('../fonts/MaisonNeueBookItalic/MaisonNeueBookItalic.woff') format('woff'), url('../fonts/MaisonNeueBookItalic/MaisonNeueBookItalic.ttf') format('truetype'), url('../fonts/MaisonNeueBookItalic/MaisonNeueBookItalic.svg#MaisonNeueBookItalic') format('svg');
 }
 /* --------------------------------------------------
  * Pixelgarage Mixins library
@@ -9003,7 +8998,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   display: none;
   margin: 0;
   vertical-align: middle;
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   font-size: 18px;
   line-height: 18px;
   color: white;
@@ -9074,7 +9069,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
  * --------------------------------------------------*/
 #block-locale-language {
   display: inline-block;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 16px;
 }
 #block-locale-language ul.language-switcher-locale-url {
@@ -9107,7 +9102,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 #block-locale-language ul.language-switcher-locale-url > li a.language-link.active,
 #block-locale-language ul.language-switcher-locale-url > li a.language-link:hover {
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   text-decoration: none;
 }
 #block-locale-language ul.language-switcher-locale-url > li span.locale-untranslated {
@@ -9146,14 +9141,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-title {
   display: none;
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   font-size: 22px;
   color: #fff;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-text {
   display: none;
   margin-bottom: 16px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 16px;
   color: #222;
 }
@@ -9161,7 +9156,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   display: inline-block;
   padding: 6px 15px;
   height: 36px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   font-size: 24px;
   line-height: 1;
   letter-spacing: 0;
@@ -9203,7 +9198,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   vertical-align: top;
   padding: 6px 5px;
   width: 60px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   font-size: 22px;
   color: #222;
   line-height: 1;
@@ -9223,7 +9218,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-custom-form form .input-group .form-item input.form-text {
   padding: 8px 5px 6px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 22px;
   text-align: right;
   -moz-border-radius: 0;
@@ -9240,7 +9235,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   display: inline-block;
   padding: 6px 15px;
   height: 36px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   font-size: 22px;
   line-height: 1;
   letter-spacing: 0;
@@ -9262,7 +9257,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   opacity: 0.7;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-input-error {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 12px;
   color: #d9534f;
 }
@@ -9275,7 +9270,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   background-color: #f0ad4e;
 }
 .field-type-number-decimal .field-items .field-item .popover {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   letter-spacing: 1.2px;
   text-align: left;
   color: #fff;
@@ -9284,7 +9279,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .field-type-number-decimal .field-items .field-item .popover .popover-title {
   padding: 4px 14px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   font-size: 80%;
   background-color: #f0ad4e;
 }
@@ -9387,25 +9382,27 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   width: 100%;
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-title h2 {
-  font-family: 'SohoGothicProRegular';
-  font-size: 51.25px;
+  font-family: 'MaisonNeueBook';
+  font-size: 22px;
+  text-transform: uppercase;
   letter-spacing: 0.02em;
-  line-height: 2.5;
+  line-height: 1;
+  text-align: left;
   color: #222;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 44em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-title h2 {
-    font-size: 10.67708333vw;
+    font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-title h2 {
-    font-size: 37px;
+    font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-title h2 {
-    font-size: 82px;
+    font-size: 24px;
   }
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body {
@@ -9413,62 +9410,87 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h1,
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h2,
-.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h3 {
-  font-family: 'SohoGothicProBold';
+.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h3,
+.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'MaisonNeueBook';
   font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
 }
-@media screen and (min-width: 35.2em) {
+@media screen and (min-width: 44em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h1,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h2,
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h3 {
-    font-size: 3.90625vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h1,
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h2,
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h3 {
-    font-size: 30px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h1,
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h2,
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h3 {
-    font-size: 30px;
-  }
-}
-.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h4,
-.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h5,
-.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h6 {
-  font-family: 'SohoGothicProRegular';
-  font-size: 18px;
-}
-@media screen and (min-width: 36em) {
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h4,
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h5,
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h6 {
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h3,
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-title {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h1,
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h2,
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h3,
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h1,
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h2,
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h3,
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-title {
+    font-size: 24px;
+  }
+}
+.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h4,
+.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h5,
+.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h6,
+.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'MaisonNeueBook';
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 43.2em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h4,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h5,
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h6 {
-    font-size: 24px;
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h6,
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-subtitle {
+    font-size: 2.60416667vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h4,
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h5,
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h6,
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-subtitle {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h4,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h5,
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h6 {
-    font-size: 24px;
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h6,
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-subtitle {
+    font-size: 20px;
   }
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body p,
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body tbody td {
-  font-family: 'SohoGothicProRegular';
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -9476,10 +9498,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -o-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 42.35294117647059em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body p,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body tbody td {
-    font-size: 2.08333333vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -9491,17 +9513,20 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 @media screen and (min-width: 64em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body p,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body tbody td {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
   color: #222;
 }
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 42.35294117647059em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a {
-    font-size: 2.08333333vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -9511,7 +9536,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 @media screen and (min-width: 64em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a:hover,
@@ -9522,13 +9547,18 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body pre,
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body address {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBookItalic';
 }
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 42.35294117647059em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body pre,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body address {
-    font-size: 2.08333333vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -9540,16 +9570,20 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 @media screen and (min-width: 64em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body pre,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body address {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body strong {
-  font-family: 'SohoGothicProBold';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBook';
 }
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 42.35294117647059em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body strong {
-    font-size: 2.08333333vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -9559,12 +9593,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 @media screen and (min-width: 64em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body strong {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body hr {
   border: 0;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #fff;
   background: none;
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body img {
@@ -9573,7 +9607,6 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 20px auto;
   padding: 0;
   max-width: 100%;
-  width: auto;
   height: auto;
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body embed,
@@ -9589,6 +9622,9 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   height: auto;
   min-height: 350px;
 }
+.node.node-page.view-mode-full > .row > div.col-sm-12 > .paragraphs-items .field-name-field-paragraphs .field-item {
+  margin-bottom: 30px;
+}
 /*
  *  Node / block webform component
  * --------------------------------------------------*/
@@ -9600,28 +9636,30 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-webform .row .col-sm-12 .field-name-title h2,
 .node.node-webform .row .col-sm-6 .field-name-title h2 {
-  font-family: 'SohoGothicProBold';
-  font-size: 18.75px;
-  letter-spacing: normal;
-  text-transform: none;
+  font-family: 'MaisonNeueBook';
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
   color: #222;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 44em) {
   .node.node-webform .row .col-sm-12 .field-name-title h2,
   .node.node-webform .row .col-sm-6 .field-name-title h2 {
-    font-size: 3.90625vw;
+    font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-webform .row .col-sm-12 .field-name-title h2,
   .node.node-webform .row .col-sm-6 .field-name-title h2 {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-webform .row .col-sm-12 .field-name-title h2,
   .node.node-webform .row .col-sm-6 .field-name-title h2 {
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 .node.node-webform .row .col-sm-12 .field-name-field-image,
@@ -9639,18 +9677,28 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-12 .field-name-body h2,
 .node.node-webform .row .col-sm-6 .field-name-body h2,
 .node.node-webform .row .col-sm-12 .field-name-body h3,
-.node.node-webform .row .col-sm-6 .field-name-body h3 {
-  font-family: 'SohoGothicProBold';
+.node.node-webform .row .col-sm-6 .field-name-body h3,
+.node.node-webform .row .col-sm-12 .field-name-body .pxl-title,
+.node.node-webform .row .col-sm-6 .field-name-body .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'MaisonNeueBook';
   font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
 }
-@media screen and (min-width: 35.2em) {
+@media screen and (min-width: 44em) {
   .node.node-webform .row .col-sm-12 .field-name-body h1,
   .node.node-webform .row .col-sm-6 .field-name-body h1,
   .node.node-webform .row .col-sm-12 .field-name-body h2,
   .node.node-webform .row .col-sm-6 .field-name-body h2,
   .node.node-webform .row .col-sm-12 .field-name-body h3,
-  .node.node-webform .row .col-sm-6 .field-name-body h3 {
-    font-size: 3.90625vw;
+  .node.node-webform .row .col-sm-6 .field-name-body h3,
+  .node.node-webform .row .col-sm-12 .field-name-body .pxl-title,
+  .node.node-webform .row .col-sm-6 .field-name-body .pxl-title {
+    font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -9659,8 +9707,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-webform .row .col-sm-12 .field-name-body h2,
   .node.node-webform .row .col-sm-6 .field-name-body h2,
   .node.node-webform .row .col-sm-12 .field-name-body h3,
-  .node.node-webform .row .col-sm-6 .field-name-body h3 {
-    font-size: 30px;
+  .node.node-webform .row .col-sm-6 .field-name-body h3,
+  .node.node-webform .row .col-sm-12 .field-name-body .pxl-title,
+  .node.node-webform .row .col-sm-6 .field-name-body .pxl-title {
+    font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -9669,8 +9719,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-webform .row .col-sm-12 .field-name-body h2,
   .node.node-webform .row .col-sm-6 .field-name-body h2,
   .node.node-webform .row .col-sm-12 .field-name-body h3,
-  .node.node-webform .row .col-sm-6 .field-name-body h3 {
-    font-size: 30px;
+  .node.node-webform .row .col-sm-6 .field-name-body h3,
+  .node.node-webform .row .col-sm-12 .field-name-body .pxl-title,
+  .node.node-webform .row .col-sm-6 .field-name-body .pxl-title {
+    font-size: 24px;
   }
 }
 .node.node-webform .row .col-sm-12 .field-name-body h4,
@@ -9678,18 +9730,28 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-12 .field-name-body h5,
 .node.node-webform .row .col-sm-6 .field-name-body h5,
 .node.node-webform .row .col-sm-12 .field-name-body h6,
-.node.node-webform .row .col-sm-6 .field-name-body h6 {
-  font-family: 'SohoGothicProRegular';
+.node.node-webform .row .col-sm-6 .field-name-body h6,
+.node.node-webform .row .col-sm-12 .field-name-body .pxl-subtitle,
+.node.node-webform .row .col-sm-6 .field-name-body .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'MaisonNeueBook';
   font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 43.2em) {
   .node.node-webform .row .col-sm-12 .field-name-body h4,
   .node.node-webform .row .col-sm-6 .field-name-body h4,
   .node.node-webform .row .col-sm-12 .field-name-body h5,
   .node.node-webform .row .col-sm-6 .field-name-body h5,
   .node.node-webform .row .col-sm-12 .field-name-body h6,
-  .node.node-webform .row .col-sm-6 .field-name-body h6 {
-    font-size: 3.125vw;
+  .node.node-webform .row .col-sm-6 .field-name-body h6,
+  .node.node-webform .row .col-sm-12 .field-name-body .pxl-subtitle,
+  .node.node-webform .row .col-sm-6 .field-name-body .pxl-subtitle {
+    font-size: 2.60416667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -9698,8 +9760,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-webform .row .col-sm-12 .field-name-body h5,
   .node.node-webform .row .col-sm-6 .field-name-body h5,
   .node.node-webform .row .col-sm-12 .field-name-body h6,
-  .node.node-webform .row .col-sm-6 .field-name-body h6 {
-    font-size: 24px;
+  .node.node-webform .row .col-sm-6 .field-name-body h6,
+  .node.node-webform .row .col-sm-12 .field-name-body .pxl-subtitle,
+  .node.node-webform .row .col-sm-6 .field-name-body .pxl-subtitle {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -9708,16 +9772,23 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-webform .row .col-sm-12 .field-name-body h5,
   .node.node-webform .row .col-sm-6 .field-name-body h5,
   .node.node-webform .row .col-sm-12 .field-name-body h6,
-  .node.node-webform .row .col-sm-6 .field-name-body h6 {
-    font-size: 24px;
+  .node.node-webform .row .col-sm-6 .field-name-body h6,
+  .node.node-webform .row .col-sm-12 .field-name-body .pxl-subtitle,
+  .node.node-webform .row .col-sm-6 .field-name-body .pxl-subtitle {
+    font-size: 20px;
   }
 }
 .node.node-webform .row .col-sm-12 .field-name-body p,
 .node.node-webform .row .col-sm-6 .field-name-body p,
 .node.node-webform .row .col-sm-12 .field-name-body tbody td,
 .node.node-webform .row .col-sm-6 .field-name-body tbody td {
-  font-family: 'SohoGothicProRegular';
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -9751,8 +9822,11 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-webform .row .col-sm-12 .field-name-body a,
 .node.node-webform .row .col-sm-6 .field-name-body a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
   color: #222;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -9785,8 +9859,13 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-6 .field-name-body pre,
 .node.node-webform .row .col-sm-12 .field-name-body address,
 .node.node-webform .row .col-sm-6 .field-name-body address {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-webform .row .col-sm-12 .field-name-body pre,
@@ -9814,8 +9893,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-webform .row .col-sm-12 .field-name-body strong,
 .node.node-webform .row .col-sm-6 .field-name-body strong {
-  font-family: 'SohoGothicProBold';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-webform .row .col-sm-12 .field-name-body strong,
@@ -9838,7 +9921,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-12 .field-name-body hr,
 .node.node-webform .row .col-sm-6 .field-name-body hr {
   border: 0;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #fff;
   background: none;
 }
 .node.node-webform .row .col-sm-12 .field-name-body img,
@@ -9848,7 +9931,6 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 20px auto;
   padding: 0;
   max-width: 100%;
-  width: auto;
   height: auto;
 }
 .node.node-webform .row .col-sm-12 .field-name-body embed,
@@ -9876,64 +9958,137 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 /*
  *  Node call2action component
  * --------------------------------------------------*/
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item h1,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item h2,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item h3 {
-  font-family: 'SohoGothicProBold';
+.node.node-call2action .row .col-sm-12 .field-name-title .field-item h2 {
+  font-family: 'MaisonNeueBook';
   font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
 }
-@media screen and (min-width: 35.2em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h1,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h2,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h3 {
-    font-size: 3.90625vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h1,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h2,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h3 {
-    font-size: 30px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h1,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h2,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h3 {
-    font-size: 30px;
-  }
-}
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item h4,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item h5,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item h6 {
-  font-family: 'SohoGothicProRegular';
-  font-size: 18px;
-}
-@media screen and (min-width: 36em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h4,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h5,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h6 {
+@media screen and (min-width: 44em) {
+  .node.node-call2action .row .col-sm-12 .field-name-title .field-item h2 {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
+  .node.node-call2action .row .col-sm-12 .field-name-title .field-item h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-call2action .row .col-sm-12 .field-name-title .field-item h2 {
+    font-size: 24px;
+  }
+}
+.node.node-call2action .row .col-sm-12 .field-name-field-subtitle .field-item {
+  font-family: 'MaisonNeueBook';
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 43.2em) {
+  .node.node-call2action .row .col-sm-12 .field-name-field-subtitle .field-item {
+    font-size: 2.60416667vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-call2action .row .col-sm-12 .field-name-field-subtitle .field-item {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-call2action .row .col-sm-12 .field-name-field-subtitle .field-item {
+    font-size: 20px;
+  }
+}
+.node.node-call2action .row .col-sm-12 .field-name-body .field-item h1,
+.node.node-call2action .row .col-sm-12 .field-name-body .field-item h2,
+.node.node-call2action .row .col-sm-12 .field-name-body .field-item h3,
+.node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'MaisonNeueBook';
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 44em) {
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h1,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h2,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h3,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h1,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h2,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h3,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h1,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h2,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h3,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 24px;
+  }
+}
+.node.node-call2action .row .col-sm-12 .field-name-body .field-item h4,
+.node.node-call2action .row .col-sm-12 .field-name-body .field-item h5,
+.node.node-call2action .row .col-sm-12 .field-name-body .field-item h6,
+.node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'MaisonNeueBook';
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 43.2em) {
   .node.node-call2action .row .col-sm-12 .field-name-body .field-item h4,
   .node.node-call2action .row .col-sm-12 .field-name-body .field-item h5,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h6 {
-    font-size: 24px;
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h6,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 2.60416667vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h4,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h5,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h6,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-call2action .row .col-sm-12 .field-name-body .field-item h4,
   .node.node-call2action .row .col-sm-12 .field-name-body .field-item h5,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h6 {
-    font-size: 24px;
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h6,
+  .node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 20px;
   }
 }
 .node.node-call2action .row .col-sm-12 .field-name-body .field-item p,
 .node.node-call2action .row .col-sm-12 .field-name-body .field-item tbody td {
-  font-family: 'SohoGothicProRegular';
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -9960,8 +10115,11 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   }
 }
 .node.node-call2action .row .col-sm-12 .field-name-body .field-item a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
   color: #222;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -9987,8 +10145,13 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-call2action .row .col-sm-12 .field-name-body .field-item pre,
 .node.node-call2action .row .col-sm-12 .field-name-body .field-item address {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-call2action .row .col-sm-12 .field-name-body .field-item pre,
@@ -10009,8 +10172,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   }
 }
 .node.node-call2action .row .col-sm-12 .field-name-body .field-item strong {
-  font-family: 'SohoGothicProBold';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-call2action .row .col-sm-12 .field-name-body .field-item strong {
@@ -10029,7 +10196,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-call2action .row .col-sm-12 .field-name-body .field-item hr {
   border: 0;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #fff;
   background: none;
 }
 .node.node-call2action .row .col-sm-12 .field-name-body .field-item img {
@@ -10038,7 +10205,6 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 20px auto;
   padding: 0;
   max-width: 100%;
-  width: auto;
   height: auto;
 }
 .node.node-call2action .row .col-sm-12 .field-name-body .field-item embed,
@@ -10075,84 +10241,112 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-title h2 {
   margin-top: 0;
-  font-family: 'SohoGothicProBold';
-  font-size: 15px;
-  color: #222;
-  line-height: 1.5;
-}
-@media screen and (min-width: 45em) {
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-title h2 {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-title h2 {
-    font-size: 17px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-title h2 {
-    font-size: 16px;
-  }
-}
-.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h1,
-.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h2,
-.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h3 {
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
 }
-@media screen and (min-width: 66em) {
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h1,
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h2,
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h3 {
-    font-size: 2.08333333vw;
+@media screen and (min-width: 44em) {
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-title h2 {
+    font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h1,
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h2,
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h3 {
-    font-size: 30px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h1,
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h2,
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h3 {
-    font-size: 16px;
-  }
-}
-.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h4,
-.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h5,
-.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h6 {
-  font-family: 'SohoGothicProRegular';
-  font-size: 18px;
-}
-@media screen and (min-width: 61.714285714285715em) {
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h4,
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h5,
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h6 {
-    font-size: 1.82291667vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h4,
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h5,
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h6 {
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-title h2 {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-title h2 {
+    font-size: 24px;
+  }
+}
+.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h1,
+.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h2,
+.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h3,
+.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'MaisonNeueBook';
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 44em) {
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h1,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h2,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h3,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body .pxl-title {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h1,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h2,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h3,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h1,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h2,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h3,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body .pxl-title {
+    font-size: 24px;
+  }
+}
+.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h4,
+.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h5,
+.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h6,
+.node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'MaisonNeueBook';
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 43.2em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h4,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h5,
-  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h6 {
-    font-size: 14px;
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h6,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body .pxl-subtitle {
+    font-size: 2.60416667vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h4,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h5,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h6,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body .pxl-subtitle {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h4,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h5,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h6,
+  .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body .pxl-subtitle {
+    font-size: 20px;
   }
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body p,
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body tbody td {
-  font-family: 'SohoGothicProRegular';
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -10160,10 +10354,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -o-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (min-width: 51.42857142857143em) {
+@media screen and (min-width: 42.35294117647059em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body p,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body tbody td {
-    font-size: 1.82291667vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10175,17 +10369,20 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 @media screen and (min-width: 64em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body p,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body tbody td {
-    font-size: 14px;
+    font-size: 17px;
   }
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
   color: #222;
 }
-@media screen and (min-width: 51.42857142857143em) {
+@media screen and (min-width: 42.35294117647059em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body a {
-    font-size: 1.82291667vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10195,7 +10392,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 @media screen and (min-width: 64em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body a {
-    font-size: 14px;
+    font-size: 17px;
   }
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body a:hover,
@@ -10206,13 +10403,18 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body pre,
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body address {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBookItalic';
 }
-@media screen and (min-width: 51.42857142857143em) {
+@media screen and (min-width: 42.35294117647059em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body pre,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body address {
-    font-size: 1.82291667vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10224,16 +10426,20 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 @media screen and (min-width: 64em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body pre,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body address {
-    font-size: 14px;
+    font-size: 17px;
   }
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body strong {
-  font-family: 'SohoGothicProBold';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBook';
 }
-@media screen and (min-width: 51.42857142857143em) {
+@media screen and (min-width: 42.35294117647059em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body strong {
-    font-size: 1.82291667vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10243,12 +10449,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 @media screen and (min-width: 64em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body strong {
-    font-size: 14px;
+    font-size: 17px;
   }
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body hr {
   border: 0;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #fff;
   background: none;
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body img {
@@ -10257,7 +10463,6 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 20px auto;
   padding: 0;
   max-width: 100%;
-  width: auto;
   height: auto;
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body embed,
@@ -10281,7 +10486,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   width: 100%;
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-field-created-time .field-item {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 10px;
   text-align: right;
 }
@@ -10301,28 +10506,30 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-title h2,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-title h2 {
-  margin: 0;
-  padding: 15px 0;
-  font-family: 'SohoGothicProBold';
-  font-size: 18.75px;
+  font-family: 'MaisonNeueBook';
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
   color: #222;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 44em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-title h2,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-title h2 {
-    font-size: 3.90625vw;
+    font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-title h2,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-title h2 {
-    font-size: 17px;
+    font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-title h2,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-title h2 {
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-field-created-time,
@@ -10332,7 +10539,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-field-created-time .field-item,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-field-created-time .field-item {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 12px;
   text-align: right;
   line-height: 1;
@@ -10365,18 +10572,28 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h2,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h2,
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h3,
-.node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h3 {
-  font-family: 'SohoGothicProBold';
+.node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h3,
+.node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body .pxl-title,
+.node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'MaisonNeueBook';
   font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
 }
-@media screen and (min-width: 35.2em) {
+@media screen and (min-width: 44em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h1,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h1,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h2,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h2,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h3,
-  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h3 {
-    font-size: 3.90625vw;
+  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h3,
+  .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body .pxl-title,
+  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body .pxl-title {
+    font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10385,8 +10602,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h2,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h2,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h3,
-  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h3 {
-    font-size: 30px;
+  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h3,
+  .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body .pxl-title,
+  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body .pxl-title {
+    font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10395,8 +10614,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h2,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h2,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h3,
-  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h3 {
-    font-size: 30px;
+  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h3,
+  .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body .pxl-title,
+  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body .pxl-title {
+    font-size: 24px;
   }
 }
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h4,
@@ -10404,18 +10625,28 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h5,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h5,
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h6,
-.node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h6 {
-  font-family: 'SohoGothicProRegular';
+.node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h6,
+.node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body .pxl-subtitle,
+.node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'MaisonNeueBook';
   font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 43.2em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h4,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h4,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h5,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h5,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h6,
-  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h6 {
-    font-size: 3.125vw;
+  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h6,
+  .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body .pxl-subtitle,
+  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body .pxl-subtitle {
+    font-size: 2.60416667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10424,8 +10655,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h5,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h5,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h6,
-  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h6 {
-    font-size: 24px;
+  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h6,
+  .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body .pxl-subtitle,
+  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body .pxl-subtitle {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10434,16 +10667,23 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h5,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h5,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h6,
-  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h6 {
-    font-size: 24px;
+  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h6,
+  .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body .pxl-subtitle,
+  .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body .pxl-subtitle {
+    font-size: 20px;
   }
 }
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body p,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body p,
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body tbody td,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body tbody td {
-  font-family: 'SohoGothicProRegular';
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -10477,8 +10717,11 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body a,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
   color: #222;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -10511,8 +10754,13 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body pre,
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body address,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body address {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body pre,
@@ -10540,8 +10788,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body strong,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body strong {
-  font-family: 'SohoGothicProBold';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body strong,
@@ -10564,7 +10816,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body hr,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body hr {
   border: 0;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #fff;
   background: none;
 }
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body img,
@@ -10574,7 +10826,6 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 20px auto;
   padding: 0;
   max-width: 100%;
-  width: auto;
   height: auto;
 }
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body embed,
@@ -10602,6 +10853,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 /*
  *  Node apartment component
  * --------------------------------------------------*/
+.node.node-apartment.view-mode-full,
+.node.node-apartment.view-mode-default {
+  padding: 0;
+}
+.node.node-apartment.view-mode-full .row .col-sm-12,
+.node.node-apartment.view-mode-default .row .col-sm-12 {
+  margin: 0 0 50px;
+}
 .node.node-apartment.view-mode-full .row .col-sm-12 .group-header-left,
 .node.node-apartment.view-mode-default .row .col-sm-12 .group-header-left,
 .node.node-apartment.view-mode-full .row .col-sm-12 .group-header-right,
@@ -10609,7 +10868,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   display: inline-block;
   vertical-align: top;
   margin: 0 -2px;
-  padding: 20px 0 30px;
+  padding: 0;
   width: 100%;
 }
 @media screen and (min-width: 48em) {
@@ -10636,29 +10895,68 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-title h2,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-title h2 {
-  margin: 0 0 20px;
+  margin: 0 0 50px;
+  padding: 10px 0 0;
+  font-family: 'MaisonNeueBook';
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+  border-top: 1px solid #958AD8;
+}
+@media screen and (min-width: 44em) {
+  .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-title h2,
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-title h2 {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-title h2,
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-title h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-title h2,
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-title h2 {
+    font-size: 24px;
+  }
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item {
   margin: 0 0 20px;
+  padding: 10px 0 0;
+  border-top: 1px solid #5f5e5e;
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h1,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h1,
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h2,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h2,
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h3,
-.node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h3 {
-  font-family: 'SohoGothicProBold';
+.node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h3,
+.node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item .pxl-title,
+.node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'MaisonNeueBook';
   font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
 }
-@media screen and (min-width: 35.2em) {
+@media screen and (min-width: 44em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h1,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h1,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h2,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h2,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h3,
-  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h3 {
-    font-size: 3.90625vw;
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h3,
+  .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item .pxl-title,
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10667,8 +10965,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h2,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h2,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h3,
-  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h3 {
-    font-size: 30px;
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h3,
+  .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item .pxl-title,
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10677,8 +10977,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h2,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h2,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h3,
-  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h3 {
-    font-size: 30px;
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h3,
+  .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item .pxl-title,
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 24px;
   }
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h4,
@@ -10686,18 +10988,28 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h5,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h5,
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h6,
-.node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h6 {
-  font-family: 'SohoGothicProRegular';
+.node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h6,
+.node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item .pxl-subtitle,
+.node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'MaisonNeueBook';
   font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 43.2em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h4,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h4,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h5,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h5,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h6,
-  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h6 {
-    font-size: 3.125vw;
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h6,
+  .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item .pxl-subtitle,
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 2.60416667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10706,8 +11018,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h5,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h5,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h6,
-  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h6 {
-    font-size: 24px;
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h6,
+  .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item .pxl-subtitle,
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10716,16 +11030,23 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h5,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h5,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h6,
-  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h6 {
-    font-size: 24px;
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h6,
+  .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item .pxl-subtitle,
+  .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 20px;
   }
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item p,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item p,
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item tbody td,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item tbody td {
-  font-family: 'SohoGothicProRegular';
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -10733,12 +11054,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -o-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 42.35294117647059em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item p,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item p,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item tbody td,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item tbody td {
-    font-size: 2.08333333vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10754,19 +11075,22 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item p,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item tbody td,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item tbody td {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item a,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
   color: #222;
 }
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 42.35294117647059em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item a,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item a {
-    font-size: 2.08333333vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10778,7 +11102,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 @media screen and (min-width: 64em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item a,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item a {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item a:hover,
@@ -10793,15 +11117,20 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item pre,
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item address,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item address {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBookItalic';
 }
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 42.35294117647059em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item pre,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item pre,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item address,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item address {
-    font-size: 2.08333333vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10817,18 +11146,22 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item pre,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item address,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item address {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item strong,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item strong {
-  font-family: 'SohoGothicProBold';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBook';
 }
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 42.35294117647059em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item strong,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item strong {
-    font-size: 2.08333333vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10840,13 +11173,13 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 @media screen and (min-width: 64em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item strong,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item strong {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item hr,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item hr {
   border: 0;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #fff;
   background: none;
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item img,
@@ -10856,7 +11189,6 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 20px auto;
   padding: 0;
   max-width: 100%;
-  width: auto;
   height: auto;
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item embed,
@@ -10880,7 +11212,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-field-images .field-item .carousel {
   display: block;
   position: relative;
-  margin: 0 auto 11%;
+  margin: 0 auto;
   padding: 0;
   width: 100%;
   height: auto;
@@ -10942,7 +11274,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 0 -5px -10%;
+  margin: 0 -5px;
   width: auto;
   z-index: 3;
 }
@@ -10980,7 +11312,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   bottom: 0;
   padding: 0;
   width: 50%;
-  font-size: 25px;
+  font-size: 20px;
   text-shadow: 0 0 4px #000;
   text-align: unset;
   color: #fff;
@@ -10995,10 +11327,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   opacity: 0;
   z-index: 2;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 32em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control {
-    font-size: 5.20833333vw;
+    font-size: 3.90625vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11055,11 +11387,98 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right:hover {
   opacity: 1.0;
 }
+.node.node-apartment.view-mode-full .row .col-sm-4,
+.node.node-apartment.view-mode-default .row .col-sm-4 {
+  margin: 0 0 50px;
+}
+.node.node-apartment.view-mode-full .row .col-sm-4 .group-price,
+.node.node-apartment.view-mode-default .row .col-sm-4 .group-price {
+  margin: 0 0 20px;
+  padding: 10px;
+  border: 1px solid #958AD8;
+}
+.node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price,
+.node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price {
+  margin-bottom: 30px;
+}
+.node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price .field-item,
+.node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price .field-item {
+  font-family: 'MaisonNeueBook';
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 44em) {
+  .node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price .field-item,
+  .node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price .field-item {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price .field-item,
+  .node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price .field-item {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price .field-item,
+  .node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price .field-item {
+    font-size: 24px;
+  }
+}
+.node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price-tag,
+.node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price-tag {
+  padding: 10px 0 0;
+  border-top: 1px solid #000;
+}
+.node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price-tag .field-item,
+.node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price-tag .field-item {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 42.35294117647059em) {
+  .node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price-tag .field-item,
+  .node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price-tag .field-item {
+    font-size: 2.21354167vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price-tag .field-item,
+  .node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price-tag .field-item {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price-tag .field-item,
+  .node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price-tag .field-item {
+    font-size: 17px;
+  }
+}
+.node.node-apartment.view-mode-full .row .col-sm-4 .field-name-availability-block,
+.node.node-apartment.view-mode-default .row .col-sm-4 .field-name-availability-block {
+  margin: 0 0 20px;
+}
+.node.node-apartment.view-mode-full .row .col-sm-4 .field-name-field-amenities,
+.node.node-apartment.view-mode-default .row .col-sm-4 .field-name-field-amenities {
+  margin: 0 0 20px;
+}
+.node.node-apartment.view-mode-full .row .col-sm-4 .field-name-field-amenities .field-item ul,
+.node.node-apartment.view-mode-default .row .col-sm-4 .field-name-field-amenities .field-item ul {
+  list-style-type: circle;
+  padding-left: 20px;
+}
 /*
  *  Node locality component
  * --------------------------------------------------*/
 /*
- *  Login form component
+ *  User Login form component
  *  (see inc/login.inc for login form alteration)
  * --------------------------------------------------*/
 #user_register_form,
@@ -11255,7 +11674,7 @@ form#user-login {
 .user-profile .row .col-sm-4,
 .user-profile .row .col-sm-8,
 .user-profile .row .col-sm-12 {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   color: #fff;
 }
 .user-profile .row .col-sm-4 .field-name-field-area-of-expertise,
@@ -11303,11 +11722,20 @@ form#user-login {
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h2,
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h3,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h3,
-.user-profile .row .col-sm-12 .field-name-field-short-description .field-item h3 {
-  font-family: 'SohoGothicProBold';
+.user-profile .row .col-sm-12 .field-name-field-short-description .field-item h3,
+.user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-title,
+.user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-title,
+.user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'MaisonNeueBook';
   font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
 }
-@media screen and (min-width: 35.2em) {
+@media screen and (min-width: 44em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h1,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h1,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h1,
@@ -11316,8 +11744,11 @@ form#user-login {
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h2,
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h3,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h3,
-  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h3 {
-    font-size: 3.90625vw;
+  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h3,
+  .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-title,
+  .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-title,
+  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-title {
+    font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11329,8 +11760,11 @@ form#user-login {
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h2,
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h3,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h3,
-  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h3 {
-    font-size: 30px;
+  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h3,
+  .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-title,
+  .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-title,
+  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-title {
+    font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11342,8 +11776,11 @@ form#user-login {
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h2,
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h3,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h3,
-  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h3 {
-    font-size: 30px;
+  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h3,
+  .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-title,
+  .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-title,
+  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-title {
+    font-size: 24px;
   }
 }
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h4,
@@ -11354,11 +11791,20 @@ form#user-login {
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h5,
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h6,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h6,
-.user-profile .row .col-sm-12 .field-name-field-short-description .field-item h6 {
-  font-family: 'SohoGothicProRegular';
+.user-profile .row .col-sm-12 .field-name-field-short-description .field-item h6,
+.user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-subtitle,
+.user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-subtitle,
+.user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'MaisonNeueBook';
   font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 43.2em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h4,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h4,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h4,
@@ -11367,8 +11813,11 @@ form#user-login {
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h5,
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h6,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h6,
-  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h6 {
-    font-size: 3.125vw;
+  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h6,
+  .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-subtitle,
+  .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-subtitle,
+  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-subtitle {
+    font-size: 2.60416667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11380,8 +11829,11 @@ form#user-login {
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h5,
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h6,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h6,
-  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h6 {
-    font-size: 24px;
+  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h6,
+  .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-subtitle,
+  .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-subtitle,
+  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-subtitle {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11393,8 +11845,11 @@ form#user-login {
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h5,
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h6,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h6,
-  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h6 {
-    font-size: 24px;
+  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h6,
+  .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-subtitle,
+  .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-subtitle,
+  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-subtitle {
+    font-size: 20px;
   }
 }
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item p,
@@ -11403,8 +11858,13 @@ form#user-login {
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item tbody td,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item tbody td,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item tbody td {
-  font-family: 'SohoGothicProRegular';
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -11412,14 +11872,14 @@ form#user-login {
   -o-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 42.35294117647059em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item p,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item p,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item p,
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item tbody td,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item tbody td,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item tbody td {
-    font-size: 2.08333333vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11439,21 +11899,24 @@ form#user-login {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item tbody td,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item tbody td,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item tbody td {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item a,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item a,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
   color: #222;
 }
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 42.35294117647059em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item a,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item a,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item a {
-    font-size: 2.08333333vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11467,7 +11930,7 @@ form#user-login {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item a,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item a,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item a {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item a:hover,
@@ -11486,17 +11949,22 @@ form#user-login {
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item address,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item address,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item address {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBookItalic';
 }
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 42.35294117647059em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item pre,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item pre,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item pre,
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item address,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item address,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item address {
-    font-size: 2.08333333vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11516,20 +11984,24 @@ form#user-login {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item address,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item address,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item address {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item strong,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item strong,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item strong {
-  font-family: 'SohoGothicProBold';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBook';
 }
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 42.35294117647059em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item strong,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item strong,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item strong {
-    font-size: 2.08333333vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11543,14 +12015,14 @@ form#user-login {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item strong,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item strong,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item strong {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item hr,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item hr,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item hr {
   border: 0;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #fff;
   background: none;
 }
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item img,
@@ -11561,7 +12033,6 @@ form#user-login {
   margin: 20px auto;
   padding: 0;
   max-width: 100%;
-  width: auto;
   height: auto;
 }
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item embed,
@@ -11620,31 +12091,30 @@ form#user-profile-form div #edit-account .panel-heading {
 }
 form#user-profile-form div fieldset.panel .panel-heading .panel-title,
 form#user-profile-form div #edit-account .panel-heading .panel-title {
-  margin: 20px 0 10px;
-  padding: 0;
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
+  font-size: 22px;
+  text-transform: uppercase;
   letter-spacing: 0.02em;
-  text-transform: none;
+  line-height: 1;
+  text-align: left;
   color: #222;
-  line-height: 1.2;
-  font-size: 17.5px;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 44em) {
   form#user-profile-form div fieldset.panel .panel-heading .panel-title,
   form#user-profile-form div #edit-account .panel-heading .panel-title {
-    font-size: 3.64583333vw;
+    font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
   form#user-profile-form div fieldset.panel .panel-heading .panel-title,
   form#user-profile-form div #edit-account .panel-heading .panel-title {
-    font-size: 23px;
+    font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
   form#user-profile-form div fieldset.panel .panel-heading .panel-title,
   form#user-profile-form div #edit-account .panel-heading .panel-title {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 form#user-profile-form div fieldset.panel .panel-body,
@@ -11662,7 +12132,7 @@ form#user-profile-form div .form-wrapper .form-item label.control-label {
 form#user-profile-form div .form-wrapper .form-item input.form-control {
   margin: 0;
   height: 36px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 16px;
   color: #222;
   border: none;
@@ -11692,7 +12162,7 @@ form#user-profile-form div .form-wrapper .form-item input.form-control:focus {
   border: 2px solid #222;
 }
 form#user-profile-form div .form-wrapper .form-item .help-block {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 11px;
   color: #808080;
 }
@@ -11735,7 +12205,7 @@ form#user-profile-form div .form-wrapper .form-item .form-checkboxes .radio > .c
 form#user-profile-form div .form-wrapper .form-item .form-radios .checkbox > .control-label,
 form#user-profile-form div .form-wrapper .form-item .form-checkboxes .checkbox > .control-label {
   padding-left: 20px;
-  font-family: 'SohoGothicProLight';
+  font-family: 'MaisonNeueBook';
   font-size: 17px;
   text-align: left;
   vertical-align: middle;
@@ -11798,7 +12268,7 @@ form#user-profile-form div .form-wrapper .form-item .form-managed-file .image-wi
   display: inline-block;
   margin: 0;
   padding: 10px 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   font-size: 20px;
   line-height: 1;
   letter-spacing: 0;
@@ -11823,7 +12293,7 @@ form#user-profile-form div .form-wrapper .form-item .form-managed-file .image-wi
 }
 @media screen and (min-width: 48em) {
   form#user-profile-form div .form-wrapper .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11851,7 +12321,7 @@ form#user-profile-form div .form-wrapper .form-item .form-managed-file .image-wi
   display: inline-block;
   margin: 0;
   padding: 10px 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   font-size: 20px;
   line-height: 1;
   letter-spacing: 0;
@@ -11877,7 +12347,7 @@ form#user-profile-form div .form-wrapper .form-item .form-managed-file .image-wi
 }
 @media screen and (min-width: 48em) {
   form#user-profile-form div .form-wrapper .form-item .form-managed-file .image-widget-data button.form-submit {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11894,7 +12364,7 @@ form#user-profile-form div .form-actions .form-submit {
   display: inline-block;
   margin: 0;
   padding: 10px 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   font-size: 28px;
   line-height: 1;
   letter-spacing: 0;
@@ -11918,85 +12388,112 @@ form#user-profile-form div .form-actions .form-submit .icon {
  *  Text paragraph component
  * --------------------------------------------------*/
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-title .field-item {
-  font-family: 'SohoGothicProBold';
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: #222;
-  font-size: 18.75px;
-}
-@media screen and (min-width: 30em) {
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-title .field-item {
-    font-size: 3.90625vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-title .field-item {
-    font-size: 24px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-title .field-item {
-    font-size: 30px;
-  }
-}
-.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h1,
-.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h2,
-.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h3 {
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
 }
-@media screen and (min-width: 35.2em) {
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h1,
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h2,
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h3 {
-    font-size: 3.90625vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h1,
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h2,
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h3 {
-    font-size: 30px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h1,
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h2,
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h3 {
-    font-size: 30px;
-  }
-}
-.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h4,
-.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h5,
-.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h6 {
-  font-family: 'SohoGothicProRegular';
-  font-size: 18px;
-}
-@media screen and (min-width: 36em) {
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h4,
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h5,
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h6 {
+@media screen and (min-width: 44em) {
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-title .field-item {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-title .field-item {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-title .field-item {
+    font-size: 24px;
+  }
+}
+.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h1,
+.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h2,
+.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h3,
+.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'MaisonNeueBook';
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 44em) {
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h1,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h2,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h3,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item .pxl-title {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h1,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h2,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h3,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h1,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h2,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h3,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item .pxl-title {
+    font-size: 24px;
+  }
+}
+.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h4,
+.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h5,
+.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h6,
+.entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'MaisonNeueBook';
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 43.2em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h4,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h5,
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h6 {
-    font-size: 24px;
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h6,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item .pxl-subtitle {
+    font-size: 2.60416667vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h4,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h5,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h6,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item .pxl-subtitle {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 64em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h4,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h5,
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h6 {
-    font-size: 24px;
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h6,
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item .pxl-subtitle {
+    font-size: 20px;
   }
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item p,
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item tbody td {
-  font-family: 'SohoGothicProRegular';
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -12004,10 +12501,10 @@ form#user-profile-form div .form-actions .form-submit .icon {
   -o-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 42.35294117647059em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item p,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item tbody td {
-    font-size: 2.60416667vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -12019,17 +12516,20 @@ form#user-profile-form div .form-actions .form-submit .icon {
 @media screen and (min-width: 64em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item p,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item tbody td {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
   color: #222;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 42.35294117647059em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item a {
-    font-size: 2.60416667vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -12039,7 +12539,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 @media screen and (min-width: 64em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item a {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item a:hover,
@@ -12050,13 +12550,18 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item pre,
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item address {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBookItalic';
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 42.35294117647059em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item pre,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item address {
-    font-size: 2.60416667vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -12068,16 +12573,20 @@ form#user-profile-form div .form-actions .form-submit .icon {
 @media screen and (min-width: 64em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item pre,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item address {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item strong {
-  font-family: 'SohoGothicProBold';
   font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBook';
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 42.35294117647059em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item strong {
-    font-size: 2.60416667vw;
+    font-size: 2.21354167vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -12087,12 +12596,12 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 @media screen and (min-width: 64em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item strong {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item hr {
   border: 0;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #fff;
   background: none;
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item img {
@@ -12101,7 +12610,6 @@ form#user-profile-form div .form-actions .form-submit .icon {
   margin: 20px auto;
   padding: 0;
   max-width: 100%;
-  width: auto;
   height: auto;
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item embed,
@@ -12121,15 +12629,17 @@ form#user-profile-form div .form-actions .form-submit .icon {
  *  Block paragraph component
  * --------------------------------------------------*/
 .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
-  font-family: 'SohoGothicProBold';
-  letter-spacing: 1.2px;
+  font-family: 'MaisonNeueBook';
+  font-size: 22px;
   text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
   color: #222;
-  font-size: 18.75px;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 44em) {
   .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
-    font-size: 3.90625vw;
+    font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -12139,22 +12649,24 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 @media screen and (min-width: 64em) {
   .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 /*
  *  Image paragraph component
  * --------------------------------------------------*/
 .entity-paragraphs-item.paragraphs-item-image-paragraph .content .field-name-field-title .field-item {
-  font-family: 'SohoGothicProBold';
-  letter-spacing: 1.2px;
+  font-family: 'MaisonNeueBook';
+  font-size: 22px;
   text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
   color: #222;
-  font-size: 18.75px;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 44em) {
   .entity-paragraphs-item.paragraphs-item-image-paragraph .content .field-name-field-title .field-item {
-    font-size: 3.90625vw;
+    font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -12164,27 +12676,28 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 @media screen and (min-width: 64em) {
   .entity-paragraphs-item.paragraphs-item-image-paragraph .content .field-name-field-title .field-item {
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 .entity-paragraphs-item.paragraphs-item-image-paragraph .content .field-name-field-images .field-item img {
   max-width: 100%;
-  width: auto;
   height: auto;
 }
 /*
  *  BS carousel paragraph component
  * --------------------------------------------------*/
 .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-title .field-item {
-  font-family: 'SohoGothicProBold';
-  letter-spacing: 1.2px;
+  font-family: 'MaisonNeueBook';
+  font-size: 22px;
   text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
   color: #222;
-  font-size: 18.75px;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 44em) {
   .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-title .field-item {
-    font-size: 3.90625vw;
+    font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -12194,58 +12707,88 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 @media screen and (min-width: 64em) {
   .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-title .field-item {
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel {
+  display: block;
   position: relative;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  width: 100%;
+  height: auto;
 }
-.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel.carousel-fade > .carousel-inner .item {
-  opacity: 0;
-  left: 0;
-  -webkit-transition: opacity 2s;
-  -o-transition: opacity 2s;
-  transition: opacity 2s;
+.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel.carousel-fade > .carousel-inner {
+  background: #000000;
 }
-.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel.carousel-fade > .carousel-inner .item.active {
-  opacity: 1.0;
-}
-.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel.carousel-fade > .carousel-inner .item.active.left,
-.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel.carousel-fade > .carousel-inner .item.active.right {
-  opacity: 0;
-  z-index: 1;
-}
-.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel.carousel-fade > .carousel-inner .item.left.next,
-.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel.carousel-fade > .carousel-inner .item.right.prev {
-  opacity: 1.0;
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel.carousel-fade > .carousel-inner .item {
+    opacity: 0;
+    -webkit-transition: opacity ease 1s;
+    -o-transition: opacity ease 1s;
+    transition: opacity ease 1s;
+  }
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel.carousel-fade > .carousel-inner .item.active {
+    opacity: 1.0;
+  }
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel.carousel-fade > .carousel-inner .item.active.left,
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel.carousel-fade > .carousel-inner .item.active.right {
+    left: 0;
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    z-index: 1;
+  }
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel.carousel-fade > .carousel-inner .item.left.next,
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel.carousel-fade > .carousel-inner .item.right.prev {
+    opacity: 1.0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
 .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > .carousel-inner {
   margin-top: 0;
 }
-.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > .carousel-inner .item div {
-  height: 0 !important;
+.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > .carousel-inner .item {
   width: 100%;
-  padding-bottom: 56.25%;
+}
+.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > .carousel-inner .item > div {
+  overflow: hidden;
+  width: 100%;
+  height: 0 !important;
+  padding-bottom: 66.66666%;
 }
 .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > .carousel-indicators {
-  position: fixed;
-  bottom: 20px;
-  margin-left: -40%;
-  width: 80%;
-  overflow-x: auto;
-  white-space: nowrap;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 -5px;
+  width: auto;
+  z-index: 3;
 }
 .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > .carousel-indicators li {
-  margin: 0 5px;
-  width: 14px;
-  height: 14px;
-  border-color: #aaa;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 5px;
+  border: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: none;
+  opacity: 1.0;
 }
+.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > .carousel-indicators li:hover,
 .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > .carousel-indicators li.active {
-  width: 17px;
-  height: 17px;
+  opacity: 0.6;
+}
+.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > .carousel-indicators li img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control {
   display: block;
@@ -12254,8 +12797,8 @@ form#user-profile-form div .form-actions .form-submit .icon {
   bottom: 0;
   padding: 0;
   width: 50%;
-  font-size: 50px;
-  text-shadow: 0 0 2px #222;
+  font-size: 20px;
+  text-shadow: 0 0 4px #000;
   text-align: unset;
   color: #fff;
   -moz-border-radius: 0;
@@ -12263,20 +12806,25 @@ form#user-profile-form div .form-actions .form-submit .icon {
   border-radius: 0;
   border: none;
   background: none;
+  -webkit-transition: opacity ease 0.5s;
+  -o-transition: opacity ease 0.5s;
+  transition: opacity ease 0.5s;
+  opacity: 0;
+  z-index: 2;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 32em) {
   .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control {
-    font-size: 10.41666667vw;
+    font-size: 3.90625vw;
   }
 }
 @media screen and (min-width: 48em) {
   .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control {
-    font-size: 50px;
+    font-size: 30px;
   }
 }
 @media screen and (min-width: 64em) {
   .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control {
-    font-size: 80px;
+    font-size: 40px;
   }
 }
 .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.left {
@@ -12294,6 +12842,9 @@ form#user-profile-form div .form-actions .form-submit .icon {
   transform: translateY(-50%);
   left: 5%;
 }
+.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.left:hover {
+  opacity: 1.0;
+}
 .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.right {
   right: 0;
   border-bottom-right-radius: 0;
@@ -12309,6 +12860,9 @@ form#user-profile-form div .form-actions .form-submit .icon {
   transform: translateY(-50%);
   right: 5%;
 }
+.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.right:hover {
+  opacity: 1.0;
+}
 /*
  *  Proximity view component
  * --------------------------------------------------*/
@@ -12317,7 +12871,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   width: 100%;
 }
 .view.view-proximity .view-content {
-  padding: 20px 0 50px;
+  padding: 0;
 }
 .view.view-proximity .view-content > .pe-container {
   width: 100%;
@@ -12473,7 +13027,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close span {
   padding: 0;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 60px;
   font-weight: normal;
   color: #222;
@@ -12497,7 +13051,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn {
   display: inline-block;
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   color: #222;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -12521,7 +13075,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-proximity ul.pagination li a,
 .view.view-proximity ul.pagination li span {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 18px;
   text-decoration: none;
   color: #222;
@@ -12543,7 +13097,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-proximity ul.pagination li:hover span,
 .view.view-proximity ul.pagination li:focus span,
 .view.view-proximity ul.pagination li.active span {
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   text-decoration: none;
   font-size: 20px;
   background: none;
@@ -12584,13 +13138,13 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-proximity ul.pagination li.pager-previous.active span,
 .view.view-proximity ul.pagination li.next.active span,
 .view.view-proximity ul.pagination li.pager-next.active span {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 18px;
 }
 .view.view-proximity .pager.pager--infinite-scroll .pager__item a {
   display: inline-block;
   padding: 8px 20px 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 16px;
   line-height: 1;
   color: #222;
@@ -12612,11 +13166,11 @@ form#user-profile-form div .form-actions .form-submit .icon {
   margin: 0 auto;
   width: 100%;
 }
-.view.view-call2action .view-content {
+.view.view-call2action > .view-content {
   margin: 0 -1.5%;
-  padding: 20px 0 50px;
+  padding: 0;
 }
-.view.view-call2action .view-content .views-row {
+.view.view-call2action > .view-content > .views-row {
   cursor: pointer;
   display: inline-block;
   vertical-align: top;
@@ -12626,13 +13180,13 @@ form#user-profile-form div .form-actions .form-submit .icon {
   overflow: visible;
 }
 @media screen and (min-width: 30em) {
-  .view.view-call2action .view-content .views-row {
+  .view.view-call2action > .view-content > .views-row {
     padding: 0 1.5%;
     width: 50%;
   }
 }
 @media screen and (min-width: 64em) {
-  .view.view-call2action .view-content .views-row {
+  .view.view-call2action > .view-content > .views-row {
     width: 33.333333%;
   }
 }
@@ -12648,7 +13202,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-hosts.view-display-id-block_hosts .view-content {
   margin: 0 -1.5%;
-  padding: 20px 0 50px;
+  padding: 0;
 }
 .view.view-hosts.view-display-id-block_hosts .view-content .views-row {
   display: inline-block;
@@ -12683,14 +13237,14 @@ form.webform-client-form fieldset.panel .panel-heading {
 }
 form.webform-client-form fieldset.panel .panel-heading .panel-title {
   display: block;
-  font-family: 'SohoGothicProBold';
-  font-size: 18.75px;
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
   color: #222;
   text-align: left;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 32.72727272727273em) {
   form.webform-client-form fieldset.panel .panel-heading .panel-title {
-    font-size: 3.90625vw;
+    font-size: 2.86458333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -12709,7 +13263,7 @@ form.webform-client-form fieldset.panel .panel-body {
 form.webform-client-form fieldset.panel .panel-body .help-block {
   display: block;
   margin: 10px 0 0;
-  font-family: 'SohoGothicProLight';
+  font-family: 'MaisonNeueBook';
   color: #222;
   font-size: 13px;
   line-height: 17px;
@@ -12745,7 +13299,7 @@ form.webform-client-form fieldset.panel .panel-body .btn.btn-default {
   vertical-align: middle;
   margin: 0;
   padding: 0 20px 0 0;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
   letter-spacing: normal;
   text-align: left;
@@ -12754,9 +13308,9 @@ form.webform-client-form fieldset.panel .panel-body .btn.btn-default {
   border: none;
   background: none;
 }
-@media screen and (min-width: 37.89473684210526em) {
+@media screen and (min-width: 51.42857142857143em) {
   form.webform-client-form fieldset.panel .panel-body .btn.btn-default {
-    font-size: 2.47395833vw;
+    font-size: 1.82291667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -12822,8 +13376,8 @@ form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.dra
   vertical-align: middle;
   margin: 0;
   padding: 7px 27px;
-  font-family: 'SohoGothicProBold';
-  font-size: 16.875px;
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -12836,9 +13390,9 @@ form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.dra
   background-color: #fff;
   font-size: 14px;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 36em) {
   form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.draggable td button {
-    font-size: 3.515625vw;
+    font-size: 2.60416667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -12878,8 +13432,8 @@ form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .fo
   vertical-align: middle;
   margin: 0;
   padding: 7px 27px;
-  font-family: 'SohoGothicProBold';
-  font-size: 16.875px;
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -12893,9 +13447,9 @@ form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .fo
   font-size: 16px;
   z-index: 10;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 36em) {
   form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .form-managed-file .input-group-btn button {
-    font-size: 3.515625vw;
+    font-size: 2.60416667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -12932,7 +13486,7 @@ form.webform-client-form .webform-component[class*="-city"] {
 }
 form.webform-client-form .webform-component label {
   width: auto;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
   font-weight: normal;
   letter-spacing: normal;
@@ -12940,9 +13494,9 @@ form.webform-client-form .webform-component label {
   text-transform: none;
   color: #222;
 }
-@media screen and (min-width: 37.89473684210526em) {
+@media screen and (min-width: 51.42857142857143em) {
   form.webform-client-form .webform-component label {
-    font-size: 2.47395833vw;
+    font-size: 1.82291667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -12962,14 +13516,14 @@ form.webform-client-form .webform-component div.description,
 form.webform-client-form .webform-component div.help-block {
   display: block;
   margin: 10px 0 0;
-  font-family: 'SohoGothicProLight';
+  font-family: 'MaisonNeueBook';
   color: #222;
   font-size: 13px;
   line-height: 17px;
 }
 form.webform-client-form .webform-component div.description strong,
 form.webform-client-form .webform-component div.help-block strong {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
 }
 form.webform-client-form .webform-component .form-control,
 form.webform-client-form .webform-component .form-managed-file {
@@ -12978,7 +13532,7 @@ form.webform-client-form .webform-component .form-managed-file {
 form.webform-client-form .webform-component input.form-text,
 form.webform-client-form .webform-component textarea {
   padding: 0 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
   color: #222;
   line-height: 1.2;
@@ -12993,10 +13547,10 @@ form.webform-client-form .webform-component textarea {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 51.42857142857143em) {
   form.webform-client-form .webform-component input.form-text,
   form.webform-client-form .webform-component textarea {
-    font-size: 2.21354167vw;
+    font-size: 1.82291667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13052,7 +13606,7 @@ form.webform-client-form .webform-component.webform-component-select select {
   max-width: 65%;
   width: auto;
   height: auto;
-  font-family: 'SohoGothicProLight';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
   color: #222;
   line-height: 1.2;
@@ -13067,9 +13621,9 @@ form.webform-client-form .webform-component.webform-component-select select {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 51.42857142857143em) {
   form.webform-client-form .webform-component.webform-component-select select {
-    font-size: 2.21354167vw;
+    font-size: 1.82291667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13108,7 +13662,7 @@ form.webform-client-form .webform-component .form-checkboxes .radio > label,
 form.webform-client-form .webform-component .form-radios .checkbox > label,
 form.webform-client-form .webform-component .form-checkboxes .checkbox > label {
   padding-left: 20px;
-  font-family: 'SohoGothicProLight';
+  font-family: 'MaisonNeueBook';
   font-size: 13px;
   text-align: left;
   vertical-align: top;
@@ -13143,9 +13697,9 @@ form.webform-client-form .webform-component .form-managed-file input {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 51.42857142857143em) {
   form.webform-client-form .webform-component .form-managed-file input {
-    font-size: 2.21354167vw;
+    font-size: 1.82291667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13177,8 +13731,7 @@ form.webform-client-form .webform-component .form-managed-file button.btn {
   vertical-align: middle;
   margin: 0;
   padding: 7px 27px;
-  font-family: 'SohoGothicProBold';
-  font-size: 16.875px;
+  font-family: 'MaisonNeueBook';
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -13193,9 +13746,9 @@ form.webform-client-form .webform-component .form-managed-file button.btn {
   font-size: 15px;
   line-height: 1.2;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 36em) {
   form.webform-client-form .webform-component .form-managed-file button.btn {
-    font-size: 3.515625vw;
+    font-size: 2.60416667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13213,9 +13766,9 @@ form.webform-client-form .webform-component .form-managed-file button.btn:focus 
   color: #fff;
   background: none;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 51.42857142857143em) {
   form.webform-client-form .webform-component .form-managed-file button.btn {
-    font-size: 2.21354167vw;
+    font-size: 1.82291667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13234,7 +13787,7 @@ form.webform-client-form .webform-component.webform-component-markup {
 }
 form.webform-client-form .webform-component.webform-component-markup h2,
 form.webform-client-form .webform-component.webform-component-markup strong {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-weight: normal;
   color: #222;
   font-size: 13px;
@@ -13242,7 +13795,7 @@ form.webform-client-form .webform-component.webform-component-markup strong {
   text-align: left;
 }
 form.webform-client-form .webform-component.webform-component-markup p {
-  font-family: 'SohoGothicProLight';
+  font-family: 'MaisonNeueBook';
   font-size: 13px;
   color: #222;
   line-height: 17px;
@@ -13298,8 +13851,8 @@ form.webform-client-form div.form-actions button.webform-submit {
   vertical-align: middle;
   margin: 0;
   padding: 7px 27px;
-  font-family: 'SohoGothicProBold';
-  font-size: 16.875px;
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -13311,9 +13864,9 @@ form.webform-client-form div.form-actions button.webform-submit {
   border: 1px solid #fff;
   background-color: #fff;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 36em) {
   form.webform-client-form div.form-actions button.webform-submit {
-    font-size: 3.515625vw;
+    font-size: 2.60416667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13336,8 +13889,7 @@ form.webform-client-form div.form-actions a.back-link {
   vertical-align: middle;
   margin: 0;
   padding: 7px 27px;
-  font-family: 'SohoGothicProBold';
-  font-size: 16.875px;
+  font-family: 'MaisonNeueBook';
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -13354,9 +13906,9 @@ form.webform-client-form div.form-actions a.back-link {
   background: none;
   text-decoration: none;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 36em) {
   form.webform-client-form div.form-actions a.back-link {
-    font-size: 3.515625vw;
+    font-size: 2.60416667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13374,9 +13926,9 @@ form.webform-client-form div.form-actions a.back-link:focus {
   color: #fff;
   background: none;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 40em) {
   form.webform-client-form div.form-actions a.back-link {
-    font-size: 3.125vw;
+    font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13394,8 +13946,7 @@ form.webform-client-form div.form-actions a.done-link {
   vertical-align: middle;
   margin: 0;
   padding: 7px 27px;
-  font-family: 'SohoGothicProBold';
-  font-size: 16.875px;
+  font-family: 'MaisonNeueBook';
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -13413,9 +13964,9 @@ form.webform-client-form div.form-actions a.done-link {
   background: none;
   text-decoration: none;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 36em) {
   form.webform-client-form div.form-actions a.done-link {
-    font-size: 3.515625vw;
+    font-size: 2.60416667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13433,9 +13984,9 @@ form.webform-client-form div.form-actions a.done-link:focus {
   color: #fff;
   background: none;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 40em) {
   form.webform-client-form div.form-actions a.done-link {
-    font-size: 3.125vw;
+    font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13466,14 +14017,14 @@ form.webform-client-form div.form-actions a.done-link:hover {
   background-color: #fff;
 }
 .webform-confirmation .confirmation-title {
-  font-family: 'SohoGothicProBold';
-  font-size: 15.625px;
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
   line-height: 30px;
   text-align: center;
 }
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 36em) {
   .webform-confirmation .confirmation-title {
-    font-size: 3.25520833vw;
+    font-size: 2.60416667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13487,14 +14038,14 @@ form.webform-client-form div.form-actions a.done-link:hover {
   }
 }
 .webform-confirmation .confirmation-message {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 15px;
   line-height: 20px;
   text-align: center;
 }
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 51.42857142857143em) {
   .webform-confirmation .confirmation-message {
-    font-size: 2.34375vw;
+    font-size: 1.82291667vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13559,7 +14110,7 @@ form.webform-client-form div.form-actions a.done-link:hover {
 }
 .submission-actions > ul.webform-submission-actions li a {
   padding: 5px 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 16px;
   color: #fff;
   text-decoration: none;
@@ -13609,7 +14160,7 @@ header#navbar .container-fluid .navbar-header a.navbar-brand {
   float: none;
   margin-left: 15px;
   padding: 0;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 41px;
   color: #222222;
   line-height: 1;
@@ -13629,7 +14180,7 @@ header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li {
 header#navbar .container .navbar-collapse nav ul.navbar-nav li a,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a {
   padding: 7px 15px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 16px;
   line-height: 1;
 }
@@ -13675,13 +14226,13 @@ body {
 body .main-container .container #page-header .region-header h2.block-title,
 body .main-container .container-fluid #page-header .region-header h2.block-title {
   margin: 20px 0 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'MaisonNeueBook';
   font-size: 24px;
 }
 body .main-container .container .row section h1.page-header,
 body .main-container .container-fluid .row section h1.page-header {
   margin: 20px 0 10px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'MaisonNeueBook';
   font-size: 41px;
 }
 body .main-container .container .row section .messages,
@@ -13716,6 +14267,10 @@ body .main-container .container .row section ul.action-links li a,
 body .main-container .container-fluid .row section ul.action-links li a {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: 14px;
+}
+body .main-container .container .row .region-content,
+body .main-container .container-fluid .row .region-content {
+  margin: 30px 0;
 }
 body .main-container .fading {
   display: none;

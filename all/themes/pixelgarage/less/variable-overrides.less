@@ -45,6 +45,21 @@
 @text-color-field:      @text-color;
 @text-color-placeholder: @gray-light;
 
+// text
+@font-letter-spacing: normal;
+@font-line-height: 1.15em;
+@font-text-align: left;
+// subtitle
+@subtitle-text-transform: uppercase;
+@subtitle-letter-spacing: 0.02em;
+@subtitle-line-height: 1;
+@subtitle-text-align: left;
+// title
+@title-text-transform: uppercase;
+@title-letter-spacing: 0.02em;
+@title-line-height: 1;
+@title-text-align: left;
+
 @font-size-base:          16px;
 @font-size-large:         ceil((@font-size-base * 1.25));
 @font-size-larger:        ceil((@font-size-base * 1.5));
@@ -54,20 +69,18 @@
 
 //
 // responsive font sizes
-@resp-font-size:          2vw;
+// text
 @resp-font-size-min:      15px;
 @resp-font-size-med:      17px;
 @resp-font-size-max:      17px;
-
-@resp-subtitle-size:      2.6vw;
+// subtitle
 @resp-subtitle-size-min:  18px;
-@resp-subtitle-size-med:  24px;
-@resp-subtitle-size-max:  24px;
-
-@resp-title-size:         3.125vw;
+@resp-subtitle-size-med:  20px;
+@resp-subtitle-size-max:  20px;
+// title
 @resp-title-size-min:     22px;
-@resp-title-size-med:     30px;
-@resp-title-size-max:     30px;
+@resp-title-size-med:     24px;
+@resp-title-size-max:     24px;
 
 //
 // selected element font size
@@ -173,12 +186,17 @@
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
+// main region
+@content-region-margin: 30px 0;
 // block/group
-@block-padding-top: 20px;
-@block-padding-bottom: 30px;
+@block-padding: 20px 0 30px;
+
+// nodes
+@node-padding: 0;
+// ds-column
+@node-ds-column-margin: 0 0 50px;
 // fields
-@field-margin-top: 20px;
-@field-margin-bottom: 20px;
+@node-field-margin: 0 0 20px;
 
 
 
