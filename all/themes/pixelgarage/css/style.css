@@ -14499,7 +14499,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   line-height: 1;
   text-align: left;
   color: #222;
-  border-top: 1px solid #E9A665;
+  border-top: 1px solid #958AD8;
 }
 @media screen and (min-width: 40em) {
   .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-title h2,
