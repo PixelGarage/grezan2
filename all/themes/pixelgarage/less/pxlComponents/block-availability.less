@@ -1,0 +1,190 @@
+/*
+ *  Block pxl availability component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+
+
+// Mixins
+// -------------------------
+
+.availability-form {
+  position: relative;
+  padding-bottom: @pxl-button-dim + 40px;
+
+  .form-item {
+    #pxl-mixins.form-items(@pxl-color-rentals);
+
+    label.control-label,
+    .help-block {
+      display: none;
+    }
+  }
+
+  .form-submit-availability {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+    border-top: 1px solid @pxl-color-rentals;
+
+    .form-item {
+      cursor: pointer;
+      display: inline-block;
+      #pxl-mixins.border-radius(50%);
+      border: 2px solid @pxl-color-rentals;
+      .rotate(-10deg);
+
+      .form-submit {
+        display: block;
+        margin: 2px;
+        padding: 1px 5px 5px;
+        width: @pxl-button-dim;
+        height: @pxl-button-dim;
+        font-family: @pxl-text-font;
+        font-size: @font-size-base;
+        line-height: @pxl-button-dim;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+        border: none;
+        #pxl-mixins.border-radius(50%);
+        background: @pxl-color-rentals none;
+      }
+    }
+  }
+}
+
+.shopping-cart-table() {
+  .table-responsive {
+    table {
+      thead {
+        tr {
+          th {
+            font-family: @pxl-text-font-bold;
+            text-align: left;
+            font-size: @font-size-min;
+            color: @text-color;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          td {
+            font-family: @pxl-text-font;
+            text-align: left;
+            font-size: @font-size-min;
+            color: @text-color;
+
+            button.cart-item-delete {
+              margin: 0;
+              padding: 0;
+              border: none;
+              background: none;
+            }
+
+            &:nth-child(2) {
+              // amount column
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// General settings
+// -------------------------
+.block-pxl-availability {
+  margin: 30px 0;
+
+  h2.block-title {
+    margin: 0 0 30px;
+    padding: 10px;
+    border-top: 1px solid @pxl-color-rentals;
+    #pxl-mixins.title();
+  }
+
+  //
+  // availability form
+  .block-availability-form {
+    .availability-form-container {
+      form {
+        .availability-form();
+      }
+    }
+  }
+
+  //
+  // shopping cart
+  .block-shopping-cart-form {
+    .shopping-cart-table {
+      .shopping-cart-table();
+    }
+
+    .shopping-cart-actions {
+      width: 100%;
+
+      .cart-items-reset {
+        display: inline-block;
+        vertical-align: bottom;
+        margin: 0 -2px;
+        padding: 5px 10px;
+        width: 30%;
+
+        font-family: @pxl-text-font;
+        text-align: center;
+        font-size: @font-size-min;
+        color: @pxl-color-rentals;
+        border: 1px solid @pxl-color-rentals;
+        background: none;
+      }
+
+      .stripe-button-container {
+        display: inline-block;
+        vertical-align: bottom;
+        margin: 0 -2px;
+        padding: 0;
+        width: 70%;
+        text-align: right;
+
+        .stripe-button-title {
+          margin-bottom: @node-field-margin;
+          font-family: @pxl-text-font-bold;
+          font-weight: bold;
+          text-align: right;
+          font-size: @font-size-base;
+        }
+
+        .stripe-button-text {
+          display: none;
+          font-family: @pxl-text-font;
+          text-align: center;
+          font-size: @font-size-min;
+        }
+
+        .stripe-button {
+          display: inline-block;
+          margin: 0 auto;
+          width: 60%;
+          font-family: @pxl-text-font;
+          font-size: @font-size-base;
+          text-transform: uppercase;
+          text-align: center;
+          color: #fff;
+          border: none;
+          #pxl-mixins.border-radius(0);
+          background: @pxl-color-rentals none;
+        }
+      }
+    }
+  }
+}

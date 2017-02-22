@@ -66,7 +66,7 @@ function pxl_hooks_theme() {
   );
 }
 
-function theme_pxl_hooks_date_vom_bis_formatter($element) {
+function theme_pxl_hooks_date_von_bis_formatter($element) {
   $from_date = strtotime($element['element']['value']);
   $date_start = explode(' ', $element['element']['value']);
   $date_end = explode(' ', $element['element']['value2']);

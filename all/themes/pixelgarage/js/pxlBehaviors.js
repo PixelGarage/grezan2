@@ -54,7 +54,6 @@
    */
   Drupal.behaviors.equalColumnHeights = {
     attach: function (context) {
-
       var maxHeight = 0,
         calcMaxHeight = function () {
           // context is column
@@ -67,26 +66,52 @@
         makeEqualColumns = function () {
           // equal heights in call2action teasers
           maxHeight = 0;
-          var call2ActionColumns = $('.view.view-call2action .node-call2action > .row > .col-sm-12');
+          var call2ActionColumns = $('.front .node-call2action.node-teaser > .row > .col-sm-12');
           call2ActionColumns.each(calcMaxHeight);
           call2ActionColumns.height(maxHeight);
 
           // equal heights in apartment teasers
           maxHeight = 0;
-          var apartmentColumns = $('.view.view-apartements .node-apartment > .row > .col-sm-12');
+          var apartmentColumns = $('.node-apartment.node-teaser > .row > .col-sm-12');
           apartmentColumns.each(calcMaxHeight);
           apartmentColumns.height(maxHeight);
 
           // equal heights in private function teasers
           maxHeight = 0;
-          var privateFunctionColumns = $('.view.view-private-function .node-locality > .row > .col-sm-12');
+          var privateFunctionColumns = $('.node-locality.node-teaser > .row > .col-sm-12');
           privateFunctionColumns.each(calcMaxHeight);
           privateFunctionColumns.height(maxHeight);
 
+          // equal heights in apartment full mode
+          maxHeight = 0;
+          var apartmentFullColumns = $('.node-apartment.view-mode-full > .row > .col-sm-4');
+          apartmentFullColumns.each(calcMaxHeight);
+          apartmentFullColumns.height(maxHeight);
+
+        },
+        resetColumns = function () {
+          var call2ActionColumns = $('.node-call2action.node-teaser > .row > .col-sm-12');
+          call2ActionColumns.height('auto');
+
+          var apartmentColumns = $('.node-apartment.node-teaser > .row > .col-sm-12');
+          apartmentColumns.height('auto');
+
+          var privateFunctionColumns = $('.node-locality.node-teaser > .row > .col-sm-12');
+          privateFunctionColumns.height('auto');
+
+          var apartmentFullColumns = $('.node-apartment.view-mode-full > .row > .col-sm-4');
+          apartmentFullColumns.height('auto');
         };
 
       $(window).on('load resize', function(ev) {
-        makeEqualColumns();
+        //
+        // only for width > 480 (more than one columns)
+        if ($(window).width() >= 480) {
+          makeEqualColumns();
+        }
+        else {
+          resetColumns();
+        }
       });
     }
   };

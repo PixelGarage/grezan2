@@ -25,10 +25,8 @@
     display: inline-block;
     #pxl-mixins.border-radius(50%);
     border: 2px solid @color;
+    .rotate(@rotate);
 
-    .views-row-odd & {
-      .rotate(@rotate);
-    }
     .views-row-even & {
       .rotate(-@rotate);
     }
@@ -44,7 +42,7 @@
 
       a, .field-action {
         display: block;
-        #pxl-mixins.center-vertically();
+        #pxl-mixins.center-xy();
         font-family: @pxl-text-font;
         font-size: @font-size-base;
         line-height: 1;
@@ -66,7 +64,7 @@
       position: relative;
       padding-bottom: @pxl-button-dim + 20px;
 
-      .field-name-title {
+      >.field-name-title {
         margin: @node-field-margin;
 
         .field-item {
@@ -78,7 +76,7 @@
         }
       }
 
-      .field-name-field-subtitle {
+      >.field-name-field-subtitle {
         margin: @node-field-margin;
         padding-bottom: 10px;
         border-bottom: 0.5px solid @pxl-color-border;
@@ -88,7 +86,7 @@
         }
       }
 
-      .field-name-field-image {
+      >.field-name-field-image {
         margin: @node-field-margin;
 
         .field-item {
@@ -100,7 +98,7 @@
         }
       }
 
-      .field-name-body {
+      >.field-name-body {
         margin: @node-field-margin;
 
         .field-item {
@@ -108,7 +106,7 @@
         }
       }
 
-      .field-name-field-block {
+      >.field-name-field-block {
         margin: @node-field-margin;
 
         .field-item {

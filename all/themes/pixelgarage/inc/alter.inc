@@ -61,3 +61,11 @@ function pixelgarage_proximity_render_item_alter($container_index, $param, &$ren
 }
 
 
+/* =============================================================================
+ *    Availability form alteration
+ * ========================================================================== */
+
+function pixelgarage_form_pxl_availability_check_form_alter(&$form, &$form_state, $form_id) {
+  $form['pxl_availability_submit']['#prefix'] = '<div class="form-submit-availability"><div class="form-item">';
+  $form['pxl_availability_submit']['#suffix'] = '</div></div>';
+}

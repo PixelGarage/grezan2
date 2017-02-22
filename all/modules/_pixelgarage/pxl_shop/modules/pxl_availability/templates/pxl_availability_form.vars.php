@@ -74,7 +74,7 @@ function pxl_availability_check_form($form, &$form_state) {
     '#title' => t('Start date'),
     '#description' => t('Enter the start date.'),
     '#element_validation' => array('pxl_availability_validate_date'),
-    '#attributes' => array('placeholder' => t('Check-in')),
+    '#attributes' => array('placeholder' => t('Check-in ...')),
     '#required' => true,
     '#weight' => 0,
   );
@@ -83,13 +83,13 @@ function pxl_availability_check_form($form, &$form_state) {
     '#title' => t('End date'),
     '#description' => t('Enter the end date.'),
     '#element_validation' => array('pxl_availability_validate_date'),
-    '#attributes' => array('placeholder' => t('Check-out')),
+    '#attributes' => array('placeholder' => t('Check-out ...')),
     '#required' => true,
     '#weight' => 1,
   );
   $form['pxl_availability_submit'] = array(
     '#type' => 'button',
-    '#value' => t('Book'),
+    '#value' => t('Checkout'),
     '#weight' => 10,
   );
 
