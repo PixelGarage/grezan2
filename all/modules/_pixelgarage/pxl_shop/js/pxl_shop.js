@@ -13,7 +13,7 @@
       $.each(Drupal.settings.pxl_shop.blocks, function (block_id, settings) {
         var $block = $('#' + block_id),
           $errorLabel = $block.find('>.label'),
-          $deleteButtons = $block.find('.shopping-cart-table .cart-item-delete').add('.cart-items-delete-all');
+          $deleteButtons = $block.find('.shopping-cart-table .cart-item-delete').add('.cart-items-reset');
 
         //
         // submit button click
