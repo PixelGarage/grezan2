@@ -11,35 +11,20 @@ if(typeof(CKEDITOR) !== 'undefined') {
     CKEDITOR.addStylesSet( 'drupal',
     [
             /* Kulturfolger styles */
-            { name : 'pxl-normal',
+            { name : 'Normal',
                     element : 'p',
                     attributes : {
                             'class' : 'pxl-normal' }
             },
-            { name : 'pxl-style1',
+            { name : 'Title',
                     element : 'p',
                     attributes : {
-                            'class' : 'pxl-style1' }
+                            'class' : 'pxl-title' }
             },
-            { name : 'pxl-style2',
+            { name : 'Subtitle',
                     element : 'p',
                     attributes : {
-                            'class' : 'pxl-style2' }
-            },
-            { name : 'pxl-style3',
-                    element : 'p',
-                    attributes : {
-                            'class' : 'pxl-style3' }
-            },
-            { name : 'pxl-style4',
-                    element : 'p',
-                    attributes : {
-                            'class' : 'pxl-style4' }
-            },
-            { name : 'pxl-style5',
-                    element : 'p',
-                    attributes : {
-                            'class' : 'pxl-style5' }
+                            'class' : 'pxl-subtitle' }
             },
 
             /* Block Styles */

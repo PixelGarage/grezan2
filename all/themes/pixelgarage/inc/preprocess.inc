@@ -27,3 +27,13 @@ function pixelgarage_preprocess_page(&$vars) {
 }
 
 
+function pixelgarage_preprocess_node(&$vars) {
+  //
+  // set css class on node, if available
+  $node = $vars['node'];
+  if (isset($node->field_css_class) && !empty($node->field_css_class)) {
+    $vars['classes_array'][] = drupal_clean_css_identifier($node->field_css_class[LANGUAGE_NONE][0]['value']);
+  }
+}
+
+

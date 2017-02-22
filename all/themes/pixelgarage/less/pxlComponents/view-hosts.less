@@ -14,8 +14,56 @@
 
 // General settings
 // -------------------------
+.view.view-hosts.view-display-id-block_manager {
+  .view-content {
+    .views-row {
+      .views-field-field-address {
+        margin: @node-field-margin;
+
+        .field-content {
+          .name-block {
+            margin: @node-field-margin;
+          }
+
+          .street-block {
+          }
+
+          .locality-block {
+            margin: @node-field-margin;
+          }
+
+          .country {
+            margin: @node-field-margin;
+          }
+        }
+      }
+
+      .views-field-field-phone {
+        .field-content {
+        }
+      }
+
+      .views-field-mail {
+        margin: @node-field-margin;
+
+        .field-content {
+          a {
+            text-decoration: none;
+            color: @pxl-color-about;
+            outline: none;
+
+            &.active, &:hover, &:focus {
+              color: darken(@pxl-color-about, 20%);
+              text-decoration: @link-hover-decoration;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .view.view-hosts.view-display-id-block_hosts {
-  margin: 0 auto;
   width: 100%;
 
   .view-content {

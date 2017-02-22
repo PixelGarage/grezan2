@@ -1092,8 +1092,8 @@ a {
 }
 a:hover,
 a:focus {
-  color: #000;
-  text-decoration: underline;
+  color: #E9A665;
+  text-decoration: none;
 }
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
@@ -3407,8 +3407,8 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #000;
-  text-decoration: underline;
+  color: #E9A665;
+  text-decoration: none;
   background-color: transparent;
 }
 .btn-link[disabled]:hover,
@@ -4731,7 +4731,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > a:focus,
 .pagination > li > span:focus {
   z-index: 2;
-  color: #fff;
+  color: #000;
   background-color: #eeeeee;
   border-color: #ddd;
 }
@@ -4742,7 +4742,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
   z-index: 3;
-  color: #fff;
+  color: #000;
   background-color: #337ab7;
   border-color: #337ab7;
   cursor: default;
@@ -8951,7 +8951,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   width: 40px;
   height: 40px;
   font-size: 36px;
-  color: #fff;
+  color: #000;
   text-align: center;
   line-height: 40px;
   background: none !important;
@@ -9069,8 +9069,6 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
  * --------------------------------------------------*/
 #block-locale-language {
   display: inline-block;
-  font-family: 'MaisonNeueBook';
-  font-size: 16px;
 }
 #block-locale-language ul.language-switcher-locale-url {
   list-style: none;
@@ -9085,7 +9083,6 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 -0.25em 0 0;
   padding: 0 10px;
   line-height: 1;
-  border-right: 1px solid #222;
 }
 #block-locale-language ul.language-switcher-locale-url > li.first {
   margin-left: 0;
@@ -9095,14 +9092,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   border-right: none;
 }
 #block-locale-language ul.language-switcher-locale-url > li a.language-link {
-  text-transform: uppercase;
   text-decoration: none;
   color: #222;
   outline: none;
 }
 #block-locale-language ul.language-switcher-locale-url > li a.language-link.active,
-#block-locale-language ul.language-switcher-locale-url > li a.language-link:hover {
-  font-family: 'MaisonNeueBook';
+#block-locale-language ul.language-switcher-locale-url > li a.language-link:hover,
+#block-locale-language ul.language-switcher-locale-url > li a.language-link:focus {
+  color: #E9A665;
   text-decoration: none;
 }
 #block-locale-language ul.language-switcher-locale-url > li span.locale-untranslated {
@@ -9143,7 +9140,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   display: none;
   font-family: 'MaisonNeueBook';
   font-size: 22px;
-  color: #fff;
+  color: #000;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-text {
   display: none;
@@ -9168,7 +9165,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   border: none;
-  background-color: #fff;
+  background-color: #000;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button:hover,
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button:focus {
@@ -9227,7 +9224,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   border: 1px solid #5f5e5e;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-custom-form form .input-group .form-item input.form-text:focus {
-  border: 1px solid #fff;
+  border: 1px solid #000;
   box-shadow: 1px 1px 1px #aaa inset;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-custom-form form button.form-submit {
@@ -9247,7 +9244,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   border: none;
-  background-color: #fff;
+  background-color: #000;
   margin: 0 0 0 -4px;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -9375,22 +9372,31 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 /*
  *  Node page component
  * --------------------------------------------------*/
-.node.node-page.view-mode-full {
-  margin: 30px 0;
-}
 .node.node-page.view-mode-full > .row > div.col-sm-12 {
   width: 100%;
 }
+.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-title {
+  display: none;
+}
+.front .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-title {
+  display: block;
+}
+@media screen and (min-width: 640px) {
+  .front .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-title {
+    display: none;
+  }
+}
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-title h2 {
+  margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-title h2 {
     font-size: 3.125vw;
   }
@@ -9414,14 +9420,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-title {
   margin: 10px auto 20px;
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h1,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h2,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h3,
@@ -9451,19 +9457,19 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-subtitle {
   margin: 10px auto;
   font-family: 'MaisonNeueBook';
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 43.2em) {
+@media screen and (min-width: 42.666666666666664em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h4,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h5,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h6,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-subtitle {
-    font-size: 2.60416667vw;
+    font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -9471,7 +9477,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h5,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h6,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -9479,7 +9485,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h5,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h6,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body p,
@@ -9498,16 +9504,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -o-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body p,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body tbody td {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body p,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body tbody td {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -9524,14 +9530,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -9541,7 +9547,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a:hover,
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a:focus {
-  color: #000;
+  color: #E9A665;
   text-decoration: none;
   background: none;
 }
@@ -9555,16 +9561,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
   font-family: 'MaisonNeueBookItalic';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body pre,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body address {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body pre,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body address {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -9581,14 +9587,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
   font-family: 'MaisonNeueBook';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body strong {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body strong {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -9598,7 +9604,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body hr {
   border: 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000;
   background: none;
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body img {
@@ -9622,8 +9628,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   height: auto;
   min-height: 350px;
 }
-.node.node-page.view-mode-full > .row > div.col-sm-12 > .paragraphs-items .field-name-field-paragraphs .field-item {
-  margin-bottom: 30px;
+.node.node-page.view-mode-full > .row > div.col-sm-12 > .paragraphs-items > .field-name-field-paragraphs > .field-items > .field-item {
+  margin-bottom: 50px;
 }
 /*
  *  Node / block webform component
@@ -9637,14 +9643,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-12 .field-name-title h2,
 .node.node-webform .row .col-sm-6 .field-name-title h2 {
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .node.node-webform .row .col-sm-12 .field-name-title h2,
   .node.node-webform .row .col-sm-6 .field-name-title h2 {
     font-size: 3.125vw;
@@ -9682,14 +9688,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-6 .field-name-body .pxl-title {
   margin: 10px auto 20px;
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .node.node-webform .row .col-sm-12 .field-name-body h1,
   .node.node-webform .row .col-sm-6 .field-name-body h1,
   .node.node-webform .row .col-sm-12 .field-name-body h2,
@@ -9735,14 +9741,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-6 .field-name-body .pxl-subtitle {
   margin: 10px auto;
   font-family: 'MaisonNeueBook';
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 43.2em) {
+@media screen and (min-width: 42.666666666666664em) {
   .node.node-webform .row .col-sm-12 .field-name-body h4,
   .node.node-webform .row .col-sm-6 .field-name-body h4,
   .node.node-webform .row .col-sm-12 .field-name-body h5,
@@ -9751,7 +9757,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-webform .row .col-sm-6 .field-name-body h6,
   .node.node-webform .row .col-sm-12 .field-name-body .pxl-subtitle,
   .node.node-webform .row .col-sm-6 .field-name-body .pxl-subtitle {
-    font-size: 2.60416667vw;
+    font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -9763,7 +9769,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-webform .row .col-sm-6 .field-name-body h6,
   .node.node-webform .row .col-sm-12 .field-name-body .pxl-subtitle,
   .node.node-webform .row .col-sm-6 .field-name-body .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -9775,7 +9781,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-webform .row .col-sm-6 .field-name-body h6,
   .node.node-webform .row .col-sm-12 .field-name-body .pxl-subtitle,
   .node.node-webform .row .col-sm-6 .field-name-body .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .node.node-webform .row .col-sm-12 .field-name-body p,
@@ -9796,12 +9802,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -o-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-webform .row .col-sm-12 .field-name-body p,
   .node.node-webform .row .col-sm-6 .field-name-body p,
   .node.node-webform .row .col-sm-12 .field-name-body tbody td,
   .node.node-webform .row .col-sm-6 .field-name-body tbody td {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -9809,7 +9815,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-webform .row .col-sm-6 .field-name-body p,
   .node.node-webform .row .col-sm-12 .field-name-body tbody td,
   .node.node-webform .row .col-sm-6 .field-name-body tbody td {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -9829,16 +9835,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-webform .row .col-sm-12 .field-name-body a,
   .node.node-webform .row .col-sm-6 .field-name-body a {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-webform .row .col-sm-12 .field-name-body a,
   .node.node-webform .row .col-sm-6 .field-name-body a {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -9851,7 +9857,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-6 .field-name-body a:hover,
 .node.node-webform .row .col-sm-12 .field-name-body a:focus,
 .node.node-webform .row .col-sm-6 .field-name-body a:focus {
-  color: #000;
+  color: #E9A665;
   text-decoration: none;
   background: none;
 }
@@ -9867,12 +9873,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
   font-family: 'MaisonNeueBookItalic';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-webform .row .col-sm-12 .field-name-body pre,
   .node.node-webform .row .col-sm-6 .field-name-body pre,
   .node.node-webform .row .col-sm-12 .field-name-body address,
   .node.node-webform .row .col-sm-6 .field-name-body address {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -9880,7 +9886,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-webform .row .col-sm-6 .field-name-body pre,
   .node.node-webform .row .col-sm-12 .field-name-body address,
   .node.node-webform .row .col-sm-6 .field-name-body address {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -9900,16 +9906,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
   font-family: 'MaisonNeueBook';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-webform .row .col-sm-12 .field-name-body strong,
   .node.node-webform .row .col-sm-6 .field-name-body strong {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-webform .row .col-sm-12 .field-name-body strong,
   .node.node-webform .row .col-sm-6 .field-name-body strong {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -9921,7 +9927,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-12 .field-name-body hr,
 .node.node-webform .row .col-sm-6 .field-name-body hr {
   border: 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000;
   background: none;
 }
 .node.node-webform .row .col-sm-12 .field-name-body img,
@@ -9958,130 +9964,155 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 /*
  *  Node call2action component
  * --------------------------------------------------*/
-.node.node-call2action .row .col-sm-12 .field-name-title .field-item h2 {
+.node.node-call2action > .row > .col-sm-12 {
+  position: relative;
+  padding-bottom: 120px;
+}
+.node.node-call2action > .row > .col-sm-12 .field-name-title {
+  margin: 0 0 10px;
+}
+.node.node-call2action > .row > .col-sm-12 .field-name-title .field-item h2 {
+  margin: 0;
+  padding-top: 10px;
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
-  .node.node-call2action .row .col-sm-12 .field-name-title .field-item h2 {
+@media screen and (min-width: 40em) {
+  .node.node-call2action > .row > .col-sm-12 .field-name-title .field-item h2 {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-call2action .row .col-sm-12 .field-name-title .field-item h2 {
+  .node.node-call2action > .row > .col-sm-12 .field-name-title .field-item h2 {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-call2action .row .col-sm-12 .field-name-title .field-item h2 {
+  .node.node-call2action > .row > .col-sm-12 .field-name-title .field-item h2 {
     font-size: 24px;
   }
 }
-.node.node-call2action .row .col-sm-12 .field-name-field-subtitle .field-item {
+.node.node-call2action > .row > .col-sm-12 .field-name-field-subtitle {
+  margin: 0 0 10px;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid #5f5e5e;
+}
+.node.node-call2action > .row > .col-sm-12 .field-name-field-subtitle .field-item {
   font-family: 'MaisonNeueBook';
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 43.2em) {
-  .node.node-call2action .row .col-sm-12 .field-name-field-subtitle .field-item {
-    font-size: 2.60416667vw;
+@media screen and (min-width: 42.666666666666664em) {
+  .node.node-call2action > .row > .col-sm-12 .field-name-field-subtitle .field-item {
+    font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-call2action .row .col-sm-12 .field-name-field-subtitle .field-item {
-    font-size: 20px;
+  .node.node-call2action > .row > .col-sm-12 .field-name-field-subtitle .field-item {
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-call2action .row .col-sm-12 .field-name-field-subtitle .field-item {
-    font-size: 20px;
+  .node.node-call2action > .row > .col-sm-12 .field-name-field-subtitle .field-item {
+    font-size: 18px;
   }
 }
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item h1,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item h2,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item h3,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-title {
+.node.node-call2action > .row > .col-sm-12 .field-name-field-image {
+  margin: 0 0 10px;
+}
+.node.node-call2action > .row > .col-sm-12 .field-name-field-image .field-item img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+.node.node-call2action > .row > .col-sm-12 .field-name-body {
+  margin: 0 0 10px;
+}
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h1,
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h2,
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h3,
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
   margin: 10px auto 20px;
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h1,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h2,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h3,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-title {
+@media screen and (min-width: 40em) {
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h1,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h2,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h3,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-title {
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h1,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h2,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h3,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-title {
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
     font-size: 24px;
   }
 }
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item h4,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item h5,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item h6,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h4,
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h5,
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h6,
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
   margin: 10px auto;
   font-family: 'MaisonNeueBook';
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 43.2em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h4,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h5,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h6,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
-    font-size: 2.60416667vw;
+@media screen and (min-width: 42.666666666666664em) {
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h4,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h5,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h6,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
-    font-size: 20px;
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h4,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h5,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item h6,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
-    font-size: 20px;
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 18px;
   }
 }
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item p,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item tbody td {
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item p,
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item tbody td {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
@@ -10096,25 +10127,25 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -o-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (min-width: 42.35294117647059em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item p,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item tbody td {
-    font-size: 2.21354167vw;
+@media screen and (min-width: 45em) {
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item tbody td {
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item p,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item tbody td {
-    font-size: 17px;
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item tbody td {
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item p,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item tbody td {
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item tbody td {
     font-size: 17px;
   }
 }
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item a {
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
   letter-spacing: normal;
@@ -10122,29 +10153,29 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 42.35294117647059em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item a {
-    font-size: 2.21354167vw;
+@media screen and (min-width: 45em) {
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item a {
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item a {
-    font-size: 17px;
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item a {
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item a {
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item a {
     font-size: 17px;
   }
 }
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item a:hover,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item a:focus {
-  color: #000;
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item a:hover,
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item a:focus {
+  color: #E9A665;
   text-decoration: none;
   background: none;
 }
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item pre,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item address {
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item pre,
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
   letter-spacing: normal;
@@ -10153,25 +10184,25 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
   font-family: 'MaisonNeueBookItalic';
 }
-@media screen and (min-width: 42.35294117647059em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item pre,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item address {
-    font-size: 2.21354167vw;
+@media screen and (min-width: 45em) {
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item address {
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item pre,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item address {
-    font-size: 17px;
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item address {
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item pre,
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item address {
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item address {
     font-size: 17px;
   }
 }
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item strong {
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item strong {
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -10179,27 +10210,27 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
   font-family: 'MaisonNeueBook';
 }
-@media screen and (min-width: 42.35294117647059em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item strong {
-    font-size: 2.21354167vw;
+@media screen and (min-width: 45em) {
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item strong {
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item strong {
-    font-size: 17px;
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item strong {
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-call2action .row .col-sm-12 .field-name-body .field-item strong {
+  .node.node-call2action > .row > .col-sm-12 .field-name-body .field-item strong {
     font-size: 17px;
   }
 }
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item hr {
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item hr {
   border: 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000;
   background: none;
 }
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item img {
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item img {
   display: block;
   overflow: hidden;
   margin: 20px auto;
@@ -10207,10 +10238,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   max-width: 100%;
   height: auto;
 }
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item embed,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item video,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item audio,
-.node.node-call2action .row .col-sm-12 .field-name-body .field-item iframe {
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item embed,
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item video,
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item audio,
+.node.node-call2action > .row > .col-sm-12 .field-name-body .field-item iframe {
   display: block;
   overflow: hidden;
   margin: 20px auto;
@@ -10219,6 +10250,186 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   max-width: 100%;
   height: auto;
   min-height: 350px;
+}
+.node.node-call2action > .row > .col-sm-12 .field-name-field-block {
+  margin: 0 0 10px;
+}
+.node.node-call2action.call2action-rentals {
+  border-top: 1px solid #958AD8;
+}
+.node.node-call2action.call2action-rentals > .row > .col-sm-12 .field-name-field-link {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 0;
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+  border-top: 1px solid #958AD8;
+}
+.node.node-call2action.call2action-rentals > .row > .col-sm-12 .field-name-field-link .field-items {
+  cursor: pointer;
+  display: inline-block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid #958AD8;
+}
+.views-row-odd .node.node-call2action.call2action-rentals > .row > .col-sm-12 .field-name-field-link .field-items {
+  -webkit-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+.views-row-even .node.node-call2action.call2action-rentals > .row > .col-sm-12 .field-name-field-link .field-items {
+  -webkit-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+.node.node-call2action.call2action-rentals > .row > .col-sm-12 .field-name-field-link .field-items .field-item {
+  display: inline-block;
+  margin: 2px;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #958AD8;
+}
+.node.node-call2action.call2action-rentals > .row > .col-sm-12 .field-name-field-link .field-items .field-item a,
+.node.node-call2action.call2action-rentals > .row > .col-sm-12 .field-name-field-link .field-items .field-item .field-action {
+  display: block;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+.node.node-call2action.call2action-artculture {
+  border-top: 1px solid #E9A665;
+}
+.node.node-call2action.call2action-artculture > .row > .col-sm-12 .field-name-field-link {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 0;
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+  border-top: 1px solid #E9A665;
+}
+.node.node-call2action.call2action-artculture > .row > .col-sm-12 .field-name-field-link .field-items {
+  cursor: pointer;
+  display: inline-block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid #E9A665;
+}
+.views-row-odd .node.node-call2action.call2action-artculture > .row > .col-sm-12 .field-name-field-link .field-items {
+  -webkit-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+.views-row-even .node.node-call2action.call2action-artculture > .row > .col-sm-12 .field-name-field-link .field-items {
+  -webkit-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+.node.node-call2action.call2action-artculture > .row > .col-sm-12 .field-name-field-link .field-items .field-item {
+  display: inline-block;
+  margin: 2px;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #E9A665;
+}
+.node.node-call2action.call2action-artculture > .row > .col-sm-12 .field-name-field-link .field-items .field-item a,
+.node.node-call2action.call2action-artculture > .row > .col-sm-12 .field-name-field-link .field-items .field-item .field-action {
+  display: block;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+.node.node-call2action.call2action-about {
+  border-top: 1px solid #6EA39E;
+}
+.node.node-call2action.call2action-about > .row > .col-sm-12 .field-name-field-link {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 0;
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+  border-top: 1px solid #6EA39E;
+}
+.node.node-call2action.call2action-about > .row > .col-sm-12 .field-name-field-link .field-items {
+  cursor: pointer;
+  display: inline-block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid #6EA39E;
+}
+.views-row-odd .node.node-call2action.call2action-about > .row > .col-sm-12 .field-name-field-link .field-items {
+  -webkit-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+.views-row-even .node.node-call2action.call2action-about > .row > .col-sm-12 .field-name-field-link .field-items {
+  -webkit-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+.node.node-call2action.call2action-about > .row > .col-sm-12 .field-name-field-link .field-items .field-item {
+  display: inline-block;
+  margin: 2px;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #6EA39E;
+}
+.node.node-call2action.call2action-about > .row > .col-sm-12 .field-name-field-link .field-items .field-item a,
+.node.node-call2action.call2action-about > .row > .col-sm-12 .field-name-field-link .field-items .field-item .field-action {
+  display: block;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
 }
 /*
  *  Node instagram component
@@ -10242,14 +10453,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-title h2 {
   margin-top: 0;
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-title h2 {
     font-size: 3.125vw;
   }
@@ -10270,14 +10481,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body .pxl-title {
   margin: 10px auto 20px;
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h1,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h2,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h3,
@@ -10307,19 +10518,19 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body .pxl-subtitle {
   margin: 10px auto;
   font-family: 'MaisonNeueBook';
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 43.2em) {
+@media screen and (min-width: 42.666666666666664em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h4,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h5,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h6,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body .pxl-subtitle {
-    font-size: 2.60416667vw;
+    font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10327,7 +10538,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h5,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h6,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10335,7 +10546,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h5,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h6,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body p,
@@ -10354,16 +10565,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -o-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body p,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body tbody td {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body p,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body tbody td {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10380,14 +10591,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body a {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body a {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10397,7 +10608,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body a:hover,
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body a:focus {
-  color: #000;
+  color: #E9A665;
   text-decoration: none;
   background: none;
 }
@@ -10411,16 +10622,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
   font-family: 'MaisonNeueBookItalic';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body pre,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body address {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body pre,
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body address {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10437,14 +10648,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
   font-family: 'MaisonNeueBook';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body strong {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body strong {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10454,7 +10665,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body hr {
   border: 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000;
   background: none;
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body img {
@@ -10507,14 +10718,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-title h2,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-title h2 {
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-title h2,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-title h2 {
     font-size: 3.125vw;
@@ -10577,14 +10788,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body .pxl-title {
   margin: 10px auto 20px;
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h1,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h1,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h2,
@@ -10630,14 +10841,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body .pxl-subtitle {
   margin: 10px auto;
   font-family: 'MaisonNeueBook';
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 43.2em) {
+@media screen and (min-width: 42.666666666666664em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h4,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h4,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h5,
@@ -10646,7 +10857,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h6,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body .pxl-subtitle,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body .pxl-subtitle {
-    font-size: 2.60416667vw;
+    font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10658,7 +10869,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h6,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body .pxl-subtitle,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10670,7 +10881,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body h6,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body .pxl-subtitle,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body p,
@@ -10691,12 +10902,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -o-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body p,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body p,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body tbody td,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body tbody td {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10704,7 +10915,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body p,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body tbody td,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body tbody td {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10724,16 +10935,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body a,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body a {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body a,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body a {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10746,7 +10957,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body a:hover,
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body a:focus,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body a:focus {
-  color: #000;
+  color: #E9A665;
   text-decoration: none;
   background: none;
 }
@@ -10762,12 +10973,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
   font-family: 'MaisonNeueBookItalic';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body pre,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body pre,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body address,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body address {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10775,7 +10986,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body pre,
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body address,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body address {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10795,16 +11006,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
   font-family: 'MaisonNeueBook';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body strong,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body strong {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body strong,
   .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body strong {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10816,7 +11027,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body hr,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body hr {
   border: 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000;
   background: none;
 }
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body img,
@@ -10853,6 +11064,359 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 /*
  *  Node apartment component
  * --------------------------------------------------*/
+.node.node-apartment.view-mode-teaser .row .col-sm-12 {
+  position: relative;
+  padding-bottom: 120px;
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .group-header {
+  position: relative;
+  margin: 0 0 10px;
+  padding: 10px 0;
+  height: 90px;
+  border-top: 1px solid #958AD8;
+  border-bottom: 0.5px solid #5f5e5e;
+}
+@media screen and (min-width: 48em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .group-header {
+    height: 110px;
+  }
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .group-header .field-name-title h2 {
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 40em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .group-header .field-name-title h2 {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .group-header .field-name-title h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .group-header .field-name-title h2 {
+    font-size: 24px;
+  }
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price .field-item {
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+  padding-bottom: 10px;
+}
+@media screen and (min-width: 42.666666666666664em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price .field-item {
+    font-size: 2.34375vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price .field-item {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price .field-item {
+    font-size: 18px;
+  }
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-field-images {
+  margin: 0 0 10px;
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-field-images .field-item img {
+  width: 100%;
+  height: auto;
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item {
+  margin: 0 0 10px;
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h1,
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h2,
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h3,
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'MaisonNeueBook';
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 40em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h1,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h2,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h3,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h1,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h2,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h3,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h1,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h2,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h3,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 24px;
+  }
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h4,
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h5,
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h6,
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 42.666666666666664em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h4,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h5,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h6,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 2.34375vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h4,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h5,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h6,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h4,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h5,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h6,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 18px;
+  }
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item p,
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item tbody td {
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+@media screen and (min-width: 45em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item p,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item tbody td {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item p,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item tbody td {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item p,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item tbody td {
+    font-size: 17px;
+  }
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 45em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a {
+    font-size: 17px;
+  }
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a:hover,
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a:focus {
+  color: #E9A665;
+  text-decoration: none;
+  background: none;
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item pre,
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item address {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBookItalic';
+}
+@media screen and (min-width: 45em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item pre,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item address {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item pre,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item address {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item pre,
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item address {
+    font-size: 17px;
+  }
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item strong {
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBook';
+}
+@media screen and (min-width: 45em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item strong {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item strong {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item strong {
+    font-size: 17px;
+  }
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item hr {
+  border: 0;
+  border-bottom: 2px solid #000;
+  background: none;
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item img {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item embed,
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item video,
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item audio,
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-body .field-item iframe {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 15px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 350px;
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 0;
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+  border-top: 1px solid #958AD8;
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items {
+  cursor: pointer;
+  display: inline-block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid #958AD8;
+}
+.views-row-odd .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items {
+  -webkit-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+.views-row-even .node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items {
+  -webkit-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items .field-item {
+  display: inline-block;
+  margin: 2px;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #958AD8;
+}
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items .field-item a,
+.node.node-apartment.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items .field-item .field-action {
+  display: block;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
 .node.node-apartment.view-mode-full,
 .node.node-apartment.view-mode-default {
   padding: 0;
@@ -10898,7 +11462,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 50px;
   padding: 10px 0 0;
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
@@ -10906,7 +11470,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
   border-top: 1px solid #958AD8;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-title h2,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-title h2 {
     font-size: 3.125vw;
@@ -10926,7 +11490,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   padding: 10px 0 0;
   border-top: 1px solid #5f5e5e;
 }
@@ -10940,14 +11504,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item .pxl-title {
   margin: 10px auto 20px;
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h1,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h1,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h2,
@@ -10993,14 +11557,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
   margin: 10px auto;
   font-family: 'MaisonNeueBook';
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 43.2em) {
+@media screen and (min-width: 42.666666666666664em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h4,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h4,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item h5,
@@ -11009,7 +11573,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h6,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item .pxl-subtitle,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
-    font-size: 2.60416667vw;
+    font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11021,7 +11585,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h6,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item .pxl-subtitle,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11033,7 +11597,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item h6,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item .pxl-subtitle,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item p,
@@ -11054,12 +11618,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -o-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item p,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item p,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item tbody td,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item tbody td {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11067,7 +11631,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item p,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item tbody td,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item tbody td {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11087,16 +11651,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item a,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item a {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item a,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item a {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11109,7 +11673,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item a:hover,
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item a:focus,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item a:focus {
-  color: #000;
+  color: #E9A665;
   text-decoration: none;
   background: none;
 }
@@ -11125,12 +11689,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
   font-family: 'MaisonNeueBookItalic';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item pre,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item pre,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item address,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item address {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11138,7 +11702,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item pre,
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item address,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item address {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11158,16 +11722,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
   font-family: 'MaisonNeueBook';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item strong,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item strong {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item strong,
   .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item strong {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11179,7 +11743,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item hr,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-body .field-item hr {
   border: 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000;
   background: none;
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-body .field-item img,
@@ -11324,7 +11888,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -webkit-transition: opacity ease 0.5s;
   -o-transition: opacity ease 0.5s;
   transition: opacity ease 0.5s;
-  opacity: 0;
+  opacity: 1.0;
   z-index: 2;
 }
 @media screen and (min-width: 32em) {
@@ -11362,9 +11926,11 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   transform: translateY(-50%);
   left: 5%;
 }
-.node.node-apartment.view-mode-full .row .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left:hover,
-.node.node-apartment.view-mode-default .row .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left:hover {
-  opacity: 1.0;
+.node.node-apartment.view-mode-full .row .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left .fa:before,
+.node.node-apartment.view-mode-default .row .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left .fa:before {
+  font-family: 'MaisonNeueBook';
+  font-size: 25px;
+  content: '\2190';
 }
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right {
@@ -11383,6 +11949,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   transform: translateY(-50%);
   right: 5%;
 }
+.node.node-apartment.view-mode-full .row .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right .fa:before,
+.node.node-apartment.view-mode-default .row .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right .fa:before {
+  font-family: 'MaisonNeueBook';
+  font-size: 25px;
+  content: '\2192';
+}
 .node.node-apartment.view-mode-full .row .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right:hover,
 .node.node-apartment.view-mode-default .row .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right:hover {
   opacity: 1.0;
@@ -11393,7 +11965,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-apartment.view-mode-full .row .col-sm-4 .group-price,
 .node.node-apartment.view-mode-default .row .col-sm-4 .group-price {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   padding: 10px;
   border: 1px solid #958AD8;
 }
@@ -11404,14 +11976,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price .field-item,
 .node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price .field-item {
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price .field-item,
   .node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price .field-item {
     font-size: 3.125vw;
@@ -11443,16 +12015,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price-tag .field-item,
   .node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price-tag .field-item {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full .row .col-sm-4 .group-price .field-name-field-price-tag .field-item,
   .node.node-apartment.view-mode-default .row .col-sm-4 .group-price .field-name-field-price-tag .field-item {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11463,11 +12035,11 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-apartment.view-mode-full .row .col-sm-4 .field-name-availability-block,
 .node.node-apartment.view-mode-default .row .col-sm-4 .field-name-availability-block {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
 }
 .node.node-apartment.view-mode-full .row .col-sm-4 .field-name-field-amenities,
 .node.node-apartment.view-mode-default .row .col-sm-4 .field-name-field-amenities {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
 }
 .node.node-apartment.view-mode-full .row .col-sm-4 .field-name-field-amenities .field-item ul,
 .node.node-apartment.view-mode-default .row .col-sm-4 .field-name-field-amenities .field-item ul {
@@ -11477,6 +12049,417 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 /*
  *  Node locality component
  * --------------------------------------------------*/
+.node.node-locality.view-mode-teaser .row .col-sm-12 {
+  position: relative;
+  padding-bottom: 120px;
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .group-header {
+  position: relative;
+  margin: 0 0 10px;
+  padding: 10px 0;
+  height: 70px;
+  border-top: 1px solid #958AD8;
+  border-bottom: 0.5px solid #5f5e5e;
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header {
+    height: 90px;
+  }
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-title h2 {
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 40em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-title h2 {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-title h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-title h2 {
+    font-size: 24px;
+  }
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price-tag .field-item {
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+  padding-bottom: 10px;
+}
+@media screen and (min-width: 42.666666666666664em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price-tag .field-item {
+    font-size: 2.34375vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price-tag .field-item {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price-tag .field-item {
+    font-size: 18px;
+  }
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-images {
+  margin: 0 0 10px;
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-images .field-item img {
+  width: 100%;
+  height: auto;
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item {
+  margin: 0 0 10px;
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h1,
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h2,
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h3,
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'MaisonNeueBook';
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 40em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h1,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h2,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h3,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h1,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h2,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h3,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h1,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h2,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h3,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 24px;
+  }
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h4,
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h5,
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h6,
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 42.666666666666664em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h4,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h5,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h6,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 2.34375vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h4,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h5,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h6,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h4,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h5,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h6,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 18px;
+  }
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item p,
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item tbody td {
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+@media screen and (min-width: 45em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item p,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item tbody td {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item p,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item tbody td {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item p,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item tbody td {
+    font-size: 17px;
+  }
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 45em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a {
+    font-size: 17px;
+  }
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a:hover,
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a:focus {
+  color: #E9A665;
+  text-decoration: none;
+  background: none;
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item pre,
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item address {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBookItalic';
+}
+@media screen and (min-width: 45em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item pre,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item address {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item pre,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item address {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item pre,
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item address {
+    font-size: 17px;
+  }
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item strong {
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBook';
+}
+@media screen and (min-width: 45em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item strong {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item strong {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item strong {
+    font-size: 17px;
+  }
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item hr {
+  border: 0;
+  border-bottom: 2px solid #000;
+  background: none;
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item img {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item embed,
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item video,
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item audio,
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item iframe {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 15px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 350px;
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 0;
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+  border-top: 1px solid #958AD8;
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items {
+  cursor: pointer;
+  display: inline-block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid #958AD8;
+}
+.views-row-odd .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items {
+  -webkit-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+.views-row-even .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items {
+  -webkit-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items .field-item {
+  display: inline-block;
+  margin: 2px;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #958AD8;
+}
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items .field-item a,
+.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items .field-item .field-action {
+  display: block;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+/*
+ *  Node footer component
+ * --------------------------------------------------*/
+.node.node-footer > .row > div.col-sm-12 .field-name-body {
+  margin: 10px 0;
+}
+.node.node-footer > .row > div.col-sm-12 .field-name-body .field-item {
+  text-align: center;
+}
+.node.node-footer > .row > div.col-sm-12 .field-name-body .field-item p {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  font-size: 18px;
+}
+.node.node-footer > .row > div.col-sm-12 .field-name-body .field-item p:first-child {
+  padding-right: 10px;
+}
+.node.node-footer > .row > div.col-sm-12 .field-name-field-links .field-items {
+  text-align: center;
+}
+.node.node-footer > .row > div.col-sm-12 .field-name-field-links .field-items .field-item {
+  display: inline-block;
+  padding: 0 5px;
+}
+.node.node-footer > .row > div.col-sm-12 .field-name-field-links .field-items .field-item a {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 45em) {
+  .node.node-footer > .row > div.col-sm-12 .field-name-field-links .field-items .field-item a {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-footer > .row > div.col-sm-12 .field-name-field-links .field-items .field-item a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-footer > .row > div.col-sm-12 .field-name-field-links .field-items .field-item a {
+    font-size: 17px;
+  }
+}
+.node.node-footer > .row > div.col-sm-12 .field-name-field-links .field-items .field-item a:before {
+  content: '\2192';
+  padding-right: 5px;
+}
+.node.node-footer > .row > div.col-sm-12 .field-name-field-links .field-items .field-item a.active,
+.node.node-footer > .row > div.col-sm-12 .field-name-field-links .field-items .field-item a:hover {
+  color: #E9A665;
+  text-decoration: none;
+}
 /*
  *  User Login form component
  *  (see inc/login.inc for login form alteration)
@@ -11706,7 +12689,7 @@ form#user-login {
 .user-profile .row .col-sm-4 .field-name-field-website .field-item a:hover,
 .user-profile .row .col-sm-8 .field-name-field-website .field-item a:hover,
 .user-profile .row .col-sm-12 .field-name-field-website .field-item a:hover {
-  color: #fff;
+  color: #000;
   text-decoration: none;
 }
 .user-profile .row .col-sm-4 .field-name-field-image,
@@ -11728,14 +12711,14 @@ form#user-login {
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-title {
   margin: 10px auto 20px;
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h1,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h1,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h1,
@@ -11797,14 +12780,14 @@ form#user-login {
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-subtitle {
   margin: 10px auto;
   font-family: 'MaisonNeueBook';
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 43.2em) {
+@media screen and (min-width: 42.666666666666664em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h4,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h4,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h4,
@@ -11817,7 +12800,7 @@ form#user-login {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-subtitle,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-subtitle,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-subtitle {
-    font-size: 2.60416667vw;
+    font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11833,7 +12816,7 @@ form#user-login {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-subtitle,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-subtitle,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11849,7 +12832,7 @@ form#user-login {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-subtitle,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-subtitle,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item p,
@@ -11872,14 +12855,14 @@ form#user-login {
   -o-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item p,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item p,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item p,
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item tbody td,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item tbody td,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item tbody td {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11889,7 +12872,7 @@ form#user-login {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item tbody td,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item tbody td,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item tbody td {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11912,18 +12895,18 @@ form#user-login {
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item a,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item a,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item a {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item a,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item a,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item a {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11939,7 +12922,7 @@ form#user-login {
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item a:focus,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item a:focus,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item a:focus {
-  color: #000;
+  color: #E9A665;
   text-decoration: none;
   background: none;
 }
@@ -11957,14 +12940,14 @@ form#user-login {
   color: #222;
   font-family: 'MaisonNeueBookItalic';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item pre,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item pre,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item pre,
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item address,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item address,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item address {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11974,7 +12957,7 @@ form#user-login {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item address,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item address,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item address {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11997,18 +12980,18 @@ form#user-login {
   color: #222;
   font-family: 'MaisonNeueBook';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item strong,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item strong,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item strong {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item strong,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item strong,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item strong {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -12022,7 +13005,7 @@ form#user-login {
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item hr,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item hr {
   border: 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000;
   background: none;
 }
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item img,
@@ -12092,14 +13075,14 @@ form#user-profile-form div #edit-account .panel-heading {
 form#user-profile-form div fieldset.panel .panel-heading .panel-title,
 form#user-profile-form div #edit-account .panel-heading .panel-title {
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   form#user-profile-form div fieldset.panel .panel-heading .panel-title,
   form#user-profile-form div #edit-account .panel-heading .panel-title {
     font-size: 3.125vw;
@@ -12389,14 +13372,14 @@ form#user-profile-form div .form-actions .form-submit .icon {
  * --------------------------------------------------*/
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-title .field-item {
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-title .field-item {
     font-size: 3.125vw;
   }
@@ -12417,14 +13400,14 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item .pxl-title {
   margin: 10px auto 20px;
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h1,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h2,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h3,
@@ -12454,19 +13437,19 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item .pxl-subtitle {
   margin: 10px auto;
   font-family: 'MaisonNeueBook';
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 43.2em) {
+@media screen and (min-width: 42.666666666666664em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h4,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h5,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h6,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item .pxl-subtitle {
-    font-size: 2.60416667vw;
+    font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -12474,7 +13457,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h5,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h6,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -12482,7 +13465,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h5,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h6,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item .pxl-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item p,
@@ -12501,16 +13484,16 @@ form#user-profile-form div .form-actions .form-submit .icon {
   -o-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item p,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item tbody td {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item p,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item tbody td {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -12527,14 +13510,14 @@ form#user-profile-form div .form-actions .form-submit .icon {
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item a {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item a {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -12544,7 +13527,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item a:hover,
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item a:focus {
-  color: #000;
+  color: #E9A665;
   text-decoration: none;
   background: none;
 }
@@ -12558,16 +13541,16 @@ form#user-profile-form div .form-actions .form-submit .icon {
   color: #222;
   font-family: 'MaisonNeueBookItalic';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item pre,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item address {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item pre,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item address {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -12584,14 +13567,14 @@ form#user-profile-form div .form-actions .form-submit .icon {
   color: #222;
   font-family: 'MaisonNeueBook';
 }
-@media screen and (min-width: 42.35294117647059em) {
+@media screen and (min-width: 45em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item strong {
-    font-size: 2.21354167vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item strong {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -12601,7 +13584,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item hr {
   border: 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000;
   background: none;
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item img {
@@ -12629,15 +13612,16 @@ form#user-profile-form div .form-actions .form-submit .icon {
  *  Block paragraph component
  * --------------------------------------------------*/
 .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
+  margin: 0 0 30px;
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
     font-size: 3.125vw;
   }
@@ -12652,19 +13636,28 @@ form#user-profile-form div .form-actions .form-submit .icon {
     font-size: 24px;
   }
 }
+.page-rentals .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
+  color: #958AD8;
+}
+.page-artculture .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
+  color: #E9A665;
+}
+.page-about .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
+  color: #6EA39E;
+}
 /*
  *  Image paragraph component
  * --------------------------------------------------*/
 .entity-paragraphs-item.paragraphs-item-image-paragraph .content .field-name-field-title .field-item {
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .entity-paragraphs-item.paragraphs-item-image-paragraph .content .field-name-field-title .field-item {
     font-size: 3.125vw;
   }
@@ -12688,14 +13681,14 @@ form#user-profile-form div .form-actions .form-submit .icon {
  * --------------------------------------------------*/
 .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-title .field-item {
   font-family: 'MaisonNeueBook';
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 44em) {
+@media screen and (min-width: 40em) {
   .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-title .field-item {
     font-size: 3.125vw;
   }
@@ -12809,7 +13802,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   -webkit-transition: opacity ease 0.5s;
   -o-transition: opacity ease 0.5s;
   transition: opacity ease 0.5s;
-  opacity: 0;
+  opacity: 1.0;
   z-index: 2;
 }
 @media screen and (min-width: 32em) {
@@ -12842,8 +13835,10 @@ form#user-profile-form div .form-actions .form-submit .icon {
   transform: translateY(-50%);
   left: 5%;
 }
-.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.left:hover {
-  opacity: 1.0;
+.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.left .fa:before {
+  font-family: 'MaisonNeueBook';
+  font-size: 25px;
+  content: '\2190';
 }
 .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.right {
   right: 0;
@@ -12860,21 +13855,75 @@ form#user-profile-form div .form-actions .form-submit .icon {
   transform: translateY(-50%);
   right: 5%;
 }
+.entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.right .fa:before {
+  font-family: 'MaisonNeueBook';
+  font-size: 25px;
+  content: '\2192';
+}
 .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.right:hover {
   opacity: 1.0;
+}
+@media screen and (min-width: 50em) {
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control {
+    text-shadow: none;
+    color: #000;
+    opacity: 1.0;
+  }
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.left .fa {
+    left: -10%;
+  }
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.right .fa {
+    right: -10%;
+  }
+}
+@media screen and (min-width: 56em) {
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.left .fa {
+    left: -20%;
+  }
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.right .fa {
+    right: -20%;
+  }
+}
+@media screen and (min-width: 64em) {
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.left .fa {
+    left: -10%;
+  }
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.right .fa {
+    right: -10%;
+  }
+}
+@media screen and (min-width: 72em) {
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.left .fa {
+    left: -20%;
+  }
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.right .fa {
+    right: -20%;
+  }
+}
+@media screen and (min-width: 80em) {
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.left .fa {
+    left: -10%;
+  }
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.right .fa {
+    right: -10%;
+  }
+}
+@media screen and (min-width: 88em) {
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.left .fa {
+    left: -20%;
+  }
+  .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-images .field-items .carousel > a.carousel-control.right .fa {
+    right: -20%;
+  }
 }
 /*
  *  Proximity view component
  * --------------------------------------------------*/
 .view.view-proximity {
-  margin: 0 auto;
   width: 100%;
 }
 .view.view-proximity .view-content {
   padding: 0;
-}
-.view.view-proximity .view-content > .pe-container {
-  width: 100%;
 }
 .view.view-proximity .view-content > .pe-container .grid-sizer,
 .view.view-proximity .view-content > .pe-container .pe-item {
@@ -13091,73 +14140,23 @@ form#user-profile-form div .form-actions .form-submit .icon {
   color: #222;
   text-decoration: none;
 }
-.view.view-proximity ul.pagination li:hover a,
-.view.view-proximity ul.pagination li:focus a,
-.view.view-proximity ul.pagination li.active a,
-.view.view-proximity ul.pagination li:hover span,
-.view.view-proximity ul.pagination li:focus span,
-.view.view-proximity ul.pagination li.active span {
-  font-family: 'MaisonNeueBook';
-  text-decoration: none;
-  font-size: 20px;
-  background: none;
-}
-.view.view-proximity ul.pagination li.pager-first:hover a,
-.view.view-proximity ul.pagination li.pager-last:hover a,
-.view.view-proximity ul.pagination li.prev:hover a,
-.view.view-proximity ul.pagination li.pager-previous:hover a,
-.view.view-proximity ul.pagination li.next:hover a,
-.view.view-proximity ul.pagination li.pager-next:hover a,
-.view.view-proximity ul.pagination li.pager-first:focus a,
-.view.view-proximity ul.pagination li.pager-last:focus a,
-.view.view-proximity ul.pagination li.prev:focus a,
-.view.view-proximity ul.pagination li.pager-previous:focus a,
-.view.view-proximity ul.pagination li.next:focus a,
-.view.view-proximity ul.pagination li.pager-next:focus a,
-.view.view-proximity ul.pagination li.pager-first.active a,
-.view.view-proximity ul.pagination li.pager-last.active a,
-.view.view-proximity ul.pagination li.prev.active a,
-.view.view-proximity ul.pagination li.pager-previous.active a,
-.view.view-proximity ul.pagination li.next.active a,
-.view.view-proximity ul.pagination li.pager-next.active a,
-.view.view-proximity ul.pagination li.pager-first:hover span,
-.view.view-proximity ul.pagination li.pager-last:hover span,
-.view.view-proximity ul.pagination li.prev:hover span,
-.view.view-proximity ul.pagination li.pager-previous:hover span,
-.view.view-proximity ul.pagination li.next:hover span,
-.view.view-proximity ul.pagination li.pager-next:hover span,
-.view.view-proximity ul.pagination li.pager-first:focus span,
-.view.view-proximity ul.pagination li.pager-last:focus span,
-.view.view-proximity ul.pagination li.prev:focus span,
-.view.view-proximity ul.pagination li.pager-previous:focus span,
-.view.view-proximity ul.pagination li.next:focus span,
-.view.view-proximity ul.pagination li.pager-next:focus span,
-.view.view-proximity ul.pagination li.pager-first.active span,
-.view.view-proximity ul.pagination li.pager-last.active span,
-.view.view-proximity ul.pagination li.prev.active span,
-.view.view-proximity ul.pagination li.pager-previous.active span,
-.view.view-proximity ul.pagination li.next.active span,
-.view.view-proximity ul.pagination li.pager-next.active span {
-  font-family: 'MaisonNeueBook';
-  font-size: 18px;
-}
 .view.view-proximity .pager.pager--infinite-scroll .pager__item a {
   display: inline-block;
   padding: 8px 20px 10px;
   font-family: 'MaisonNeueBook';
   font-size: 16px;
   line-height: 1;
-  color: #222;
+  color: #000;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  border: 1px solid #222;
+  border: 1px solid #000;
   background-color: #fff;
 }
 .view.view-proximity .pager.pager--infinite-scroll .pager__item a:hover,
 .view.view-proximity .pager.pager--infinite-scroll .pager__item a.active {
   color: #fff;
-  background-color: #222;
+  background-color: #000;
 }
 /*
  *  Call2action view component
@@ -13171,7 +14170,6 @@ form#user-profile-form div .form-actions .form-submit .icon {
   padding: 0;
 }
 .view.view-call2action > .view-content > .views-row {
-  cursor: pointer;
   display: inline-block;
   vertical-align: top;
   margin: 0 -2px;
@@ -13193,11 +14191,239 @@ form#user-profile-form div .form-actions .form-submit .icon {
 /*
  *  Apartment view component
  * --------------------------------------------------*/
+.view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a {
+  text-decoration: none;
+  color: #958AD8;
+  outline: none;
+}
+.view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a.active,
+.view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a:hover,
+.view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a:focus {
+  color: #513fbd;
+  text-decoration: none;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .grid-sizer,
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .pe-item {
+  width: 100%;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .gutter-sizer {
+  width: 0;
+}
+@media screen and (min-width: 30em) {
+  .view.view-apartements.view-display-id-block_page .view-content > .pe-container .grid-sizer,
+  .view.view-apartements.view-display-id-block_page .view-content > .pe-container .pe-item {
+    width: 48.5%;
+  }
+  .view.view-apartements.view-display-id-block_page .view-content > .pe-container .gutter-sizer {
+    width: 3%;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-apartements.view-display-id-block_page .view-content > .pe-container .grid-sizer,
+  .view.view-apartements.view-display-id-block_page .view-content > .pe-container .pe-item {
+    width: 31.333333%;
+  }
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .pe-item {
+  display: block;
+  overflow: visible;
+  margin: 0 0 6% !important;
+  opacity: 1.0;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+@media screen and (min-width: 30em) {
+  .view.view-apartements.view-display-id-block_page .view-content > .pe-container .pe-item {
+    margin: 0 0 3% !important;
+  }
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .pe-item.shown {
+  opacity: 1.0;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .pe-item.pe-item-ajax,
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .pe-item.pe-item-no-ajax,
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .pe-item.pe-item-linked {
+  cursor: pointer;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height {
+  height: 100%;
+  overflow-y: hidden;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog {
+  height: 100%;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content {
+  height: 100%;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-header,
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-footer {
+  position: relative;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-header .body-fading,
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-footer .body-fading {
+  display: block;
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  height: 1px;
+  z-index: 10;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-header .body-fading.body-fading-top,
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-footer .body-fading.body-fading-top {
+  bottom: -1px;
+  background-image: -webkit-linear-gradient(top, #aaa 0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -o-linear-gradient(top, #aaa 0%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(to bottom, #aaa 0%, rgba(0, 0, 0, 0) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffaaaaaa', endColorstr='#00000000', GradientType=0);
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-header .body-fading.body-fading-bottom,
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-footer .body-fading.body-fading-bottom {
+  top: -1px;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #aaa 100%);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #aaa 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #aaa 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#ffaaaaaa', GradientType=0);
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-body {
+  overflow-y: auto;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-backdrop.in {
+  opacity: 0.7;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog {
+  margin: 0 auto;
+  width: 100%;
+}
+.admin-menu .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog {
+  margin: 29px auto 0;
+}
+@media screen and (min-width: 30em) {
+  .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog {
+    min-width: 480px;
+    width: 90%;
+    max-width: 690px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog {
+    width: 90%;
+    max-width: 800px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog {
+    width: 800px;
+  }
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content {
+  position: relative;
+  padding: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header {
+  padding: 0;
+  min-height: 60px;
+  border: none;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  opacity: 1.0;
+  z-index: 1;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close span {
+  padding: 0;
+  font-family: 'MaisonNeueBook';
+  font-size: 60px;
+  font-weight: normal;
+  color: #222;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header .body-fading {
+  display: none;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
+  padding: 20px 10px;
+}
+@media screen and (min-width: 30em) {
+  .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
+    padding: 20px 30px;
+  }
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer {
+  display: none;
+  padding: 10px 0;
+  border: none;
+  text-align: center;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn {
+  display: inline-block;
+  font-family: 'MaisonNeueBook';
+  color: #222;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 2px solid #222;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
+  box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn:hover {
+  color: #fff;
+  background-color: #222;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .body-fading {
+  display: none;
+}
 /*
  *  Host view component
  * --------------------------------------------------*/
+.view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-field-address {
+  margin: 0 0 10px;
+}
+.view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-field-address .field-content .name-block {
+  margin: 0 0 10px;
+}
+.view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-field-address .field-content .locality-block {
+  margin: 0 0 10px;
+}
+.view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-field-address .field-content .country {
+  margin: 0 0 10px;
+}
+.view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail {
+  margin: 0 0 10px;
+}
+.view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a {
+  text-decoration: none;
+  color: #6EA39E;
+  outline: none;
+}
+.view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a.active,
+.view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a:hover,
+.view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a:focus {
+  color: #426965;
+  text-decoration: none;
+}
 .view.view-hosts.view-display-id-block_hosts {
-  margin: 0 auto;
   width: 100%;
 }
 .view.view-hosts.view-display-id-block_hosts .view-content {
@@ -13217,6 +14443,201 @@ form#user-profile-form div .form-actions .form-submit .icon {
     padding: 0 1.5%;
     width: 50%;
   }
+}
+/*
+ *  Private function view component
+ * --------------------------------------------------*/
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .grid-sizer,
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .pe-item {
+  width: 100%;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .gutter-sizer {
+  width: 0;
+}
+@media screen and (min-width: 30em) {
+  .view.view-private-function.view-display-id-block_page .view-content > .pe-container .grid-sizer,
+  .view.view-private-function.view-display-id-block_page .view-content > .pe-container .pe-item {
+    width: 48.5%;
+  }
+  .view.view-private-function.view-display-id-block_page .view-content > .pe-container .gutter-sizer {
+    width: 3%;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-private-function.view-display-id-block_page .view-content > .pe-container .grid-sizer,
+  .view.view-private-function.view-display-id-block_page .view-content > .pe-container .pe-item {
+    width: 31.333333%;
+  }
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .pe-item {
+  display: block;
+  overflow: visible;
+  margin: 0 0 6% !important;
+  opacity: 1.0;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+@media screen and (min-width: 30em) {
+  .view.view-private-function.view-display-id-block_page .view-content > .pe-container .pe-item {
+    margin: 0 0 3% !important;
+  }
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .pe-item.shown {
+  opacity: 1.0;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .pe-item.pe-item-ajax,
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .pe-item.pe-item-no-ajax,
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .pe-item.pe-item-linked {
+  cursor: pointer;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height {
+  height: 100%;
+  overflow-y: hidden;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog {
+  height: 100%;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content {
+  height: 100%;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-header,
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-footer {
+  position: relative;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-header .body-fading,
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-footer .body-fading {
+  display: block;
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  height: 1px;
+  z-index: 10;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-header .body-fading.body-fading-top,
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-footer .body-fading.body-fading-top {
+  bottom: -1px;
+  background-image: -webkit-linear-gradient(top, #aaa 0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -o-linear-gradient(top, #aaa 0%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(to bottom, #aaa 0%, rgba(0, 0, 0, 0) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffaaaaaa', endColorstr='#00000000', GradientType=0);
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-header .body-fading.body-fading-bottom,
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-footer .body-fading.body-fading-bottom {
+  top: -1px;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #aaa 100%);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #aaa 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #aaa 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#ffaaaaaa', GradientType=0);
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal.modal-fixed-height .modal-dialog .modal-content .modal-body {
+  overflow-y: auto;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-backdrop.in {
+  opacity: 0.7;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog {
+  margin: 0 auto;
+  width: 100%;
+}
+.admin-menu .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog {
+  margin: 29px auto 0;
+}
+@media screen and (min-width: 30em) {
+  .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog {
+    min-width: 480px;
+    width: 90%;
+    max-width: 690px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog {
+    width: 90%;
+    max-width: 800px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog {
+    width: 800px;
+  }
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content {
+  position: relative;
+  padding: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header {
+  padding: 0;
+  min-height: 60px;
+  border: none;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  opacity: 1.0;
+  z-index: 1;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close span {
+  padding: 0;
+  font-family: 'MaisonNeueBook';
+  font-size: 60px;
+  font-weight: normal;
+  color: #222;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header .body-fading {
+  display: none;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
+  padding: 20px 10px;
+}
+@media screen and (min-width: 30em) {
+  .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
+    padding: 20px 30px;
+  }
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer {
+  display: none;
+  padding: 10px 0;
+  border: none;
+  text-align: center;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn {
+  display: inline-block;
+  font-family: 'MaisonNeueBook';
+  color: #222;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 2px solid #222;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
+  box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn:hover {
+  color: #fff;
+  background-color: #222;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .body-fading {
+  display: none;
 }
 /*
  *  Webform Addons component
@@ -13292,7 +14713,7 @@ form.webform-client-form fieldset.panel .panel-body fieldset.panel .panel-body f
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border-left: 2px solid #fff;
+  border-left: 2px solid #000;
 }
 form.webform-client-form fieldset.panel .panel-body .btn.btn-default {
   display: inline-block;
@@ -13304,7 +14725,7 @@ form.webform-client-form fieldset.panel .panel-body .btn.btn-default {
   letter-spacing: normal;
   text-align: left;
   text-transform: none;
-  color: #fff;
+  color: #000;
   border: none;
   background: none;
 }
@@ -13332,7 +14753,7 @@ form.webform-client-form fieldset.panel .panel-body .btn.btn-default:before {
 }
 form.webform-client-form fieldset.panel .panel-body .btn.btn-default:hover,
 form.webform-client-form fieldset.panel .panel-body .btn.btn-default:focus {
-  color: #000;
+  color: #E9A665;
 }
 form.webform-client-form fieldset.panel .panel-body [id*='webform-addmore-add']:before {
   content: '\f0fe';
@@ -13386,8 +14807,8 @@ form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.dra
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #fff;
-  background-color: #fff;
+  border: 1px solid #000;
+  background-color: #000;
   font-size: 14px;
 }
 @media screen and (min-width: 36em) {
@@ -13407,7 +14828,7 @@ form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.dra
 }
 form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.draggable td button:hover,
 form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.draggable td button:focus {
-  color: #fff;
+  color: #000;
   background: none;
 }
 form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file {
@@ -13442,8 +14863,8 @@ form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .fo
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #fff;
-  background-color: #fff;
+  border: 1px solid #000;
+  background-color: #000;
   font-size: 16px;
   z-index: 10;
 }
@@ -13464,7 +14885,7 @@ form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .fo
 }
 form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .form-managed-file .input-group-btn button:hover,
 form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .form-managed-file .input-group-btn button:focus {
-  color: #fff;
+  color: #000;
   background: none;
 }
 form.webform-client-form .webform-component {
@@ -13510,7 +14931,7 @@ form.webform-client-form .webform-component label {
   }
 }
 form.webform-client-form .webform-component label span.form-required {
-  color: #fff;
+  color: #000;
 }
 form.webform-client-form .webform-component div.description,
 form.webform-client-form .webform-component div.help-block {
@@ -13542,7 +14963,7 @@ form.webform-client-form .webform-component textarea {
   -webkit-border-radius: 0;
   border-radius: 0;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #000;
   background-color: rgba(255, 255, 255, 0);
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -13585,9 +15006,9 @@ form.webform-client-form .webform-component input.form-text:focus,
 form.webform-client-form .webform-component input.form-text:hover,
 form.webform-client-form .webform-component textarea:focus,
 form.webform-client-form .webform-component textarea:hover {
-  border: 1px solid #fff;
-  -webkit-box-shadow: 0 0 3px #fff inset;
-  box-shadow: 0 0 3px #fff inset;
+  border: 1px solid #000;
+  -webkit-box-shadow: 0 0 3px #000 inset;
+  box-shadow: 0 0 3px #000 inset;
 }
 form.webform-client-form .webform-component .form-textarea-wrapper div.grippie {
   display: none;
@@ -13615,7 +15036,7 @@ form.webform-client-form .webform-component.webform-component-select select {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   background-color: rgba(255, 255, 255, 0);
   outline: none;
   -webkit-box-shadow: none;
@@ -13639,7 +15060,7 @@ form.webform-client-form .webform-component.webform-component-select select {
 form.webform-client-form .webform-component.webform-component-select select:focus,
 form.webform-client-form .webform-component.webform-component-select select:active {
   outline: none;
-  border: 1px solid #fff;
+  border: 1px solid #000;
 }
 form.webform-client-form .webform-component.webform-component-select:after {
   content: '\f0d7';
@@ -13649,7 +15070,7 @@ form.webform-client-form .webform-component.webform-component-select:after {
   right: 5px;
   bottom: 0;
   font-family: 'fontawesome';
-  color: #fff;
+  color: #000;
   line-height: 30px;
   pointer-events: none;
 }
@@ -13740,8 +15161,8 @@ form.webform-client-form .webform-component .form-managed-file button.btn {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #fff;
-  background-color: #fff;
+  border: 1px solid #000;
+  background-color: #000;
   padding: 0 12px;
   font-size: 15px;
   line-height: 1.2;
@@ -13763,7 +15184,7 @@ form.webform-client-form .webform-component .form-managed-file button.btn {
 }
 form.webform-client-form .webform-component .form-managed-file button.btn:hover,
 form.webform-client-form .webform-component .form-managed-file button.btn:focus {
-  color: #fff;
+  color: #000;
   background: none;
 }
 @media screen and (min-width: 51.42857142857143em) {
@@ -13861,8 +15282,8 @@ form.webform-client-form div.form-actions button.webform-submit {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #fff;
-  background-color: #fff;
+  border: 1px solid #000;
+  background-color: #000;
 }
 @media screen and (min-width: 36em) {
   form.webform-client-form div.form-actions button.webform-submit {
@@ -13881,7 +15302,7 @@ form.webform-client-form div.form-actions button.webform-submit {
 }
 form.webform-client-form div.form-actions button.webform-submit:hover,
 form.webform-client-form div.form-actions button.webform-submit:focus {
-  color: #fff;
+  color: #000;
   background: none;
 }
 form.webform-client-form div.form-actions a.back-link {
@@ -13898,8 +15319,8 @@ form.webform-client-form div.form-actions a.back-link {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #fff;
-  background-color: #fff;
+  border: 1px solid #000;
+  background-color: #000;
   font-size: 15px;
   padding-left: 0;
   border: none;
@@ -13923,7 +15344,7 @@ form.webform-client-form div.form-actions a.back-link {
 }
 form.webform-client-form div.form-actions a.back-link:hover,
 form.webform-client-form div.form-actions a.back-link:focus {
-  color: #fff;
+  color: #000;
   background: none;
 }
 @media screen and (min-width: 40em) {
@@ -13955,10 +15376,10 @@ form.webform-client-form div.form-actions a.done-link {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #fff;
-  background-color: #fff;
+  border: 1px solid #000;
+  background-color: #000;
   font-size: 15px;
-  color: #fff;
+  color: #000;
   padding-left: 0;
   border: none;
   background: none;
@@ -13981,7 +15402,7 @@ form.webform-client-form div.form-actions a.done-link {
 }
 form.webform-client-form div.form-actions a.done-link:hover,
 form.webform-client-form div.form-actions a.done-link:focus {
-  color: #fff;
+  color: #000;
   background: none;
 }
 @media screen and (min-width: 40em) {
@@ -14010,11 +15431,11 @@ form.webform-client-form div.form-actions a.done-link:hover {
   padding: 15px 30px;
   width: 80%;
   color: #fff;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: #000;
 }
 .webform-confirmation .confirmation-title {
   font-family: 'MaisonNeueBook';
@@ -14112,39 +15533,52 @@ form.webform-client-form div.form-actions a.done-link:hover {
   padding: 5px 10px;
   font-family: 'MaisonNeueBook';
   font-size: 16px;
-  color: #fff;
+  color: #000;
   text-decoration: none;
   border-radius: 3px;
-  border: 2px solid #fff;
+  border: 2px solid #000;
   background: none;
   outline: none;
 }
 .submission-actions > ul.webform-submission-actions li a:hover,
 .submission-actions > ul.webform-submission-actions li a:active {
   color: #fff;
-  background: #fff none;
+  background: #000 none;
   outline: none;
 }
 /*
  *  Header section (navigation)
  * --------------------------------------------------*/
 body.navbar-is-fixed-top {
-  padding-top: 110px !important;
-}
-body.navbar-is-fixed-top.admin-menu {
-  padding-top: 110px !important;
+  padding-top: 90px !important;
 }
 header#navbar {
-  border-bottom: none;
-  background: transparent none;
+  border-bottom: 0.5px solid #5f5e5e;
+  background: #fff none;
 }
 header#navbar .container,
 header#navbar .container-fluid {
-  padding: 30px 15px 10px;
+  position: relative;
+  padding: 0 15px;
+}
+header#navbar .container .navbar-header,
+header#navbar .container-fluid .navbar-header {
+  position: relative;
+  margin: 0;
+  height: 90px;
 }
 header#navbar .container .navbar-header a.logo,
 header#navbar .container-fluid .navbar-header a.logo {
+  display: inline-block;
   float: none;
+  margin: 0;
+  padding: 0 20px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
 }
 header#navbar .container .navbar-header a.logo img,
 header#navbar .container-fluid .navbar-header a.logo img {
@@ -14153,36 +15587,226 @@ header#navbar .container-fluid .navbar-header a.logo img {
   max-height: 80px;
   width: auto;
 }
+@media screen and (min-width: 640px) {
+  header#navbar .container .navbar-header a.logo,
+  header#navbar .container-fluid .navbar-header a.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+header#navbar .container .navbar-header a.navbar-brand,
+header#navbar .container-fluid .navbar-header a.navbar-brand,
+header#navbar .container .navbar-header .region-navigation,
+header#navbar .container-fluid .navbar-header .region-navigation {
+  float: none;
+  padding: 0;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: 'MaisonNeueBook';
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 43.2em) {
+  header#navbar .container .navbar-header a.navbar-brand,
+  header#navbar .container-fluid .navbar-header a.navbar-brand,
+  header#navbar .container .navbar-header .region-navigation,
+  header#navbar .container-fluid .navbar-header .region-navigation {
+    font-size: 2.60416667vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  header#navbar .container .navbar-header a.navbar-brand,
+  header#navbar .container-fluid .navbar-header a.navbar-brand,
+  header#navbar .container .navbar-header .region-navigation,
+  header#navbar .container-fluid .navbar-header .region-navigation {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 64em) {
+  header#navbar .container .navbar-header a.navbar-brand,
+  header#navbar .container-fluid .navbar-header a.navbar-brand,
+  header#navbar .container .navbar-header .region-navigation,
+  header#navbar .container-fluid .navbar-header .region-navigation {
+    font-size: 24px;
+  }
+}
 header#navbar .container .navbar-header a.navbar-brand,
 header#navbar .container-fluid .navbar-header a.navbar-brand {
-  display: inline-block;
-  vertical-align: middle;
-  float: none;
-  margin-left: 15px;
-  padding: 0;
-  font-family: 'MaisonNeueBook';
-  font-size: 41px;
-  color: #222222;
-  line-height: 1;
+  display: none;
+}
+@media screen and (min-width: 640px) {
+  header#navbar .container .navbar-header a.navbar-brand,
+  header#navbar .container-fluid .navbar-header a.navbar-brand {
+    display: inline-block;
+  }
+}
+header#navbar .container .navbar-header .region-navigation,
+header#navbar .container-fluid .navbar-header .region-navigation {
+  right: 40px;
 }
 header#navbar .container .navbar-header .navbar-toggle,
 header#navbar .container-fluid .navbar-header .navbar-toggle {
-  padding: 5px 10px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 0;
+}
+header#navbar .container .navbar-header .navbar-toggle .icon-bar,
+header#navbar .container-fluid .navbar-header .navbar-toggle .icon-bar {
+  display: block;
+  height: 2px;
+  width: 20px;
+  background-color: #000;
+}
+header#navbar .container .navbar-header .navbar-toggle .icon-bar + .icon-bar,
+header#navbar .container-fluid .navbar-header .navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+header#navbar .container .navbar-header .navbar-toggle:hover,
+header#navbar .container-fluid .navbar-header .navbar-toggle:hover {
+  background: none;
+}
+header#navbar .container .navbar-header .navbar-toggle:hover .icon-bar + .icon-bar,
+header#navbar .container-fluid .navbar-header .navbar-toggle:hover .icon-bar + .icon-bar {
+  margin-top: 7px;
+}
+header#navbar .container .navbar-collapse,
+header#navbar .container-fluid .navbar-collapse {
+  margin: 0;
+  height: auto;
+  border: none;
+  background: #fff none;
 }
 header#navbar .container .navbar-collapse nav ul.navbar-nav,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav {
+  display: block;
   margin: 0;
+  width: 100%;
 }
 header#navbar .container .navbar-collapse nav ul.navbar-nav li,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li {
-  height: 40px;
+  display: inline-block;
+  width: 100%;
 }
 header#navbar .container .navbar-collapse nav ul.navbar-nav li a,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a {
   padding: 7px 15px;
   font-family: 'MaisonNeueBook';
-  font-size: 16px;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   line-height: 1;
+  text-align: center;
+  color: #222;
+}
+header#navbar .container .navbar-collapse nav ul.navbar-nav li a:hover,
+header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a:hover,
+header#navbar .container .navbar-collapse nav ul.navbar-nav li a.active,
+header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a.active {
+  background: none;
+}
+header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-rentals a,
+header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-rentals a {
+  color: #958AD8;
+}
+header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-rentals a:hover,
+header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-rentals a:hover,
+header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-rentals a.active,
+header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-rentals a.active {
+  color: #513fbd;
+}
+header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-art-culture a,
+header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-art-culture a {
+  color: #E9A665;
+}
+header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-art-culture a:hover,
+header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-art-culture a:hover,
+header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-art-culture a.active,
+header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-art-culture a.active {
+  color: #cb731d;
+}
+header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-about a,
+header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-about a {
+  color: #6EA39E;
+}
+header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-about a:hover,
+header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-about a:hover,
+header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-about a.active,
+header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-about a.active {
+  color: #426965;
+}
+header#navbar .container .navbar-collapse .navbar-toggle-close,
+header#navbar .container-fluid .navbar-collapse .navbar-toggle-close {
+  display: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+header#navbar .container .navbar-collapse .navbar-toggle-close .button-close,
+header#navbar .container-fluid .navbar-collapse .navbar-toggle-close .button-close {
+  display: block;
+  width: 20px;
+  height: 30px;
+  font-size: 30px;
+  line-height: 1;
+}
+@media screen and (min-width: 640px) {
+  header#navbar .container .navbar-collapse,
+  header#navbar .container-fluid .navbar-collapse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 90px;
+    width: 100%;
+  }
+  header#navbar .container .navbar-collapse nav,
+  header#navbar .container-fluid .navbar-collapse nav {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+  }
+  header#navbar .container .navbar-collapse nav ul.navbar-nav,
+  header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav {
+    text-align: center;
+  }
+  header#navbar .container .navbar-collapse nav ul.navbar-nav li,
+  header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li {
+    width: auto;
+  }
+  header#navbar .container .navbar-collapse .navbar-toggle-close,
+  header#navbar .container-fluid .navbar-collapse .navbar-toggle-close {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 15px;
+    z-index: 10;
+  }
 }
 /*
  *  Content section (main content)
@@ -14220,8 +15844,16 @@ html {
 }
 body {
   position: relative;
+  min-height: 100%;
+}
+body .main-container {
+  padding-bottom: 130px;
   height: 100%;
-  min-height: 320px;
+}
+@media screen and (min-width: 30em) {
+  body .main-container {
+    padding-bottom: 80px;
+  }
 }
 body .main-container .container #page-header .region-header h2.block-title,
 body .main-container .container-fluid #page-header .region-header h2.block-title {
@@ -14295,6 +15927,21 @@ body .main-container .fading.fading-bottom {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffffff', GradientType=0);
+}
+body footer.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  height: 130px;
+  border-top: 0.5px solid #5f5e5e;
+}
+@media screen and (min-width: 30em) {
+  body footer.footer {
+    height: 80px;
+  }
 }
 /* --------------------------------------------------
  * Pixelgarage Footer

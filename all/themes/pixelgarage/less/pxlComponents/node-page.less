@@ -5,7 +5,7 @@
 // Variables
 // -------------------------
 @paragraph-max-width: 1000px;
-@paragraph-margin-bottom: 30px;
+@paragraph-margin-bottom: 50px;
 
 
 // Mixins
@@ -15,14 +15,25 @@
 // General settings
 // -------------------------
 .node.node-page.view-mode-full {
-  margin: 30px 0;
-
   >.row {
     >div.col-sm-12 {
       width: 100%;
 
       >.field-name-title {
+        display: none;
+
+        .front & {
+          display: block;
+        }
+
+        @media @special-break {
+          .front & {
+            display: none;
+          }
+        }
+
         h2 {
+          margin: @node-field-margin;
           #pxl-mixins.title();
         }
       }
@@ -33,11 +44,13 @@
       }
 
       >.paragraphs-items {
-        .field-name-field-paragraphs {
-          .field-item {
-            margin-bottom: @paragraph-margin-bottom;
+        >.field-name-field-paragraphs {
+          >.field-items{
+            >.field-item {
+              margin-bottom: @paragraph-margin-bottom;
 
-            // see paragraph-item-... less files
+              // see paragraph-item-... less files
+            }
           }
         }
       }

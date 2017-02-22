@@ -14,14 +14,28 @@
 
 // General settings
 // -------------------------
-.view.view-apartment.view-display-id-block_list {
+.view.view-apartements.view-display-id-block_list {
   .view-content {
     .views-row {
       .views-field-title {
         a {
+          text-decoration: none;
+          color: @pxl-color-rentals;
+          outline: none;
 
+          &.active, &:hover, &:focus {
+            color: darken(@pxl-color-rentals, 20%);
+            text-decoration: @link-hover-decoration;
+          }
         }
       }
     }
+  }
+}
+
+
+.view.view-apartements.view-display-id-block_page {
+  .view-content {
+    .proximity-list();
   }
 }

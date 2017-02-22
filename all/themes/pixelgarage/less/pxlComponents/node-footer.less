@@ -1,0 +1,65 @@
+/*
+ *  Node footer component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+
+
+// Mixins
+// -------------------------
+
+
+// General settings
+// -------------------------
+.node.node-footer {
+  >.row {
+    >div.col-sm-12 {
+      .field-name-body {
+        margin: 10px 0;
+
+        .field-item {
+          text-align: center;
+          p {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            vertical-align: middle;
+            font-size: 18px;
+
+            &:first-child {
+              padding-right: 10px;
+            }
+
+          }
+        }
+      }
+
+      .field-name-field-links {
+        .field-items {
+          text-align: center;
+
+          .field-item {
+            display: inline-block;
+            padding: 0 5px;
+
+            a {
+              #pxl-mixins.text();
+
+              &:before {
+                content: '\2192';
+                padding-right: 5px;
+              }
+
+              &.active, &:hover {
+                color: @link-hover-color;
+                text-decoration: @link-hover-decoration;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

@@ -9,7 +9,6 @@
   /**
    * This behavior adds shadow to header on scroll.
    *
-   */
   Drupal.behaviors.addHeaderShadow = {
     attach: function (context) {
       $(window).on("scroll", function () {
@@ -22,6 +21,7 @@
       });
     }
   };
+   */
 
   /**
    * Anchor menus: Scrolls smoothly to anchor due to menu click.
@@ -65,11 +65,23 @@
           }
         },
         makeEqualColumns = function () {
-          // equal heights in nodes
+          // equal heights in call2action teasers
           maxHeight = 0;
-          var apartmentColumns = $('.view.view-call2action .node-call2action > .row > .col-sm-12');
+          var call2ActionColumns = $('.view.view-call2action .node-call2action > .row > .col-sm-12');
+          call2ActionColumns.each(calcMaxHeight);
+          call2ActionColumns.height(maxHeight);
+
+          // equal heights in apartment teasers
+          maxHeight = 0;
+          var apartmentColumns = $('.view.view-apartements .node-apartment > .row > .col-sm-12');
           apartmentColumns.each(calcMaxHeight);
           apartmentColumns.height(maxHeight);
+
+          // equal heights in private function teasers
+          maxHeight = 0;
+          var privateFunctionColumns = $('.view.view-private-function .node-locality > .row > .col-sm-12');
+          privateFunctionColumns.each(calcMaxHeight);
+          privateFunctionColumns.height(maxHeight);
 
         };
 
@@ -81,10 +93,10 @@
 
   /**
    * Allows full size clickable items.
+   */
    Drupal.behaviors.fullSizeClickableItems = {
     attach: function () {
-      var $clickableItems = $('.node-link-item.node-teaser .field-group-div')
-        .add('.node-team-member.node-teaser .field-group-div');
+      var $clickableItems = $('.node-call2action.node-teaser .field-name-field-link .field-items');
 
       $clickableItems.once('click', function () {
         $(this).on('click', function () {
@@ -94,7 +106,6 @@
       });
     }
   };
-   */
 
   /**
    * Swaps images from black/white to colored on mouse hover.

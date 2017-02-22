@@ -24,6 +24,85 @@
       .field-items {
         .carousel {
           #pxl-mixins.carousel();
+
+          > a.carousel-control {
+            @media screen and (min-width: 50em) {
+              text-shadow: none;
+              color: #000;
+              opacity: 1.0;
+
+              &.left {
+                .fa {
+                  left: -10%;
+                }
+              }
+              &.right {
+                .fa {
+                  right: -10%;
+                }
+              }
+            }
+            @media screen and (min-width: 56em)  {
+              &.left {
+                .fa {
+                  left: -20%;
+                }
+              }
+              &.right {
+                .fa {
+                  right: -20%;
+                }
+              }
+            }
+            @media @normal {
+              &.left {
+                .fa {
+                  left: -10%;
+                }
+              }
+              &.right {
+                .fa {
+                  right: -10%;
+                }
+              }
+            }
+            @media screen and (min-width: 72em)  {
+              &.left {
+                .fa {
+                  left: -20%;
+                }
+              }
+              &.right {
+                .fa {
+                  right: -20%;
+                }
+              }
+            }
+            @media @wide {
+              &.left {
+                .fa {
+                  left: -10%;
+                }
+              }
+              &.right {
+                .fa {
+                  right: -10%;
+                }
+              }
+            }
+            @media screen and (min-width: 88em)  {
+              &.left {
+                .fa {
+                  left: -20%;
+                }
+              }
+              &.right {
+                .fa {
+                  right: -20%;
+                }
+              }
+            }
+          }
         }
       }
     }

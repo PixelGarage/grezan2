@@ -8,11 +8,78 @@
 
 // Mixins
 // -------------------------
-
+@locality-header-height: 70px;
+@locality-header-height-tablet: 90px;
 
 
 // General settings
 // -------------------------
+
+//
+// teaser mode
+.node.node-locality.view-mode-teaser {
+  .row {
+    .col-sm-12 {
+      position: relative;
+      padding-bottom: @pxl-button-dim + 20px;
+
+      .group-header {
+        position: relative;
+        margin: @node-field-margin;
+        padding: 10px 0;
+        height: @locality-header-height;
+        border-top: 1px solid @pxl-color-rentals;
+        border-bottom: 0.5px solid @pxl-color-border;
+
+        @media @tablet {
+          height: @locality-header-height-tablet;
+        }
+
+        .field-name-title {
+          h2 {
+            margin: @node-field-margin;
+            #pxl-mixins.title();
+          }
+        }
+
+        .field-name-field-price-tag {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+
+          .field-item {
+            #pxl-mixins.subtitle();
+            padding-bottom: 10px;
+          }
+        }
+      }
+
+
+      .field-name-field-images {
+        margin: @node-field-margin;
+        .field-item {
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+
+      .field-name-body {
+        .field-item {
+          margin: @node-field-margin;
+          #pxl-mixins.wysiwyg-body();
+        }
+      }
+
+      .field-name-field-teaser-action {
+        .action-button(@pxl-color-rentals);
+      }
+    }
+  }
+}
+
 .node.node-locality {
   .row {
     .col-sm-12 {

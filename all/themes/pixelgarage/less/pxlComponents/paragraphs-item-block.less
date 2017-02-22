@@ -16,7 +16,18 @@
   .content {
     .field-name-field-title {
       .field-item {
+        margin: 0 0 30px;
         #pxl-mixins.title();
+
+        .page-rentals & {
+          color: @pxl-color-rentals;
+        }
+        .page-artculture & {
+          color: @pxl-color-artculture;
+        }
+        .page-about & {
+          color: @pxl-color-about;
+        }
       }
     }
 

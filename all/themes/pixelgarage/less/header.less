@@ -4,7 +4,7 @@
 
 // Variables
 // -------------------------
-
+@header-height: 90px;
 
 // Mixins
 // -------------------------
@@ -14,26 +14,31 @@
 // Main settings
 // -------------------------
 body.navbar-is-fixed-top {
-  padding-top: 110px !important;
-
-  &.admin-menu {
-    padding-top: 110px !important;
-  }
-
+  padding-top: @header-height !important;
 }
 
 
 header#navbar {
-  border-bottom: none;
-  background: transparent none;
+  border-bottom: 0.5px solid @pxl-color-border;
+  background: #fff none;
 
   .container, .container-fluid {
-    padding: @grid-gutter-width @grid-gutter-width / 2 10px;
+    position: relative;
+    padding: 0 @grid-gutter-width/2;
 
     .navbar-header {
+      position: relative;
+      margin: 0;
+      height: @header-height;
+
       // header (branding)
       a.logo {
+        display: inline-block;
         float: none;
+        margin: 0;
+        padding: 0 20px;
+        #pxl-mixins.center-vertically(absolute);
+        left: 0;
 
         img {
           display: inline-block;
@@ -41,48 +46,179 @@ header#navbar {
           max-height: 80px;
           width: auto;
         }
+
+        @media @special-break {
+          #pxl-mixins.center-xy(absolute);
+        }
       }
 
-      a.navbar-brand {
-        display: inline-block;
-        vertical-align: middle;
+      a.navbar-brand,
+      .region-navigation {
         float: none;
-        margin-left: @grid-gutter-width/2;
         padding: 0;
-        font-family: @pxl-text-font-medium;
-        font-size: @font-size-h1;
-        color: @gray-darker;
-        line-height: 1;
+        height: auto;
+        #pxl-mixins.center-vertically(absolute);
+        font-family: @pxl-title-font;
+        #pxl-mixins.font-size-responsive(24px, 20px, 18px);
+        text-transform: @title-text-transform;
+        letter-spacing: @title-letter-spacing;
+        line-height: @title-line-height;
+        text-align: @title-text-align;
+        color: @text-color;
+      }
+      a.navbar-brand {
+        display: none;
+
+        @media @special-break {
+          display: inline-block;
+        }
+      }
+      .region-navigation {
+        right: 40px;
       }
 
       .navbar-toggle {
         // navbar toggle with burger
-        padding: 5px 10px;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        border: none;
+        #pxl-mixins.center-vertically(absolute);
+        right: 0;
+
+        .icon-bar {
+          display: block;
+          height: 2px;
+          width: 20px;
+          background-color: #000;
+
+          & + .icon-bar {
+            margin-top: 5px;
+          }
+        }
+
+        &:hover {
+          background: none;
+
+          .icon-bar {
+            & + .icon-bar {
+              margin-top: 7px;
+            }
+          }
+        }
       }
     }
 
     // collapse part
     .navbar-collapse {
+      margin: 0;
+      height: auto;
+      border: none;
+      background: #fff none;
+
       // main menu
       nav {
         ul.navbar-nav {
+          display: block;
           margin: 0;
+          width: 100%;
 
           li {
-            height: 40px;
+            display: inline-block;
+            width: 100%;
 
             a {
               padding: 7px 15px;
-              font-family: @pxl-text-font;
-              font-size: @font-size-base;
-              line-height: 1;
+              font-family: @pxl-title-font;
+              font-size: 30px;
+              text-transform: @title-text-transform;
+              letter-spacing: @title-letter-spacing;
+              line-height: @title-line-height;
+              text-align: center;
+              color: @text-color;
 
               &:hover,
               &.active {
+                background: none;
               }
+            }
+
+            &.menu-rentals{
+              a {
+                color: @pxl-color-rentals;
+                &:hover,
+                &.active {
+                  color: darken(@pxl-color-rentals, 20%);
+                }
+              }
+            }
+            &.menu-art-culture{
+              a {
+                color: @pxl-color-artculture;
+                &:hover,
+                &.active {
+                  color: darken(@pxl-color-artculture, 20%);
+                }
+              }
+            }
+            &.menu-about{
+              a {
+                color: @pxl-color-about;
+                &:hover,
+                &.active {
+                  color: darken(@pxl-color-about, 20%);
+                }
+              }
+            }
+
+          }
+        }
+      }
+
+      .navbar-toggle-close {
+        display: none;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+
+        .button-close {
+          display: block;
+          width: 20px;
+          height: 30px;
+          font-size: 30px;
+          line-height: 1;
+        }
+      }
+
+      @media @special-break {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: @header-height;
+        width: 100%;
+
+        nav {
+          #pxl-mixins.center-vertically(absolute);
+          left: 0;
+          width: 100%;
+
+          ul.navbar-nav {
+            text-align: center;
+
+            li {
+              width: auto;
             }
           }
         }
+
+        .navbar-toggle-close {
+          display: inline-block;
+          #pxl-mixins.center-vertically(absolute);
+          right: @grid-gutter-width/2;
+          z-index: 10;
+        }
+
       }
 
     }

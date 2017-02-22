@@ -121,7 +121,7 @@
       border: none;
       background: none;
       #pxl-mixins.transition(opacity ease 0.5s);
-      opacity: 0;
+      opacity: 1.0;
       z-index: 2;
 
       &.left {
@@ -133,10 +133,12 @@
           display: inline-block;
           #pxl-mixins.center-vertically(absolute);
           left: 5%;
-        }
 
-        &:hover {
-          opacity: 1.0;
+          &:before {
+            font-family: @pxl-text-font;
+            font-size: 25px;
+            content: '\2190';
+          }
         }
       }
 
@@ -149,6 +151,12 @@
           display: inline-block;
           #pxl-mixins.center-vertically(absolute);
           right: 5%;
+
+          &:before {
+            font-family: @pxl-text-font;
+            font-size: 25px;
+            content: '\2192';
+          }
         }
 
         &:hover {

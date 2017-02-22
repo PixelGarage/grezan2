@@ -4,60 +4,152 @@
 
 // Variables
 // -------------------------
+@pxl-button-dim: 100px;
 
 
 // Mixins
 // -------------------------
+
+.action-button(@color: @pxl-color-main; @rotate: 10deg) {
+  position: absolute;
+  left: @grid-gutter-width/2;
+  right: @grid-gutter-width/2;
+  bottom: 0;
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+  border-top: 1px solid @color;
+
+  .field-items {
+    cursor: pointer;
+    display: inline-block;
+    #pxl-mixins.border-radius(50%);
+    border: 2px solid @color;
+
+    .views-row-odd & {
+      .rotate(@rotate);
+    }
+    .views-row-even & {
+      .rotate(-@rotate);
+    }
+
+    .field-item {
+      display: inline-block;
+      margin: 2px;
+      padding: 5px;
+      width: @pxl-button-dim;
+      height: @pxl-button-dim;
+      #pxl-mixins.border-radius(50%);
+      background-color: @color;
+
+      a, .field-action {
+        display: block;
+        #pxl-mixins.center-vertically();
+        font-family: @pxl-text-font;
+        font-size: @font-size-base;
+        line-height: 1;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+}
 
 
 
 // General settings
 // -------------------------
 .node.node-call2action {
-  .row {
-    .col-sm-12 {
+  >.row {
+    >.col-sm-12 {
+      position: relative;
+      padding-bottom: @pxl-button-dim + 20px;
+
       .field-name-title {
+        margin: @node-field-margin;
+
         .field-item {
           h2 {
+            margin: 0;
+            padding-top: 10px;
             #pxl-mixins.title();
           }
         }
       }
 
       .field-name-field-subtitle {
+        margin: @node-field-margin;
+        padding-bottom: 10px;
+        border-bottom: 0.5px solid @pxl-color-border;
+
         .field-item {
           #pxl-mixins.subtitle();
         }
       }
 
       .field-name-field-image {
+        margin: @node-field-margin;
+
         .field-item {
           img {
-
+            max-width: 100%;
+            width: 100%;
+            height: auto;
           }
         }
       }
 
       .field-name-body {
+        margin: @node-field-margin;
+
         .field-item {
           #pxl-mixins.wysiwyg-body();
         }
       }
 
       .field-name-field-block {
+        margin: @node-field-margin;
+
         .field-item {
           // see view-apartment.less
         }
       }
-
-      .field-name-field-link {
-        .field-item {
-          a {
-
-          }
-        }
-      }
-
     }
   }
+
+  &.call2action-rentals {
+    border-top: 1px solid @pxl-color-rentals;
+
+    >.row {
+      >.col-sm-12 {
+        .field-name-field-link {
+          .action-button(@pxl-color-rentals);
+        }
+      }
+    }
+  }
+  &.call2action-artculture {
+    border-top: 1px solid @pxl-color-artculture;
+
+    >.row {
+      >.col-sm-12 {
+        .field-name-field-link {
+          .action-button(@pxl-color-artculture);
+        }
+      }
+    }
+  }
+  &.call2action-about {
+    border-top: 1px solid @pxl-color-about;
+
+    >.row {
+      >.col-sm-12 {
+        .field-name-field-link {
+          .action-button(@pxl-color-about);
+        }
+      }
+    }
+  }
+
 }

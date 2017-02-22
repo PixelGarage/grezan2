@@ -21,7 +21,7 @@ regions[page_bottom] = Page bottom
 ; Stylesheets
 ; ========================================
 stylesheets[all][] = css/style.css
-stylesheets[all][] = css/smartmenu/jquery.smartmenus.bootstrap.css
+;stylesheets[all][] = css/smartmenu/jquery.smartmenus.bootstrap.css
 
 ; ========================================
 ; Scripts
@@ -42,17 +42,17 @@ scripts[] = bootstrap/js/transition.js
 ; ========================================
 ; Pixelgarage Scripts
 ; ========================================
-scripts[] = js/pxlTest.js
+;scripts[] = js/pxlTest.js
 scripts[] = js/pxlBehaviors.js
-scripts[] = js/smartmenu/jquery.smartmenus.js
-scripts[] = js/smartmenu/jquery.smartmenus.bootstrap.js
+;scripts[] = js/smartmenu/jquery.smartmenus.js
+;scripts[] = js/smartmenu/jquery.smartmenus.bootstrap.js
 
 ; ========================================
 ; Pixelgarage Breakpoints (first match from top is taken => no stacked breakpoints needed)
 ; ========================================
-breakpoints[wide] 	   = only screen and (min-width:75em)
+breakpoints[wide] 	   = only screen and (min-width:80em)
 multipliers[wide][]    = 2x
-breakpoints[desktop]   = only screen and (min-width:62em)
+breakpoints[desktop]   = only screen and (min-width:64em)
 multipliers[desktop][] = 2x
 breakpoints[tablet]    = only screen and (min-width:48em)
 multipliers[tablet][]  = 2x
