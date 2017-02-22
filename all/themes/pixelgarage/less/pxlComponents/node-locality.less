@@ -18,8 +18,8 @@
 //
 // teaser mode
 .node.node-locality.view-mode-teaser {
-  .row {
-    .col-sm-12 {
+  >.row {
+    >.col-sm-12 {
       position: relative;
       padding-bottom: @pxl-button-dim + 20px;
 
@@ -56,7 +56,7 @@
       }
 
 
-      .field-name-field-images {
+      .field-name-field-locality-images {
         margin: @node-field-margin;
         .field-item {
           img {
@@ -80,9 +80,43 @@
   }
 }
 
-.node.node-locality {
-  .row {
-    .col-sm-12 {
+.node.node-locality.view-mode-full,
+.node.node-locality.view-mode-default {
+  >.row {
+    >.col-sm-12 {
+      .field-name-field-locality-images {
+        margin: @node-field-margin;
+        .field-item {
+          .carousel {
+            #pxl-mixins.carousel();
+          }
+        }
+      }
+
+      .field-name-title {
+        h2 {
+          margin: 0 0 30px;
+          padding: 10px 0 0;
+          #pxl-mixins.title();
+          border-top: 1px solid @pxl-color-artculture;
+        }
+      }
+
+      .field-name-field-price-tag {
+        .field-item {
+          margin: 0 0 30px;
+          padding: 0 0 10px;
+          #pxl-mixins.text();
+          border-bottom: 0.5px solid @pxl-color-border;
+        }
+      }
+
+      .field-name-body {
+        .field-item {
+          margin: @node-field-margin;
+          #pxl-mixins.wysiwyg-body();
+        }
+      }
 
     }
   }

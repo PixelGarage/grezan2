@@ -67,8 +67,12 @@
   width: 100%;
 
   .view-content {
-    margin: 0 -@grid-gutter-dist/2;
+    margin: 0;
     padding: 0;
+
+    @media @tablet {
+      margin: 0 -@grid-gutter-dist/2;
+    }
 
     .views-row {
       display: inline-block;
@@ -85,25 +89,32 @@
 
       .views-field-field-address-name-line {
         .field-content {
-
+          margin: @node-field-margin;
+          #pxl-mixins.title();
         }
       }
 
       .views-field-field-portrait {
+        margin: @node-field-margin;
+
         .field-content {
           img {
-
+            width: 100%;
+            height: auto;
           }
         }
       }
 
       .views-field-field-biography {
+        margin: @node-field-margin;
         .views-label {
-
+          display: block;
+          margin: @node-field-margin;
+          #pxl-mixins.subtitle();
         }
 
         .field-content {
-
+          #pxl-mixins.wysiwyg-body();
         }
       }
 

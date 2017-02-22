@@ -10036,7 +10036,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   display: none;
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-title h2 {
-  margin: 0 0 10px;
+  margin: 0 0 30px;
   font-family: 'MaisonNeueBook';
   font-size: 20px;
   text-transform: uppercase;
@@ -10061,7 +10061,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   }
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body {
-  margin: 0 0 20px;
+  margin: 0 0 40px;
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h1,
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h2,
@@ -10279,6 +10279,12 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .paragraphs-items > .field-name-field-paragraphs > .field-items > .field-item {
   margin-bottom: 50px;
+}
+.node.node-page.view-mode-full.page-about > .row > div.col-sm-12 {
+  width: 100%;
+}
+.node.node-page.view-mode-full.page-about > .row > div.col-sm-12 > .field-name-title {
+  display: block;
 }
 /*
  *  Node / block webform component
@@ -13939,11 +13945,11 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 /*
  *  Node locality component
  * --------------------------------------------------*/
-.node.node-locality.view-mode-teaser .row .col-sm-12 {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 {
   position: relative;
   padding-bottom: 120px;
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .group-header {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header {
   position: relative;
   margin: 0 0 10px;
   padding: 10px 0;
@@ -13952,11 +13958,11 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   border-bottom: 0.5px solid #5f5e5e;
 }
 @media screen and (min-width: 48em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header {
     height: 90px;
   }
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-title h2 {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header .field-name-title h2 {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 20px;
@@ -13967,27 +13973,27 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
 }
 @media screen and (min-width: 40em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-title h2 {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header .field-name-title h2 {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-title h2 {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header .field-name-title h2 {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-title h2 {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header .field-name-title h2 {
     font-size: 24px;
   }
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price-tag {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header .field-name-field-price-tag {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price-tag .field-item {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header .field-name-field-price-tag .field-item {
   font-family: 'MaisonNeueBook';
   font-size: 16px;
   text-transform: uppercase;
@@ -13998,34 +14004,34 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   padding-bottom: 10px;
 }
 @media screen and (min-width: 42.666666666666664em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price-tag .field-item {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header .field-name-field-price-tag .field-item {
     font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price-tag .field-item {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header .field-name-field-price-tag .field-item {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .group-header .field-name-field-price-tag .field-item {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header .field-name-field-price-tag .field-item {
     font-size: 18px;
   }
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-images {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-locality-images {
   margin: 0 0 10px;
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-images .field-item img {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-locality-images .field-item img {
   width: 100%;
   height: auto;
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item {
   margin: 0 0 10px;
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h1,
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h2,
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h3,
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-title {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h1,
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h2,
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h3,
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
   margin: 10px auto 20px;
   font-family: 'MaisonNeueBook';
   font-size: 20px;
@@ -14036,33 +14042,33 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
 }
 @media screen and (min-width: 40em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h1,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h2,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h3,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-title {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h1,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h2,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h3,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-title {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h1,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h2,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h3,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-title {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
     font-size: 24px;
   }
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h4,
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h5,
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h6,
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h4,
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h5,
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h6,
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
   margin: 10px auto;
   font-family: 'MaisonNeueBook';
   font-size: 16px;
@@ -14073,31 +14079,31 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
 }
 @media screen and (min-width: 42.666666666666664em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h4,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h5,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h6,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
     font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h4,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h5,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h6,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h4,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h5,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item h6,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
     font-size: 18px;
   }
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item p,
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item tbody td {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item p,
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item tbody td {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
@@ -14113,24 +14119,24 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   hyphens: auto;
 }
 @media screen and (min-width: 45em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item p,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item tbody td {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item tbody td {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item p,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item tbody td {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item tbody td {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item p,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item tbody td {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item tbody td {
     font-size: 17px;
   }
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
   letter-spacing: normal;
@@ -14139,28 +14145,28 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #222;
 }
 @media screen and (min-width: 45em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a {
     font-size: 17px;
   }
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a:hover,
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item a:focus {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a:hover,
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a:focus {
   color: #E9A665;
   text-decoration: none;
   background: none;
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item pre,
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item address {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item pre,
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
   letter-spacing: normal;
@@ -14170,24 +14176,24 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item pre,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item address {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item address {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item pre,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item address {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item address {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item pre,
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item address {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item address {
     font-size: 17px;
   }
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item strong {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item strong {
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -14196,26 +14202,26 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item strong {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item strong {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item strong {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item strong {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item strong {
+  .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item strong {
     font-size: 17px;
   }
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item hr {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item hr {
   border: 0;
   border-bottom: 2px solid #000;
   background: none;
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item img {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item img {
   display: block;
   overflow: hidden;
   margin: 20px auto;
@@ -14223,10 +14229,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   max-width: 100%;
   height: auto;
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item embed,
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item video,
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item audio,
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-body .field-item iframe {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item embed,
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item video,
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item audio,
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item iframe {
   display: block;
   overflow: hidden;
   margin: 20px auto;
@@ -14236,7 +14242,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   height: auto;
   min-height: 350px;
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action {
   position: absolute;
   left: 15px;
   right: 15px;
@@ -14246,7 +14252,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   text-align: center;
   border-top: 1px solid #958AD8;
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items {
   cursor: pointer;
   display: inline-block;
   -moz-border-radius: 50%;
@@ -14258,13 +14264,13 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -o-transform: rotate(10deg);
   transform: rotate(10deg);
 }
-.views-row-even .node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items {
+.views-row-even .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items {
   -webkit-transform: rotate(-10deg);
   -ms-transform: rotate(-10deg);
   -o-transform: rotate(-10deg);
   transform: rotate(-10deg);
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items .field-item {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item {
   display: inline-block;
   margin: 2px;
   padding: 5px;
@@ -14275,8 +14281,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   border-radius: 50%;
   background-color: #958AD8;
 }
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items .field-item a,
-.node.node-locality.view-mode-teaser .row .col-sm-12 .field-name-field-teaser-action .field-items .field-item .field-action {
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item a,
+.node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item .field-action {
   display: block;
   position: relative;
   top: 50%;
@@ -14290,6 +14296,540 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   text-transform: uppercase;
   text-align: center;
   color: #fff;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images {
+  margin: 0 0 10px;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner {
+  background: #000000;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner .item,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner .item {
+    opacity: 0;
+    -webkit-transition: opacity ease 1s;
+    -o-transition: opacity ease 1s;
+    transition: opacity ease 1s;
+  }
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner .item.active,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner .item.active {
+    opacity: 1.0;
+  }
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner .item.active.left,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner .item.active.left,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner .item.active.right,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner .item.active.right {
+    left: 0;
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    z-index: 1;
+  }
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner .item.left.next,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner .item.left.next,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner .item.right.prev,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel.carousel-fade > .carousel-inner .item.right.prev {
+    opacity: 1.0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-inner,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-inner {
+  margin-top: 0;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-inner .item,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-inner .item {
+  width: 100%;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-inner .item > div,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-inner .item > div {
+  overflow: hidden;
+  width: 100%;
+  height: 0 !important;
+  padding-bottom: 66.66666%;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-indicators,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-indicators {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 -5px;
+  width: auto;
+  z-index: 3;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-indicators li,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-indicators li {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 5px;
+  border: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: none;
+  opacity: 1.0;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-indicators li:hover,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-indicators li:hover,
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-indicators li.active,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-indicators li.active {
+  opacity: 0.6;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-indicators li img,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > .carousel-indicators li img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  width: 50%;
+  font-size: 20px;
+  text-shadow: 0 0 4px #000;
+  text-align: unset;
+  color: #fff;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: none;
+  background: none;
+  -webkit-transition: opacity ease 0.5s;
+  -o-transition: opacity ease 0.5s;
+  transition: opacity ease 0.5s;
+  opacity: 1.0;
+  z-index: 2;
+}
+@media screen and (min-width: 32em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control {
+    font-size: 3.90625vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control {
+    font-size: 40px;
+  }
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.left,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.left {
+  left: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-left-width: 0;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.left .fa,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.left .fa {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 5%;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.left .fa:before,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.left .fa:before {
+  font-family: 'MaisonNeueBook';
+  font-size: 25px;
+  content: '\2190';
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.right,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.right {
+  right: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right-width: 0;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.right .fa,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.right .fa {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 5%;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.right .fa:before,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.right .fa:before {
+  font-family: 'MaisonNeueBook';
+  font-size: 25px;
+  content: '\2192';
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.right:hover,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel > a.carousel-control.right:hover {
+  opacity: 1.0;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-title h2,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-title h2 {
+  margin: 0 0 30px;
+  padding: 10px 0 0;
+  font-family: 'MaisonNeueBook';
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+  border-top: 1px solid #E9A665;
+}
+@media screen and (min-width: 40em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-title h2,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-title h2 {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-title h2,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-title h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-title h2,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-title h2 {
+    font-size: 24px;
+  }
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-price-tag .field-item,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-price-tag .field-item {
+  margin: 0 0 30px;
+  padding: 0 0 10px;
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  border-bottom: 0.5px solid #5f5e5e;
+}
+@media screen and (min-width: 45em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-price-tag .field-item,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-price-tag .field-item {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-price-tag .field-item,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-price-tag .field-item {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-price-tag .field-item,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-price-tag .field-item {
+    font-size: 17px;
+  }
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item {
+  margin: 0 0 10px;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h1,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h1,
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h2,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h2,
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h3,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h3,
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-title,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'MaisonNeueBook';
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 40em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-title,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-title,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-title,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
+    font-size: 24px;
+  }
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h4,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h4,
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h5,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h5,
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h6,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h6,
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 42.666666666666664em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 2.34375vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+    font-size: 18px;
+  }
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item p,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item p,
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item tbody td,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item tbody td {
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+@media screen and (min-width: 45em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item tbody td,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item tbody td {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item tbody td,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item tbody td {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item tbody td,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item tbody td {
+    font-size: 17px;
+  }
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 45em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a {
+    font-size: 17px;
+  }
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a:hover,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a:hover,
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a:focus,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a:focus {
+  color: #E9A665;
+  text-decoration: none;
+  background: none;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item pre,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item pre,
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item address,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item address {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBookItalic';
+}
+@media screen and (min-width: 45em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item address,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item address {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item address,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item address {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item address,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item address {
+    font-size: 17px;
+  }
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item strong,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong {
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBook';
+}
+@media screen and (min-width: 45em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item strong,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item strong,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item strong,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong {
+    font-size: 17px;
+  }
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item hr,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item hr {
+  border: 0;
+  border-bottom: 2px solid #000;
+  background: none;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item img,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item img {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item embed,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item embed,
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item video,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item video,
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item audio,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item audio,
+.node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item iframe,
+.node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item iframe {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 15px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 350px;
 }
 /*
  *  Node footer component
@@ -16322,8 +16862,13 @@ form#user-profile-form div .form-actions .form-submit .icon {
   width: 100%;
 }
 .view.view-hosts.view-display-id-block_hosts .view-content {
-  margin: 0 -1.5%;
+  margin: 0;
   padding: 0;
+}
+@media screen and (min-width: 48em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content {
+    margin: 0 -1.5%;
+  }
 }
 .view.view-hosts.view-display-id-block_hosts .view-content .views-row {
   display: inline-block;
@@ -16338,6 +16883,281 @@ form#user-profile-form div .form-actions .form-submit .icon {
     padding: 0 1.5%;
     width: 50%;
   }
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-address-name-line .field-content {
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 40em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-address-name-line .field-content {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-address-name-line .field-content {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-address-name-line .field-content {
+    font-size: 24px;
+  }
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-portrait {
+  margin: 0 0 10px;
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-portrait .field-content img {
+  width: 100%;
+  height: auto;
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography {
+  margin: 0 0 10px;
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .views-label {
+  display: block;
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 42.666666666666664em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .views-label {
+    font-size: 2.34375vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .views-label {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .views-label {
+    font-size: 18px;
+  }
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h1,
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h2,
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h3,
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'MaisonNeueBook';
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 40em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h1,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h2,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h3,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content .pxl-title {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h1,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h2,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h3,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h1,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h2,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h3,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content .pxl-title {
+    font-size: 24px;
+  }
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h4,
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h5,
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h6,
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 42.666666666666664em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h4,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h5,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h6,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content .pxl-subtitle {
+    font-size: 2.34375vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h4,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h5,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h6,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content .pxl-subtitle {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h4,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h5,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h6,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content .pxl-subtitle {
+    font-size: 18px;
+  }
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content p,
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content tbody td {
+  margin: 0 0 10px;
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+@media screen and (min-width: 45em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content p,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content tbody td {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content p,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content tbody td {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content p,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content tbody td {
+    font-size: 17px;
+  }
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content a {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 45em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content a {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content a {
+    font-size: 17px;
+  }
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content a:hover,
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content a:focus {
+  color: #E9A665;
+  text-decoration: none;
+  background: none;
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content pre,
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content address {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBookItalic';
+}
+@media screen and (min-width: 45em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content pre,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content address {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content pre,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content address {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content pre,
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content address {
+    font-size: 17px;
+  }
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content strong {
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.15em;
+  text-align: left;
+  color: #222;
+  font-family: 'MaisonNeueBook';
+}
+@media screen and (min-width: 45em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content strong {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content strong {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content strong {
+    font-size: 17px;
+  }
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content hr {
+  border: 0;
+  border-bottom: 2px solid #000;
+  background: none;
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content img {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content embed,
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content video,
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content audio,
+.view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content iframe {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 15px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 350px;
 }
 /*
  *  Private function view component

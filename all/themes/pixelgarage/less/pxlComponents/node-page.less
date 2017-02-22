@@ -23,13 +23,13 @@
         display: none;
 
         h2 {
-          margin: @node-field-margin;
+          margin: 0 0 30px;
           #pxl-mixins.title();
         }
       }
 
       >.field-name-body {
-        margin: 0 0 20px;
+        margin: 0 0 40px;
         #pxl-mixins.wysiwyg-body();
       }
 
@@ -45,6 +45,19 @@
         }
       }
 
+    }
+  }
+
+  &.page-about {
+    >.row {
+      >div.col-sm-12 {
+        width: 100%;
+
+        >.field-name-title {
+          display: block;
+
+        }
+      }
     }
   }
 }
