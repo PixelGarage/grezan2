@@ -78,7 +78,7 @@
        * are filled with the valid formatted dates.
        */
       var locale = 'de-CH',
-        hiddenDays = Drupal.settings.pxl_availability.hiddenDays;
+        hiddenDays = ('pxl_availability' in Drupal.settings) ? Drupal.settings.pxl_availability.hiddenDays : [];
 
       return {
         selectable: true,

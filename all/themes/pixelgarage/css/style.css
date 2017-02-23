@@ -9359,6 +9359,51 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 /*
  *  Fullcalendar component
  * --------------------------------------------------*/
+.fullcalendar .fc-header .fc-header-title h2 {
+  margin: 0;
+  font-family: 'MaisonNeueBook';
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #222;
+}
+@media screen and (min-width: 40em) {
+  .fullcalendar .fc-header .fc-header-title h2 {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .fullcalendar .fc-header .fc-header-title h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .fullcalendar .fc-header .fc-header-title h2 {
+    font-size: 24px;
+  }
+}
+.fullcalendar .fc-header .fc-header-space {
+  padding-left: 5px;
+}
+.fullcalendar .fc-header .fc-button-prev,
+.fullcalendar .fc-header .fc-button-next,
+.fullcalendar .fc-header .fc-button-today {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #958AD8;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: none;
+}
+.fullcalendar .fc-header .fc-button-today {
+  padding: 0 0.6em;
+}
+.fullcalendar .fc-content {
+  font-family: 'MaisonNeueBook';
+}
 .fullcalendar .fc-content .fc-view-month .fc-cell-overlay {
   background-color: #958AD8;
 }
@@ -9952,6 +9997,157 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   background: #958AD8 none;
+}
+.block-pxl-availability .block-availability-form .modal {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.block-pxl-availability .block-availability-form .modal.modal-fixed-height {
+  height: 100%;
+  overflow-y: hidden;
+}
+.block-pxl-availability .block-availability-form .modal.modal-fixed-height .modal-dialog {
+  height: 100%;
+}
+.block-pxl-availability .block-availability-form .modal.modal-fixed-height .modal-dialog .modal-content {
+  height: 100%;
+}
+.block-pxl-availability .block-availability-form .modal.modal-fixed-height .modal-dialog .modal-content .modal-header,
+.block-pxl-availability .block-availability-form .modal.modal-fixed-height .modal-dialog .modal-content .modal-footer {
+  position: relative;
+}
+.block-pxl-availability .block-availability-form .modal.modal-fixed-height .modal-dialog .modal-content .modal-header .body-fading,
+.block-pxl-availability .block-availability-form .modal.modal-fixed-height .modal-dialog .modal-content .modal-footer .body-fading {
+  display: block;
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  height: 1px;
+  z-index: 10;
+}
+.block-pxl-availability .block-availability-form .modal.modal-fixed-height .modal-dialog .modal-content .modal-header .body-fading.body-fading-top,
+.block-pxl-availability .block-availability-form .modal.modal-fixed-height .modal-dialog .modal-content .modal-footer .body-fading.body-fading-top {
+  bottom: -1px;
+  background-image: -webkit-linear-gradient(top, #aaa 0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -o-linear-gradient(top, #aaa 0%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(to bottom, #aaa 0%, rgba(0, 0, 0, 0) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffaaaaaa', endColorstr='#00000000', GradientType=0);
+}
+.block-pxl-availability .block-availability-form .modal.modal-fixed-height .modal-dialog .modal-content .modal-header .body-fading.body-fading-bottom,
+.block-pxl-availability .block-availability-form .modal.modal-fixed-height .modal-dialog .modal-content .modal-footer .body-fading.body-fading-bottom {
+  top: -1px;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #aaa 100%);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #aaa 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #aaa 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#ffaaaaaa', GradientType=0);
+}
+.block-pxl-availability .block-availability-form .modal.modal-fixed-height .modal-dialog .modal-content .modal-body {
+  overflow-y: auto;
+}
+.block-pxl-availability .block-availability-form .modal .modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+}
+.block-pxl-availability .block-availability-form .modal .modal-backdrop.in {
+  opacity: 0.9;
+}
+.block-pxl-availability .block-availability-form .modal .modal-dialog {
+  margin: 0 auto;
+  width: 100%;
+}
+.admin-menu .block-pxl-availability .block-availability-form .modal .modal-dialog {
+  margin: 29px auto 0;
+}
+@media screen and (min-width: 30em) {
+  .block-pxl-availability .block-availability-form .modal .modal-dialog {
+    min-width: 480px;
+    width: 90%;
+    max-width: 690px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .block-pxl-availability .block-availability-form .modal .modal-dialog {
+    width: 90%;
+    max-width: 800px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .block-pxl-availability .block-availability-form .modal .modal-dialog {
+    width: 800px;
+  }
+}
+.block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content {
+  position: relative;
+  padding: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-header {
+  padding: 0;
+  min-height: 60px;
+  border: none;
+}
+.block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-header button.close {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  opacity: 1.0;
+  z-index: 1;
+}
+.block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-header button.close span {
+  padding: 0;
+  font-family: 'MaisonNeueBook';
+  font-size: 60px;
+  font-weight: normal;
+  color: #222;
+}
+.block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-header .body-fading {
+  display: none;
+}
+.block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-body {
+  padding: 20px 15px;
+}
+@media screen and (min-width: 30em) {
+  .block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-body {
+    padding: 20px 30px;
+  }
+}
+.block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-footer {
+  display: none;
+  padding: 10px 0;
+  border: none;
+  text-align: center;
+}
+.block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-footer .btn {
+  display: inline-block;
+  font-family: 'MaisonNeueBook';
+  color: #222;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 2px solid #222;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
+  box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
+}
+.block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-footer .btn:hover {
+  color: #fff;
+  background-color: #222;
+}
+.block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-footer .body-fading {
+  display: none;
 }
 .block-pxl-availability .block-shopping-cart-form .shopping-cart-table .table-responsive table thead tr th {
   font-family: 'MaisonNeueBook';
