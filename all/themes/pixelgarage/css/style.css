@@ -9361,6 +9361,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
  * --------------------------------------------------*/
 .fullcalendar .fc-header .fc-header-title h2 {
   margin: 0;
+  padding: 5px 0 0;
   font-family: 'MaisonNeueBook';
   font-size: 20px;
   text-transform: uppercase;
@@ -9409,13 +9410,17 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .fullcalendar .fc-content .fc-view-month .fc-event-container .fc-event {
   height: 20px;
-  background-color: #7264cb;
+  border: 1px solid #b8b0e5;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-color: #b8b0e5;
 }
 .fullcalendar .fc-content .fc-view-month .fc-event-container .fc-event .fc-event-title {
   display: none;
 }
 .fullcalendar .fc-content .fc-view-month table tbody tr.fc-week td.fc-day.fc-past {
-  background-color: #efefef;
+  background-color: #f6f6f6;
 }
 /*
  *  Block pxl availability component

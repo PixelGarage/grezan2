@@ -5,11 +5,11 @@
 // Variables
 // -------------------------
 @fc-selection-bg-color: @pxl-color-rentals;
-@fc-past-bg-color: #efefef;
+@fc-past-bg-color: #f6f6f6;
 
 @fc-event-height: 20px;
-@fc-event-bg-color: darken(@pxl-color-rentals, 10%);
-
+@fc-event-bg-color: lighten(@pxl-color-rentals, 10%);
+@fc-event-border-color: lighten(@pxl-color-rentals, 10%);
 
 // Mixins
 // -------------------------
@@ -32,6 +32,7 @@
     .fc-header-title {
       h2 {
         margin: 0;
+        padding: 5px 0 0;
         #pxl-mixins.title();
       }
     }
@@ -63,6 +64,8 @@
       .fc-event-container {
         .fc-event {
           height: @fc-event-height;
+          border: 1px solid @fc-event-border-color;
+          #pxl-mixins.border-radius(0);
           background-color: @fc-event-bg-color;
 
           .fc-event-title {
