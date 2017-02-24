@@ -1369,7 +1369,7 @@
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .pxl-title {
@@ -1393,7 +1393,7 @@
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .pxl-subtitle {
@@ -1416,7 +1416,7 @@
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .pxl-normal {

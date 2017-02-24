@@ -258,11 +258,13 @@ function pxl_availability_create_calendar_event_from_cart_item($item) {
   node_object_prepare($node);
 
   // fill fields
-  $node->title = 'Booked';
+  $node->title = t('Booked');
   $node->field_state[LANGUAGE_NONE][0]['tid'] = _pxl_availabilty_calendar_event_state_tid('booked');
   $node->field_sku_id[LANGUAGE_NONE][0]['value'] = $item->id;
-  $node->field_event_date[LANGUAGE_NONE][0]['value'] = $item->start;
-  $node->field_event_date[LANGUAGE_NONE][0]['value2'] = $item->end;
+  $node->field_event_date[LANGUAGE_NONE][0] = array(
+    'value' => format_date($item->start, 'custom', 'Y-m-d H:i:s', 'UTC'),
+    'value2' => format_date($item->end, 'custom', 'Y-m-d H:i:s', 'UTC'),
+  );
   $node->field_order_id[LANGUAGE_NONE][0]['value'] = isset($item->chargeID) ? $item->chargeID : '';
   node_save($node);
 

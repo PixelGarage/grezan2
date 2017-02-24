@@ -169,7 +169,7 @@ function stripe_button_token_callback() {
   // create response button (amount == 0 means success button, amount < 0 means failure button)
   $success = !$msg ? 0 : -1;
   $box_title = !$msg ? t('Thank you,') : t('Whoops,');
-  $box_text = !$msg ? t('for your contribution') : t('something went wrong');
+  $box_text = !$msg ? t('your payment was successful') : t('something went wrong');
   $button = theme('stripe_button_fix_value', array(
       'field_id' => $button_id,
       'amount' => $success,
@@ -411,7 +411,7 @@ function theme_stripe_button_fix_value($variables) {
     }
 
     // create theme output
-    $output = '<div class="stripe-button-container">' .
+    $output = '<div class="stripe-button-container pay">' .
       '<div class="stripe-button-title">' . $variables['box_title'] . '</div>' .
       '<div class="stripe-button-text">' . $variables['box_text'] . '</div>' .
       '<button id="' . $field_id . '" type="button" class="btn btn-normal stripe-button">' .
@@ -421,7 +421,7 @@ function theme_stripe_button_fix_value($variables) {
   else if ($variables['amount'] == 0) {
     //
     // successful payment, create success button (disabled)
-    $output = '<div class="stripe-button-container">' .
+    $output = '<div class="stripe-button-container success">' .
       '<div class="stripe-button-title">' . $variables['box_title'] . '</div>' .
       '<div class="stripe-button-text">' . $variables['box_text'] . '</div>' .
       '<button id="' . $field_id . '" type="button" class="btn btn-success stripe-button" disabled>' .
@@ -431,7 +431,7 @@ function theme_stripe_button_fix_value($variables) {
   else {
     //
     // failed payment, create fail button (disabled)
-    $output = '<div class="stripe-button-container">' .
+    $output = '<div class="stripe-button-container error">' .
       '<div class="stripe-button-title">' . $variables['box_title'] . '</div>' .
       '<div class="stripe-button-text">' . $variables['box_text'] . '</div>' .
       '<button id="' . $field_id . '" type="button" class="btn btn-error stripe-button">' .
@@ -520,7 +520,7 @@ function template_preprocess_stripe_button_custom_value(&$variables) {
  */
 function theme_stripe_button_custom_value($variables) {
   // create theme output
-  $output = '<div class="stripe-button-container">' .
+  $output = '<div class="stripe-button-container pay-form">' .
     '<div class="stripe-button-title">' . $variables['box_title'] . '</div>' .
     '<div class="stripe-button-text">' . $variables['box_text'] . '</div>' .
     drupal_render($variables['render_form']);

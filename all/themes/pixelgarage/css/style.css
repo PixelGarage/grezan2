@@ -1075,7 +1075,7 @@ body {
   font-family: 'MaisonNeueBook';
   font-size: 16px;
   line-height: 1.42857143;
-  color: #222;
+  color: #72725F;
   background-color: #fff;
 }
 input,
@@ -1087,12 +1087,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #222;
+  color: #72725F;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
 }
 a:focus {
@@ -2898,7 +2898,7 @@ select[multiple].input-lg {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #626262;
+  color: #b0b0a0;
 }
 @media (min-width: 48em) {
   .form-inline .form-group {
@@ -3386,7 +3386,7 @@ fieldset[disabled] .btn-danger.focus {
   background-color: #fff;
 }
 .btn-link {
-  color: #222;
+  color: #72725F;
   font-weight: normal;
   border-radius: 0;
 }
@@ -3407,7 +3407,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background-color: transparent;
 }
@@ -3991,7 +3991,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #222;
+  border-color: #72725F;
 }
 .nav .nav-divider {
   height: 1px;
@@ -4710,7 +4710,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 6px 12px;
   line-height: 1.42857143;
   text-decoration: none;
-  color: #222;
+  color: #72725F;
   background-color: #fff;
   border: 1px solid #ddd;
   margin-left: -1px;
@@ -4929,7 +4929,7 @@ a.badge:focus {
 }
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #222;
+  color: #72725F;
   background-color: #fff;
 }
 .list-group-item > .badge {
@@ -5004,11 +5004,11 @@ a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #222;
+  border-color: #72725F;
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #222;
+  color: #72725F;
 }
 .alert {
   padding: 15px;
@@ -9096,17 +9096,69 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 #block-locale-language ul.language-switcher-locale-url > li a.language-link {
   text-decoration: none;
-  color: #222;
+  color: #72725F;
   outline: none;
 }
 #block-locale-language ul.language-switcher-locale-url > li a.language-link.active,
 #block-locale-language ul.language-switcher-locale-url > li a.language-link:hover,
 #block-locale-language ul.language-switcher-locale-url > li a.language-link:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
 }
 #block-locale-language ul.language-switcher-locale-url > li span.locale-untranslated {
   color: #eeeeee;
+}
+/*
+ *  Path Breadcrump component
+ * --------------------------------------------------*/
+.breadcrumb {
+  display: block;
+  text-align: center;
+  background: none;
+}
+.breadcrumb span.inline {
+  display: inline-block;
+  padding: 0 5px;
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: left;
+  color: #72725F;
+}
+@media screen and (min-width: 42.666666666666664em) {
+  .breadcrumb span.inline {
+    font-size: 2.34375vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .breadcrumb span.inline {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .breadcrumb span.inline {
+    font-size: 18px;
+  }
+}
+.breadcrumb span.inline a {
+  text-decoration: none;
+}
+.breadcrumb span.inline a:hover {
+  text-decoration: underline;
+}
+.node-type-apartment .breadcrumb span.inline {
+  color: #988ADE;
+}
+.node-type-apartment .breadcrumb span.inline a {
+  color: #988ADE;
+}
+.breadcrumb span.delimiter {
+  padding: 0 5px;
+}
+.node-type-apartment .breadcrumb span.delimiter {
+  color: #988ADE;
 }
 /*
  *  Stripe button component
@@ -9150,7 +9202,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin-bottom: 16px;
   font-family: 'MaisonNeueBook';
   font-size: 16px;
-  color: #222;
+  color: #72725F;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button {
   display: inline-block;
@@ -9200,7 +9252,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   width: 60px;
   font-family: 'MaisonNeueBook';
   font-size: 22px;
-  color: #222;
+  color: #72725F;
   line-height: 1;
   border: 1px solid #5f5e5e;
   background-color: #fff;
@@ -9210,7 +9262,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   vertical-align: top;
   padding: 0;
   width: 70px;
-  color: #222;
+  color: #72725F;
   text-align: right;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-custom-form form .input-group .form-item label {
@@ -9299,7 +9351,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   padding: 0;
   width: 100% !important;
   border: none;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #72725F;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -9343,7 +9395,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   background-position: -18px 7px;
 }
 .form-select.chosen-container-single .chosen-drop {
-  border: 2px solid #222;
+  border: 2px solid #72725F;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -9353,7 +9405,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   background: #fff;
 }
 .form-select.chosen-container-single .chosen-drop ul.chosen-results li.active-result.highlighted {
-  color: #222;
+  color: #72725F;
   background: #f4f4f4;
 }
 /*
@@ -9368,7 +9420,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .fullcalendar .fc-header .fc-header-title h2 {
@@ -9393,7 +9445,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .fullcalendar .fc-header .fc-button-today {
   margin: 0;
   padding: 0;
-  border: 1px solid #958AD8;
+  border: 1px solid #988ADE;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -9406,17 +9458,18 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   font-family: 'MaisonNeueBook';
 }
 .fullcalendar .fc-content .fc-view-month .fc-cell-overlay {
-  background-color: #958AD8;
+  background-color: #988ADE;
 }
 .fullcalendar .fc-content .fc-view-month .fc-event-container .fc-event {
   height: 20px;
-  border: 1px solid #b8b0e5;
+  border: 1px solid #bbb2e9;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  background-color: #b8b0e5;
+  background-color: #bbb2e9;
 }
-.fullcalendar .fc-content .fc-view-month .fc-event-container .fc-event .fc-event-title {
+.fullcalendar .fc-content .fc-view-month .fc-event-container .fc-event .fc-event-title,
+.fullcalendar .fc-content .fc-view-month .fc-event-container .fc-event .fc-event-time {
   display: none;
 }
 .fullcalendar .fc-content .fc-view-month table tbody tr.fc-week td.fc-day.fc-past {
@@ -9438,8 +9491,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   height: 36px;
   font-family: 'MaisonNeueBook';
   font-size: 16px;
-  color: #222;
-  border: 1px solid #958AD8;
+  color: #72725F;
+  border: 1px solid #988ADE;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -9469,7 +9522,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #808080;
 }
 .availability-form .form-item .form-textarea-wrapper textarea {
-  border: 1px solid #958AD8;
+  border: 1px solid #988ADE;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -9535,7 +9588,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 -2px;
   padding: 0;
   width: 100%;
-  border: 1px solid #958AD8;
+  border: 1px solid #988ADE;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -9667,7 +9720,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0;
   padding-top: 10px;
   text-align: center;
-  border-top: 1px solid #958AD8;
+  border-top: 1px solid #988ADE;
 }
 .availability-form .form-submit-availability .form-item {
   cursor: pointer;
@@ -9675,7 +9728,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #958AD8;
+  border: 2px solid #988ADE;
   -webkit-transform: rotate(-10deg);
   -ms-transform: rotate(-10deg);
   -o-transform: rotate(-10deg);
@@ -9697,7 +9750,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  background: #958AD8 none;
+  background: #988ADE none;
 }
 .block-pxl-availability {
   margin: 30px 0;
@@ -9705,14 +9758,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .block-pxl-availability h2.block-title {
   margin: 0 0 30px;
   padding: 10px;
-  border-top: 1px solid #958AD8;
+  border-top: 1px solid #988ADE;
   font-family: 'MaisonNeueBook';
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .block-pxl-availability h2.block-title {
@@ -9742,8 +9795,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   height: 36px;
   font-family: 'MaisonNeueBook';
   font-size: 16px;
-  color: #222;
-  border: 1px solid #958AD8;
+  color: #72725F;
+  border: 1px solid #988ADE;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -9773,7 +9826,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #808080;
 }
 .block-pxl-availability .block-availability-form .availability-form-container form .form-item .form-textarea-wrapper textarea {
-  border: 1px solid #958AD8;
+  border: 1px solid #988ADE;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -9839,7 +9892,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 -2px;
   padding: 0;
   width: 100%;
-  border: 1px solid #958AD8;
+  border: 1px solid #988ADE;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -9971,7 +10024,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0;
   padding-top: 10px;
   text-align: center;
-  border-top: 1px solid #958AD8;
+  border-top: 1px solid #988ADE;
 }
 .block-pxl-availability .block-availability-form .availability-form-container form .form-submit-availability .form-item {
   cursor: pointer;
@@ -9979,7 +10032,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #958AD8;
+  border: 2px solid #988ADE;
   -webkit-transform: rotate(-10deg);
   -ms-transform: rotate(-10deg);
   -o-transform: rotate(-10deg);
@@ -10001,7 +10054,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  background: #958AD8 none;
+  background: #988ADE none;
 }
 .block-pxl-availability .block-availability-form .modal {
   background-color: rgba(255, 255, 255, 0.8);
@@ -10116,7 +10169,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   font-family: 'MaisonNeueBook';
   font-size: 60px;
   font-weight: normal;
-  color: #222;
+  color: #72725F;
 }
 .block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-header .body-fading {
   display: none;
@@ -10138,18 +10191,18 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-footer .btn {
   display: inline-block;
   font-family: 'MaisonNeueBook';
-  color: #222;
+  color: #72725F;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
-  border: 2px solid #222;
+  border: 2px solid #72725F;
   background-color: #fff;
   -webkit-box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
   box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
 }
 .block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-footer .btn:hover {
   color: #fff;
-  background-color: #222;
+  background-color: #72725F;
 }
 .block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-footer .body-fading {
   display: none;
@@ -10158,13 +10211,13 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   font-family: 'MaisonNeueBook';
   text-align: left;
   font-size: 15px;
-  color: #222;
+  color: #72725F;
 }
 .block-pxl-availability .block-shopping-cart-form .shopping-cart-table .table-responsive table tbody tr td {
   font-family: 'MaisonNeueBook';
   text-align: left;
   font-size: 15px;
-  color: #222;
+  color: #72725F;
 }
 .block-pxl-availability .block-shopping-cart-form .shopping-cart-table .table-responsive table tbody tr td button.cart-item-delete {
   margin: 0;
@@ -10187,8 +10240,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   font-family: 'MaisonNeueBook';
   text-align: center;
   font-size: 15px;
-  color: #958AD8;
-  border: 1px solid #958AD8;
+  color: #988ADE;
+  border: 1px solid #988ADE;
   background: none;
 }
 .block-pxl-availability .block-shopping-cart-form .shopping-cart-actions .stripe-button-container {
@@ -10209,8 +10262,11 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .block-pxl-availability .block-shopping-cart-form .shopping-cart-actions .stripe-button-container .stripe-button-text {
   display: none;
   font-family: 'MaisonNeueBook';
-  text-align: center;
+  text-align: right;
   font-size: 15px;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-actions .stripe-button-container.success .stripe-button-text {
+  display: block;
 }
 .block-pxl-availability .block-shopping-cart-form .shopping-cart-actions .stripe-button-container .stripe-button {
   display: inline-block;
@@ -10225,7 +10281,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  background: #958AD8 none;
+  background: #988ADE none;
 }
 /*
  *  Node page component
@@ -10244,7 +10300,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-title h2 {
@@ -10275,7 +10331,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h1,
@@ -10312,7 +10368,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h4,
@@ -10346,7 +10402,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -10378,7 +10434,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a {
@@ -10397,7 +10453,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a:hover,
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -10408,7 +10464,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -10434,7 +10490,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -10504,7 +10560,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-webform .row .col-sm-12 .field-name-title h2,
@@ -10549,7 +10605,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-webform .row .col-sm-12 .field-name-body h1,
@@ -10602,7 +10658,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-webform .row .col-sm-12 .field-name-body h4,
@@ -10650,7 +10706,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -10689,7 +10745,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-webform .row .col-sm-12 .field-name-body a,
@@ -10713,7 +10769,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-6 .field-name-body a:hover,
 .node.node-webform .row .col-sm-12 .field-name-body a:focus,
 .node.node-webform .row .col-sm-6 .field-name-body a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -10726,7 +10782,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -10759,7 +10815,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -10836,7 +10892,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-call2action > .row > .col-sm-12 > .field-name-title .field-item h2 {
@@ -10865,7 +10921,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-call2action > .row > .col-sm-12 > .field-name-field-subtitle .field-item {
@@ -10904,7 +10960,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-call2action > .row > .col-sm-12 > .field-name-body .field-item h1,
@@ -10941,7 +10997,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-call2action > .row > .col-sm-12 > .field-name-body .field-item h4,
@@ -10975,7 +11031,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -11007,7 +11063,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-call2action > .row > .col-sm-12 > .field-name-body .field-item a {
@@ -11026,7 +11082,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-call2action > .row > .col-sm-12 > .field-name-body .field-item a:hover,
 .node.node-call2action > .row > .col-sm-12 > .field-name-body .field-item a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -11037,7 +11093,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -11063,7 +11119,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -11111,7 +11167,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
 }
 .node.node-call2action.call2action-rentals {
-  border-top: 1px solid #958AD8;
+  border-top: 1px solid #988ADE;
 }
 .node.node-call2action.call2action-rentals > .row > .col-sm-12 .field-name-field-link {
   position: absolute;
@@ -11121,7 +11177,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0;
   padding-top: 10px;
   text-align: center;
-  border-top: 1px solid #958AD8;
+  border-top: 1px solid #988ADE;
 }
 .node.node-call2action.call2action-rentals > .row > .col-sm-12 .field-name-field-link .field-items {
   cursor: pointer;
@@ -11129,7 +11185,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #958AD8;
+  border: 2px solid #988ADE;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
@@ -11150,7 +11206,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  background-color: #958AD8;
+  background-color: #988ADE;
 }
 .node.node-call2action.call2action-rentals > .row > .col-sm-12 .field-name-field-link .field-items .field-item a,
 .node.node-call2action.call2action-rentals > .row > .col-sm-12 .field-name-field-link .field-items .field-item .field-action {
@@ -11169,7 +11225,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #fff;
 }
 .node.node-call2action.call2action-artculture {
-  border-top: 1px solid #E9A665;
+  border-top: 1px solid #F4A258;
 }
 .node.node-call2action.call2action-artculture > .row > .col-sm-12 .field-name-field-link {
   position: absolute;
@@ -11179,7 +11235,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0;
   padding-top: 10px;
   text-align: center;
-  border-top: 1px solid #E9A665;
+  border-top: 1px solid #F4A258;
 }
 .node.node-call2action.call2action-artculture > .row > .col-sm-12 .field-name-field-link .field-items {
   cursor: pointer;
@@ -11187,7 +11243,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #E9A665;
+  border: 2px solid #F4A258;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
@@ -11208,7 +11264,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  background-color: #E9A665;
+  background-color: #F4A258;
 }
 .node.node-call2action.call2action-artculture > .row > .col-sm-12 .field-name-field-link .field-items .field-item a,
 .node.node-call2action.call2action-artculture > .row > .col-sm-12 .field-name-field-link .field-items .field-item .field-action {
@@ -11227,7 +11283,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #fff;
 }
 .node.node-call2action.call2action-about {
-  border-top: 1px solid #6EA39E;
+  border-top: 1px solid #5DA59E;
 }
 .node.node-call2action.call2action-about > .row > .col-sm-12 .field-name-field-link {
   position: absolute;
@@ -11237,7 +11293,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0;
   padding-top: 10px;
   text-align: center;
-  border-top: 1px solid #6EA39E;
+  border-top: 1px solid #5DA59E;
 }
 .node.node-call2action.call2action-about > .row > .col-sm-12 .field-name-field-link .field-items {
   cursor: pointer;
@@ -11245,7 +11301,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #6EA39E;
+  border: 2px solid #5DA59E;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
@@ -11266,7 +11322,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  background-color: #6EA39E;
+  background-color: #5DA59E;
 }
 .node.node-call2action.call2action-about > .row > .col-sm-12 .field-name-field-link .field-items .field-item a,
 .node.node-call2action.call2action-about > .row > .col-sm-12 .field-name-field-link .field-items .field-item .field-action {
@@ -11311,7 +11367,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-title h2 {
@@ -11339,7 +11395,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h1,
@@ -11376,7 +11432,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body h4,
@@ -11410,7 +11466,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -11442,7 +11498,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body a {
@@ -11461,7 +11517,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body a:hover,
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -11472,7 +11528,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -11498,7 +11554,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -11576,7 +11632,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-title h2,
@@ -11646,7 +11702,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h1,
@@ -11699,7 +11755,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body h4,
@@ -11747,7 +11803,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -11786,7 +11842,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body a,
@@ -11810,7 +11866,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body a:hover,
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body a:focus,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -11823,7 +11879,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -11856,7 +11912,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -11929,7 +11985,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-datum .field-item {
@@ -11960,7 +12016,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-event-description .field-item h1,
@@ -11997,7 +12053,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-event-description .field-item h4,
@@ -12031,7 +12087,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -12063,7 +12119,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-event-description .field-item a {
@@ -12082,7 +12138,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-event-description .field-item a:hover,
 .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-event-description .field-item a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -12093,7 +12149,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -12119,7 +12175,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -12172,7 +12228,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   padding: 10px 0;
   height: 100px;
-  border-top: 1px solid #E9A665;
+  border-top: 1px solid #F4A258;
   border-bottom: 0.5px solid #5f5e5e;
 }
 @media screen and (min-width: 48em) {
@@ -12188,7 +12244,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-event.view-mode-teaser > .row > .col-sm-12 .group-header .field-name-title h2 {
@@ -12218,7 +12274,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
   padding-bottom: 10px;
 }
 @media screen and (min-width: 42.666666666666664em) {
@@ -12251,7 +12307,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-datum .field-item {
@@ -12282,7 +12338,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-event-description .field-item h1,
@@ -12319,7 +12375,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-event-description .field-item h4,
@@ -12353,7 +12409,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -12385,7 +12441,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-event-description .field-item a {
@@ -12404,7 +12460,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-event-description .field-item a:hover,
 .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-event-description .field-item a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -12415,7 +12471,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -12441,7 +12497,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -12493,7 +12549,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0;
   padding-top: 10px;
   text-align: center;
-  border-top: 1px solid #E9A665;
+  border-top: 1px solid #F4A258;
 }
 .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items {
   cursor: pointer;
@@ -12501,7 +12557,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #E9A665;
+  border: 2px solid #F4A258;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
@@ -12522,7 +12578,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  background-color: #E9A665;
+  background-color: #F4A258;
 }
 .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item a,
 .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item .field-action {
@@ -12741,8 +12797,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
-  border-top: 1px solid #E9A665;
+  color: #72725F;
+  border-top: 1px solid #F4A258;
 }
 @media screen and (min-width: 40em) {
   .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-title h2,
@@ -12771,7 +12827,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-datum .field-item,
@@ -12800,7 +12856,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   border-bottom: 0.5px solid #5f5e5e;
 }
 @media screen and (min-width: 45em) {
@@ -12840,7 +12896,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-event-description .field-item h1,
@@ -12893,7 +12949,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-event-description .field-item h4,
@@ -12941,7 +12997,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -12980,7 +13036,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-event-description .field-item a,
@@ -13004,7 +13060,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-event.view-mode-default > .row > .col-sm-12 .field-name-field-event-description .field-item a:hover,
 .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-event-description .field-item a:focus,
 .node.node-event.view-mode-default > .row > .col-sm-12 .field-name-field-event-description .field-item a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -13017,7 +13073,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -13050,7 +13106,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -13125,7 +13181,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-event-link .field-item a,
@@ -13154,7 +13210,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-event.view-mode-default > .row > .col-sm-12 .field-name-field-event-link .field-item a.active,
 .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-event-link .field-item a:hover,
 .node.node-event.view-mode-default > .row > .col-sm-12 .field-name-field-event-link .field-item a:hover {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
 }
 /*
@@ -13169,7 +13225,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   padding: 10px 0;
   height: 90px;
-  border-top: 1px solid #958AD8;
+  border-top: 1px solid #988ADE;
   border-bottom: 0.5px solid #5f5e5e;
 }
 @media screen and (min-width: 48em) {
@@ -13185,7 +13241,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .group-header .field-name-title h2 {
@@ -13215,7 +13271,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
   padding-bottom: 10px;
 }
 @media screen and (min-width: 42.666666666666664em) {
@@ -13254,7 +13310,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h1,
@@ -13291,7 +13347,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h4,
@@ -13325,7 +13381,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -13357,7 +13413,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a {
@@ -13376,7 +13432,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a:hover,
 .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -13387,7 +13443,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -13413,7 +13469,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -13465,7 +13521,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0;
   padding-top: 10px;
   text-align: center;
-  border-top: 1px solid #958AD8;
+  border-top: 1px solid #988ADE;
 }
 .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items {
   cursor: pointer;
@@ -13473,7 +13529,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #958AD8;
+  border: 2px solid #988ADE;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
@@ -13494,7 +13550,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  background-color: #958AD8;
+  background-color: #988ADE;
 }
 .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item a,
 .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item .field-action {
@@ -13558,8 +13614,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
-  border-top: 1px solid #958AD8;
+  color: #72725F;
+  border-top: 1px solid #988ADE;
 }
 @media screen and (min-width: 40em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-title h2,
@@ -13600,7 +13656,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h1,
@@ -13653,7 +13709,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h4,
@@ -13701,7 +13757,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -13740,7 +13796,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a,
@@ -13764,7 +13820,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a:hover,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a:focus,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -13777,7 +13833,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -13810,7 +13866,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -14058,7 +14114,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price {
   margin: 0 0 10px;
   padding: 10px;
-  border: 1px solid #958AD8;
+  border: 1px solid #988ADE;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price .field-name-field-price,
 .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price {
@@ -14072,7 +14128,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price .field-name-field-price .field-item,
@@ -14104,7 +14160,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item,
@@ -14132,7 +14188,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-field-amenities {
   margin: 0 0 10px;
   padding: 10px 0 0;
-  border-top: 1px solid #958AD8;
+  border-top: 1px solid #988ADE;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-4 .field-name-field-amenities .field-item ul,
 .node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-field-amenities .field-item ul {
@@ -14155,7 +14211,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   padding: 10px 0;
   height: 70px;
-  border-top: 1px solid #958AD8;
+  border-top: 1px solid #988ADE;
   border-bottom: 0.5px solid #5f5e5e;
 }
 @media screen and (min-width: 48em) {
@@ -14171,7 +14227,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header .field-name-title h2 {
@@ -14201,7 +14257,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
   padding-bottom: 10px;
 }
 @media screen and (min-width: 42.666666666666664em) {
@@ -14240,7 +14296,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h1,
@@ -14277,7 +14333,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item h4,
@@ -14311,7 +14367,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -14343,7 +14399,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a {
@@ -14362,7 +14418,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a:hover,
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -14373,7 +14429,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -14399,7 +14455,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -14451,7 +14507,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0;
   padding-top: 10px;
   text-align: center;
-  border-top: 1px solid #958AD8;
+  border-top: 1px solid #988ADE;
 }
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items {
   cursor: pointer;
@@ -14459,7 +14515,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #958AD8;
+  border: 2px solid #988ADE;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
@@ -14480,7 +14536,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  background-color: #958AD8;
+  background-color: #988ADE;
 }
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item a,
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item .field-action {
@@ -14699,8 +14755,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
-  border-top: 1px solid #958AD8;
+  color: #72725F;
+  border-top: 1px solid #988ADE;
 }
 @media screen and (min-width: 40em) {
   .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-title h2,
@@ -14729,7 +14785,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   border-bottom: 0.5px solid #5f5e5e;
 }
 @media screen and (min-width: 45em) {
@@ -14769,7 +14825,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h1,
@@ -14822,7 +14878,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h4,
@@ -14870,7 +14926,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -14909,7 +14965,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a,
@@ -14933,7 +14989,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a:hover,
 .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a:focus,
 .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -14946,7 +15002,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -14979,7 +15035,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -15064,7 +15120,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-footer > .row > div.col-sm-12 .field-name-field-links .field-items .field-item a {
@@ -15087,7 +15143,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-footer > .row > div.col-sm-12 .field-name-field-links .field-items .field-item a.active,
 .node.node-footer > .row > div.col-sm-12 .field-name-field-links .field-items .field-item a:hover {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
 }
 /*
@@ -15346,7 +15402,7 @@ form#user-login {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h1,
@@ -15415,7 +15471,7 @@ form#user-login {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h4,
@@ -15477,7 +15533,7 @@ form#user-login {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -15523,7 +15579,7 @@ form#user-login {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item a,
@@ -15552,7 +15608,7 @@ form#user-login {
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item a:focus,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item a:focus,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -15567,7 +15623,7 @@ form#user-login {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -15607,7 +15663,7 @@ form#user-login {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -15710,7 +15766,7 @@ form#user-profile-form div #edit-account .panel-heading .panel-title {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   form#user-profile-form div fieldset.panel .panel-heading .panel-title,
@@ -15747,9 +15803,9 @@ form#user-profile-form div .form-wrapper .form-item input.form-control {
   height: 36px;
   font-family: 'MaisonNeueBook';
   font-size: 16px;
-  color: #222;
+  color: #72725F;
   border: none;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #72725F;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -15772,7 +15828,7 @@ form#user-profile-form div .form-wrapper .form-item input.form-control:focus {
   -webkit-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
   -moz-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
   box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
-  border: 2px solid #222;
+  border: 2px solid #72725F;
 }
 form#user-profile-form div .form-wrapper .form-item .help-block {
   font-family: 'MaisonNeueBook';
@@ -15781,7 +15837,7 @@ form#user-profile-form div .form-wrapper .form-item .help-block {
 }
 form#user-profile-form div .form-wrapper .form-item .form-textarea-wrapper textarea {
   border: none;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #72725F;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -15804,7 +15860,7 @@ form#user-profile-form div .form-wrapper .form-item .form-textarea-wrapper texta
   -webkit-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
   -moz-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
   box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
-  border: 2px solid #222;
+  border: 2px solid #72725F;
 }
 form#user-profile-form div .form-wrapper .form-item .form-textarea-wrapper .grippie {
   display: none;
@@ -15848,7 +15904,7 @@ form#user-profile-form div .form-wrapper .form-item .form-managed-file .image-wi
   margin: 0 -2px;
   padding: 0;
   width: 100%;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #72725F;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -16007,7 +16063,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-title .field-item {
@@ -16035,7 +16091,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h1,
@@ -16072,7 +16128,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item h4,
@@ -16106,7 +16162,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -16138,7 +16194,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item a {
@@ -16157,7 +16213,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item a:hover,
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -16168,7 +16224,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -16194,7 +16250,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -16249,7 +16305,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
@@ -16267,13 +16323,13 @@ form#user-profile-form div .form-actions .form-submit .icon {
   }
 }
 .page-rentals .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
-  color: #958AD8;
+  color: #988ADE;
 }
 .page-artculture .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
-  color: #E9A665;
+  color: #F4A258;
 }
 .page-about .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
-  color: #6EA39E;
+  color: #5DA59E;
 }
 /*
  *  Image paragraph component
@@ -16285,7 +16341,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .entity-paragraphs-item.paragraphs-item-image-paragraph .content .field-name-field-title .field-item {
@@ -16316,7 +16372,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .content .field-name-field-title .field-item {
@@ -16712,7 +16768,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   font-family: 'MaisonNeueBook';
   font-size: 60px;
   font-weight: normal;
-  color: #222;
+  color: #72725F;
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header .body-fading {
   display: none;
@@ -16734,18 +16790,18 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn {
   display: inline-block;
   font-family: 'MaisonNeueBook';
-  color: #222;
+  color: #72725F;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
-  border: 2px solid #222;
+  border: 2px solid #72725F;
   background-color: #fff;
   -webkit-box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
   box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn:hover {
   color: #fff;
-  background-color: #222;
+  background-color: #72725F;
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .body-fading {
   display: none;
@@ -16760,7 +16816,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   font-family: 'MaisonNeueBook';
   font-size: 18px;
   text-decoration: none;
-  color: #222;
+  color: #72725F;
   border: none;
   background: none;
 }
@@ -16770,7 +16826,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-proximity ul.pagination li:hover span,
 .view.view-proximity ul.pagination li:focus span,
 .view.view-proximity ul.pagination li.active span {
-  color: #222;
+  color: #72725F;
   text-decoration: none;
 }
 .view.view-proximity .pager.pager--infinite-scroll .pager__item a {
@@ -16826,13 +16882,13 @@ form#user-profile-form div .form-actions .form-submit .icon {
  * --------------------------------------------------*/
 .view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a {
   text-decoration: none;
-  color: #958AD8;
+  color: #988ADE;
   outline: none;
 }
 .view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a.active,
 .view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a:hover,
 .view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a:focus {
-  color: #513fbd;
+  color: #523ac8;
   text-decoration: none;
 }
 .view.view-apartements.view-display-id-block_page .view-content > .pe-container .grid-sizer,
@@ -16992,7 +17048,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   font-family: 'MaisonNeueBook';
   font-size: 60px;
   font-weight: normal;
-  color: #222;
+  color: #72725F;
 }
 .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header .body-fading {
   display: none;
@@ -17014,18 +17070,18 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn {
   display: inline-block;
   font-family: 'MaisonNeueBook';
-  color: #222;
+  color: #72725F;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
-  border: 2px solid #222;
+  border: 2px solid #72725F;
   background-color: #fff;
   -webkit-box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
   box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
 }
 .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn:hover {
   color: #fff;
-  background-color: #222;
+  background-color: #72725F;
 }
 .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .body-fading {
   display: none;
@@ -17050,13 +17106,13 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a {
   text-decoration: none;
-  color: #6EA39E;
+  color: #5DA59E;
   outline: none;
 }
 .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a.active,
 .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a:hover,
 .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a:focus {
-  color: #426965;
+  color: #386460;
   text-decoration: none;
 }
 .view.view-hosts.view-display-id-block_hosts {
@@ -17093,7 +17149,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-address-name-line .field-content {
@@ -17129,7 +17185,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .views-label {
@@ -17157,7 +17213,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 40em) {
   .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h1,
@@ -17194,7 +17250,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 42.666666666666664em) {
   .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content h4,
@@ -17228,7 +17284,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -17260,7 +17316,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 45em) {
   .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content a {
@@ -17279,7 +17335,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content a:hover,
 .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content a:focus {
-  color: #E9A665;
+  color: #F4A258;
   text-decoration: none;
   background: none;
 }
@@ -17290,7 +17346,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBookItalic';
 }
 @media screen and (min-width: 45em) {
@@ -17316,7 +17372,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
+  color: #72725F;
   font-family: 'MaisonNeueBook';
 }
 @media screen and (min-width: 45em) {
@@ -17520,7 +17576,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   font-family: 'MaisonNeueBook';
   font-size: 60px;
   font-weight: normal;
-  color: #222;
+  color: #72725F;
 }
 .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header .body-fading {
   display: none;
@@ -17542,18 +17598,18 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn {
   display: inline-block;
   font-family: 'MaisonNeueBook';
-  color: #222;
+  color: #72725F;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
-  border: 2px solid #222;
+  border: 2px solid #72725F;
   background-color: #fff;
   -webkit-box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
   box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
 }
 .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn:hover {
   color: #fff;
-  background-color: #222;
+  background-color: #72725F;
 }
 .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .body-fading {
   display: none;
@@ -17718,7 +17774,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   font-family: 'MaisonNeueBook';
   font-size: 60px;
   font-weight: normal;
-  color: #222;
+  color: #72725F;
 }
 .view.view-events .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header .body-fading {
   display: none;
@@ -17740,18 +17796,18 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-events .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn {
   display: inline-block;
   font-family: 'MaisonNeueBook';
-  color: #222;
+  color: #72725F;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
-  border: 2px solid #222;
+  border: 2px solid #72725F;
   background-color: #fff;
   -webkit-box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
   box-shadow: 0 0 4px rgba(100, 100, 100, 0.4);
 }
 .view.view-events .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn:hover {
   color: #fff;
-  background-color: #222;
+  background-color: #72725F;
 }
 .view.view-events .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .body-fading {
   display: none;
@@ -17777,7 +17833,7 @@ form.webform-client-form fieldset.panel .panel-heading .panel-title {
   display: block;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  color: #222;
+  color: #72725F;
   text-align: left;
 }
 @media screen and (min-width: 32.72727272727273em) {
@@ -17802,7 +17858,7 @@ form.webform-client-form fieldset.panel .panel-body .help-block {
   display: block;
   margin: 10px 0 0;
   font-family: 'MaisonNeueBook';
-  color: #222;
+  color: #72725F;
   font-size: 13px;
   line-height: 17px;
 }
@@ -17870,7 +17926,7 @@ form.webform-client-form fieldset.panel .panel-body .btn.btn-default:before {
 }
 form.webform-client-form fieldset.panel .panel-body .btn.btn-default:hover,
 form.webform-client-form fieldset.panel .panel-body .btn.btn-default:focus {
-  color: #E9A665;
+  color: #F4A258;
 }
 form.webform-client-form fieldset.panel .panel-body [id*='webform-addmore-add']:before {
   content: '\f0fe';
@@ -18030,7 +18086,7 @@ form.webform-client-form .webform-component label {
   letter-spacing: normal;
   text-align: left;
   text-transform: none;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 51.42857142857143em) {
   form.webform-client-form .webform-component label {
@@ -18055,7 +18111,7 @@ form.webform-client-form .webform-component div.help-block {
   display: block;
   margin: 10px 0 0;
   font-family: 'MaisonNeueBook';
-  color: #222;
+  color: #72725F;
   font-size: 13px;
   line-height: 17px;
 }
@@ -18072,7 +18128,7 @@ form.webform-client-form .webform-component textarea {
   padding: 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  color: #222;
+  color: #72725F;
   line-height: 1.2;
   letter-spacing: normal;
   text-align: left;
@@ -18146,7 +18202,7 @@ form.webform-client-form .webform-component.webform-component-select select {
   height: auto;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  color: #222;
+  color: #72725F;
   line-height: 1.2;
   letter-spacing: normal;
   text-align: left;
@@ -18228,7 +18284,7 @@ form.webform-client-form .webform-component .form-managed-file input {
   padding: 0;
   width: 75%;
   font-size: 15px;
-  color: #222;
+  color: #72725F;
   text-align: left;
   border: none;
   background-color: rgba(255, 255, 255, 0);
@@ -18327,7 +18383,7 @@ form.webform-client-form .webform-component.webform-component-markup h2,
 form.webform-client-form .webform-component.webform-component-markup strong {
   font-family: 'MaisonNeueBook';
   font-weight: normal;
-  color: #222;
+  color: #72725F;
   font-size: 13px;
   line-height: 17px;
   text-align: left;
@@ -18335,7 +18391,7 @@ form.webform-client-form .webform-component.webform-component-markup strong {
 form.webform-client-form .webform-component.webform-component-markup p {
   font-family: 'MaisonNeueBook';
   font-size: 13px;
-  color: #222;
+  color: #72725F;
   line-height: 17px;
   text-align: left;
   background: none;
@@ -18431,7 +18487,7 @@ form.webform-client-form div.form-actions a.back-link {
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
-  color: #222;
+  color: #72725F;
   outline: none;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
@@ -18488,7 +18544,7 @@ form.webform-client-form div.form-actions a.done-link {
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
-  color: #222;
+  color: #72725F;
   outline: none;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
@@ -18538,7 +18594,7 @@ form.webform-client-form div.form-actions a.done-link:focus {
   }
 }
 form.webform-client-form div.form-actions a.done-link:hover {
-  color: #222;
+  color: #72725F;
 }
 /*
  *  Webform confirmation component
@@ -18701,7 +18757,7 @@ header#navbar .container .navbar-header a.logo img,
 header#navbar .container-fluid .navbar-header a.logo img {
   display: inline-block;
   vertical-align: middle;
-  max-height: 80px;
+  height: 80px;
   width: auto;
 }
 @media screen and (min-width: 640px) {
@@ -18733,7 +18789,7 @@ header#navbar .container-fluid .navbar-header .region-navigation {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: left;
-  color: #222;
+  color: #72725F;
 }
 @media screen and (min-width: 43.2em) {
   header#navbar .container .navbar-header a.navbar-brand,
@@ -18791,7 +18847,7 @@ header#navbar .container-fluid .navbar-header .navbar-toggle .icon-bar {
   display: block;
   height: 2px;
   width: 20px;
-  background-color: #000;
+  background-color: #72725F;
 }
 header#navbar .container .navbar-header .navbar-toggle .icon-bar + .icon-bar,
 header#navbar .container-fluid .navbar-header .navbar-toggle .icon-bar + .icon-bar {
@@ -18832,7 +18888,7 @@ header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a {
   letter-spacing: 0.02em;
   line-height: 1;
   text-align: center;
-  color: #222;
+  color: #72725F;
 }
 header#navbar .container .navbar-collapse nav ul.navbar-nav li a:hover,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a:hover,
@@ -18842,33 +18898,33 @@ header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a.active {
 }
 header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-rentals a,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-rentals a {
-  color: #958AD8;
+  color: #988ADE;
 }
 header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-rentals a:hover,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-rentals a:hover,
 header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-rentals a.active,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-rentals a.active {
-  color: #513fbd;
+  color: #523ac8;
 }
 header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-art-culture a,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-art-culture a {
-  color: #E9A665;
+  color: #F4A258;
 }
 header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-art-culture a:hover,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-art-culture a:hover,
 header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-art-culture a.active,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-art-culture a.active {
-  color: #cb731d;
+  color: #d86e0e;
 }
 header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-about a,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-about a {
-  color: #6EA39E;
+  color: #5DA59E;
 }
 header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-about a:hover,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-about a:hover,
 header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-about a.active,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-about a.active {
-  color: #426965;
+  color: #386460;
 }
 header#navbar .container .navbar-collapse .navbar-toggle-close,
 header#navbar .container-fluid .navbar-collapse .navbar-toggle-close {
@@ -18881,10 +18937,10 @@ header#navbar .container-fluid .navbar-collapse .navbar-toggle-close {
 header#navbar .container .navbar-collapse .navbar-toggle-close .button-close,
 header#navbar .container-fluid .navbar-collapse .navbar-toggle-close .button-close {
   display: block;
-  width: 20px;
+  width: 25px;
   height: 30px;
-  font-size: 30px;
-  line-height: 1;
+  font-size: 50px;
+  line-height: 30px;
 }
 @media screen and (min-width: 640px) {
   header#navbar .container .navbar-collapse,
@@ -18985,6 +19041,10 @@ body .main-container .container-fluid #page-header .region-header .block {
 body .main-container .container #page-header .region-header .block h2.block-title,
 body .main-container .container-fluid #page-header .region-header .block h2.block-title {
   display: none;
+}
+body .main-container .container #page-header .region-header .block .content .pxl-title,
+body .main-container .container-fluid #page-header .region-header .block .content .pxl-title {
+  text-align: center;
 }
 body .main-container .container .row section h1.page-header,
 body .main-container .container-fluid .row section h1.page-header {

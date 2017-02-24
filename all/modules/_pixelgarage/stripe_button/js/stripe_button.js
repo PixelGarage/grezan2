@@ -23,7 +23,7 @@
             locale: 'auto',
             token: function (token) {
               // get button container for responses
-              var $fieldItemDiv = $clickedButton.parents('.field-item');
+              var $buttonContainer = $clickedButton.parent();
 
               // Use the token to create the charge with a server-side script.
               if ((typeof token != 'undefined') && token.id) {
@@ -45,10 +45,10 @@
 
                 //
                 // charge the customer with the token and display response
-                $fieldItemDiv.load('/stripe/ajax/token', params, function (response, status, xhr) {
+                $buttonContainer.load('/stripe/ajax/token', params, function (response, status, xhr) {
                   if (status == "error") {
                     var msg = "Server error " + xhr.status + ": " + xhr.statusText;
-                    $fieldItemDiv.html('<div class="stripe-button-error">' + msg + '</div>');
+                    $buttonContainer.append('<div class="stripe-button-error">' + msg + '</div>');
                   }
                   else {
                     // do NOT attach behaviours to button, it is disabled
@@ -59,7 +59,7 @@
               else {
                 // no valid token returned => should never happen
                 var msg = "Stripe payment server error. Try it later again.";
-                $clickedButton.parent().append('<div class="stripe-button-error">' + msg + '</div>');
+                $buttonContainer.append('<div class="stripe-button-error">' + msg + '</div>');
               }
 
             }
@@ -114,7 +114,7 @@
       $.each(Drupal.settings.stripe_button.custom_buttons, function (button, settings) {
         var $form_button = $('#form-' + button + ' .form-submit'),
             $form_text = $('#form-' + button + ' .form-text'),
-            $fieldItemDiv = $form_button.parents('.field-item');
+            $buttonContainer = $form_button.parent();
 
         $form_button.off('click');
         $form_button.on('click', function (e) {
@@ -132,10 +132,10 @@
 
           //
           // get the stripe button with the user set value
-          $fieldItemDiv.load('/stripe/ajax/button', params, function (response, status, xhr) {
+          $buttonContainer.load('/stripe/ajax/button', params, function (response, status, xhr) {
             if (status == "error") {
               var msg = "Server error " + xhr.status + ": " + xhr.statusText;
-              $fieldItemDiv.html('<div class="stripe-button-error">' + msg + '</div>');
+              $buttonContainer.append('<div class="stripe-button-error">' + msg + '</div>');
             }
             else {
               // attach behaviours to new stripe button

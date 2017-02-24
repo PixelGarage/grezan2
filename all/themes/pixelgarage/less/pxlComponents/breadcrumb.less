@@ -1,0 +1,58 @@
+/*
+ *  Path Breadcrump component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+
+// Mixins
+// -------------------------
+
+
+
+// General settings
+// -------------------------
+.breadcrumb {
+  display: block;
+  text-align: center;
+  background: none;
+
+  span.inline {
+    display: inline-block;
+    padding: 0 5px;
+    #pxl-mixins.subtitle();
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .node-type-apartment & {
+      color: @pxl-color-rentals;
+
+      a {
+        color: @pxl-color-rentals;
+      }
+    }
+
+
+    &.odd{
+
+    }
+
+    &.even {
+
+    }
+  }
+
+  span.delimiter {
+    padding: 0 5px;
+
+    .node-type-apartment & {
+      color: @pxl-color-rentals;
+    }
+  }
+}

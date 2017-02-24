@@ -171,8 +171,13 @@
         .stripe-button-text {
           display: none;
           font-family: @pxl-text-font;
-          text-align: center;
+          text-align: right;
           font-size: @font-size-min;
+        }
+        &.success {
+          .stripe-button-text {
+            display: block;
+          }
         }
 
         .stripe-button {

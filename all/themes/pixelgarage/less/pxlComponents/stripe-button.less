@@ -14,6 +14,8 @@
 
 // Mixins
 // -------------------------
+//
+// stripe button
 .stripe-button(@size: @stripe-button-font-size) {
   display: inline-block;
   padding: 6px 15px;
@@ -35,6 +37,8 @@
   }
 }
 
+//
+// custom value form
 .stripe-button-form () {
   form {
     width: 100%;
@@ -102,6 +106,58 @@
   }
 }
 
+//
+// stripe button with container
+.stripe-container-button() {
+  padding: 0;
+
+  .stripe-button-title {
+    display: none;
+    font-family: @pxl-text-font-bold;
+    font-size: 22px;
+    color: @pxl-color-main;
+  }
+
+  .stripe-button-text {
+    display: none;
+    margin-bottom: @font-size-base;
+    font-family: @pxl-text-font;
+    font-size: @font-size-base;
+    color: @text-color;
+  }
+
+  //
+  // fixed stripe button
+  .stripe-button {
+    // the stripe button with the fixed amount
+    .stripe-button(@font-size-button);
+
+    &.btn-warning {
+      background-color: @brand-warning;
+    }
+
+    &[disabled] {
+      opacity: 0.7;
+    }
+  }
+
+  //
+  // stripe button custom form
+  .stripe-button-custom-form {
+    .stripe-button-form ();
+  }
+
+  //
+  // visible only when input is incorrect
+  .stripe-button-input-error {
+    font-family: @pxl-text-font;
+    font-size: 12px;
+    color: @brand-danger;
+  }
+}
+
+
+
 
 // General settings
 // -------------------------
@@ -132,51 +188,7 @@
       //
       // STRIPE BUTTON CONTAINER
       .stripe-button-container {
-        padding: 0;
-
-        .stripe-button-title {
-          display: none;
-          font-family: @pxl-text-font-bold;
-          font-size: 22px;
-          color: @pxl-color-main;
-        }
-
-        .stripe-button-text {
-          display: none;
-          margin-bottom: @font-size-base;
-          font-family: @pxl-text-font;
-          font-size: @font-size-base;
-          color: @text-color;
-        }
-
-        //
-        // fixed stripe button
-        .stripe-button {
-          // the stripe button with the given amount
-          .stripe-button(@font-size-button);
-
-          &.btn-warning {
-            background-color: @brand-warning;
-          }
-
-          &[disabled] {
-            opacity: 0.7;
-          }
-        }
-
-        //
-        // stripe button custom form
-        .stripe-button-custom-form {
-          .stripe-button-form ();
-        }
-
-        //
-        // visible only when input is incorrect
-        .stripe-button-input-error {
-          font-family: @pxl-text-font;
-          font-size: 12px;
-          color: @brand-danger;
-        }
+        .stripe-container-button();
       }
 
       //
