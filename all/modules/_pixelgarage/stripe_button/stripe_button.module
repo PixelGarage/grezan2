@@ -229,6 +229,7 @@ function stripe_button_custom_form_callback () {
         'amount' => $new_amount,
         'currency' => $currency,
         'stripe_settings' => array('recurring_billing' => $recurring_billing),
+        'hide-container' => true,
       )
     );
   }
@@ -411,33 +412,32 @@ function theme_stripe_button_fix_value($variables) {
     }
 
     // create theme output
-    $output = '<div class="stripe-button-container pay">' .
-      '<div class="stripe-button-title">' . $variables['box_title'] . '</div>' .
+    $add_container = isset($variables['hide_container']) ? false : true;
+    $output = $add_container ? '<div class="stripe-button-container pay">' : '';
+    $output .= '<div class="stripe-button-title">' . $variables['box_title'] . '</div>' .
       '<div class="stripe-button-text">' . $variables['box_text'] . '</div>' .
       '<button id="' . $field_id . '" type="button" class="btn btn-normal stripe-button">' .
-      $variables['button_label'] .
-      '</button></div>';
+      $variables['button_label'] . '</button>';
+    $output .= $add_container ? '</div>' : '';
   }
   else if ($variables['amount'] == 0) {
     //
-    // successful payment, create success button (disabled)
-    $output = '<div class="stripe-button-container success">' .
-      '<div class="stripe-button-title">' . $variables['box_title'] . '</div>' .
+    // successful payment, create success button (disabled) without container (called in ajax callback)
+    $output = '<div class="stripe-button-title">' . $variables['box_title'] . '</div>' .
       '<div class="stripe-button-text">' . $variables['box_text'] . '</div>' .
       '<button id="' . $field_id . '" type="button" class="btn btn-success stripe-button" disabled>' .
       '<span class="fa fa-check"></span>' . $variables['button_label'] .
-      '</button></div>';
+      '</button>';
   }
   else {
     //
-    // failed payment, create fail button (disabled)
-    $output = '<div class="stripe-button-container error">' .
-      '<div class="stripe-button-title">' . $variables['box_title'] . '</div>' .
+    // failed payment, create fail button (disabled) without container (called in ajax callback)
+    $output = '<div class="stripe-button-title">' . $variables['box_title'] . '</div>' .
       '<div class="stripe-button-text">' . $variables['box_text'] . '</div>' .
       '<button id="' . $field_id . '" type="button" class="btn btn-error stripe-button">' .
       '<span class="fa fa-times"></span>' . $variables['button_label'] .
       '</button>' .
-      '<div class="stripe-button-error">' . t($variables['message']) . '</div></div>';
+      '<div class="stripe-button-error">' . t($variables['message']) . '</div>';
   }
 
   return $output;
@@ -519,12 +519,12 @@ function template_preprocess_stripe_button_custom_value(&$variables) {
  * 4) The predefined button process starts.
  */
 function theme_stripe_button_custom_value($variables) {
-  // create theme output
-  $output = '<div class="stripe-button-container pay-form">' .
-    '<div class="stripe-button-title">' . $variables['box_title'] . '</div>' .
+  // create theme output, do not output container div in case of error (happens only in ajax callback)
+  $output = empty($variables['message']) ? '<div class="stripe-button-container pay-form">' : '';
+  $output .= '<div class="stripe-button-title">' . $variables['box_title'] . '</div>' .
     '<div class="stripe-button-text">' . $variables['box_text'] . '</div>' .
     drupal_render($variables['render_form']);
-  $output .= !empty($variables['message']) ? '<div class="stripe-button-error">' . t($variables['message']) . '</div></div>' : '</div>';
+  $output .= !empty($variables['message']) ? '<div class="stripe-button-error">' . t($variables['message']) . '</div>' : '</div>';
 
   return $output;
 }

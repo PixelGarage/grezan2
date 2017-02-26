@@ -28,9 +28,9 @@ function template_preprocess_pxl_availability_form(&$vars) {
   $context['view_name'] = $view_array[0];
   $context['view_display_id'] = $view_array[1];
   $context['intl_url'] = $_GET['q'];
-  $sku_filters = array(false);
+  $sku_filters = array();
   drupal_alter('pxl_availability_filter_by_sku', $sku_filters, $context);
-  $vars['calendar'] = views_embed_view($context['view_name'], $context['view_display_id'], $sku_filters[0]);
+  $vars['calendar'] = views_embed_view($context['view_name'], $context['view_display_id'], !empty($sku_filters) ? $sku_filters[0] : null);
   //$results = views_get_view_result($view_name, $view_display_id, $view_args[0]);
   if (!$sku_filters[0]) {
     // TODO: get all product SKUs and add them to the $sku_filters array (replace null)

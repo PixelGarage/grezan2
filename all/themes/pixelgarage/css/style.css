@@ -9189,6 +9189,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   }
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container {
+  position: relative;
   padding: 0;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-title {
@@ -9226,8 +9227,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button:focus {
   opacity: 0.7;
 }
-.field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button.btn-warning {
-  background-color: #f0ad4e;
+.field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button.btn-error {
+  background-color: #d9534f;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button[disabled] {
   opacity: 0.7;
@@ -9308,7 +9309,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-custom-form form button.form-submit:focus {
   opacity: 0.7;
 }
-.field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-input-error {
+.field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-payment-processing {
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+}
+.field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-payment-processing img {
+  width: 60px;
+  height: 60px;
+}
+.field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-error {
   font-family: 'MaisonNeueBook';
   font-size: 12px;
   color: #d9534f;
@@ -10246,6 +10256,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .block-pxl-availability .block-shopping-cart-form .shopping-cart-actions .stripe-button-container {
   display: inline-block;
+  position: relative;
   vertical-align: bottom;
   margin: 0 -2px;
   padding: 0;
@@ -10282,6 +10293,15 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -webkit-border-radius: 0;
   border-radius: 0;
   background: #988ADE none;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-actions .stripe-button-container .stripe-payment-processing {
+  position: absolute;
+  bottom: 17px;
+  left: 30%;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-actions .stripe-button-container .stripe-payment-processing img {
+  width: 60px;
+  height: 60px;
 }
 /*
  *  Node page component
@@ -12598,7 +12618,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-event-images,
 .node.node-event.view-mode-default > .row > .col-sm-12 .field-name-field-event-images {
-  margin: 0 0 10px;
+  margin: 0 0 30px;
 }
 .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-event-images .field-item .carousel,
 .node.node-event.view-mode-default > .row > .col-sm-12 .field-name-field-event-images .field-item .carousel {
@@ -14211,7 +14231,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   padding: 10px 0;
   height: 70px;
-  border-top: 1px solid #988ADE;
+  border-top: 1px solid #9B589B;
   border-bottom: 0.5px solid #5f5e5e;
 }
 @media screen and (min-width: 48em) {
@@ -14507,7 +14527,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0;
   padding-top: 10px;
   text-align: center;
-  border-top: 1px solid #988ADE;
+  border-top: 1px solid #9B589B;
 }
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items {
   cursor: pointer;
@@ -14515,7 +14535,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #988ADE;
+  border: 2px solid #9B589B;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
@@ -14536,7 +14556,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  background-color: #988ADE;
+  background-color: #9B589B;
 }
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item a,
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item .field-action {
@@ -14556,7 +14576,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images,
 .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images {
-  margin: 0 0 10px;
+  margin: 0 0 30px;
 }
 .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel,
 .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-field-locality-images .field-item .carousel {
@@ -14756,7 +14776,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   line-height: 1;
   text-align: left;
   color: #72725F;
-  border-top: 1px solid #988ADE;
+  border-top: 1px solid #9B589B;
 }
 @media screen and (min-width: 40em) {
   .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-title h2,
@@ -16322,8 +16342,11 @@ form#user-profile-form div .form-actions .form-submit .icon {
     font-size: 24px;
   }
 }
-.page-rentals .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
+.page-rentals .even .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
   color: #988ADE;
+}
+.page-rentals .odd .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
+  color: #9B589B;
 }
 .page-artculture .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
   color: #F4A258;
@@ -18904,7 +18927,7 @@ header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-rentals a:ho
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-rentals a:hover,
 header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-rentals a.active,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-rentals a.active {
-  color: #523ac8;
+  color: #7562d3;
 }
 header#navbar .container .navbar-collapse nav ul.navbar-nav li.menu-art-culture a,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li.menu-art-culture a {

@@ -154,6 +154,7 @@
 
       .stripe-button-container {
         display: inline-block;
+        position: relative;
         vertical-align: bottom;
         margin: 0 -2px;
         padding: 0;
@@ -193,6 +194,21 @@
           #pxl-mixins.border-radius(0);
           background: @pxl-color-rentals none;
         }
+
+        //
+        // processing icon
+        .stripe-payment-processing {
+          position: absolute;
+          bottom: 17px;
+          left: 30%;
+
+          img {
+            width: 60px;
+            height: 60px;
+
+          }
+        }
+
       }
     }
   }

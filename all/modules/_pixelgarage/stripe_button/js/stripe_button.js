@@ -41,7 +41,7 @@
 
                 // append payment processing activity image to button
                 var stripeProcessing = '<span class="stripe-payment-processing"><img src="' + stripeSettings.processing_img + '" alt="processing payment..."/></span>';
-                $clickedButton.parent().append(stripeProcessing);
+                $buttonContainer.append(stripeProcessing);
 
                 //
                 // charge the customer with the token and display response
@@ -114,7 +114,7 @@
       $.each(Drupal.settings.stripe_button.custom_buttons, function (button, settings) {
         var $form_button = $('#form-' + button + ' .form-submit'),
             $form_text = $('#form-' + button + ' .form-text'),
-            $buttonContainer = $form_button.parent();
+            $buttonContainer = $form_button.parents('.stripe-button-container');
 
         $form_button.off('click');
         $form_button.on('click', function (e) {

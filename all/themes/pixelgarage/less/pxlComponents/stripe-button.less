@@ -109,6 +109,7 @@
 //
 // stripe button with container
 .stripe-container-button() {
+  position: relative;
   padding: 0;
 
   .stripe-button-title {
@@ -132,8 +133,8 @@
     // the stripe button with the fixed amount
     .stripe-button(@font-size-button);
 
-    &.btn-warning {
-      background-color: @brand-warning;
+    &.btn-error {
+      background-color: @brand-danger;
     }
 
     &[disabled] {
@@ -148,8 +149,22 @@
   }
 
   //
-  // visible only when input is incorrect
-  .stripe-button-input-error {
+  // processing icon
+  .stripe-payment-processing {
+    position: absolute;
+    bottom: (@form-control-height - 60px) / 2;
+    left: 0;
+
+    img {
+      width: 60px;
+      height: 60px;
+
+    }
+  }
+
+  //
+  // visible only when an error occurred
+  .stripe-button-error {
     font-family: @pxl-text-font;
     font-size: 12px;
     color: @brand-danger;

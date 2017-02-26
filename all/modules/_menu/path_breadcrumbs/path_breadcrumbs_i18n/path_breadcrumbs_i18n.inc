@@ -53,6 +53,14 @@ class i18n_path_breadcrumbs_object extends i18n_string_object_wrapper {
         'title' => t('Title: @title (path: @path)', array('@title' => $title, '@path' => $this->object->paths[$key])),
       );
     }
+    foreach ($this->object->paths as $key => $path) {
+      if ($path != '<none>' && $path != '<front>') {
+        $properties[$this->get_textgroup()][$string_type][$object_id]['paths:' . $key] = array(
+          'string' => $path,
+          'title' => t('Path: @path', array('@path' => $path)),
+        );
+      }
+    }
 
     return $properties;
   }
