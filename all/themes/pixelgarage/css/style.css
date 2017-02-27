@@ -9767,7 +9767,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   width: 80px;
   height: 80px;
   font-family: 'MaisonNeueBook';
-  font-size: 14px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
   line-height: 80px;
   text-transform: uppercase;
   text-align: center;
@@ -10071,7 +10072,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   width: 80px;
   height: 80px;
   font-family: 'MaisonNeueBook';
-  font-size: 14px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
   line-height: 80px;
   text-transform: uppercase;
   text-align: center;
@@ -11278,8 +11280,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   font-family: 'MaisonNeueBook';
-  font-size: 14px;
-  letter-spacing: 0.05em;
+  font-size: 12px;
+  letter-spacing: 0.02em;
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
@@ -11340,8 +11342,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   font-family: 'MaisonNeueBook';
-  font-size: 14px;
-  letter-spacing: 0.05em;
+  font-size: 12px;
+  letter-spacing: 0.02em;
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
@@ -11402,8 +11404,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   font-family: 'MaisonNeueBook';
-  font-size: 14px;
-  letter-spacing: 0.05em;
+  font-size: 12px;
+  letter-spacing: 0.02em;
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
@@ -12677,8 +12679,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   font-family: 'MaisonNeueBook';
-  font-size: 14px;
-  letter-spacing: 0.05em;
+  font-size: 12px;
+  letter-spacing: 0.02em;
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
@@ -13661,8 +13663,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   font-family: 'MaisonNeueBook';
-  font-size: 14px;
-  letter-spacing: 0.05em;
+  font-size: 12px;
+  letter-spacing: 0.02em;
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
@@ -14663,8 +14665,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   font-family: 'MaisonNeueBook';
-  font-size: 14px;
-  letter-spacing: 0.05em;
+  font-size: 12px;
+  letter-spacing: 0.02em;
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
