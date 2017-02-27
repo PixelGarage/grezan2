@@ -82,12 +82,6 @@
           privateFunctionColumns.each(calcMaxHeight);
           privateFunctionColumns.height(maxHeight);
 
-          // equal heights in apartment full mode
-          maxHeight = 0;
-          var apartmentFullColumns = $('.node-apartment.view-mode-full > .row > .col-sm-4');
-          apartmentFullColumns.each(calcMaxHeight);
-          apartmentFullColumns.height(maxHeight);
-
         },
         resetColumns = function () {
           var call2ActionColumns = $('.node-call2action.node-teaser > .row > .col-sm-12');
@@ -98,9 +92,6 @@
 
           var privateFunctionColumns = $('.node-locality.node-teaser > .row > .col-sm-12');
           privateFunctionColumns.height('auto');
-
-          var apartmentFullColumns = $('.node-apartment.view-mode-full > .row > .col-sm-4');
-          apartmentFullColumns.height('auto');
         };
 
       $(window).on('load resize', function(ev) {
