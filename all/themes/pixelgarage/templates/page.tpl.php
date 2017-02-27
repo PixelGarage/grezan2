@@ -72,6 +72,9 @@
  *
  * @ingroup templates
  */
+
+$path = drupal_get_path('theme', 'pixelgarage');
+$close_img = file_create_url($path . '/images/button_close.svg');
 ?>
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="<?php print $container_class; ?>">
@@ -105,7 +108,7 @@
       <div class="navbar-collapse collapse fade" id="navbar-collapse">
         <button type="button" class="navbar-toggle-close" data-toggle="collapse" data-target="#navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
-          <span class="button-close" aria-hidden="true">&times;</span>
+          <span class="button-close" aria-hidden="true"><img src="<?php print $close_img; ?>"/></span>
         </button>
 
         <nav role="navigation">

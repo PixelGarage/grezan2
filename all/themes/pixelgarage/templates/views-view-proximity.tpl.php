@@ -3,6 +3,9 @@
  * @file
  * View theme template to layout the proximity items and add the bootstrap modal dialog functionality to each item.
  */
+
+$path = drupal_get_path('theme', 'pixelgarage');
+$close_img = file_create_url($path . '/images/button_close.svg');
 ?>
 
 <div id="<?php print $pe_container_id; ?>" class="pe-container">
@@ -34,7 +37,7 @@
       <div class="modal-content">
         <!-- Header -->
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><img src="<?php print $close_img; ?>"/></button>
           <?php if ($title): ?>
             <h2 class="modal-title" id="pe-modal-label"><?php print $title; ?></h2>
           <?php endif; ?>

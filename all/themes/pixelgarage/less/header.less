@@ -4,7 +4,8 @@
 
 // Variables
 // -------------------------
-@header-height: 90px;
+@logo-img-height: 50px;
+@logo-img-height-large: 80px;
 
 // Mixins
 // -------------------------
@@ -14,7 +15,21 @@
 // Main settings
 // -------------------------
 body.navbar-is-fixed-top {
-  padding-top: @header-height !important;
+  padding-top: @logo-img-height + 10 !important;
+
+  &.admin-menu {
+    padding-top: @logo-img-height + 10 !important;
+  }
+
+  @media @special-break {
+    &.front {
+      padding-top: @logo-img-height-large + 10 !important;
+
+      &.admin-menu {
+        padding-top: @logo-img-height-large + 10 !important;
+      }
+    }
+  }
 }
 
 
@@ -29,7 +44,13 @@ header#navbar {
     .navbar-header {
       position: relative;
       margin: 0;
-      height: @header-height;
+      height: @logo-img-height + 10;
+
+      @media @special-break {
+        .front & {
+          height: @logo-img-height-large + 10;
+        }
+      }
 
       // header (branding)
       a.logo {
@@ -43,8 +64,14 @@ header#navbar {
         img {
           display: inline-block;
           vertical-align: middle;
-          height: 80px;
+          height: @logo-img-height;
           width: auto;
+
+          @media @special-break {
+            .front & {
+              height: @logo-img-height-large;
+            }
+          }
         }
 
         @media @special-break {
@@ -70,7 +97,9 @@ header#navbar {
         display: none;
 
         @media @special-break {
-          display: inline-block;
+          .front & {
+            display: inline-block;
+          }
         }
       }
       .region-navigation {
@@ -111,7 +140,7 @@ header#navbar {
 
     // collapse part
     .navbar-collapse {
-      margin: 0;
+      margin: 30px 0;
       height: auto;
       border: none;
       background: #fff none;
@@ -130,7 +159,7 @@ header#navbar {
             a {
               padding: 7px 15px;
               font-family: @pxl-title-font;
-              font-size: 30px;
+              font-size: @resp-title-size-max;
               text-transform: @title-text-transform;
               letter-spacing: @title-letter-spacing;
               line-height: @title-line-height;
@@ -140,34 +169,23 @@ header#navbar {
               &:hover,
               &.active {
                 background: none;
+                text-decoration: underline;
               }
             }
 
             &.menu-rentals{
               a {
                 color: @pxl-color-rentals;
-                &:hover,
-                &.active {
-                  color: darken(@pxl-color-rentals, 10%);
-                }
               }
             }
             &.menu-art-culture{
               a {
                 color: @pxl-color-artculture;
-                &:hover,
-                &.active {
-                  color: darken(@pxl-color-artculture, 20%);
-                }
               }
             }
             &.menu-about{
               a {
                 color: @pxl-color-about;
-                &:hover,
-                &.active {
-                  color: darken(@pxl-color-about, 20%);
-                }
               }
             }
 
@@ -183,11 +201,13 @@ header#navbar {
         background: none;
 
         .button-close {
-          display: block;
-          width: 25px;
-          height: 30px;
-          font-size: 50px;
-          line-height: 30px;
+          width: 20px;
+          height: 20px;
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
         }
       }
 
@@ -195,8 +215,13 @@ header#navbar {
         position: absolute;
         top: 0;
         left: 0;
-        height: @header-height;
+        margin: 0;
+        height: @logo-img-height + 10;
         width: 100%;
+
+        .front & {
+          height: @logo-img-height-large + 10;
+        }
 
         nav {
           #pxl-mixins.center-vertically(absolute);

@@ -4,8 +4,8 @@
 
 // Variables
 // -------------------------
-@fc-selection-bg-color: @pxl-color-rentals;
-@fc-past-bg-color: #f6f6f6;
+@fc-selection-bg-color: lighten(@pxl-color-artculture, 30%);
+@fc-past-bg-color: #f7f7f7;
 
 @fc-event-height: 20px;
 @fc-event-bg-color: lighten(@pxl-color-rentals, 10%);
@@ -56,11 +56,6 @@
     font-family: @pxl-text-font;
 
     .fc-view-month {
-      .fc-cell-overlay {
-        // selection
-        background-color: @fc-selection-bg-color;
-      }
-
       .fc-event-container {
         .fc-event {
           height: @fc-event-height;
@@ -101,6 +96,9 @@
 
               &.fc-today {
 
+                &.fc-state-highlight {
+                  background-color: @fc-selection-bg-color;
+                }
               }
 
               &.fc-future {

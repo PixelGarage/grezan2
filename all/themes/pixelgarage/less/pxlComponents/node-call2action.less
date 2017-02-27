@@ -4,7 +4,7 @@
 
 // Variables
 // -------------------------
-@pxl-button-dim: 100px;
+@pxl-button-dim: 80px;
 
 
 // Mixins
@@ -44,7 +44,8 @@
         display: block;
         #pxl-mixins.center-xy();
         font-family: @pxl-text-font;
-        font-size: @font-size-base;
+        font-size: @font-size-base - 2;
+        letter-spacing: 0.05em;
         line-height: 1;
         text-transform: uppercase;
         text-align: center;
@@ -121,6 +122,14 @@
 
     >.row {
       >.col-sm-12 {
+        .field-name-title {
+          .field-item {
+            h2 {
+              color: @pxl-color-rentals;
+            }
+          }
+        }
+
         .field-name-field-link {
           .action-button(@pxl-color-rentals);
         }
@@ -132,6 +141,14 @@
 
     >.row {
       >.col-sm-12 {
+        .field-name-title {
+          .field-item {
+            h2 {
+              color: @pxl-color-artculture;
+            }
+          }
+        }
+
         .field-name-field-link {
           .action-button(@pxl-color-artculture);
         }
@@ -143,6 +160,14 @@
 
     >.row {
       >.col-sm-12 {
+        .field-name-title {
+          .field-item {
+            h2 {
+              color: @pxl-color-about;
+            }
+          }
+        }
+
         .field-name-field-link {
           .action-button(@pxl-color-about);
         }

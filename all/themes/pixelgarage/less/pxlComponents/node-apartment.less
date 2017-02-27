@@ -39,6 +39,7 @@
           h2 {
             margin: @node-field-margin;
             #pxl-mixins.title();
+            color: @pxl-color-rentals;
           }
         }
 
@@ -99,11 +100,11 @@
 
       @media @tablet {
         .group-header-left {
-          width: 50%;
+          width: 33.3333333%;
           padding-right: @grid-gutter-width/2;
         }
         .group-header-right {
-          width: 50%;
+          width: 66.6666666%;
           padding-left: @grid-gutter-width/2;
         }
       }
@@ -122,6 +123,7 @@
           margin: 0 0 50px;
           padding: 10px 0 0;
           #pxl-mixins.title();
+          color: @pxl-color-rentals;
           border-top: 1px solid @pxl-color-rentals;
         }
       }
@@ -139,6 +141,15 @@
         .field-item {
           .carousel {
             #pxl-mixins.carousel();
+
+            > .carousel-inner {
+              .item {
+                >div {
+                  padding-bottom: 66.66666%;
+                }
+              }
+            }
+
           }
         }
       }
