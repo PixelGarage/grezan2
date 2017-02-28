@@ -72,19 +72,21 @@ function theme_pxl_hooks_date_von_bis_formatter($element) {
   $date_end = explode(' ', $element['element']['value2']);
   $to_date = strtotime($element['element']['value2']);
   $has_end_date = $from_date != $to_date && !empty($date_end[0]);
-
+  $string = '';
+  /*
   if ($has_end_date) {
     $string = '<strong>' . t('Von') . '</strong> ';
   } else {
     $string = '<strong>' . t('Am') . '</strong> ';
   }
+  */
   if (date('H:i', $from_date) == '00:00') {
     $string .= date('d.m.Y', $from_date);
   } else {
     $string .= date('d.m.Y, H:i', $from_date);
   }
   if ($has_end_date) {
-    $string .= ' <strong>' . t('bis') . '</strong> ' . date('d.m.Y', strtotime($element['element']['value2']));
+    $string .= ' <strong>' . t('-') . '</strong> ' . date('d.m.Y', strtotime($element['element']['value2']));
   }
   return $string;
 }
