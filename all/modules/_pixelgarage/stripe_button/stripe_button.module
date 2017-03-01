@@ -62,6 +62,7 @@ function stripe_button_token_callback() {
   $currency = $_POST['currency'];
   $email = $_POST['email'];
   $recurring_billing = $_POST['recurringBilling'];
+  $args = $_POST['arguments'];
   $date = date('r'); // e.g. Thu, 21 Dec 2000 16:01:07 +0200
   $desc = t('@site charged you (@user) with @amount @curr on @date', array(
     '@site' => variable_get('site_name'),
@@ -111,12 +112,16 @@ function stripe_button_token_callback() {
     }
     $stripe_fee = stripe_button_stripe_fee($amount);
     $params = array (
+      'token' => $token,
       'stripe_api_mode' => strtolower(variable_get('stripe_api_mode', 'test')),
       'recurring_billing' => $recurring_billing,
       'currency' => $currency,
       'amount' => ($amount / 100),
       'stripe_fee' => ($stripe_fee / 100),
       'app_fee' => ($app_fee / 100),
+      'user_email' => $email,
+      'description' => $desc,
+      'arguments' => $args,
     );
 
     // invoke charge_completing hook for all modules

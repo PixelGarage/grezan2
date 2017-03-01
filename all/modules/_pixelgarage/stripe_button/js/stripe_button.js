@@ -21,7 +21,7 @@
             key: stripeSettings.stripe_public_key,
             image: stripeSettings.icon,
             locale: 'auto',
-            token: function (token) {
+            token: function (token, args) {
               // get button container for responses
               var $buttonContainer = $clickedButton.parent();
 
@@ -36,7 +36,8 @@
                       email: token.email,
                       amount: clickedButtonSettings.amount,
                       currency: clickedButtonSettings.currency,
-                      recurringBilling: clickedButtonSettings.recurringBilling
+                      recurringBilling: clickedButtonSettings.recurringBilling,
+                      arguments: args
                     };
 
                 // append payment processing activity image to button

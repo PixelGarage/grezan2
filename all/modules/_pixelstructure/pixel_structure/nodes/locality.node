@@ -1,5 +1,5 @@
 <?php
-$export_time = 1487261039;
+$export_time = 1488382264;
 $data = array(
   'bundles' => array(
     'locality' => (object) array(
@@ -25,8 +25,21 @@ $data = array(
       'entity_types' => array(
         0 => 'node',
       ),
-      'translatable' => '0',
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
       'settings' => array(),
+      'translatable' => '0',
       'storage' => array(
         'type' => 'field_sql_storage',
         'settings' => array(),
@@ -49,19 +62,6 @@ $data = array(
               ),
             ),
           ),
-        ),
-      ),
-      'foreign keys' => array(
-        'format' => array(
-          'table' => 'filter_format',
-          'columns' => array(
-            'format' => 'format',
-          ),
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
         ),
       ),
       'field_name' => 'body',
@@ -97,6 +97,8 @@ $data = array(
           4 => 'blog',
           5 => 'locality',
           6 => 'call2action',
+          7 => 'instagram',
+          8 => 'footer',
         ),
       ),
     ),
@@ -258,6 +260,123 @@ $data = array(
         ),
       ),
     ),
+    'field_teaser_action' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'max_length' => '20',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_teaser_action' => array(
+                'value' => 'field_teaser_action_value',
+                'format' => 'field_teaser_action_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_teaser_action' => array(
+                'value' => 'field_teaser_action_value',
+                'format' => 'field_teaser_action_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'field_name' => 'field_teaser_action',
+      'type' => 'text',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => '20',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'apartment',
+          1 => 'locality',
+          2 => 'event',
+        ),
+      ),
+    ),
+    'field_weight' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_weight' => array(
+                'value' => 'field_weight_value',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_weight' => array(
+                'value' => 'field_weight_value',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'field_name' => 'field_weight',
+      'type' => 'number_integer',
+      'module' => 'number',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'int',
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'apartment',
+          1 => 'page',
+          2 => 'call2action',
+          3 => 'event',
+          4 => 'locality',
+        ),
+      ),
+    ),
   ),
   'instances' => array(
     'body' => array(
@@ -282,14 +401,14 @@ $data = array(
           'default' => array(
             'label' => 'hidden',
             'type' => 'text_default',
-            'weight' => '2',
+            'weight' => '3',
             'settings' => array(),
             'module' => 'text',
           ),
           'teaser' => array(
             'label' => 'hidden',
             'type' => 'text_summary_or_trimmed',
-            'weight' => '3',
+            'weight' => '4',
             'settings' => array(
               'trim_length' => '300',
             ),
@@ -354,7 +473,7 @@ $data = array(
               'pause' => 'hover',
               'wrap' => '1',
               'keyboard' => '1',
-              'indicators' => '1',
+              'indicators' => '0',
               'image_style' => '0',
               'background' => '1',
               'background_pos' => 'center center',
@@ -376,7 +495,7 @@ $data = array(
           'teaser' => array(
             'label' => 'hidden',
             'type' => 'image',
-            'weight' => '2',
+            'weight' => '3',
             'settings' => array(
               'image_style' => 'teaser',
               'image_link' => '',
@@ -424,14 +543,14 @@ $data = array(
           'default' => array(
             'label' => 'hidden',
             'type' => 'text_default',
-            'weight' => '3',
+            'weight' => '2',
             'settings' => array(),
             'module' => 'text',
           ),
           'teaser' => array(
             'label' => 'hidden',
             'type' => 'text_default',
-            'weight' => '1',
+            'weight' => '2',
             'settings' => array(),
             'module' => 'text',
           ),
@@ -443,6 +562,130 @@ $data = array(
         'entity_type' => 'node',
         'bundle' => 'locality',
         'deleted' => '0',
+      ),
+    ),
+    'field_teaser_action' => array(
+      0 => array(
+        'label' => 'Teaser action',
+        'widget' => array(
+          'weight' => '4',
+          'type' => 'text_textfield',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'size' => '60',
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '0',
+          'linkit' => array(
+            'enable' => 0,
+            'profile' => '',
+            'button_text' => 'Search',
+          ),
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'above',
+            'type' => 'hidden',
+            'weight' => '12',
+            'settings' => array(),
+          ),
+          'teaser' => array(
+            'label' => 'hidden',
+            'type' => 'text_default',
+            'weight' => '5',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_teaser_action',
+        'entity_type' => 'node',
+        'bundle' => 'locality',
+        'deleted' => '0',
+      ),
+    ),
+    'field_weight' => array(
+      0 => array(
+        'label' => 'Weight',
+        'widget' => array(
+          'weight' => '5',
+          'type' => 'number',
+          'module' => 'number',
+          'active' => 0,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'min' => '',
+          'max' => '',
+          'prefix' => '',
+          'suffix' => '',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'above',
+            'type' => 'hidden',
+            'weight' => '13',
+            'settings' => array(),
+          ),
+          'teaser' => array(
+            'label' => 'above',
+            'type' => 'hidden',
+            'weight' => '13',
+            'settings' => array(),
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => array(
+          0 => array(
+            'value' => '0',
+          ),
+        ),
+        'field_name' => 'field_weight',
+        'entity_type' => 'node',
+        'bundle' => 'locality',
+        'deleted' => '0',
+      ),
+    ),
+  ),
+  'fieldgroups' => array(
+    'group_header|node|locality|teaser' => (object) array(
+      'id' => '6',
+      'identifier' => 'group_header|node|locality|teaser',
+      'group_name' => 'group_header',
+      'entity_type' => 'node',
+      'bundle' => 'locality',
+      'mode' => 'teaser',
+      'parent_name' => '',
+      'table' => 'field_group',
+      'type' => 'Normal',
+      'export_type' => 1,
+      'disabled' => FALSE,
+      'label' => 'Header',
+      'weight' => '0',
+      'children' => array(
+        0 => 'field_price_tag',
+        1 => 'title',
+      ),
+      'format_type' => 'div',
+      'format_settings' => array(
+        'label' => 'Header',
+        'instance_settings' => array(
+          'id' => '',
+          'classes' => 'group-header',
+          'description' => '',
+          'show_label' => '0',
+          'label_element' => 'h3',
+          'effect' => 'none',
+          'speed' => 'none',
+        ),
+        'formatter' => 'open',
       ),
     ),
   ),

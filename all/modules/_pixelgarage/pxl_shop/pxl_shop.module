@@ -293,7 +293,7 @@ function _pxl_shop_date_range_available($key, $startDate, $endDate) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'calendar_event')
-    ->fieldCondition('field_sku_id', 'value', $key)
+    ->fieldCondition('field_sku_id', 'target_id', $key)
     ->fieldCondition('field_event_date', 'value', $endDate, '<')
     ->fieldCondition('field_event_date', 'value2', $startDate, '>');
   $result = $query->execute();
@@ -314,6 +314,7 @@ function pxl_shop_stripe_button_charge_completed($charge_params) {
       //
       // create a calendar event for each item in the shopping cart
       $item->chargeID = $charge_params['charge_id'];
+      $item->email = $charge_params['user_email'];
       pxl_availability_create_calendar_event_from_cart_item($item);
     }
 

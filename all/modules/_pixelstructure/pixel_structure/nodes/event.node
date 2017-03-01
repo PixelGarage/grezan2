@@ -1,5 +1,5 @@
 <?php
-$export_time = 1487261026;
+$export_time = 1488382256;
 $data = array(
   'bundles' => array(
     'event' => (object) array(
@@ -21,7 +21,7 @@ $data = array(
     ),
   ),
   'fields' => array(
-    'field_event_dates' => array(
+    'field_datum' => array(
       'translatable' => '0',
       'entity_types' => array(),
       'settings' => array(
@@ -47,15 +47,15 @@ $data = array(
         'details' => array(
           'sql' => array(
             'FIELD_LOAD_CURRENT' => array(
-              'field_data_field_event_dates' => array(
-                'value' => 'field_event_dates_value',
-                'value2' => 'field_event_dates_value2',
+              'field_data_field_datum' => array(
+                'value' => 'field_datum_value',
+                'value2' => 'field_datum_value2',
               ),
             ),
             'FIELD_LOAD_REVISION' => array(
-              'field_revision_field_event_dates' => array(
-                'value' => 'field_event_dates_value',
-                'value2' => 'field_event_dates_value2',
+              'field_revision_field_datum' => array(
+                'value' => 'field_datum_value',
+                'value2' => 'field_datum_value2',
               ),
             ),
           ),
@@ -63,8 +63,8 @@ $data = array(
       ),
       'foreign keys' => array(),
       'indexes' => array(),
-      'field_name' => 'field_event_dates',
-      'type' => 'datestamp',
+      'field_name' => 'field_datum',
+      'type' => 'datetime',
       'module' => 'date',
       'active' => '1',
       'locked' => '0',
@@ -72,13 +72,21 @@ $data = array(
       'deleted' => '0',
       'columns' => array(
         'value' => array(
-          'type' => 'int',
+          'type' => 'datetime',
+          'mysql_type' => 'datetime',
+          'pgsql_type' => 'timestamp without time zone',
+          'sqlite_type' => 'varchar',
+          'sqlsrv_type' => 'smalldatetime',
           'not null' => FALSE,
           'sortable' => TRUE,
           'views' => TRUE,
         ),
         'value2' => array(
-          'type' => 'int',
+          'type' => 'datetime',
+          'mysql_type' => 'datetime',
+          'pgsql_type' => 'timestamp without time zone',
+          'sqlite_type' => 'varchar',
+          'sqlsrv_type' => 'smalldatetime',
           'not null' => FALSE,
           'sortable' => TRUE,
           'views' => FALSE,
@@ -394,13 +402,130 @@ $data = array(
         ),
       ),
     ),
+    'field_teaser_action' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'max_length' => '20',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_teaser_action' => array(
+                'value' => 'field_teaser_action_value',
+                'format' => 'field_teaser_action_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_teaser_action' => array(
+                'value' => 'field_teaser_action_value',
+                'format' => 'field_teaser_action_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'field_name' => 'field_teaser_action',
+      'type' => 'text',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => '20',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'apartment',
+          1 => 'locality',
+          2 => 'event',
+        ),
+      ),
+    ),
+    'field_weight' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_weight' => array(
+                'value' => 'field_weight_value',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_weight' => array(
+                'value' => 'field_weight_value',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'field_name' => 'field_weight',
+      'type' => 'number_integer',
+      'module' => 'number',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'int',
+          'not null' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'apartment',
+          1 => 'page',
+          2 => 'call2action',
+          3 => 'event',
+          4 => 'locality',
+        ),
+      ),
+    ),
   ),
   'instances' => array(
-    'field_event_dates' => array(
+    'field_datum' => array(
       0 => array(
-        'label' => 'Event date',
+        'label' => 'Datum',
         'widget' => array(
-          'weight' => '2',
+          'weight' => '4',
           'type' => 'date_popup',
           'module' => 'date',
           'active' => 1,
@@ -425,36 +550,29 @@ $data = array(
         'display' => array(
           'default' => array(
             'label' => 'hidden',
-            'type' => 'date_default',
+            'type' => 'pxl_hooks_date_von_bis',
             'weight' => '2',
-            'settings' => array(
-              'format_type' => 'short',
-              'fromto' => 'value',
-              'multiple_number' => '',
-              'multiple_from' => '',
-              'multiple_to' => '',
-              'show_remaining_days' => 0,
-            ),
-            'module' => 'date',
+            'settings' => array(),
+            'module' => 'pxl_hooks',
           ),
           'teaser' => array(
             'label' => 'hidden',
-            'type' => 'date_default',
-            'weight' => '2',
-            'settings' => array(
-              'format_type' => 'short',
-              'fromto' => 'value',
-              'multiple_number' => '',
-              'multiple_from' => '',
-              'multiple_to' => '',
-              'show_remaining_days' => 0,
-            ),
-            'module' => 'date',
+            'type' => 'pxl_hooks_date_von_bis',
+            'weight' => '3',
+            'settings' => array(),
+            'module' => 'pxl_hooks',
+          ),
+          'front' => array(
+            'label' => 'hidden',
+            'type' => 'pxl_hooks_date_von_bis',
+            'weight' => '1',
+            'settings' => array(),
+            'module' => 'pxl_hooks',
           ),
         ),
-        'required' => 0,
+        'required' => 1,
         'description' => '',
-        'field_name' => 'field_event_dates',
+        'field_name' => 'field_datum',
         'entity_type' => 'node',
         'bundle' => 'event',
         'deleted' => '0',
@@ -464,7 +582,7 @@ $data = array(
       0 => array(
         'label' => 'Event description',
         'widget' => array(
-          'weight' => '4',
+          'weight' => '3',
           'type' => 'text_textarea_with_summary',
           'module' => 'text',
           'active' => 1,
@@ -495,9 +613,12 @@ $data = array(
           ),
           'teaser' => array(
             'label' => 'hidden',
-            'type' => 'hidden',
-            'weight' => '5',
-            'settings' => array(),
+            'type' => 'text_summary_or_trimmed',
+            'weight' => '3',
+            'settings' => array(
+              'trim_length' => '200',
+            ),
+            'module' => 'text',
           ),
           'rss' => array(
             'label' => 'hidden',
@@ -523,6 +644,15 @@ $data = array(
             'settings' => array(),
             'weight' => 0,
           ),
+          'front' => array(
+            'label' => 'hidden',
+            'type' => 'text_summary_or_trimmed',
+            'weight' => '3',
+            'settings' => array(
+              'trim_length' => '100',
+            ),
+            'module' => 'text',
+          ),
         ),
         'required' => 1,
         'description' => 'Describes the event.',
@@ -538,7 +668,7 @@ $data = array(
       0 => array(
         'label' => 'Images',
         'widget' => array(
-          'weight' => '3',
+          'weight' => '2',
           'type' => 'image_image',
           'module' => 'image',
           'active' => 1,
@@ -561,13 +691,21 @@ $data = array(
         'display' => array(
           'default' => array(
             'label' => 'hidden',
-            'type' => 'image',
+            'type' => 'bootstrap_carousel_if',
             'weight' => '0',
             'settings' => array(
-              'image_style' => '',
-              'image_link' => '',
+              'interval' => '8000',
+              'pause' => 'hover',
+              'wrap' => '1',
+              'keyboard' => '1',
+              'indicators' => '1',
+              'image_style' => '0',
+              'background' => '1',
+              'background_pos' => 'center center',
+              'width' => '100%',
+              'height' => '300px',
             ),
-            'module' => 'image',
+            'module' => 'bootstrap_carousel_if',
           ),
           'full' => array(
             'label' => 'hidden',
@@ -582,7 +720,7 @@ $data = array(
           'teaser' => array(
             'label' => 'hidden',
             'type' => 'image',
-            'weight' => '0',
+            'weight' => '1',
             'settings' => array(
               'image_style' => 'teaser',
               'image_link' => 'content',
@@ -627,6 +765,16 @@ $data = array(
             'label' => 'above',
             'settings' => array(),
             'weight' => 0,
+          ),
+          'front' => array(
+            'label' => 'hidden',
+            'type' => 'image',
+            'weight' => '0',
+            'settings' => array(
+              'image_style' => 'teaser',
+              'image_link' => '',
+            ),
+            'module' => 'image',
           ),
         ),
         'required' => 0,
@@ -694,7 +842,7 @@ $data = array(
           'teaser' => array(
             'label' => 'above',
             'type' => 'hidden',
-            'weight' => '12',
+            'weight' => '13',
             'settings' => array(),
           ),
           'rss' => array(
@@ -714,6 +862,12 @@ $data = array(
             'label' => 'above',
             'settings' => array(),
             'weight' => 0,
+          ),
+          'front' => array(
+            'label' => 'hidden',
+            'type' => 'hidden',
+            'weight' => '12',
+            'settings' => array(),
           ),
         ),
         'required' => 0,
@@ -760,7 +914,7 @@ $data = array(
           'teaser' => array(
             'label' => 'hidden',
             'type' => 'text_default',
-            'weight' => '3',
+            'weight' => '2',
             'settings' => array(),
             'module' => 'text',
           ),
@@ -782,6 +936,12 @@ $data = array(
             'settings' => array(),
             'weight' => 0,
           ),
+          'front' => array(
+            'label' => 'hidden',
+            'type' => 'hidden',
+            'weight' => '2',
+            'settings' => array(),
+          ),
         ),
         'required' => 1,
         'description' => 'Add the organizer or artist of the event.',
@@ -791,6 +951,142 @@ $data = array(
         'entity_type' => 'node',
         'bundle' => 'event',
         'deleted' => '0',
+      ),
+    ),
+    'field_teaser_action' => array(
+      0 => array(
+        'label' => 'Teaser action',
+        'widget' => array(
+          'weight' => '6',
+          'type' => 'text_textfield',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'size' => '60',
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '0',
+          'linkit' => array(
+            'enable' => 0,
+            'profile' => '',
+            'button_text' => 'Search',
+          ),
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'above',
+            'type' => 'hidden',
+            'weight' => '14',
+            'settings' => array(),
+          ),
+          'teaser' => array(
+            'label' => 'hidden',
+            'type' => 'text_default',
+            'weight' => '4',
+            'settings' => array(),
+            'module' => 'text',
+          ),
+          'front' => array(
+            'label' => 'above',
+            'type' => 'hidden',
+            'weight' => '13',
+            'settings' => array(),
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_teaser_action',
+        'entity_type' => 'node',
+        'bundle' => 'event',
+        'deleted' => '0',
+      ),
+    ),
+    'field_weight' => array(
+      0 => array(
+        'label' => 'Weight',
+        'widget' => array(
+          'weight' => '7',
+          'type' => 'number',
+          'module' => 'number',
+          'active' => 0,
+          'settings' => array(),
+        ),
+        'settings' => array(
+          'min' => '',
+          'max' => '',
+          'prefix' => '',
+          'suffix' => '',
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'above',
+            'type' => 'hidden',
+            'weight' => '15',
+            'settings' => array(),
+          ),
+          'teaser' => array(
+            'label' => 'above',
+            'type' => 'hidden',
+            'weight' => '12',
+            'settings' => array(),
+          ),
+          'front' => array(
+            'label' => 'above',
+            'type' => 'hidden',
+            'weight' => '14',
+            'settings' => array(),
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => array(
+          0 => array(
+            'value' => '0',
+          ),
+        ),
+        'field_name' => 'field_weight',
+        'entity_type' => 'node',
+        'bundle' => 'event',
+        'deleted' => '0',
+      ),
+    ),
+  ),
+  'fieldgroups' => array(
+    'group_header|node|event|teaser' => (object) array(
+      'id' => '7',
+      'identifier' => 'group_header|node|event|teaser',
+      'group_name' => 'group_header',
+      'entity_type' => 'node',
+      'bundle' => 'event',
+      'mode' => 'teaser',
+      'parent_name' => '',
+      'table' => 'field_group',
+      'type' => 'Normal',
+      'export_type' => 1,
+      'disabled' => FALSE,
+      'label' => 'Header',
+      'weight' => '0',
+      'children' => array(
+        0 => 'field_datum',
+        1 => 'title',
+      ),
+      'format_type' => 'div',
+      'format_settings' => array(
+        'label' => 'Header',
+        'instance_settings' => array(
+          'id' => '',
+          'classes' => 'group-header',
+          'description' => '',
+          'show_label' => '0',
+          'label_element' => 'h2',
+          'effect' => 'none',
+          'speed' => 'none',
+        ),
+        'formatter' => 'open',
       ),
     ),
   ),
