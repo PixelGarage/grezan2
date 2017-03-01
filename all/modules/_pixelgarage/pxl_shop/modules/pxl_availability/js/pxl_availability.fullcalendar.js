@@ -20,9 +20,9 @@
 
         //
         // set start and end time for date range
-        // add check-in time
+        // add check-in time in milliseconds
         start += Drupal.settings.pxl_availability.checkInTime*3600*1000;
-        // add check-out time
+        // add check-out time  in milliseconds
         end += Drupal.settings.pxl_availability.checkOutTime*3600*1000;
 
         return [start, end];
@@ -45,7 +45,8 @@
 
       /**
        * Validates a given date range against all calendar events.
-       * Returns TRUE, if the given range does not intersect with any calendar event and lies in the future, FALSE otherwise.
+       * Returns TRUE, if the given range does not intersect with any calendar event, has a minimum number of days
+       * and lies in the future, FALSE otherwise.
        */
       var _dateRangeIsValid = function(start, end) {
         // get error element in dialog and initialize it
@@ -54,7 +55,14 @@
 
         // check if date range is in future
         if (start < Date.now()) {
-          $errLabel.html(Drupal.settings.pxl_availability.error_in_past);
+          $errLabel.html(Drupal.settings.pxl_availability.errorInPast);
+          return false;
+        }
+
+        // check if date range has minimum number of days
+        $days = Math.round((end - start) / (24*3600*1000));
+        if ($days < Drupal.settings.pxl_availability.minDays) {
+          $errLabel.html(Drupal.settings.pxl_availability.errorMinDays);
           return false;
         }
 
@@ -63,12 +71,12 @@
         for (var i = 0; i < calendarEvents.length; i++) {
           var calendarEvent = calendarEvents[i];
           if (start <= calendarEvent.endTime && end >= calendarEvent.startTime) {
-            $errLabel.html(Drupal.settings.pxl_availability.error_no_availability);
+            $errLabel.html(Drupal.settings.pxl_availability.errorNoAvailability);
             return false;
           }
         }
 
-        // no intersection
+        // valid date range
         return true;
       };
 

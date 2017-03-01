@@ -9273,7 +9273,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   font-size: 22px;
   color: #72725F;
   line-height: 1;
-  border: 1px solid #5f5e5e;
+  border: 1px solid #72725F;
   background-color: #fff;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-custom-form form .input-group .form-item {
@@ -9295,7 +9295,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #5f5e5e;
+  border: 1px solid #72725F;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-custom-form form .input-group .form-item input.form-text:focus {
   border: 1px solid #000;
@@ -9756,7 +9756,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #988ADE;
+  border: 1.5px solid #988ADE;
   -webkit-transform: rotate(-10deg);
   -ms-transform: rotate(-10deg);
   -o-transform: rotate(-10deg);
@@ -9764,7 +9764,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .availability-form .form-submit-availability .form-item .form-submit {
   display: block;
-  margin: 2px;
+  margin: 3px;
   padding: 1px 5px 5px;
   width: 80px;
   height: 80px;
@@ -10061,7 +10061,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #988ADE;
+  border: 1.5px solid #988ADE;
   -webkit-transform: rotate(-10deg);
   -ms-transform: rotate(-10deg);
   -o-transform: rotate(-10deg);
@@ -10069,7 +10069,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .block-pxl-availability .block-availability-form .availability-form-container form .form-submit-availability .form-item .form-submit {
   display: block;
-  margin: 2px;
+  margin: 3px;
   padding: 1px 5px 5px;
   width: 80px;
   height: 80px;
@@ -10182,15 +10182,25 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   box-shadow: none;
 }
 .block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-header {
-  padding: 0;
-  min-height: 60px;
+  margin: 30px 0 0;
+  padding: 10px 15px;
+  min-height: 42px;
   border: none;
+}
+.block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-header span.label-danger {
+  padding: 5px 15px;
+  font-family: 'MaisonNeueBook';
+  font-size: 12px;
+  line-height: 1;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 .block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-header button.close {
   display: block;
   position: absolute;
-  top: 0;
-  right: 10px;
+  top: 10px;
+  right: 15px;
   opacity: 1.0;
   z-index: 1;
 }
@@ -10207,6 +10217,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-header .body-fading {
   display: none;
+}
+@media screen and (min-width: 30em) {
+  .block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-header {
+    padding: 10px 30px;
+  }
+  .block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-header button.close {
+    right: 30px;
+  }
 }
 .block-pxl-availability .block-availability-form .modal .modal-dialog .modal-content .modal-body {
   padding: 20px 15px;
@@ -10969,7 +10987,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-call2action > .row > .col-sm-12 > .field-name-field-subtitle {
   margin: 0 0 10px;
   padding-bottom: 10px;
-  border-bottom: 0.5px solid #5f5e5e;
+  border-bottom: 0.5px solid #72725F;
 }
 .node.node-call2action > .row > .col-sm-12 > .field-name-field-subtitle .field-item {
   font-family: 'MaisonNeueBook';
@@ -11249,7 +11267,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #988ADE;
+  border: 1.5px solid #988ADE;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
@@ -11263,7 +11281,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-call2action.call2action-rentals > .row > .col-sm-12 .field-name-field-link .field-items .field-item {
   display: inline-block;
-  margin: 2px;
+  margin: 3px;
   padding: 5px;
   width: 80px;
   height: 80px;
@@ -11311,7 +11329,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #F4A258;
+  border: 1.5px solid #F4A258;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
@@ -11325,7 +11343,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-call2action.call2action-artculture > .row > .col-sm-12 .field-name-field-link .field-items .field-item {
   display: inline-block;
-  margin: 2px;
+  margin: 3px;
   padding: 5px;
   width: 80px;
   height: 80px;
@@ -11373,7 +11391,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #5DA59E;
+  border: 1.5px solid #5DA59E;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
@@ -11387,7 +11405,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-call2action.call2action-about > .row > .col-sm-12 .field-name-field-link .field-items .field-item {
   display: inline-block;
-  margin: 2px;
+  margin: 3px;
   padding: 5px;
   width: 80px;
   height: 80px;
@@ -12315,7 +12333,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   padding: 10px 0;
   height: 100px;
   border-top: 1px solid #F4A258;
-  border-bottom: 0.5px solid #5f5e5e;
+  border-bottom: 0.5px solid #72725F;
 }
 @media screen and (min-width: 48em) {
   .node.node-event.view-mode-teaser > .row > .col-sm-12 .group-header {
@@ -12648,7 +12666,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #F4A258;
+  border: 1.5px solid #F4A258;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
@@ -12662,7 +12680,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item {
   display: inline-block;
-  margin: 2px;
+  margin: 3px;
   padding: 5px;
   width: 80px;
   height: 80px;
@@ -12950,7 +12968,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  border-bottom: 0.5px solid #5f5e5e;
+  border-bottom: 0.5px solid #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-event-organizer .field-item,
@@ -13324,7 +13342,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   padding: 10px 0;
   height: 90px;
   border-top: 1px solid #988ADE;
-  border-bottom: 0.5px solid #5f5e5e;
+  border-bottom: 0.5px solid #72725F;
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .group-header {
@@ -13632,7 +13650,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #988ADE;
+  border: 1.5px solid #988ADE;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
@@ -13646,7 +13664,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item {
   display: inline-block;
-  margin: 2px;
+  margin: 3px;
   padding: 5px;
   width: 80px;
   height: 80px;
@@ -13744,7 +13762,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item {
   margin: 0 0 10px;
   padding: 10px 0 0;
-  border-top: 0.5px solid #5f5e5e;
+  border-top: 0.5px solid #72725F;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h1,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h1,
@@ -14325,8 +14343,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   padding: 10px 0;
   height: 70px;
-  border-top: 1px solid #9B589B;
-  border-bottom: 0.5px solid #5f5e5e;
+  border-top: 1px solid #a11a48;
+  border-bottom: 0.5px solid #72725F;
 }
 @media screen and (min-width: 48em) {
   .node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header {
@@ -14342,7 +14360,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   line-height: 1;
   text-align: left;
   color: #72725F;
-  color: #9B589B;
+  color: #a11a48;
 }
 @media screen and (min-width: 40em) {
   .node.node-locality.view-mode-teaser > .row > .col-sm-12 .group-header .field-name-title h2 {
@@ -14626,7 +14644,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0;
   padding-top: 10px;
   text-align: center;
-  border-top: 1px solid #9B589B;
+  border-top: 1px solid #a11a48;
 }
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items {
   cursor: pointer;
@@ -14634,7 +14652,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid #9B589B;
+  border: 1.5px solid #a11a48;
   -webkit-transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -o-transform: rotate(10deg);
@@ -14648,14 +14666,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item {
   display: inline-block;
-  margin: 2px;
+  margin: 3px;
   padding: 5px;
   width: 80px;
   height: 80px;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  background-color: #9B589B;
+  background-color: #a11a48;
 }
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item a,
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-field-teaser-action .field-items .field-item .field-action {
@@ -14876,8 +14894,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   line-height: 1;
   text-align: left;
   color: #72725F;
-  color: #9B589B;
-  border-top: 1px solid #9B589B;
+  color: #a11a48;
+  border-top: 1px solid #a11a48;
 }
 @media screen and (min-width: 40em) {
   .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-title h2,
@@ -14907,7 +14925,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  border-bottom: 0.5px solid #5f5e5e;
+  border-bottom: 0.5px solid #72725F;
 }
 @media screen and (min-width: 45em) {
   .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-field-price-tag .field-item,
@@ -16463,7 +16481,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   color: #988ADE;
 }
 .page-rentals .odd .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
-  color: #9B589B;
+  color: #a11a48;
 }
 .page-artculture .entity-paragraphs-item.paragraphs-item-block-paragraph .content .field-name-field-title .field-item {
   color: #F4A258;
@@ -16891,15 +16909,25 @@ form#user-profile-form div .form-actions .form-submit .icon {
   box-shadow: none;
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header {
-  padding: 0;
-  min-height: 60px;
+  margin: 30px 0 0;
+  padding: 10px 15px;
+  min-height: 42px;
   border: none;
+}
+.view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header span.label-danger {
+  padding: 5px 15px;
+  font-family: 'MaisonNeueBook';
+  font-size: 12px;
+  line-height: 1;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close {
   display: block;
   position: absolute;
-  top: 0;
-  right: 10px;
+  top: 10px;
+  right: 15px;
   opacity: 1.0;
   z-index: 1;
 }
@@ -16916,6 +16944,14 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header .body-fading {
   display: none;
+}
+@media screen and (min-width: 30em) {
+  .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header {
+    padding: 10px 30px;
+  }
+  .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close {
+    right: 30px;
+  }
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
   padding: 20px 15px;
@@ -17175,15 +17211,25 @@ form#user-profile-form div .form-actions .form-submit .icon {
   box-shadow: none;
 }
 .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header {
-  padding: 0;
-  min-height: 60px;
+  margin: 30px 0 0;
+  padding: 10px 15px;
+  min-height: 42px;
   border: none;
+}
+.view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header span.label-danger {
+  padding: 5px 15px;
+  font-family: 'MaisonNeueBook';
+  font-size: 12px;
+  line-height: 1;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close {
   display: block;
   position: absolute;
-  top: 0;
-  right: 10px;
+  top: 10px;
+  right: 15px;
   opacity: 1.0;
   z-index: 1;
 }
@@ -17200,6 +17246,14 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header .body-fading {
   display: none;
+}
+@media screen and (min-width: 30em) {
+  .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header {
+    padding: 10px 30px;
+  }
+  .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close {
+    right: 30px;
+  }
 }
 .view.view-apartements.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
   padding: 20px 15px;
@@ -17711,15 +17765,25 @@ form#user-profile-form div .form-actions .form-submit .icon {
   box-shadow: none;
 }
 .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header {
-  padding: 0;
-  min-height: 60px;
+  margin: 30px 0 0;
+  padding: 10px 15px;
+  min-height: 42px;
   border: none;
+}
+.view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header span.label-danger {
+  padding: 5px 15px;
+  font-family: 'MaisonNeueBook';
+  font-size: 12px;
+  line-height: 1;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close {
   display: block;
   position: absolute;
-  top: 0;
-  right: 10px;
+  top: 10px;
+  right: 15px;
   opacity: 1.0;
   z-index: 1;
 }
@@ -17736,6 +17800,14 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header .body-fading {
   display: none;
+}
+@media screen and (min-width: 30em) {
+  .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header {
+    padding: 10px 30px;
+  }
+  .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close {
+    right: 30px;
+  }
 }
 .view.view-private-function.view-display-id-block_page .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
   padding: 20px 15px;
@@ -17913,15 +17985,25 @@ form#user-profile-form div .form-actions .form-submit .icon {
   box-shadow: none;
 }
 .view.view-events .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header {
-  padding: 0;
-  min-height: 60px;
+  margin: 30px 0 0;
+  padding: 10px 15px;
+  min-height: 42px;
   border: none;
+}
+.view.view-events .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header span.label-danger {
+  padding: 5px 15px;
+  font-family: 'MaisonNeueBook';
+  font-size: 12px;
+  line-height: 1;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 .view.view-events .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close {
   display: block;
   position: absolute;
-  top: 0;
-  right: 10px;
+  top: 10px;
+  right: 15px;
   opacity: 1.0;
   z-index: 1;
 }
@@ -17938,6 +18020,14 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-events .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header .body-fading {
   display: none;
+}
+@media screen and (min-width: 30em) {
+  .view.view-events .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header {
+    padding: 10px 30px;
+  }
+  .view.view-events .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close {
+    right: 30px;
+  }
 }
 .view.view-events .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
   padding: 20px 15px;
@@ -18897,7 +18987,7 @@ body.navbar-is-fixed-top.admin-menu {
   }
 }
 header#navbar {
-  border-bottom: 0.5px solid #5f5e5e;
+  border-bottom: 0.5px solid #72725F;
   background: #fff none;
 }
 header#navbar .container,
@@ -19295,7 +19385,7 @@ body footer.footer {
   margin: 0;
   padding: 0;
   height: 130px;
-  border-top: 0.5px solid #5f5e5e;
+  border-top: 0.5px solid #72725F;
 }
 @media screen and (min-width: 30em) {
   body footer.footer {

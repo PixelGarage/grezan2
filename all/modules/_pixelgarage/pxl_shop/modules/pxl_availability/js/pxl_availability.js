@@ -56,6 +56,7 @@
             Drupal.settings.pxl_availability.modalCalendarDialog = $modal;
             Drupal.settings.pxl_availability.checkInTime = settings.check_in_time;
             Drupal.settings.pxl_availability.checkOutTime = settings.check_out_time;
+            Drupal.settings.pxl_availability.minDays = settings.min_days;
             Drupal.settings.pxl_availability.hiddenDays = settings.hidden_days;
             $modal.fadeIn(300).modal('show');
 

@@ -95,6 +95,7 @@ function pxl_availability_theme($existing, $type, $theme, $path) {
         'calendar_view' => null,  // string view-name:view-display
         'check_in_time' => '15',
         'check_out_time' => '12',
+        'min_days' => '4',
         'selectable_days' => array(0,1,2,3,4,5,6), // array with all selectable days (0=Sunday, ... 6=Saturday)
       ),
       'file' => 'templates/pxl_availability_form.vars.php',
@@ -167,6 +168,15 @@ function _pxl_availability_settings_form($delta = 0) {
     '#description'   => t('Define the check-out time in hours. Default: 12h'),
     '#weight' => 3,
   );
+  $form['pxl_availability']['min_days'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Minimal number of days'),
+    '#default_value' => variable_get($delta . '_min_days', '12'),
+    '#field_suffix' => t('days'),
+    '#size' => 4,
+    '#description'   => t('Define the minimal number of days to be selected. Default: 4 days'),
+    '#weight' => 4,
+  );
   $days = array(0 => t('Sunday'),1 => t('Monday'),2 => t('Tuesday'),3 => t('Wednesday'),4 => t('Thursday'),5 => t('Friday'),6 => t('Saturday'),);
   $form['pxl_availability']['selectable_days'] = array(
     '#title' => t('Selectable days'),
@@ -174,7 +184,7 @@ function _pxl_availability_settings_form($delta = 0) {
     '#options' => $days,
     '#default_value' => variable_get($delta . '_selectable_days', array(0,1,2,3,4,5,6)),
     '#description' => t('Select all week days that are visible in the calendar view.'),
-    '#weight' => 4,
+    '#weight' => 5,
   );
   return $form;
 }
@@ -188,6 +198,7 @@ function pxl_availability_block_save($delta = 0, $settings = array()) {
       variable_set($delta . '_calendar_view', $settings['calendar_view']);
       variable_set($delta . '_check_in_time', $settings['check_in_time']);
       variable_set($delta . '_check_out_time', $settings['check_out_time']);
+      variable_set($delta . '_min_days', $settings['min_days']);
       variable_set($delta . '_selectable_days', $settings['selectable_days']);
       break;
   }
@@ -207,6 +218,7 @@ function pxl_availability_block_view($delta = 0) {
         '#calendar_view' => variable_get($delta . '_calendar_view'),
         '#check_in_time' => variable_get($delta . '_check_in_time'),
         '#check_out_time' => variable_get($delta . '_check_out_time'),
+        '#min_days' => variable_get($delta . '_min_days'),
         '#selectable_days' => variable_get($delta . '_selectable_days'),
       );
       break;
