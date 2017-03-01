@@ -4731,7 +4731,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > a:focus,
 .pagination > li > span:focus {
   z-index: 2;
-  color: #000;
+  color: #72725F;
   background-color: #eeeeee;
   border-color: #ddd;
 }
@@ -4742,7 +4742,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
   z-index: 3;
-  color: #000;
+  color: #72725F;
   background-color: #337ab7;
   border-color: #337ab7;
   cursor: default;
@@ -8954,7 +8954,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   width: 40px;
   height: 40px;
   font-size: 36px;
-  color: #000;
+  color: #72725F;
   text-align: center;
   line-height: 40px;
   background: none !important;
@@ -9214,7 +9214,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   display: none;
   font-family: 'MaisonNeueBook';
   font-size: 22px;
-  color: #000;
+  color: #72725F;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-text {
   display: none;
@@ -9239,7 +9239,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   border: none;
-  background-color: #000;
+  background-color: #72725F;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button:hover,
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button:focus {
@@ -9298,7 +9298,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   border: 1px solid #72725F;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-custom-form form .input-group .form-item input.form-text:focus {
-  border: 1px solid #000;
+  border: 1px solid #72725F;
   box-shadow: 1px 1px 1px #aaa inset;
 }
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button-custom-form form button.form-submit {
@@ -9318,7 +9318,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   border: none;
-  background-color: #000;
+  background-color: #72725F;
   margin: 0 0 0 -4px;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -10576,7 +10576,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body img {
@@ -10914,7 +10914,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-12 .field-name-body hr,
 .node.node-webform .row .col-sm-6 .field-name-body hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .node.node-webform .row .col-sm-12 .field-name-body img,
@@ -11218,7 +11218,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-call2action > .row > .col-sm-12 > .field-name-body .field-item hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .node.node-call2action > .row > .col-sm-12 > .field-name-body .field-item img {
@@ -11669,7 +11669,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body img {
@@ -12036,7 +12036,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body hr,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body img,
@@ -12299,7 +12299,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-event-description .field-item hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-event-description .field-item img {
@@ -12626,7 +12626,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-event-description .field-item hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-event-description .field-item img {
@@ -13246,7 +13246,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-event-description .field-item hr,
 .node.node-event.view-mode-default > .row > .col-sm-12 .field-name-field-event-description .field-item hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-event-description .field-item img,
@@ -13610,7 +13610,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item img {
@@ -14018,7 +14018,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item hr,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item img,
@@ -14612,7 +14612,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item img {
@@ -15203,7 +15203,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item hr,
 .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item img,
@@ -15331,11 +15331,11 @@ form#user-login {
   -moz-border-radius: 0.25em;
   -webkit-border-radius: 0.25em;
   border-radius: 0.25em;
-  background-image: -webkit-linear-gradient(top, #a70014 0%, #410008 100%);
-  background-image: -o-linear-gradient(top, #a70014 0%, #410008 100%);
-  background-image: linear-gradient(to bottom, #a70014 0%, #410008 100%);
+  background-image: -webkit-linear-gradient(top, #a11a48 0%, #490c21 100%);
+  background-image: -o-linear-gradient(top, #a11a48 0%, #490c21 100%);
+  background-image: linear-gradient(to bottom, #a11a48 0%, #490c21 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa70014', endColorstr='#ff410008', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa11a48', endColorstr='#ff490c21', GradientType=0);
   display: inline-block;
   position: absolute;
   right: 0;
@@ -15344,11 +15344,11 @@ form#user-login {
 }
 #user-create-account .login-register:hover {
   color: #fff;
-  background-image: -webkit-linear-gradient(top, #410008 0%, #a70014 100%);
-  background-image: -o-linear-gradient(top, #410008 0%, #a70014 100%);
-  background-image: linear-gradient(to bottom, #410008 0%, #a70014 100%);
+  background-image: -webkit-linear-gradient(top, #490c21 0%, #a11a48 100%);
+  background-image: -o-linear-gradient(top, #490c21 0%, #a11a48 100%);
+  background-image: linear-gradient(to bottom, #490c21 0%, #a11a48 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff410008', endColorstr='#ffa70014', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff490c21', endColorstr='#ffa11a48', GradientType=0);
   text-decoration: none;
 }
 /* user login form */
@@ -15358,14 +15358,240 @@ form#user-login {
   padding: 0 0 2em;
   width: 100%;
   border: 0;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #72725F;
 }
 @media screen and (min-width: 64em) {
   #user_login_form {
     padding: 2em;
     width: 50%;
     border: 0;
-    border-right: 1px solid #eeeeee;
+    border-right: 1px solid #72725F;
+  }
+}
+#user_login_form .form-item label.control-label {
+  display: block;
+  font-weight: normal;
+}
+#user_login_form .form-item input.form-control {
+  margin: 0;
+  height: 36px;
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  color: #72725F;
+  border: 1px solid #72725F;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-color: #fff;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#user_login_form .form-item input.form-control::-moz-placeholder {
+  color: #777777;
+  opacity: 1;
+}
+#user_login_form .form-item input.form-control:-ms-input-placeholder {
+  color: #777777;
+}
+#user_login_form .form-item input.form-control::-webkit-input-placeholder {
+  color: #777777;
+}
+#user_login_form .form-item input.form-control:focus {
+  -webkit-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
+  -moz-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
+  box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
+}
+#user_login_form .form-item .help-block {
+  font-family: 'MaisonNeueBook';
+  font-size: 11px;
+  color: #808080;
+}
+#user_login_form .form-item .form-textarea-wrapper textarea {
+  border: 1px solid #72725F;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-color: #fff;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#user_login_form .form-item .form-textarea-wrapper textarea::-moz-placeholder {
+  color: #777777;
+  opacity: 1;
+}
+#user_login_form .form-item .form-textarea-wrapper textarea:-ms-input-placeholder {
+  color: #777777;
+}
+#user_login_form .form-item .form-textarea-wrapper textarea::-webkit-input-placeholder {
+  color: #777777;
+}
+#user_login_form .form-item .form-textarea-wrapper textarea:focus {
+  -webkit-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
+  -moz-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
+  box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
+}
+#user_login_form .form-item .form-textarea-wrapper .grippie {
+  display: none;
+}
+#user_login_form .form-item .form-radios,
+#user_login_form .form-item .form-checkboxes {
+  vertical-align: top;
+}
+#user_login_form .form-item .form-radios .radio > .control-label,
+#user_login_form .form-item .form-checkboxes .radio > .control-label,
+#user_login_form .form-item .form-radios .checkbox > .control-label,
+#user_login_form .form-item .form-checkboxes .checkbox > .control-label {
+  padding-left: 20px;
+  font-family: 'MaisonNeueBook';
+  font-size: 17px;
+  text-align: left;
+  vertical-align: middle;
+}
+#user_login_form .form-item .form-radios .radio > .control-label > input,
+#user_login_form .form-item .form-checkboxes .radio > .control-label > input,
+#user_login_form .form-item .form-radios .checkbox > .control-label > input,
+#user_login_form .form-item .form-checkboxes .checkbox > .control-label > input {
+  margin: 5px 7px 0 -20px;
+  vertical-align: top;
+}
+#user_login_form .form-item .form-managed-file {
+  display: block;
+  position: relative;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-color: #fff;
+}
+#user_login_form .form-item .form-managed-file .image-widget-data .input-group {
+  display: block;
+  position: relative;
+}
+#user_login_form .form-item .form-managed-file .image-widget-data .input-group input {
+  display: inline-block;
+  float: none;
+  margin: 0 -2px;
+  padding: 0;
+  width: 100%;
+  border: 1px solid #72725F;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: #fff;
+}
+#user_login_form .form-item .form-managed-file .image-widget-data .input-group input::-moz-placeholder {
+  color: #777777;
+  opacity: 1;
+}
+#user_login_form .form-item .form-managed-file .image-widget-data .input-group input:-ms-input-placeholder {
+  color: #777777;
+}
+#user_login_form .form-item .form-managed-file .image-widget-data .input-group input::-webkit-input-placeholder {
+  color: #777777;
+}
+#user_login_form .form-item .form-managed-file .image-widget-data .input-group .input-group-btn {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 -2px;
+  width: auto;
+  z-index: 10;
+}
+#user_login_form .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 20px;
+  font-family: 'MaisonNeueBook';
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #fff;
+  outline: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: none;
+  background-color: #000;
+  opacity: 1.0;
+  font-size: 15px;
+}
+#user_login_form .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit:hover,
+#user_login_form .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit:focus {
+  opacity: 0.7;
+}
+@media screen and (min-width: 45em) {
+  #user_login_form .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  #user_login_form .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  #user_login_form .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit {
+    font-size: 16px;
+  }
+}
+#user_login_form .form-item .form-managed-file .image-widget-data .form-group {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+#user_login_form .form-item .form-managed-file .image-widget-data .form-group span.file {
+  display: inline-block;
+  vertical-align: middle;
+}
+#user_login_form .form-item .form-managed-file .image-widget-data .form-group span.file > img {
+  display: none;
+}
+#user_login_form .form-item .form-managed-file .image-widget-data .form-group span.file a {
+  vertical-align: middle;
+}
+#user_login_form .form-item .form-managed-file .image-widget-data button.form-submit {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 20px;
+  font-family: 'MaisonNeueBook';
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #fff;
+  outline: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: none;
+  background-color: #000;
+  opacity: 1.0;
+  font-size: 15px;
+  display: block;
+}
+#user_login_form .form-item .form-managed-file .image-widget-data button.form-submit:hover,
+#user_login_form .form-item .form-managed-file .image-widget-data button.form-submit:focus {
+  opacity: 0.7;
+}
+@media screen and (min-width: 45em) {
+  #user_login_form .form-item .form-managed-file .image-widget-data button.form-submit {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  #user_login_form .form-item .form-managed-file .image-widget-data button.form-submit {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  #user_login_form .form-item .form-managed-file .image-widget-data button.form-submit {
+    font-size: 16px;
   }
 }
 #user_login_form .form-actions-wrapper {
@@ -15385,39 +15611,39 @@ form#user-login {
   -moz-border-radius: 0.25em;
   -webkit-border-radius: 0.25em;
   border-radius: 0.25em;
-  background-image: -webkit-linear-gradient(top, #a70014 0%, #410008 100%);
-  background-image: -o-linear-gradient(top, #a70014 0%, #410008 100%);
-  background-image: linear-gradient(to bottom, #a70014 0%, #410008 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa70014', endColorstr='#ff410008', GradientType=0);
-  background-image: -webkit-linear-gradient(top, #2698f2 0%, #0a62a8 100%);
-  background-image: -o-linear-gradient(top, #2698f2 0%, #0a62a8 100%);
-  background-image: linear-gradient(to bottom, #2698f2 0%, #0a62a8 100%);
+  background-image: -webkit-linear-gradient(top, #a11a48 0%, #490c21 100%);
+  background-image: -o-linear-gradient(top, #a11a48 0%, #490c21 100%);
+  background-image: linear-gradient(to bottom, #a11a48 0%, #490c21 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa11a48', endColorstr='#ff490c21', GradientType=0);
+  background-image: -webkit-linear-gradient(top, #5DA59E 0%, #386460 100%);
+  background-image: -o-linear-gradient(top, #5DA59E 0%, #386460 100%);
+  background-image: linear-gradient(to bottom, #5DA59E 0%, #386460 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2698f2', endColorstr='#ff0a62a8', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5da59e', endColorstr='#ff386460', GradientType=0);
 }
 #user_login_form .form-actions-wrapper .form-actions .btn:hover {
   color: #fff;
-  background-image: -webkit-linear-gradient(top, #410008 0%, #a70014 100%);
-  background-image: -o-linear-gradient(top, #410008 0%, #a70014 100%);
-  background-image: linear-gradient(to bottom, #410008 0%, #a70014 100%);
+  background-image: -webkit-linear-gradient(top, #490c21 0%, #a11a48 100%);
+  background-image: -o-linear-gradient(top, #490c21 0%, #a11a48 100%);
+  background-image: linear-gradient(to bottom, #490c21 0%, #a11a48 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff410008', endColorstr='#ffa70014', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff490c21', endColorstr='#ffa11a48', GradientType=0);
   text-decoration: none;
 }
 #user_login_form .form-actions-wrapper .form-actions .btn:hover {
-  background-image: -webkit-linear-gradient(top, #0a62a8 0%, #2698f2 100%);
-  background-image: -o-linear-gradient(top, #0a62a8 0%, #2698f2 100%);
-  background-image: linear-gradient(to bottom, #0a62a8 0%, #2698f2 100%);
+  background-image: -webkit-linear-gradient(top, #386460 0%, #5DA59E 100%);
+  background-image: -o-linear-gradient(top, #386460 0%, #5DA59E 100%);
+  background-image: linear-gradient(to bottom, #386460 0%, #5DA59E 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0a62a8', endColorstr='#ff2698f2', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff386460', endColorstr='#ff5da59e', GradientType=0);
 }
 #user_login_form .form-actions-wrapper .login-password {
   display: inline-block;
   margin: 0.5em 0;
-  color: #2698f2;
+  color: #5DA59E;
 }
 #user_login_form .form-actions-wrapper .login-password:hover {
-  color: #2698f2;
+  color: #5DA59E;
   text-decoration: underline;
 }
 /* User register / password forms */
@@ -15441,11 +15667,11 @@ form#user-login {
 #user-pass .form-actions .back-to-login .login-account {
   display: inline-block;
   margin-top: 0.5em;
-  color: #2698f2;
+  color: #5DA59E;
 }
 #user-register-form .form-actions .back-to-login .login-account:hover,
 #user-pass .form-actions .back-to-login .login-account:hover {
-  color: #2698f2;
+  color: #5DA59E;
   text-decoration: underline;
 }
 #user-register-form .form-actions .back-to-login:before,
@@ -15453,7 +15679,7 @@ form#user-login {
   display: inline;
   font-family: "fontawesome";
   content: '\f112';
-  color: #2698f2;
+  color: #5DA59E;
   text-align: center;
   padding: 0.3em;
 }
@@ -15464,21 +15690,21 @@ form#user-login {
   -moz-border-radius: 0.25em;
   -webkit-border-radius: 0.25em;
   border-radius: 0.25em;
-  background-image: -webkit-linear-gradient(top, #a70014 0%, #410008 100%);
-  background-image: -o-linear-gradient(top, #a70014 0%, #410008 100%);
-  background-image: linear-gradient(to bottom, #a70014 0%, #410008 100%);
+  background-image: -webkit-linear-gradient(top, #a11a48 0%, #490c21 100%);
+  background-image: -o-linear-gradient(top, #a11a48 0%, #490c21 100%);
+  background-image: linear-gradient(to bottom, #a11a48 0%, #490c21 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa70014', endColorstr='#ff410008', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa11a48', endColorstr='#ff490c21', GradientType=0);
   float: right;
 }
 #user-register-form .form-actions .btn:hover,
 #user-pass .form-actions .btn:hover {
   color: #fff;
-  background-image: -webkit-linear-gradient(top, #410008 0%, #a70014 100%);
-  background-image: -o-linear-gradient(top, #410008 0%, #a70014 100%);
-  background-image: linear-gradient(to bottom, #410008 0%, #a70014 100%);
+  background-image: -webkit-linear-gradient(top, #490c21 0%, #a11a48 100%);
+  background-image: -o-linear-gradient(top, #490c21 0%, #a11a48 100%);
+  background-image: linear-gradient(to bottom, #490c21 0%, #a11a48 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff410008', endColorstr='#ffa70014', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff490c21', endColorstr='#ffa11a48', GradientType=0);
   text-decoration: none;
 }
 /*
@@ -15519,7 +15745,7 @@ form#user-login {
 .user-profile .row .col-sm-4 .field-name-field-website .field-item a:hover,
 .user-profile .row .col-sm-8 .field-name-field-website .field-item a:hover,
 .user-profile .row .col-sm-12 .field-name-field-website .field-item a:hover {
-  color: #000;
+  color: #72725F;
   text-decoration: none;
 }
 .user-profile .row .col-sm-4 .field-name-field-image,
@@ -15841,7 +16067,7 @@ form#user-login {
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item hr,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item img,
@@ -16424,7 +16650,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item img {
@@ -17015,17 +17241,17 @@ form#user-profile-form div .form-actions .form-submit .icon {
   font-family: 'MaisonNeueBook';
   font-size: 16px;
   line-height: 1;
-  color: #000;
+  color: #72725F;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  border: 1px solid #000;
+  border: 1px solid #72725F;
   background-color: #fff;
 }
 .view.view-proximity .pager.pager--infinite-scroll .pager__item a:hover,
 .view.view-proximity .pager.pager--infinite-scroll .pager__item a.active {
   color: #fff;
-  background-color: #000;
+  background-color: #72725F;
 }
 /*
  *  Call2action view component
@@ -17598,7 +17824,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content hr {
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #72725F;
   background: none;
 }
 .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content img {
@@ -18136,7 +18362,7 @@ form.webform-client-form fieldset.panel .panel-body fieldset.panel .panel-body f
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border-left: 2px solid #000;
+  border-left: 2px solid #72725F;
 }
 form.webform-client-form fieldset.panel .panel-body .btn.btn-default {
   display: inline-block;
@@ -18148,7 +18374,7 @@ form.webform-client-form fieldset.panel .panel-body .btn.btn-default {
   letter-spacing: normal;
   text-align: left;
   text-transform: none;
-  color: #000;
+  color: #72725F;
   border: none;
   background: none;
 }
@@ -18230,8 +18456,8 @@ form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.dra
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #000;
-  background-color: #000;
+  border: 1px solid #72725F;
+  background-color: #72725F;
   font-size: 14px;
 }
 @media screen and (min-width: 36em) {
@@ -18251,7 +18477,7 @@ form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.dra
 }
 form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.draggable td button:hover,
 form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.draggable td button:focus {
-  color: #000;
+  color: #72725F;
   background: none;
 }
 form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file {
@@ -18286,8 +18512,8 @@ form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .fo
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #000;
-  background-color: #000;
+  border: 1px solid #72725F;
+  background-color: #72725F;
   font-size: 16px;
   z-index: 10;
 }
@@ -18308,7 +18534,7 @@ form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .fo
 }
 form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .form-managed-file .input-group-btn button:hover,
 form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .form-managed-file .input-group-btn button:focus {
-  color: #000;
+  color: #72725F;
   background: none;
 }
 form.webform-client-form .webform-component {
@@ -18354,7 +18580,7 @@ form.webform-client-form .webform-component label {
   }
 }
 form.webform-client-form .webform-component label span.form-required {
-  color: #000;
+  color: #72725F;
 }
 form.webform-client-form .webform-component div.description,
 form.webform-client-form .webform-component div.help-block {
@@ -18386,7 +18612,7 @@ form.webform-client-form .webform-component textarea {
   -webkit-border-radius: 0;
   border-radius: 0;
   border: none;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #72725F;
   background-color: rgba(255, 255, 255, 0);
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -18429,9 +18655,9 @@ form.webform-client-form .webform-component input.form-text:focus,
 form.webform-client-form .webform-component input.form-text:hover,
 form.webform-client-form .webform-component textarea:focus,
 form.webform-client-form .webform-component textarea:hover {
-  border: 1px solid #000;
-  -webkit-box-shadow: 0 0 3px #000 inset;
-  box-shadow: 0 0 3px #000 inset;
+  border: 1px solid #72725F;
+  -webkit-box-shadow: 0 0 3px #72725F inset;
+  box-shadow: 0 0 3px #72725F inset;
 }
 form.webform-client-form .webform-component .form-textarea-wrapper div.grippie {
   display: none;
@@ -18459,7 +18685,7 @@ form.webform-client-form .webform-component.webform-component-select select {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #000;
+  border: 1px solid #72725F;
   background-color: rgba(255, 255, 255, 0);
   outline: none;
   -webkit-box-shadow: none;
@@ -18483,7 +18709,7 @@ form.webform-client-form .webform-component.webform-component-select select {
 form.webform-client-form .webform-component.webform-component-select select:focus,
 form.webform-client-form .webform-component.webform-component-select select:active {
   outline: none;
-  border: 1px solid #000;
+  border: 1px solid #72725F;
 }
 form.webform-client-form .webform-component.webform-component-select:after {
   content: '\f0d7';
@@ -18493,7 +18719,7 @@ form.webform-client-form .webform-component.webform-component-select:after {
   right: 5px;
   bottom: 0;
   font-family: 'fontawesome';
-  color: #000;
+  color: #72725F;
   line-height: 30px;
   pointer-events: none;
 }
@@ -18584,8 +18810,8 @@ form.webform-client-form .webform-component .form-managed-file button.btn {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #000;
-  background-color: #000;
+  border: 1px solid #72725F;
+  background-color: #72725F;
   padding: 0 12px;
   font-size: 15px;
   line-height: 1.2;
@@ -18607,7 +18833,7 @@ form.webform-client-form .webform-component .form-managed-file button.btn {
 }
 form.webform-client-form .webform-component .form-managed-file button.btn:hover,
 form.webform-client-form .webform-component .form-managed-file button.btn:focus {
-  color: #000;
+  color: #72725F;
   background: none;
 }
 @media screen and (min-width: 51.42857142857143em) {
@@ -18705,8 +18931,8 @@ form.webform-client-form div.form-actions button.webform-submit {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #000;
-  background-color: #000;
+  border: 1px solid #72725F;
+  background-color: #72725F;
 }
 @media screen and (min-width: 36em) {
   form.webform-client-form div.form-actions button.webform-submit {
@@ -18725,7 +18951,7 @@ form.webform-client-form div.form-actions button.webform-submit {
 }
 form.webform-client-form div.form-actions button.webform-submit:hover,
 form.webform-client-form div.form-actions button.webform-submit:focus {
-  color: #000;
+  color: #72725F;
   background: none;
 }
 form.webform-client-form div.form-actions a.back-link {
@@ -18742,8 +18968,8 @@ form.webform-client-form div.form-actions a.back-link {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #000;
-  background-color: #000;
+  border: 1px solid #72725F;
+  background-color: #72725F;
   font-size: 15px;
   padding-left: 0;
   border: none;
@@ -18767,7 +18993,7 @@ form.webform-client-form div.form-actions a.back-link {
 }
 form.webform-client-form div.form-actions a.back-link:hover,
 form.webform-client-form div.form-actions a.back-link:focus {
-  color: #000;
+  color: #72725F;
   background: none;
 }
 @media screen and (min-width: 40em) {
@@ -18794,15 +19020,14 @@ form.webform-client-form div.form-actions a.done-link {
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
-  color: #72725F;
   outline: none;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  border: 1px solid #000;
-  background-color: #000;
+  border: 1px solid #72725F;
+  background-color: #72725F;
   font-size: 15px;
-  color: #000;
+  color: #72725F;
   padding-left: 0;
   border: none;
   background: none;
@@ -18825,7 +19050,7 @@ form.webform-client-form div.form-actions a.done-link {
 }
 form.webform-client-form div.form-actions a.done-link:hover,
 form.webform-client-form div.form-actions a.done-link:focus {
-  color: #000;
+  color: #72725F;
   background: none;
 }
 @media screen and (min-width: 40em) {
@@ -18854,11 +19079,11 @@ form.webform-client-form div.form-actions a.done-link:hover {
   padding: 15px 30px;
   width: 80%;
   color: #fff;
-  border: 1px solid #000;
+  border: 1px solid #72725F;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  background-color: #000;
+  background-color: #72725F;
 }
 .webform-confirmation .confirmation-title {
   font-family: 'MaisonNeueBook';
@@ -18956,17 +19181,17 @@ form.webform-client-form div.form-actions a.done-link:hover {
   padding: 5px 10px;
   font-family: 'MaisonNeueBook';
   font-size: 16px;
-  color: #000;
+  color: #72725F;
   text-decoration: none;
   border-radius: 3px;
-  border: 2px solid #000;
+  border: 2px solid #72725F;
   background: none;
   outline: none;
 }
 .submission-actions > ul.webform-submission-actions li a:hover,
 .submission-actions > ul.webform-submission-actions li a:active {
   color: #fff;
-  background: #000 none;
+  background: #72725F none;
   outline: none;
 }
 /*
