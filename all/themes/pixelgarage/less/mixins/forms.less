@@ -69,23 +69,22 @@
       // see chosen.less
     }
 
-    .form-radios, .form-checkboxes {
-      vertical-align: top;
+    .radio, .checkbox {
+      > .control-label {
+        padding-left: 20px;
+        font-family: @pxl-text-font;
+        font-size: @font-size-base;
+        text-align: left;
+        vertical-align: middle;
 
-      .radio, .checkbox {
-        > .control-label {
-          padding-left: 20px;
-          font-family: @pxl-text-font-light;
-          font-size: 17px;
-          //#pxl-mixins.font-size-responsive(19px, 14px);
-          text-align: left;
-          vertical-align: middle;
+        a {
+          text-decoration: underline;
+        }
 
-          > input {
-            //display: none;
-            margin: 5px 7px 0 -20px;
-            vertical-align: top;
-          }
+        > input {
+          //display: none;
+          margin: 5px 7px 0 -30px;
+          vertical-align: top;
         }
       }
     }

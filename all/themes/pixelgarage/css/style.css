@@ -9577,25 +9577,21 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .availability-form .form-item .form-textarea-wrapper .grippie {
   display: none;
 }
-.availability-form .form-item .form-radios,
-.availability-form .form-item .form-checkboxes {
-  vertical-align: top;
-}
-.availability-form .form-item .form-radios .radio > .control-label,
-.availability-form .form-item .form-checkboxes .radio > .control-label,
-.availability-form .form-item .form-radios .checkbox > .control-label,
-.availability-form .form-item .form-checkboxes .checkbox > .control-label {
+.availability-form .form-item .radio > .control-label,
+.availability-form .form-item .checkbox > .control-label {
   padding-left: 20px;
   font-family: 'MaisonNeueBook';
-  font-size: 17px;
+  font-size: 16px;
   text-align: left;
   vertical-align: middle;
 }
-.availability-form .form-item .form-radios .radio > .control-label > input,
-.availability-form .form-item .form-checkboxes .radio > .control-label > input,
-.availability-form .form-item .form-radios .checkbox > .control-label > input,
-.availability-form .form-item .form-checkboxes .checkbox > .control-label > input {
-  margin: 5px 7px 0 -20px;
+.availability-form .form-item .radio > .control-label a,
+.availability-form .form-item .checkbox > .control-label a {
+  text-decoration: underline;
+}
+.availability-form .form-item .radio > .control-label > input,
+.availability-form .form-item .checkbox > .control-label > input {
+  margin: 5px 7px 0 -30px;
   vertical-align: top;
 }
 .availability-form .form-item .form-managed-file {
@@ -9882,25 +9878,21 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .block-pxl-availability .block-availability-form .availability-form-container form .form-item .form-textarea-wrapper .grippie {
   display: none;
 }
-.block-pxl-availability .block-availability-form .availability-form-container form .form-item .form-radios,
-.block-pxl-availability .block-availability-form .availability-form-container form .form-item .form-checkboxes {
-  vertical-align: top;
-}
-.block-pxl-availability .block-availability-form .availability-form-container form .form-item .form-radios .radio > .control-label,
-.block-pxl-availability .block-availability-form .availability-form-container form .form-item .form-checkboxes .radio > .control-label,
-.block-pxl-availability .block-availability-form .availability-form-container form .form-item .form-radios .checkbox > .control-label,
-.block-pxl-availability .block-availability-form .availability-form-container form .form-item .form-checkboxes .checkbox > .control-label {
+.block-pxl-availability .block-availability-form .availability-form-container form .form-item .radio > .control-label,
+.block-pxl-availability .block-availability-form .availability-form-container form .form-item .checkbox > .control-label {
   padding-left: 20px;
   font-family: 'MaisonNeueBook';
-  font-size: 17px;
+  font-size: 16px;
   text-align: left;
   vertical-align: middle;
 }
-.block-pxl-availability .block-availability-form .availability-form-container form .form-item .form-radios .radio > .control-label > input,
-.block-pxl-availability .block-availability-form .availability-form-container form .form-item .form-checkboxes .radio > .control-label > input,
-.block-pxl-availability .block-availability-form .availability-form-container form .form-item .form-radios .checkbox > .control-label > input,
-.block-pxl-availability .block-availability-form .availability-form-container form .form-item .form-checkboxes .checkbox > .control-label > input {
-  margin: 5px 7px 0 -20px;
+.block-pxl-availability .block-availability-form .availability-form-container form .form-item .radio > .control-label a,
+.block-pxl-availability .block-availability-form .availability-form-container form .form-item .checkbox > .control-label a {
+  text-decoration: underline;
+}
+.block-pxl-availability .block-availability-form .availability-form-container form .form-item .radio > .control-label > input,
+.block-pxl-availability .block-availability-form .availability-form-container form .form-item .checkbox > .control-label > input {
+  margin: 5px 7px 0 -30px;
   vertical-align: top;
 }
 .block-pxl-availability .block-availability-form .availability-form-container form .form-item .form-managed-file {
@@ -10280,6 +10272,231 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .block-pxl-availability .block-shopping-cart-form .shopping-cart-table .table-responsive table tbody tr td:nth-child(2) {
   text-align: right;
 }
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb {
+  margin: 0 0 30px;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb label.control-label {
+  display: block;
+  font-weight: normal;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb input.form-control {
+  margin: 0;
+  height: 36px;
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  color: #72725F;
+  border: 1px solid #72725F;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-color: #fff;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb input.form-control::-moz-placeholder {
+  color: #777777;
+  opacity: 1;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb input.form-control:-ms-input-placeholder {
+  color: #777777;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb input.form-control::-webkit-input-placeholder {
+  color: #777777;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb input.form-control:focus {
+  -webkit-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
+  -moz-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
+  box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .help-block {
+  font-family: 'MaisonNeueBook';
+  font-size: 11px;
+  color: #808080;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-textarea-wrapper textarea {
+  border: 1px solid #72725F;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-color: #fff;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-textarea-wrapper textarea::-moz-placeholder {
+  color: #777777;
+  opacity: 1;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-textarea-wrapper textarea:-ms-input-placeholder {
+  color: #777777;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-textarea-wrapper textarea::-webkit-input-placeholder {
+  color: #777777;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-textarea-wrapper textarea:focus {
+  -webkit-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
+  -moz-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
+  box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-textarea-wrapper .grippie {
+  display: none;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .radio > .control-label,
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .checkbox > .control-label {
+  padding-left: 20px;
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  text-align: left;
+  vertical-align: middle;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .radio > .control-label a,
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .checkbox > .control-label a {
+  text-decoration: underline;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .radio > .control-label > input,
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .checkbox > .control-label > input {
+  margin: 5px 7px 0 -30px;
+  vertical-align: top;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file {
+  display: block;
+  position: relative;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-color: #fff;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .input-group {
+  display: block;
+  position: relative;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .input-group input {
+  display: inline-block;
+  float: none;
+  margin: 0 -2px;
+  padding: 0;
+  width: 100%;
+  border: 1px solid #72725F;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: #fff;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .input-group input::-moz-placeholder {
+  color: #777777;
+  opacity: 1;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .input-group input:-ms-input-placeholder {
+  color: #777777;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .input-group input::-webkit-input-placeholder {
+  color: #777777;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .input-group .input-group-btn {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 -2px;
+  width: auto;
+  z-index: 10;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 20px;
+  font-family: 'MaisonNeueBook';
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #fff;
+  outline: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: none;
+  background-color: #000;
+  opacity: 1.0;
+  font-size: 15px;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit:hover,
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit:focus {
+  opacity: 0.7;
+}
+@media screen and (min-width: 45em) {
+  .block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit {
+    font-size: 16px;
+  }
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .form-group {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .form-group span.file {
+  display: inline-block;
+  vertical-align: middle;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .form-group span.file > img {
+  display: none;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data .form-group span.file a {
+  vertical-align: middle;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data button.form-submit {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 20px;
+  font-family: 'MaisonNeueBook';
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #fff;
+  outline: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: none;
+  background-color: #000;
+  opacity: 1.0;
+  font-size: 15px;
+  display: block;
+}
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data button.form-submit:hover,
+.block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data button.form-submit:focus {
+  opacity: 0.7;
+}
+@media screen and (min-width: 45em) {
+  .block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data button.form-submit {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data button.form-submit {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .block-pxl-availability .block-shopping-cart-form .shopping-cart-agb .form-managed-file .image-widget-data button.form-submit {
+    font-size: 16px;
+  }
+}
 .block-pxl-availability .block-shopping-cart-form .shopping-cart-actions {
   width: 100%;
 }
@@ -10306,6 +10523,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   text-align: right;
 }
 .block-pxl-availability .block-shopping-cart-form .shopping-cart-actions .stripe-button-container .stripe-button-title {
+  display: none;
   margin-bottom: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-weight: bold;
@@ -15435,25 +15653,21 @@ form#user-login {
 #user_login_form .form-item .form-textarea-wrapper .grippie {
   display: none;
 }
-#user_login_form .form-item .form-radios,
-#user_login_form .form-item .form-checkboxes {
-  vertical-align: top;
-}
-#user_login_form .form-item .form-radios .radio > .control-label,
-#user_login_form .form-item .form-checkboxes .radio > .control-label,
-#user_login_form .form-item .form-radios .checkbox > .control-label,
-#user_login_form .form-item .form-checkboxes .checkbox > .control-label {
+#user_login_form .form-item .radio > .control-label,
+#user_login_form .form-item .checkbox > .control-label {
   padding-left: 20px;
   font-family: 'MaisonNeueBook';
-  font-size: 17px;
+  font-size: 16px;
   text-align: left;
   vertical-align: middle;
 }
-#user_login_form .form-item .form-radios .radio > .control-label > input,
-#user_login_form .form-item .form-checkboxes .radio > .control-label > input,
-#user_login_form .form-item .form-radios .checkbox > .control-label > input,
-#user_login_form .form-item .form-checkboxes .checkbox > .control-label > input {
-  margin: 5px 7px 0 -20px;
+#user_login_form .form-item .radio > .control-label a,
+#user_login_form .form-item .checkbox > .control-label a {
+  text-decoration: underline;
+}
+#user_login_form .form-item .radio > .control-label > input,
+#user_login_form .form-item .checkbox > .control-label > input {
+  margin: 5px 7px 0 -30px;
   vertical-align: top;
 }
 #user_login_form .form-item .form-managed-file {

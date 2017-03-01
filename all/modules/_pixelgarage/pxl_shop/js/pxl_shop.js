@@ -13,7 +13,9 @@
       $.each(Drupal.settings.pxl_shop.blocks, function (block_id, settings) {
         var $block = $('#' + block_id),
           $errorLabel = $block.find('>.label'),
-          $deleteButtons = $block.find('.shopping-cart-table .cart-item-delete').add('.cart-items-reset');
+          $deleteButtons = $block.find('.shopping-cart-table .cart-item-delete').add('.cart-items-reset'),
+          $stripeButton = $block.find('.shopping-cart-actions .stripe-button'),
+          $agbCheckbox = $block.find('input#edit-agb-checkbox');
 
         //
         // submit button click
@@ -37,6 +39,20 @@
             });
 
             e.preventDefault();
+          });
+        });
+
+        //
+        // AGB checkbox
+        $stripeButton.attr('disabled', true);
+        $agbCheckbox.once('checkbox', function() {
+          $(this).on('click', function(e) {
+            if($(this).is(':checked')) {
+              $stripeButton.attr('disabled', false);
+            }
+            else {
+              $stripeButton.attr('disabled', true);
+            }
           });
         });
       });

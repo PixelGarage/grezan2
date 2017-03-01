@@ -42,9 +42,27 @@ function template_preprocess_pxl_shop_cart_form(&$vars) {
   ));
 
   //
+  // define the AGB checkbox
+  global $language;
+  switch ($language->language) {
+    case 'de':
+      $node_path = 'node/87';
+      break;
+    case 'fr':
+      $node_path = 'node/90';
+      break;
+    case 'en':
+    default:
+      $node_path = 'node/86';
+      break;
+  }
+  $agb_link = l(t('terms of condition'), $node_path, array('attributes' => array('target' => '_blank')));
+  $vars['agb_text'] = t('I hereby confirm to agree to the !url', array('!url' => $agb_link));
+
+  //
   // define the stripe payment button
-  $description = !empty($vars['pay_dialog_text']) ? t($vars['pay_dialog_text']) : t('Payment of shopping cart');
-  $button_title = !empty($vars['pay_button_title']) ? $vars['pay_button_title'] : t('Pay now');
+  $description = !empty($vars['pay_dialog_text']) ? t($vars['pay_dialog_text']) : t('Pay shopping cart items');
+  $button_title = !empty($vars['pay_button_title']) ? $vars['pay_button_title'] : t('Pay');
   $button_text = !empty($vars['pay_button_text']) ? $vars['pay_button_text'] : t('with your credit card');
   $stripe_settings = array(
     'name' => $vars['pay_dialog_title'],
