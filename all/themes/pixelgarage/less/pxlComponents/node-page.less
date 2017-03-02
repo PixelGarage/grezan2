@@ -37,7 +37,9 @@
         >.field-name-field-paragraphs {
           >.field-items{
             >.field-item {
-              margin-bottom: @paragraph-margin-bottom;
+              &:not(:last-child) {
+                margin-bottom: @paragraph-margin-bottom;
+              }
 
               // see paragraph-item-... less files
             }

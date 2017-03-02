@@ -10821,7 +10821,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   height: auto;
   min-height: 350px;
 }
-.node.node-page.view-mode-full > .row > div.col-sm-12 > .paragraphs-items > .field-name-field-paragraphs > .field-items > .field-item {
+.node.node-page.view-mode-full > .row > div.col-sm-12 > .paragraphs-items > .field-name-field-paragraphs > .field-items > .field-item:not(:last-child) {
   margin-bottom: 50px;
 }
 .node.node-page.view-mode-full.page-about > .row > div.col-sm-12 {
@@ -18845,6 +18845,24 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-social-masonry .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .body-fading {
   display: none;
+}
+.view.view-social-masonry .pager.pager--infinite-scroll .pager__item a {
+  display: inline-block;
+  padding: 8px 20px 10px;
+  font-family: 'MaisonNeueBook';
+  font-size: 16px;
+  line-height: 1;
+  color: #72725F;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #72725F;
+  background-color: #fff;
+}
+.view.view-social-masonry .pager.pager--infinite-scroll .pager__item a:hover,
+.view.view-social-masonry .pager.pager--infinite-scroll .pager__item a.active {
+  color: #fff;
+  background-color: #72725F;
 }
 /*
  *  Webform Addons component
