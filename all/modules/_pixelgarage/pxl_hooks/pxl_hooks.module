@@ -196,9 +196,8 @@ function pxl_hooks_instagram_media_save($type, $item) {
   // save only image (no video)
   if ($type != 'image') return;
 
-  $filename = $type . $item->instagram_id;
+  $filename = $type . '_' . $item->instagram_id;
   $picture = _import_picture($filename, $item->standard_resolution);
-  $caption = ($item->caption && $item->caption->text) ? $item->caption->text : '';
 
   $node = new stdClass();
   $node->type = 'instagram';
@@ -216,7 +215,7 @@ function pxl_hooks_instagram_media_save($type, $item) {
   $node->field_link[LANGUAGE_NONE][0]['url'] = $item->instagram_link;
   $node->field_instagram_user[LANGUAGE_NONE][0]['value'] = $item->instagram_user;
   $node->field_instagram_tags[LANGUAGE_NONE][0]['value'] = $item->tags;
-  $node->body[LANGUAGE_NONE][0]['value'] = $caption;
+  $node->body[LANGUAGE_NONE][0]['value'] = $item->caption;
 
   // save node
   $node = node_submit($node);
