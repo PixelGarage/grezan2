@@ -49,9 +49,9 @@ function template_preprocess_pxl_availability_form(&$vars) {
       'SKUs' => $sku_filters,
     ),
   );
-  $js_settings['pxl_availability']['errorNoAvailability'] = t('No availability for the selected time range.');
-  $js_settings['pxl_availability']['errorInPast'] = t('The selected time range is in the past.');
-  $js_settings['pxl_availability']['errorMinDays'] = t('The minimal selectable time range includes @days days.', array('@days'=>$vars['min_days']));
+  $js_settings['pxl_availability']['errorNoAvailability'] = t('The selected time range is not available.');
+  $js_settings['pxl_availability']['errorInPast'] = t('The selected time range cannot be in the past.');
+  $js_settings['pxl_availability']['errorMinDays'] = t('The minimal selectable time range must include at least @days days.', array('@days'=>$vars['min_days']));
   drupal_add_js($js_settings, 'setting');
 
   // render shopping cart form to add all needed js settings and files

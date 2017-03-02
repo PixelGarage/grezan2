@@ -9245,6 +9245,9 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button:focus {
   opacity: 0.7;
 }
+.field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button span.fa {
+  padding-right: 10px;
+}
 .field-type-number-decimal .field-items .field-item .stripe-button-container .stripe-button.btn-error {
   background-color: #d9534f;
 }
@@ -13909,13 +13912,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #fff;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 {
+.node.node-apartment.view-mode-default > .row > .col-sm-12,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 {
   margin: 0 0 50px;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .group-header-left,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .group-header-left,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .group-header-left,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .group-header-right,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .group-header-right {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .group-header-right,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .group-header-right {
   display: inline-block;
   vertical-align: top;
   margin: 0 -2px;
@@ -13924,28 +13930,33 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .group-header-left,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .group-header-left {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .group-header-left,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .group-header-left {
     width: 33.3333333%;
     padding-right: 15px;
   }
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .group-header-right,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .group-header-right {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .group-header-right,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .group-header-right {
     width: 66.6666666%;
     padding-left: 15px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .group-header-left,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .group-header-left {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .group-header-left,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .group-header-left {
     width: 33.3333333%;
   }
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .group-header-right,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .group-header-right {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .group-header-right,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .group-header-right {
     width: 66.6666666%;
   }
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-title h2,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-title h2 {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-title h2,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-title h2 {
   margin: 0 0 50px;
   padding: 10px 0 0;
   font-family: 'MaisonNeueBook';
@@ -13960,36 +13971,44 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 @media screen and (min-width: 40em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-title h2,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-title h2 {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-title h2,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-title h2 {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-title h2,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-title h2 {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-title h2,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-title h2 {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-title h2,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-title h2 {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-title h2,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-title h2 {
     font-size: 24px;
   }
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item {
   margin: 0 0 10px;
   padding: 10px 0 0;
   border-top: 0.5px solid #72725F;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h1,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h1,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h1,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h2,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h2,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h2,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h3,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h3,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h3,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-title,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-title,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
   margin: 10px auto 20px;
   font-family: 'MaisonNeueBook';
   font-size: 20px;
@@ -14002,47 +14021,63 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 @media screen and (min-width: 40em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h1,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h1,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h2,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h2,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h3,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h3,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-title,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-title,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h1,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h1,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h2,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h2,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h3,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h3,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-title,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-title,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h1,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h1,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h1,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h2,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h2,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h2,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h3,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h3,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h3,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-title,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-title,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item .pxl-title {
     font-size: 24px;
   }
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h4,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h4,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h4,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h5,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h5,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h5,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h6,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h6,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h6,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
   margin: 10px auto;
   font-family: 'MaisonNeueBook';
   font-size: 16px;
@@ -14055,43 +14090,57 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 @media screen and (min-width: 42.666666666666664em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h4,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h4,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h5,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h5,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h6,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h6,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
     font-size: 2.34375vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h4,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h4,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h5,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h5,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h6,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h6,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h4,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h4,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h4,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h5,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h5,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h5,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item h6,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item h6,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item h6,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item .pxl-subtitle {
     font-size: 18px;
   }
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item p,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item p,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item p,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item tbody td,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item tbody td {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item tbody td,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item tbody td {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
@@ -14109,29 +14158,36 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 @media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item p,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item p,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item tbody td,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item tbody td {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item tbody td,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item tbody td {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item p,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item p,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item tbody td,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item tbody td {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item tbody td,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item tbody td {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item p,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item p,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item p,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item tbody td,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item tbody td {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item tbody td,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item tbody td {
     font-size: 17px;
   }
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
   letter-spacing: normal;
@@ -14141,39 +14197,47 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 @media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item a {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item a {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item a {
     font-size: 17px;
   }
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a:before,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a:before {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a:before,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item a:before {
   content: '\2192';
   padding-right: 5px;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a:hover,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a:hover,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item a:hover,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item a:focus,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a:focus {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a:focus,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item a:focus {
   color: #F4A258;
   text-decoration: none;
   background: none;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item pre,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item pre,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item pre,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item address,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item address {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item address,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
   letter-spacing: normal;
@@ -14185,29 +14249,36 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 @media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item pre,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item pre,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item address,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item address {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item address,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item address {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item pre,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item pre,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item address,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item address {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item address,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item address {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item pre,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item pre,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item pre,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item address,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item address {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item address,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item address {
     font-size: 17px;
   }
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item strong,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item strong {
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -14217,30 +14288,35 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 @media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item strong,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item strong {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item strong,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item strong {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item strong,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item strong {
     font-size: 17px;
   }
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item hr,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item hr {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item hr,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item hr {
   border: 0;
   border-bottom: 2px solid #72725F;
   background: none;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item img,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item img {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item img,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item img {
   display: block;
   overflow: hidden;
   margin: 20px auto;
@@ -14250,12 +14326,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item embed,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item embed,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item embed,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item video,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item video,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item video,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item audio,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item audio,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item audio,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item iframe,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item iframe {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item iframe,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item iframe {
   display: block;
   overflow: hidden;
   margin: 20px auto;
@@ -14266,7 +14346,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   min-height: 350px;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel {
   display: block;
   position: relative;
   margin: 0 auto;
@@ -14275,25 +14356,30 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   height: auto;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner {
   background: #000000;
 }
 @media all and (transform-3d), (-webkit-transform-3d) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item {
     opacity: 0;
     -webkit-transition: opacity ease 1s;
     -o-transition: opacity ease 1s;
     transition: opacity ease 1s;
   }
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.active,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.active {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.active,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.active {
     opacity: 1.0;
   }
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.active.left,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.active.left,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.active.left,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.active.right,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.active.right {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.active.right,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.active.right {
     left: 0;
     opacity: 0;
     -webkit-transform: translate3d(0, 0, 0);
@@ -14302,30 +14388,36 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   }
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.left.next,
   .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.left.next,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.left.next,
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.right.prev,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.right.prev {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.right.prev,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel.carousel-fade > .carousel-inner .item.right.prev {
     opacity: 1.0;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner {
   margin-top: 0;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner .item,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner .item {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner .item,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner .item {
   width: 100%;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner .item > div,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner .item > div {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner .item > div,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner .item > div {
   overflow: hidden;
   width: 100%;
   height: 0 !important;
   padding-bottom: 50%;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators {
   position: absolute;
   top: auto;
   bottom: 0;
@@ -14336,7 +14428,8 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   z-index: 3;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li {
   display: inline-block;
   vertical-align: top;
   overflow: hidden;
@@ -14351,18 +14444,22 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li:hover,
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li:hover,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li:hover,
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li.active,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li.active {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li.active,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li.active {
   opacity: 0.6;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li img,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li img {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li img,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-indicators li img {
   display: block;
   width: 100%;
   height: auto;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control {
   display: block;
   position: absolute;
   top: 0;
@@ -14386,31 +14483,36 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 @media screen and (min-width: 32em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control {
     font-size: 3.90625vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control {
     font-size: 30px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control,
-  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control {
+  .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control {
     font-size: 40px;
   }
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left {
   left: 0;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
   border-left-width: 0;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left .fa,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left .fa {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left .fa,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left .fa {
   display: inline-block;
   position: absolute;
   top: 50%;
@@ -14420,20 +14522,23 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   left: 5%;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left .fa:before,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left .fa:before {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left .fa:before,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.left .fa:before {
   font-family: 'MaisonNeueBook';
   font-size: 25px;
   content: '\2190';
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right {
   right: 0;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
   border-right-width: 0;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right .fa,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right .fa {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right .fa,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right .fa {
   display: inline-block;
   position: absolute;
   top: 50%;
@@ -14443,35 +14548,42 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   right: 5%;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right .fa:before,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right .fa:before {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right .fa:before,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right .fa:before {
   font-family: 'MaisonNeueBook';
   font-size: 25px;
   content: '\2192';
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right:hover,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right:hover {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right:hover,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > a.carousel-control.right:hover {
   opacity: 1.0;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner .item > div,
-.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner .item > div {
+.node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner .item > div,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-field-images .field-item .carousel > .carousel-inner .item > div {
   padding-bottom: 66.66666%;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-4,
-.node.node-apartment.view-mode-default > .row > .col-sm-4 {
+.node.node-apartment.view-mode-default > .row > .col-sm-4,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-4 {
   margin: 0 0 50px;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price,
-.node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price {
+.node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .group-price {
   margin: 0 0 10px;
   padding: 10px;
   border: 1px solid #988ADE;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price .field-name-field-price,
-.node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price {
+.node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .group-price .field-name-field-price {
   margin-bottom: 30px;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price .field-name-field-price .field-item,
-.node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price .field-item {
+.node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price .field-item,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .group-price .field-name-field-price .field-item {
   font-family: 'MaisonNeueBook';
   font-size: 20px;
   text-transform: uppercase;
@@ -14482,29 +14594,34 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 @media screen and (min-width: 40em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price .field-name-field-price .field-item,
-  .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price .field-item {
+  .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price .field-item,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .group-price .field-name-field-price .field-item {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price .field-name-field-price .field-item,
-  .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price .field-item {
+  .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price .field-item,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .group-price .field-name-field-price .field-item {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price .field-name-field-price .field-item,
-  .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price .field-item {
+  .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price .field-item,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .group-price .field-name-field-price .field-item {
     font-size: 24px;
   }
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price .field-name-field-price-tag,
-.node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price-tag {
+.node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price-tag,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .group-price .field-name-field-price-tag {
   padding: 10px 0 0;
   border-top: 1px solid #000;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item,
-.node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item {
+.node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
   letter-spacing: normal;
@@ -14514,39 +14631,46 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 @media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item,
-  .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item {
+  .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item,
-  .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item {
+  .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item,
-  .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item {
+  .node.node-apartment.view-mode-default > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item {
     font-size: 17px;
   }
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-4 .field-name-availability-block,
-.node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-availability-block {
+.node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-availability-block,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .field-name-availability-block {
   margin: 0 0 10px;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-4 .field-name-field-amenities,
-.node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-field-amenities {
+.node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-field-amenities,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .field-name-field-amenities {
   margin: 0 0 10px;
   padding: 10px 0 0;
   border-top: 1px solid #988ADE;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-4 .field-name-field-amenities .field-item ul,
-.node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-field-amenities .field-item ul {
+.node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-field-amenities .field-item ul,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .field-name-field-amenities .field-item ul {
   list-style-type: circle;
   padding-left: 20px;
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-4 .field-name-field-amenities .field-item ul li,
-.node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-field-amenities .field-item ul li {
+.node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-field-amenities .field-item ul li,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .field-name-field-amenities .field-item ul li {
   padding-bottom: 10px;
 }
 /*

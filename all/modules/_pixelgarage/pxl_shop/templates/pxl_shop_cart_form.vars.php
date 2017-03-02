@@ -57,7 +57,7 @@ function template_preprocess_pxl_shop_cart_form(&$vars) {
       break;
   }
   $agb_link = l(t('terms of condition'), $node_path, array('attributes' => array('target' => '_blank')));
-  $vars['agb_text'] = t('I hereby confirm to agree to the !url', array('!url' => $agb_link));
+  $vars['agb_text'] = t('I hereby confirm to accept the !url', array('!url' => $agb_link));
 
   //
   // define the stripe payment button
