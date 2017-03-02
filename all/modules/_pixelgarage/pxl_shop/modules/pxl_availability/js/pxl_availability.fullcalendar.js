@@ -60,10 +60,12 @@
         }
 
         // check if date range has minimum number of days
-        $days = Math.round((end - start) / (24*3600*1000));
-        if ($days < Drupal.settings.pxl_availability.minDays) {
-          $errLabel.html(Drupal.settings.pxl_availability.errorMinDays);
-          return false;
+        if (start != end) {
+          $days = Math.round((end - start) / (24*3600*1000));
+          if ($days < Drupal.settings.pxl_availability.minDays) {
+            $errLabel.html(Drupal.settings.pxl_availability.errorMinDays);
+            return false;
+          }
         }
 
         // check against all calendar events
@@ -163,10 +165,10 @@
 
           //
           // validate date range
-          var startDate = new Date(startDateVal),
-            endDate = new Date(endDateVal);
-
           if (_dateRangeIsValid(startDateVal, endDateVal)) {
+            var startDate = new Date(startDateVal),
+              endDate = new Date(endDateVal);
+
             //
             // set date range on fields
             if (isSecondDateSelection) {
