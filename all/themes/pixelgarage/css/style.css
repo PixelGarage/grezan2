@@ -17599,7 +17599,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   width: 100%;
 }
 .view.view-call2action > .view-content {
-  margin: 0 -1.5%;
+  margin: 0;
   padding: 0;
 }
 .view.view-call2action > .view-content > .views-row {
@@ -20050,7 +20050,7 @@ header#navbar .container-fluid .navbar-collapse .navbar-toggle-close .button-clo
  * --------------------------------------------------*/
 .container,
 .container-fluid {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -20082,7 +20082,7 @@ html {
 body {
   position: relative;
   min-height: 100%;
-  background: url(../images/background_home.png) repeat-y top left / cover;
+  background: url(../images/background_home.png) repeat-y top center / cover;
 }
 body .main-container {
   padding-bottom: 130px;

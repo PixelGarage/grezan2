@@ -22,7 +22,7 @@ class i18n_path_breadcrumbs_object extends i18n_string_object_wrapper {
    *   Constant showing translate mode.
    */
   public function get_translate_mode() {
-    if ($this->object->translatable) {
+    if (!empty($this->object->translatable)) {
       return I18N_MODE_TRANSLATE;
     }
     return I18N_MODE_NONE;
@@ -52,14 +52,6 @@ class i18n_path_breadcrumbs_object extends i18n_string_object_wrapper {
         'string' => $title,
         'title' => t('Title: @title (path: @path)', array('@title' => $title, '@path' => $this->object->paths[$key])),
       );
-    }
-    foreach ($this->object->paths as $key => $path) {
-      if ($path != '<none>' && $path != '<front>') {
-        $properties[$this->get_textgroup()][$string_type][$object_id]['paths:' . $key] = array(
-          'string' => $path,
-          'title' => t('Path: @path', array('@path' => $path)),
-        );
-      }
     }
 
     return $properties;
