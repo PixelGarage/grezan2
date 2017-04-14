@@ -118,14 +118,17 @@
         $(this).on('click', function (ev) {
           //
           // exlude apartements list from call2action link, follow apartment links instead)
-          var $exlude = $(this).find('.view-apartements'),
-              offset = $exlude.offset(),
-              width = $exlude.width(),
-              height = $exlude.height(),
+          var $exclude = $(this).find('.view-apartements');
+          if ($exclude.length > 0) {
+            var offset = $exclude.offset(),
+              width = $exclude.width(),
+              height = $exclude.height(),
               x = ev.pageX,
               y = ev.pageY;
-          if (x >= offset.left && x < (offset.left + width) && y >= offset.top && y < (offset.top + height)) {
-            return true;
+
+            if (x >= offset.left && x < (offset.left + width) && y >= offset.top && y < (offset.top + height)) {
+              return true;
+            }
           }
 
           //
