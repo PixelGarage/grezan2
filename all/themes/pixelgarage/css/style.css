@@ -11172,6 +11172,9 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 /*
  *  Node call2action component
  * --------------------------------------------------*/
+.node.node-call2action {
+  cursor: pointer;
+}
 .node.node-call2action > .row > .col-sm-12 {
   position: relative;
   padding-bottom: 100px;

@@ -112,11 +112,25 @@
    */
    Drupal.behaviors.fullSizeClickableItems = {
     attach: function () {
-      var $clickableItems = $('.node-call2action.node-teaser .field-name-field-link .field-items');
+      var $clickableItems = $('.node-call2action.node-teaser');
 
       $clickableItems.once('click', function () {
-        $(this).on('click', function () {
-          window.location = $(this).find("a:first").attr("href");
+        $(this).on('click', function (ev) {
+          //
+          // exlude apartements list from call2action link, follow apartment links instead)
+          var $exlude = $(this).find('.view-apartements'),
+              offset = $exlude.offset(),
+              width = $exlude.width(),
+              height = $exlude.height(),
+              x = ev.pageX,
+              y = ev.pageY;
+          if (x >= offset.left && x < (offset.left + width) && y >= offset.top && y < (offset.top + height)) {
+            return true;
+          }
+
+          //
+          // follow call2action link for click on whole call2action node (except excluded area)
+          window.location = $(this).find('.field-name-field-link .field-items a:first').attr("href");
           return false;
         });
       });
