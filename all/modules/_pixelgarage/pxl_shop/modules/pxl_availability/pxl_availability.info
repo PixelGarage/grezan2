@@ -1,5 +1,5 @@
-name = Time range availability of products
-description = "Block providing a form with calendar dropdown managing the availability of a product in the booking system."
+name = Pixelgarage availability form
+description = "Block providing an availability form with calendar popup to manage the bookings of rental objects."
 core = 7.x
 package = Pixelgarage
 ;configure = admin/PxlBooking/availability

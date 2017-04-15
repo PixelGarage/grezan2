@@ -1,5 +1,5 @@
 name = Pixelgarage shop
-description = "Provides the basic functionality and administration environment to run a shop based on Stripe."
+description = "Provides the checkout functionality (shopping cart) and administration environment to run a shop based on Stripe."
 core = 7.x
 package = Pixelgarage
 configure = admin/pxlshop
