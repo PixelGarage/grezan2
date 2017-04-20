@@ -17911,15 +17911,37 @@ form#user-profile-form div .form-actions .form-submit .icon {
   margin: 0 0 10px;
 }
 .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a {
-  text-decoration: none;
-  color: #5DA59E;
-  outline: none;
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  line-height: 1.15em;
+  text-align: left;
+  color: #72725F;
 }
-.view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a.active,
+@media screen and (min-width: 45em) {
+  .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a {
+    font-size: 17px;
+  }
+}
+.view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a:before {
+  content: '\2192';
+  padding-right: 5px;
+}
 .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a:hover,
 .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-mail .field-content a:focus {
-  color: #386460;
+  color: #F4A258;
   text-decoration: none;
+  background: none;
 }
 .view.view-hosts.view-display-id-block_hosts {
   width: 100%;
