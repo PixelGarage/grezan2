@@ -12274,26 +12274,25 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-datum .field-item {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
-  font-size: 16px;
-  text-transform: uppercase;
+  font-size: 15px;
   letter-spacing: 0.02em;
-  line-height: 1;
+  line-height: 1.15em;
   text-align: left;
   color: #72725F;
 }
-@media screen and (min-width: 42.666666666666664em) {
+@media screen and (min-width: 45em) {
   .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-datum .field-item {
-    font-size: 2.34375vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-datum .field-item {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-datum .field-item {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-event-description .field-item {
@@ -16042,6 +16041,37 @@ form#user-login {
 .user-profile .row .col-sm-12 .field-name-field-area-of-expertise .field-item {
   display: block;
 }
+.user-profile .row .col-sm-4 .field-name-field-address .field-item,
+.user-profile .row .col-sm-8 .field-name-field-address .field-item,
+.user-profile .row .col-sm-12 .field-name-field-address .field-item {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  line-height: 1.15em;
+  text-align: left;
+  color: #72725F;
+}
+@media screen and (min-width: 45em) {
+  .user-profile .row .col-sm-4 .field-name-field-address .field-item,
+  .user-profile .row .col-sm-8 .field-name-field-address .field-item,
+  .user-profile .row .col-sm-12 .field-name-field-address .field-item {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .user-profile .row .col-sm-4 .field-name-field-address .field-item,
+  .user-profile .row .col-sm-8 .field-name-field-address .field-item,
+  .user-profile .row .col-sm-12 .field-name-field-address .field-item {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .user-profile .row .col-sm-4 .field-name-field-address .field-item,
+  .user-profile .row .col-sm-8 .field-name-field-address .field-item,
+  .user-profile .row .col-sm-12 .field-name-field-address .field-item {
+    font-size: 17px;
+  }
+}
 .user-profile .row .col-sm-4 .field-name-field-plz,
 .user-profile .row .col-sm-8 .field-name-field-plz,
 .user-profile .row .col-sm-12 .field-name-field-plz {
@@ -17591,9 +17621,30 @@ form#user-profile-form div .form-actions .form-submit .icon {
  *  Apartment view component
  * --------------------------------------------------*/
 .view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  line-height: 1.15em;
+  text-align: left;
+  color: #72725F;
   text-decoration: none;
   color: #988ADE;
   outline: none;
+}
+@media screen and (min-width: 45em) {
+  .view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a {
+    font-size: 17px;
+  }
 }
 .view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a.active,
 .view.view-apartements.view-display-id-block_list .view-content .views-row .views-field-title a:hover,
@@ -17823,6 +17874,29 @@ form#user-profile-form div .form-actions .form-submit .icon {
  * --------------------------------------------------*/
 .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-field-address {
   margin: 0 0 10px;
+}
+.view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-field-address .field-content {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  line-height: 1.15em;
+  text-align: left;
+  color: #72725F;
+}
+@media screen and (min-width: 45em) {
+  .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-field-address .field-content {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-field-address .field-content {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-field-address .field-content {
+    font-size: 17px;
+  }
 }
 .view.view-hosts.view-display-id-block_manager .view-content .views-row .views-field-field-address .field-content .name-block {
   margin: 0 0 10px;
