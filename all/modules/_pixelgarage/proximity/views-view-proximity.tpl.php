@@ -16,9 +16,8 @@
     <div class="pe-item pe-item-ajax <?php print 'pe-item-' . $ajax_load_params[$id]; ?> <?php if ($classes_array[$id]) print $classes_array[$id]; ?>" style="margin: 0 -2px">
       <div class="pe-item-inner">
         <!-- modal trigger -->
-        <a class="button" role="button" href="<?php print $item_base_url . $ajax_load_params[$id]; ?>" data-ajax-load-param="<?php print $ajax_load_params[$id]; ?>" <?php print drupal_attributes($toggle_attributes); ?>>
-          <?php print $row; ?>
-        </a>
+        <a class="button" role="button" href="<?php print $item_base_url . $ajax_load_params[$id]; ?>" data-ajax-load-param="<?php print $ajax_load_params[$id]; ?>" <?php print drupal_attributes($toggle_attributes); ?>></a>
+        <?php print $row; ?>
       </div>
     </div>
 

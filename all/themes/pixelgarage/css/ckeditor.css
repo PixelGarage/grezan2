@@ -1413,7 +1413,7 @@
 .pxl-normal {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;

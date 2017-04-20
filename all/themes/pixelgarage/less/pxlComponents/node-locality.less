@@ -117,6 +117,10 @@
         .field-item {
           margin: @node-field-margin;
           #pxl-mixins.wysiwyg-body();
+
+          @media @tablet {
+            .content-columns(2);
+          }
         }
       }
 

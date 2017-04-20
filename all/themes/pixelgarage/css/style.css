@@ -10682,16 +10682,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body p,
@@ -10714,7 +10708,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -10748,7 +10742,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -10774,7 +10768,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -10994,16 +10988,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .node.node-webform .row .col-sm-12 .field-name-body p,
@@ -11033,7 +11021,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-6 .field-name-body a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -11075,7 +11063,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-6 .field-name-body address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -11108,7 +11096,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-webform .row .col-sm-12 .field-name-body strong,
 .node.node-webform .row .col-sm-6 .field-name-body strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -11327,16 +11315,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .node.node-call2action > .row > .col-sm-12 > .field-name-body .field-item p,
@@ -11359,7 +11341,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-call2action > .row > .col-sm-12 > .field-name-body .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -11393,7 +11375,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-call2action > .row > .col-sm-12 > .field-name-body .field-item address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -11419,7 +11401,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-call2action > .row > .col-sm-12 > .field-name-body .field-item strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -11778,16 +11760,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body p,
@@ -11810,7 +11786,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -11844,7 +11820,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -11870,7 +11846,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-instagram.view-mode-teaser .row div.col-sm-12 .field-name-body strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -12119,16 +12095,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body p,
@@ -12158,7 +12128,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -12200,7 +12170,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -12233,7 +12203,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-instagram.view-mode-full .row div.col-sm-12 .field-name-body strong,
 .node.node-instagram.view-mode-default .row div.col-sm-12 .field-name-body strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -12408,16 +12378,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-event-description .field-item p,
@@ -12440,7 +12404,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-event-description .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -12474,7 +12438,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-event-description .field-item address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -12500,7 +12464,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-event.view-mode-front > .row > .col-sm-12 .field-name-field-event-description .field-item strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -12735,16 +12699,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-event-description .field-item p,
@@ -12767,7 +12725,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-event-description .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -12801,7 +12759,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-event-description .field-item address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -12827,7 +12785,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-event.view-mode-teaser > .row > .col-sm-12 .field-name-field-event-description .field-item strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -13188,7 +13146,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   padding: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -13329,16 +13287,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-event-description .field-item p,
@@ -13368,7 +13320,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-event.view-mode-default > .row > .col-sm-12 .field-name-field-event-description .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -13410,7 +13362,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-event.view-mode-default > .row > .col-sm-12 .field-name-field-event-description .field-item address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -13443,7 +13395,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-event-description .field-item strong,
 .node.node-event.view-mode-default > .row > .col-sm-12 .field-name-field-event-description .field-item strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -13518,7 +13470,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-event.view-mode-default > .row > .col-sm-12 .field-name-field-event-link .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -13719,16 +13671,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item p,
@@ -13751,7 +13697,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -13785,7 +13731,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -13811,7 +13757,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-apartment.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -14147,16 +14093,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .node.node-apartment.view-mode-full > .row > .col-sm-12 .field-name-body .field-item p,
@@ -14193,7 +14133,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -14243,7 +14183,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -14283,7 +14223,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong,
 .node.node-apartment.view-mode-la_tour > .row > .col-sm-12 .field-name-body .field-item strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -14627,7 +14567,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .group-price .field-name-field-price-tag .field-item {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -14664,6 +14604,37 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   padding: 10px 0 0;
   border-top: 1px solid #988ADE;
+}
+.node.node-apartment.view-mode-full > .row > .col-sm-4 .field-name-field-amenities .field-item,
+.node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-field-amenities .field-item,
+.node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .field-name-field-amenities .field-item {
+  font-family: 'MaisonNeueBook';
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  line-height: 1.15em;
+  text-align: left;
+  color: #72725F;
+}
+@media screen and (min-width: 45em) {
+  .node.node-apartment.view-mode-full > .row > .col-sm-4 .field-name-field-amenities .field-item,
+  .node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-field-amenities .field-item,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .field-name-field-amenities .field-item {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-apartment.view-mode-full > .row > .col-sm-4 .field-name-field-amenities .field-item,
+  .node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-field-amenities .field-item,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .field-name-field-amenities .field-item {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-apartment.view-mode-full > .row > .col-sm-4 .field-name-field-amenities .field-item,
+  .node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-field-amenities .field-item,
+  .node.node-apartment.view-mode-la_tour > .row > .col-sm-4 .field-name-field-amenities .field-item {
+    font-size: 17px;
+  }
 }
 .node.node-apartment.view-mode-full > .row > .col-sm-4 .field-name-field-amenities .field-item ul,
 .node.node-apartment.view-mode-default > .row > .col-sm-4 .field-name-field-amenities .field-item ul,
@@ -14847,16 +14818,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item p,
@@ -14879,7 +14844,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -14913,7 +14878,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -14939,7 +14904,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 }
 .node.node-locality.view-mode-teaser > .row > .col-sm-12 .field-name-body .field-item strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -15271,7 +15236,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   padding: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -15412,16 +15377,10 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item p,
@@ -15451,7 +15410,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -15493,7 +15452,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -15526,7 +15485,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item strong,
 .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -15582,11 +15541,22 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   height: auto;
   min-height: 350px;
 }
+@media screen and (min-width: 48em) {
+  .node.node-locality.view-mode-full > .row > .col-sm-12 .field-name-body .field-item,
+  .node.node-locality.view-mode-default > .row > .col-sm-12 .field-name-body .field-item {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+  }
+}
 /*
  *  Node footer component
  * --------------------------------------------------*/
 .node.node-footer > .row > div.col-sm-12 .field-name-body {
-  margin: 10px 0;
+  margin: 10px 0 0;
 }
 .node.node-footer > .row > div.col-sm-12 .field-name-body .field-item {
   text-align: center;
@@ -15611,7 +15581,7 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-footer > .row > div.col-sm-12 .field-name-field-links .field-items .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -16246,16 +16216,10 @@ form#user-login {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item p,
@@ -16292,7 +16256,7 @@ form#user-login {
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -16342,7 +16306,7 @@ form#user-login {
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -16382,7 +16346,7 @@ form#user-login {
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item strong,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -16881,16 +16845,10 @@ form#user-profile-form div .form-actions .form-submit .icon {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item p,
@@ -16913,7 +16871,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -16947,7 +16905,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -16973,7 +16931,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .content .field-name-field-text .field-item strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -18055,16 +18013,10 @@ form#user-profile-form div .form-actions .form-submit .icon {
   margin: 0 0 10px;
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
 }
 @media screen and (min-width: 45em) {
   .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content p,
@@ -18087,7 +18039,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content a {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -18121,7 +18073,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content address {
   font-family: 'MaisonNeueBook';
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
@@ -18147,7 +18099,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-hosts.view-display-id-block_hosts .view-content .views-row .views-field-field-biography .field-content strong {
   font-size: 15px;
-  letter-spacing: normal;
+  letter-spacing: 0.02em;
   line-height: 1.15em;
   text-align: left;
   color: #72725F;
