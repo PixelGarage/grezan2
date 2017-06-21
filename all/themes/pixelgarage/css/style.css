@@ -13504,6 +13504,16 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   color: #F4A258;
   text-decoration: none;
 }
+.node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-video-link,
+.node.node-event.view-mode-default > .row > .col-sm-12 .field-name-field-video-link {
+  margin: 80px 0;
+}
+.node.node-event.view-mode-full > .row > .col-sm-12 .field-name-field-video-link .field-item .embedded-video iframe,
+.node.node-event.view-mode-default > .row > .col-sm-12 .field-name-field-video-link .field-item .embedded-video iframe {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
 /*
  *  Node apartment component
  * --------------------------------------------------*/
@@ -18681,6 +18691,29 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-events .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .body-fading {
   display: none;
+}
+.view.view-events ul.pagination {
+  display: inline-block;
+  margin: 20px 0;
+  text-align: center;
+}
+.view.view-events ul.pagination li a,
+.view.view-events ul.pagination li span {
+  font-family: 'MaisonNeueBook';
+  font-size: 18px;
+  text-decoration: none;
+  color: #72725F;
+  border: none;
+  background: none;
+}
+.view.view-events ul.pagination li:hover a,
+.view.view-events ul.pagination li:focus a,
+.view.view-events ul.pagination li.active a,
+.view.view-events ul.pagination li:hover span,
+.view.view-events ul.pagination li:focus span,
+.view.view-events ul.pagination li.active span {
+  color: #72725F;
+  text-decoration: none;
 }
 /*
  *  social masonry view component
