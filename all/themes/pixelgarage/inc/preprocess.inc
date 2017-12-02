@@ -29,6 +29,8 @@ function pixelgarage_preprocess_page(&$vars) {
   else {
     $vars['logo'] = str_replace(array('.jpg', '.png'), '_border.svg', $vars['logo']);
   }
+
+  $vars['site_name'] = str_replace('Grézan', 'Grézan<br>', $vars['site_name']);
 }
 
 
