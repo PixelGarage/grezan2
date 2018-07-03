@@ -68,12 +68,12 @@ function template_preprocess_pxl_shop_cart_form(&$vars) {
     'name' => $vars['pay_dialog_title'],
     'description' => $description,
     'currency' => $currency,
-    'buttonPrefix' => '',
+    'prefix' => '',
     'zipCode' => 0,
-    'billingAddress' => isset($vars['billing_address']) ? $vars['billing_address'] : 0,
-    'shippingAddress' => 0,
-    'allowRememberMe' => 0,
-    'recurringBilling' => 'one-time',
+    'billing' => isset($vars['billing_address']) ? $vars['billing_address'] : 0,
+    'shipping' => 0,
+    'remember' => 0,
+    'recurring_billing' => 'one-time',
   );
   $vars['stripe_button'] = theme('stripe_button_fix_value', array(
     'field_id' => 'button-pay-shopping-cart-' . $vars['id'],

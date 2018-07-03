@@ -280,6 +280,11 @@ function pxl_availability_create_calendar_event_from_cart_item($item) {
   $node->field_sku_id[LANGUAGE_NONE][0]['target_id'] = $item->id;
   $node->field_order_id[LANGUAGE_NONE][0]['value'] = isset($item->chargeID) ? $item->chargeID : '';
   $node->field_user_email[LANGUAGE_NONE][0]['value'] = isset($item->email) ? $item->email : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['name_line'] = isset($item->name) ? $item->name : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['thoroughfare'] = isset($item->address) ? $item->address : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['postal_code'] = isset($item->zip) ? $item->zip : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['locality'] = isset($item->city) ? $item->city : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['country'] = isset($item->countryCode) ? $item->countryCode : '';
   node_save($node);
 
 }

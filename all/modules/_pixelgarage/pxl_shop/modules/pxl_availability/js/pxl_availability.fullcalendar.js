@@ -197,6 +197,12 @@
           }
 
           return false;
+        },
+
+        eventClick: function(calEvent, jsEvent, view) {
+          //
+          // prevent event click
+          return false;
         }
       };
     }

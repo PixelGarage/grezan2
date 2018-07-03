@@ -1,5 +1,5 @@
 <?php
-$export_time = 1488382235;
+$export_time = 1530622480;
 $data = array(
   'bundles' => array(
     'calendar_event' => (object) array(
@@ -99,6 +99,172 @@ $data = array(
           6 => 'call2action',
           7 => 'instagram',
           8 => 'footer',
+          9 => 'block',
+        ),
+      ),
+    ),
+    'field_customer_address' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_customer_address' => array(
+                'country' => 'field_customer_address_country',
+                'administrative_area' => 'field_customer_address_administrative_area',
+                'sub_administrative_area' => 'field_customer_address_sub_administrative_area',
+                'locality' => 'field_customer_address_locality',
+                'dependent_locality' => 'field_customer_address_dependent_locality',
+                'postal_code' => 'field_customer_address_postal_code',
+                'thoroughfare' => 'field_customer_address_thoroughfare',
+                'premise' => 'field_customer_address_premise',
+                'sub_premise' => 'field_customer_address_sub_premise',
+                'organisation_name' => 'field_customer_address_organisation_name',
+                'name_line' => 'field_customer_address_name_line',
+                'first_name' => 'field_customer_address_first_name',
+                'last_name' => 'field_customer_address_last_name',
+                'data' => 'field_customer_address_data',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_customer_address' => array(
+                'country' => 'field_customer_address_country',
+                'administrative_area' => 'field_customer_address_administrative_area',
+                'sub_administrative_area' => 'field_customer_address_sub_administrative_area',
+                'locality' => 'field_customer_address_locality',
+                'dependent_locality' => 'field_customer_address_dependent_locality',
+                'postal_code' => 'field_customer_address_postal_code',
+                'thoroughfare' => 'field_customer_address_thoroughfare',
+                'premise' => 'field_customer_address_premise',
+                'sub_premise' => 'field_customer_address_sub_premise',
+                'organisation_name' => 'field_customer_address_organisation_name',
+                'name_line' => 'field_customer_address_name_line',
+                'first_name' => 'field_customer_address_first_name',
+                'last_name' => 'field_customer_address_last_name',
+                'data' => 'field_customer_address_data',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'field_name' => 'field_customer_address',
+      'type' => 'addressfield',
+      'module' => 'addressfield',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'country' => array(
+          'description' => 'Two letter ISO country code of this address.',
+          'type' => 'varchar',
+          'length' => 2,
+          'not null' => FALSE,
+          'default' => '',
+        ),
+        'administrative_area' => array(
+          'description' => 'The administrative area of this address. (i.e. State/Province)',
+          'type' => 'varchar',
+          'length' => 255,
+          'default' => '',
+          'not null' => FALSE,
+        ),
+        'sub_administrative_area' => array(
+          'description' => 'The sub administrative area of this address.',
+          'type' => 'varchar',
+          'length' => 255,
+          'default' => '',
+          'not null' => FALSE,
+        ),
+        'locality' => array(
+          'description' => 'The locality of this address. (i.e. City)',
+          'type' => 'varchar',
+          'length' => 255,
+          'default' => '',
+          'not null' => FALSE,
+        ),
+        'dependent_locality' => array(
+          'description' => 'The dependent locality of this address.',
+          'type' => 'varchar',
+          'length' => 255,
+          'default' => '',
+          'not null' => FALSE,
+        ),
+        'postal_code' => array(
+          'description' => 'The postal code of this address.',
+          'type' => 'varchar',
+          'length' => 255,
+          'default' => '',
+          'not null' => FALSE,
+        ),
+        'thoroughfare' => array(
+          'description' => 'The thoroughfare of this address. (i.e. Street address)',
+          'type' => 'varchar',
+          'length' => 255,
+          'default' => '',
+          'not null' => FALSE,
+        ),
+        'premise' => array(
+          'description' => 'The premise of this address. (i.e. Apartment / Suite number)',
+          'type' => 'varchar',
+          'length' => 255,
+          'default' => '',
+          'not null' => FALSE,
+        ),
+        'sub_premise' => array(
+          'description' => 'The sub_premise of this address.',
+          'type' => 'varchar',
+          'length' => 255,
+          'default' => '',
+          'not null' => FALSE,
+        ),
+        'organisation_name' => array(
+          'description' => 'Contents of a primary OrganisationName element in the xNL XML.',
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'default' => '',
+        ),
+        'name_line' => array(
+          'description' => 'Contents of a primary NameLine element in the xNL XML.',
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'default' => '',
+        ),
+        'first_name' => array(
+          'description' => 'Contents of the FirstName element of a primary PersonName element in the xNL XML.',
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'default' => '',
+        ),
+        'last_name' => array(
+          'description' => 'Contents of the LastName element of a primary PersonName element in the xNL XML.',
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+          'default' => '',
+        ),
+        'data' => array(
+          'description' => 'Additional data for this address.',
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => FALSE,
+          'serialize' => TRUE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'calendar_event',
         ),
       ),
     ),
@@ -114,12 +280,12 @@ $data = array(
           'year' => 'year',
           'second' => 0,
         ),
-        'tz_handling' => 'site',
-        'timezone_db' => 'UTC',
+        'tz_handling' => 'none',
+        'timezone_db' => '',
         'cache_enabled' => 0,
         'cache_count' => '4',
-        'repeat' => '0',
         'todate' => 'optional',
+        'repeat' => '0',
       ),
       'storage' => array(
         'type' => 'field_sql_storage',
@@ -455,7 +621,7 @@ $data = array(
       0 => array(
         'label' => 'Description',
         'widget' => array(
-          'weight' => '3',
+          'weight' => '2',
           'type' => 'text_textarea_with_summary',
           'module' => 'text',
           'active' => 1,
@@ -501,11 +667,66 @@ $data = array(
         'deleted' => '0',
       ),
     ),
+    'field_customer_address' => array(
+      0 => array(
+        'label' => 'Customer address',
+        'widget' => array(
+          'weight' => '6',
+          'type' => 'addressfield_standard',
+          'module' => 'addressfield',
+          'active' => 1,
+          'settings' => array(
+            'available_countries' => array(),
+            'default_country' => 'CH',
+            'format_handlers' => array(
+              'address' => 'address',
+              'name-oneline' => 'name-oneline',
+              'address-optional' => 'address-optional',
+              'address-hide-postal-code' => 0,
+              'address-hide-street' => 0,
+              'address-hide-country' => 0,
+              'organisation' => 0,
+              'name-full' => 0,
+            ),
+          ),
+        ),
+        'settings' => array(
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'above',
+            'type' => 'addressfield_default',
+            'settings' => array(
+              'use_widget_handlers' => 1,
+              'format_handlers' => array(
+                0 => 'address',
+              ),
+            ),
+            'module' => 'addressfield',
+            'weight' => 8,
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_customer_address',
+        'entity_type' => 'node',
+        'bundle' => 'calendar_event',
+        'deleted' => '0',
+      ),
+    ),
     'field_event_date' => array(
       0 => array(
         'label' => 'Event date',
         'widget' => array(
-          'weight' => '2',
+          'weight' => '1',
           'type' => 'date_popup',
           'module' => 'date',
           'active' => 1,
@@ -561,7 +782,7 @@ $data = array(
       0 => array(
         'label' => 'Order ID',
         'widget' => array(
-          'weight' => '5',
+          'weight' => '7',
           'type' => 'text_textfield',
           'module' => 'text',
           'active' => 1,
@@ -621,6 +842,7 @@ $data = array(
             'type' => 'entityreference_label',
             'settings' => array(
               'link' => FALSE,
+              'bypass_access' => FALSE,
             ),
             'module' => 'entityreference',
             'weight' => 5,
@@ -645,7 +867,7 @@ $data = array(
       0 => array(
         'label' => 'Event State',
         'widget' => array(
-          'weight' => '1',
+          'weight' => '3',
           'type' => 'options_buttons',
           'module' => 'options',
           'active' => 1,
@@ -686,7 +908,7 @@ $data = array(
       0 => array(
         'label' => 'User email',
         'widget' => array(
-          'weight' => '6',
+          'weight' => '5',
           'type' => 'text_textfield',
           'module' => 'text',
           'active' => 1,

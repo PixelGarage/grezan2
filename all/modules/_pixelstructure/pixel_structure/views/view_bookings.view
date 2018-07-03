@@ -1,0 +1,233 @@
+<?php
+
+$view = new view();
+$view->name = 'bookings';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'node';
+$view->human_name = 'Bookings';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = 'Bookings';
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['access']['type'] = 'perm';
+$handler->display->display_options['access']['perm'] = 'access administration menu';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['pager']['type'] = 'full';
+$handler->display->display_options['pager']['options']['items_per_page'] = '25';
+$handler->display->display_options['style_plugin'] = 'table';
+$handler->display->display_options['style_options']['columns'] = array(
+  'field_sku_id' => 'field_sku_id',
+  'body' => 'body',
+  'field_event_date' => 'field_event_date',
+  'field_event_date_1' => 'field_event_date_1',
+  'field_user_email' => 'field_user_email',
+  'field_customer_address' => 'field_customer_address',
+  'field_order_id' => 'field_order_id',
+  'view_node' => 'view_node',
+  'edit_node' => 'view_node',
+  'delete_node' => 'view_node',
+  'clone_node' => 'view_node',
+);
+$handler->display->display_options['style_options']['default'] = 'field_event_date';
+$handler->display->display_options['style_options']['info'] = array(
+  'field_sku_id' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'body' => array(
+    'sortable' => 0,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_event_date' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'desc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_event_date_1' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'desc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_user_email' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_customer_address' => array(
+    'sortable' => 0,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_order_id' => array(
+    'sortable' => 0,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'view_node' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'edit_node' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'delete_node' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'clone_node' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+);
+$handler->display->display_options['style_options']['sticky'] = TRUE;
+/* Header: Global: Text area */
+$handler->display->display_options['header']['area']['id'] = 'area';
+$handler->display->display_options['header']['area']['table'] = 'views';
+$handler->display->display_options['header']['area']['field'] = 'area';
+$handler->display->display_options['header']['area']['label'] = 'All bookings';
+$handler->display->display_options['header']['area']['empty'] = TRUE;
+$handler->display->display_options['header']['area']['content'] = '<strong style="font-size: 24px;">All bookings</strong>
+
+Use this table to manage all bookings of Château Grézan. Find a specific booking by sorting and filtering different criterias, edit or delete a booking or add a new booking without going through the Stripe payment process, e.g. for private bookings etc.';
+$handler->display->display_options['header']['area']['format'] = 'full_html';
+/* Field: Content: Apartment */
+$handler->display->display_options['fields']['field_sku_id']['id'] = 'field_sku_id';
+$handler->display->display_options['fields']['field_sku_id']['table'] = 'field_data_field_sku_id';
+$handler->display->display_options['fields']['field_sku_id']['field'] = 'field_sku_id';
+$handler->display->display_options['fields']['field_sku_id']['settings'] = array(
+  'link' => 1,
+);
+/* Field: Content: Event date */
+$handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
+$handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
+$handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
+$handler->display->display_options['fields']['field_event_date']['label'] = 'Booking start (UTC)';
+$handler->display->display_options['fields']['field_event_date']['settings'] = array(
+  'format_type' => 'short',
+  'custom_date_format' => '',
+  'fromto' => 'value',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+  'show_remaining_days' => 0,
+);
+/* Field: Content: Event date */
+$handler->display->display_options['fields']['field_event_date_1']['id'] = 'field_event_date_1';
+$handler->display->display_options['fields']['field_event_date_1']['table'] = 'field_data_field_event_date';
+$handler->display->display_options['fields']['field_event_date_1']['field'] = 'field_event_date';
+$handler->display->display_options['fields']['field_event_date_1']['label'] = 'Booking end (UTC)';
+$handler->display->display_options['fields']['field_event_date_1']['settings'] = array(
+  'format_type' => 'short',
+  'custom_date_format' => '',
+  'fromto' => 'value2',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+  'show_remaining_days' => 0,
+);
+/* Field: Content: User email */
+$handler->display->display_options['fields']['field_user_email']['id'] = 'field_user_email';
+$handler->display->display_options['fields']['field_user_email']['table'] = 'field_data_field_user_email';
+$handler->display->display_options['fields']['field_user_email']['field'] = 'field_user_email';
+$handler->display->display_options['fields']['field_user_email']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['field_user_email']['alter']['path'] = 'mailto:[field_user_email]';
+/* Field: Content: Customer address */
+$handler->display->display_options['fields']['field_customer_address']['id'] = 'field_customer_address';
+$handler->display->display_options['fields']['field_customer_address']['table'] = 'field_data_field_customer_address';
+$handler->display->display_options['fields']['field_customer_address']['field'] = 'field_customer_address';
+$handler->display->display_options['fields']['field_customer_address']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_customer_address']['click_sort_column'] = 'country';
+$handler->display->display_options['fields']['field_customer_address']['settings'] = array(
+  'use_widget_handlers' => 1,
+  'format_handlers' => array(
+    'address' => 'address',
+  ),
+);
+/* Field: Content: Order ID */
+$handler->display->display_options['fields']['field_order_id']['id'] = 'field_order_id';
+$handler->display->display_options['fields']['field_order_id']['table'] = 'field_data_field_order_id';
+$handler->display->display_options['fields']['field_order_id']['field'] = 'field_order_id';
+/* Field: Content: Link */
+$handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+$handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+$handler->display->display_options['fields']['view_node']['label'] = 'Operations';
+$handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['view_node']['text'] = 'View ';
+/* Field: Content: Edit link */
+$handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['label'] = '';
+$handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['edit_node']['text'] = 'Edit ';
+/* Field: Content: Delete link */
+$handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+$handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+$handler->display->display_options['fields']['delete_node']['label'] = '';
+$handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['delete_node']['text'] = 'Delete ';
+/* Field: Content: Clone link */
+$handler->display->display_options['fields']['clone_node']['id'] = 'clone_node';
+$handler->display->display_options['fields']['clone_node']['table'] = 'node';
+$handler->display->display_options['fields']['clone_node']['field'] = 'clone_node';
+$handler->display->display_options['fields']['clone_node']['label'] = '';
+$handler->display->display_options['fields']['clone_node']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['clone_node']['text'] = 'Clone';
+/* Sort criterion: Content: Post date */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'calendar_event' => 'calendar_event',
+);
+
+/* Display: Page */
+$handler = $view->new_display('page', 'Page', 'page');
+$handler->display->display_options['path'] = 'admin/content/bookings';
+$handler->display->display_options['menu']['type'] = 'tab';
+$handler->display->display_options['menu']['title'] = 'Bookings';
+$handler->display->display_options['menu']['weight'] = '0';
+$handler->display->display_options['menu']['context'] = 0;
+$handler->display->display_options['menu']['context_only_inline'] = 0;

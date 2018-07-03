@@ -315,7 +315,19 @@ function pxl_shop_stripe_button_charge_completed($charge_params) {
       // create a calendar event for each item in the shopping cart
       $item->chargeID = $charge_params['charge_id'];
       $item->email = $charge_params['user_email'];
+      if (isset($charge_params['arguments'])) {
+        $args = $charge_params['arguments'];
+        $item->name = $args['billing_name'];
+        $item->address = $args['billing_address_line1'];
+        $item->zip = $args['billing_address_zip'];
+        $item->city = $args['billing_address_city'];
+        $item->country = $args['billing_address_country'];
+        $item->countryCode = $args['billing_address_country_code'];
+        $item->state = $args['billing_address_state'];
+      }
       pxl_availability_create_calendar_event_from_cart_item($item);
+
+      // send email to admin
     }
 
     // reset shopping cart
