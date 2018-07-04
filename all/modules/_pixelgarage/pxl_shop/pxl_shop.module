@@ -401,7 +401,7 @@ function pxl_shop_mail($key, &$message, $params) {
 function pxl_shop_mail_alter(&$message) {
   switch ($message['key']) {
     case 'client':
-      $message['subject'] = t('Confirmation of online reservation Grézan Castle Art & Culture ...');
+      $message['subject'] = t('Confirmation of your booking at Grézan Castle Art & Culture ...');
       $body_end = array(
         t('We are looking forward to welcome you soon at Château de Grézan and wish you a pleasant stay.'),
         t("Sincerly yours"),
