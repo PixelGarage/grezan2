@@ -310,7 +310,7 @@ function pxl_shop_stripe_button_charge_completed($charge_params) {
   //
   // loop over all cart items, and finish booking
   if (module_exists('pxl_availability')) {
-    foreach (pxl_shop_cart_items() as $key => $item) {
+    foreach (pxl_shop_cart_items() as $id => $item) {
       //
       // create a calendar event for each item in the shopping cart
       $item->chargeID = $charge_params['charge_id'];
@@ -327,10 +327,90 @@ function pxl_shop_stripe_button_charge_completed($charge_params) {
       }
       pxl_availability_create_calendar_event_from_cart_item($item);
 
-      // send email to admin
+    }
+
+    //
+    // send email to admin and customer
+    global $language;
+    $site_mail = variable_get('site_mail');
+    $site = explode('@', $site_mail)[1];
+    $mail_to = array(
+      'admin' => $site_mail,
+      'client' => $charge_params['user_email']
+    );
+    $params['items'] = pxl_shop_cart_items();
+    $params['site'] = $site;
+    $from = 'reservation@' . $site;
+
+    foreach ($mail_to as $key => $to) {
+      drupal_mail('pxl_shop', $key, $to, $language, $params, $from);
     }
 
     // reset shopping cart
     pxl_shop_cart_remove_item('all');
+
+  }
+}
+
+/**
+ * Called by drupal_mail to add specific subject and body of mail.
+ *
+ * @param $key
+ * @param $message
+ * @param $params
+ */
+function pxl_shop_mail($key, &$message, $params) {
+  $reservations = array();
+  $first_item = false;
+  foreach ($params['items'] as $item) {
+    if (!$first_item) {
+      $first_item = $item;
+    }
+    $reservations[] = $item->description;
+  }
+
+  switch ($key) {
+    case 'admin':
+      $message['subject'] = t('Notice of online reservation made by !customer ...', array('!customer' => $first_item->name));
+      $body_start = array(
+        t('ONLINE BOOKING NOTICE!'),
+        t("Booking details:\n")
+      );
+      $body_end = array(
+        t("Customer information:"),
+        $first_item->name . '<br>' . $first_item->address . '<br>' . $first_item->zip . ' ' . $first_item->city . '<br>' . $first_item->country,
+        $first_item->email
+      );
+      $message['body'] = array_merge($body_start, $reservations, $body_end);
+      break;
+    case 'client':
+      $message['subject'] = t('Confirmation of your booking on !site ...', array('!site' => $params['site']));
+      $body_start = array(
+        t('Dear !customer', array('!customer' => $first_item->name)),
+        t("you made the following bookings:\n")
+      );
+      $body_end = array(
+        t("\nSincerly yours"),
+        t('The !site Team', array('!site' => $params['site']))
+      );
+      $message['body'] = array_merge($body_start, $reservations, $body_end);
+      break;
+  }
+}
+
+function pxl_shop_mail_alter(&$message) {
+  switch ($message['key']) {
+    case 'client':
+      $message['subject'] = t('Confirmation of online reservation Grézan Castle Art & Culture ...');
+      $body_end = array(
+        t('We are looking forward to welcome you soon at Château de Grézan and wish you a pleasant stay.'),
+        t("Sincerly yours"),
+        t('The Grézan Team')
+      );
+      $body = $message['body'];
+      array_pop($body);
+      array_pop($body);
+      $message['body'] = array_merge($body, $body_end);
+      break;
   }
 }

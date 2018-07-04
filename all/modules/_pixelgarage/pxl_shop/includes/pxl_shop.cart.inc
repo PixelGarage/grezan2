@@ -39,7 +39,7 @@ function pxl_shop_create_cart_item($sku_id, $startDate = null, $endDate = null) 
   $item = new stdClass();
   $item->id = $sku_obj->id;
   $item->title = $sku_title;
-  $item->description = t('Booking of "@name" for @days days.<br>Check-in: @startDate; Check-out: @endDate', array(
+  $item->description = t('Booking of @name for @days days.<br>Check-in: @startDate; Check-out: @endDate', array(
       '@name' => $sku_title,
       '@startDate' => $checkin,
       '@endDate' => $checkout,
