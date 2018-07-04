@@ -371,7 +371,7 @@ function pxl_shop_mail($key, &$message, $params) {
 
   switch ($key) {
     case 'admin':
-      $message['subject'] = t('Notice of online reservation made by !customer ...', array('!customer' => $first_item->name));
+      $message['subject'] = t('Notice of online booking made by !customer ...', array('!customer' => $first_item->name));
       $body_start = array(
         t('ONLINE BOOKING NOTICE!'),
         t("Booking details:\n")
