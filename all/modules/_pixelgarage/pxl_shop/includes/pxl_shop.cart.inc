@@ -13,16 +13,14 @@
  *   Shopping cart management
  * ========================================================================== */
 /**
- * Creates shopping cart item for the given product SKU.
+ * Creates shopping cart item for the given product id.
  *
- * @param $sku_id  string
- *    The product SKU ID (master id of translation set).
- * @param $startDate  int
- *    Unix timestamp of the start date. Only used for bookable items in a time period.
- * @param $endDate  int
- *    Unix timestamp of the end date. Only used for bookable items in a time period.
- * @return object
- *    The created shopping cart item.
+ * @param $sku_id     string  The product SKU ID (master id of translation set).
+ * @param $startDate  int     Unix timestamp of the start date in seconds.
+ * @param $endDate    int     Unix timestamp of the end date in seconds.
+ *
+ * @return object| null
+ *    The created shopping cart item, if successful, otherwise null.
  */
 function pxl_shop_create_cart_item($sku_id, $startDate = null, $endDate = null) {
   // calculate time range and format dates
@@ -32,24 +30,30 @@ function pxl_shop_create_cart_item($sku_id, $startDate = null, $endDate = null) 
   $checkout = date('d.m.y, H:i', $endDate);
 
   // get sku object
-  $sku_obj = pxl_shop_retrieve_sku($sku_id);
-  $sku_title = $sku_obj->title;
+  $item = null;
+  try {
+    $product = pxl_shop_get_product($sku_id);
+    $product_title = $product->title;
 
-  // create cart item
-  $item = new stdClass();
-  $item->id = $sku_obj->id;
-  $item->title = $sku_title;
-  $item->description = t('Booking of @name for @days days.<br>Check-in: @startDate; Check-out: @endDate', array(
-      '@name' => $sku_title,
-      '@startDate' => $checkin,
-      '@endDate' => $checkout,
-      '@days' => $days,
-    )
-  );
-  $item->start = $startDate;
-  $item->end = $endDate;
-  $item->price = $sku_obj->price_per_day*$days;
+    // create cart item
+    $item = new stdClass();
+    $item->id = $product->id;
+    $item->title = $product_title;
+    $item->description = t('Booking of @name for @days days.<br>Check-in: @startDate; Check-out: @endDate', array(
+        '@name' => $product_title,
+        '@startDate' => $checkin,
+        '@endDate' => $checkout,
+        '@days' => $days,
+      )
+    );
+    $item->start = $startDate;
+    $item->end = $endDate;
+    $item->price = $product->price_per_day*$days;
 
+  }
+  catch (Exception $e) {
+    watchdog('pxl_shop', 'Error: ' . $e->getMessage(), array(), WATCHDOG_DEBUG);
+  }
   return $item;
 }
 
@@ -66,10 +70,8 @@ function pxl_shop_cart_add_item($item) {
 /**
  * Removes a shop item from the shopping cart.
  *
- * @param $key  string
- *    Unique item key or 'all' to empty shopping cart.
- * @return bool
- *    True, if shopping cart is empty, false otherwise.
+ * @param $key  string  Unique item key or 'all' to empty shopping cart.
+ * @return bool  True, if shopping cart is empty, false otherwise.
  */
 function pxl_shop_cart_remove_item($key) {
   $shopping_cart_items = &pxl_shop_session_data()['cart']['items'];

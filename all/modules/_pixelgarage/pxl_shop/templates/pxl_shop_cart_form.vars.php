@@ -68,21 +68,20 @@ function template_preprocess_pxl_shop_cart_form(&$vars) {
     'name' => $vars['pay_dialog_title'],
     'description' => $description,
     'currency' => $currency,
-    'prefix' => '',
-    'zipCode' => 0,
+    'submit_type' => 'book',
     'billing' => isset($vars['billing_address']) ? $vars['billing_address'] : 0,
-    'shipping' => 0,
-    'remember' => 0,
     'recurring_billing' => 'one-time',
   );
-  $vars['stripe_button'] = theme('stripe_button_fix_value', array(
-    'field_id' => 'button-pay-shopping-cart-' . $vars['id'],
-    'box_title' => $button_title,
-    'box_text' => $button_text,
-    'amount' => $amount,
-    'currency' => $currency,
-    'stripe_settings' => $stripe_settings,
-  ));
+  $stripe_button = array(
+    '#theme' => 'stripe_checkout_button_fix',
+    '#button_id' => 'button-pay-shopping-cart-' . $vars['id'],
+    '#box_title' => $button_title,
+    '#box_text' => $button_text,
+    '#amount' => $amount,
+    '#currency' => $currency,
+    '#stripe_settings' => $stripe_settings,
+  );
+  $vars['stripe_button'] = drupal_render($stripe_button);
 
   //
   // add js files and settings

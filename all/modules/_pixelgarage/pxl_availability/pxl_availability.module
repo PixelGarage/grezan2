@@ -1,0 +1,417 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ralph
+ * Date: 06.12.16
+ * Time: 13:16
+ */
+
+
+/**
+ * Session wide data container.
+ *
+ * @return array Returns the session data array.
+ */
+function &pxl_availability_session_data() {
+  if (!isset($_SESSION['pxl_availability'])) {
+    $_SESSION['pxl_availability'] = array();
+  }
+  return $_SESSION['pxl_availability'];
+}
+
+
+/* =============================================================================
+ *   Availability hooks
+ * ========================================================================== */
+/**
+ * Implements hook_views_api.
+ */
+function pxl_availability_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'pxl_availability') .'/structures/views',
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function pxl_availability_menu() {
+  // handles AJAX avaiability submission
+  $items['ajax/availability/submit'] = array(
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    'page callback' => 'pxl_availability_submit_callback',
+  );
+  return $items;
+}
+
+/**
+ * AJAX callback from the availability block submit button.
+ *
+ * This callback returns the shopping cart filled with the product (SKU) information
+ * of all added items.
+ */
+function pxl_availability_submit_callback() {
+  //
+  // get the time range and the available product(s) for this time range
+  $start_date = $_POST['startDateVal'];
+  $end_date = $_POST['endDateVal'];
+  $avail_products = &pxl_availability_session_data()['filtered_products'];
+
+  //
+  // create a cart item for each available product SKU and add them to the shopping cart
+  foreach ($avail_products as $product_id) {
+    $item = pxl_shop_create_cart_item($product_id, $start_date, $end_date);
+    pxl_shop_cart_add_item($item);
+  }
+
+  //
+  // get the shopping cart and render it with its js settings (js files already loaded)
+  drupal_static_reset('drupal_add_js');
+  $cart_block = pxl_shop_block_view('pxl_shop_cart_form');
+  $shopping_cart = drupal_render($cart_block);
+  $js_settings = array(
+    'settings' => drupal_add_js()['settings'],
+    'dummy.js' => 0,
+  );
+  $rendered_js = drupal_get_js('header', $js_settings, true);
+
+  // exit with shopping cart block
+  drupal_add_http_header('Content-Type', 'text/html; charset=utf-8');
+  print $rendered_js;
+  print $shopping_cart;
+  drupal_exit();
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function pxl_availability_theme($existing, $type, $theme, $path) {
+  return array(
+    'pxl_availability_form' => array(
+      'variables' => array(
+        'calendar_view' => null,  // string view-name:view-display
+        'check_in_time' => '15',
+        'check_out_time' => '12',
+        'min_days' => '4',
+        'selectable_days' => array(0,1,2,3,4,5,6), // array with all selectable days (0=Sunday, ... 6=Saturday)
+      ),
+      'file' => 'templates/pxl_availability_form.vars.php',
+      'template' => 'templates/pxl-availability-form',
+    ),
+  );
+}
+
+
+/* =============================================================================
+ *   Availability Block (Form with fullcalendar dropdown managing booked events)
+ * ========================================================================== */
+/**
+ * Implements hook_block_info().
+ **/
+function pxl_availability_block_info() {
+  $blocks['pxl_availability_form'] = array(
+    'info' => t('Pixel availability calendar'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+
+
+/**
+ * Implements hook_block_configure().
+ */
+function pxl_availability_block_configure($delta = 0) {
+  switch ($delta) {
+    case 'pxl_availability_form':
+      return _pxl_availability_settings_form($delta);
+      break;
+  }
+}
+
+function _pxl_availability_settings_form($delta = 0) {
+  $form['pxl_availability'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Availability calendar settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+
+  $calendar_views = views_get_views_as_options(false, 'enabled');
+  $form['pxl_availability']['calendar_view'] = array(
+    '#title' => t('Choose a fullcalendar view'),
+    '#type' => 'select',
+    '#options' => $calendar_views,
+    '#default_value' => variable_get($delta . '_calendar_view', ''),
+    '#description' => t('Select the calendar view to be displayed.'),
+    '#weight' => 1,
+  );
+
+  $form['pxl_availability']['check_in_time'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Check-in time'),
+    '#default_value' => variable_get($delta . '_check_in_time', '15'),
+    '#field_suffix' => t('h'),
+    '#size' => 4,
+    '#description'   => t('Define the check-in time in hours. Default: 15h'),
+    '#weight' => 2,
+  );
+  $form['pxl_availability']['check_out_time'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Check-out time'),
+    '#default_value' => variable_get($delta . '_check_out_time', '12'),
+    '#field_suffix' => t('h'),
+    '#size' => 4,
+    '#description'   => t('Define the check-out time in hours. Default: 12h'),
+    '#weight' => 3,
+  );
+  $form['pxl_availability']['min_days'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Minimal number of days'),
+    '#default_value' => variable_get($delta . '_min_days', '12'),
+    '#field_suffix' => t('days'),
+    '#size' => 4,
+    '#description'   => t('Define the minimal number of days to be selected. Default: 4 days'),
+    '#weight' => 4,
+  );
+  $days = array(0 => t('Sunday'),1 => t('Monday'),2 => t('Tuesday'),3 => t('Wednesday'),4 => t('Thursday'),5 => t('Friday'),6 => t('Saturday'),);
+  $form['pxl_availability']['selectable_days'] = array(
+    '#title' => t('Selectable days'),
+    '#type' => 'checkboxes',
+    '#options' => $days,
+    '#default_value' => variable_get($delta . '_selectable_days', array(0,1,2,3,4,5,6)),
+    '#description' => t('Select all week days that are visible in the calendar view.'),
+    '#weight' => 5,
+  );
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function pxl_availability_block_save($delta = 0, $settings = array()) {
+  switch ($delta) {
+    case 'pxl_availability_form':
+      variable_set($delta . '_calendar_view', $settings['calendar_view']);
+      variable_set($delta . '_check_in_time', $settings['check_in_time']);
+      variable_set($delta . '_check_out_time', $settings['check_out_time']);
+      variable_set($delta . '_min_days', $settings['min_days']);
+      variable_set($delta . '_selectable_days', $settings['selectable_days']);
+      break;
+  }
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function pxl_availability_block_view($delta = 0) {
+  $block = array();
+
+  switch ($delta) {
+    case 'pxl_availability_form':
+      $block['subject'] = null;
+      $block['content'] = array (
+        '#theme' => 'pxl_availability_form',
+        '#calendar_view' => variable_get($delta . '_calendar_view'),
+        '#check_in_time' => variable_get($delta . '_check_in_time'),
+        '#check_out_time' => variable_get($delta . '_check_out_time'),
+        '#min_days' => variable_get($delta . '_min_days'),
+        '#selectable_days' => variable_get($delta . '_selectable_days'),
+      );
+      break;
+  }
+
+  return $block;
+}
+
+
+/* =============================================================================
+ *   Fullcalendar options definition
+ * ========================================================================== */
+
+function pxl_availability_fullcalendar_api() {
+  return array(
+    'api' => fullcalendar_api_version(),
+  );
+}
+
+
+/**
+ * Implements hook_fullcalendar_options_info().
+ */
+function pxl_availability_fullcalendar_options_info() {
+  return array(
+    'pxl_availability' => array(
+      'name' => t('Check Availability'),
+      'js' => TRUE,
+    ),
+  );
+}
+
+
+/* =============================================================================
+ *   Calendar events
+ * ========================================================================== */
+/**
+ * Create a calendar event from a given shopping cart item. It's state is pending
+ * and the status is unpublished.
+ *
+ * @param     $item   object Shopping cart item to be booked.
+ *                           The mandatory item properties at creation time are: {
+ *                              product_id: The produkt id, for which this event is created
+ *                              start: The start date and time of the event
+ *                              end: The end date and time of the event
+ *                           }
+ *
+ * @param int $status int The node publish status (0 = unpublished, 1 = published)
+ *
+ * @return int  Node id, if successful
+ * @throws \Exception
+ */
+function pxl_availability_create_calendar_event_from_cart_item($item, $status = 0) {
+  $node = new stdClass();
+  $node->type = 'calendar_event';
+  $node->language = LANGUAGE_NONE;
+  $node->uid = 1;
+  $node->status = $status;
+  node_object_prepare($node);
+
+  // fill fields
+  $node->title = t('Pending');
+  $node->field_sku_id[LANGUAGE_NONE][0]['target_id'] = $item->id;
+  $node->field_state[LANGUAGE_NONE][0]['tid'] = _pxl_availabilty_calendar_event_state_tid('pending');
+  $node->field_event_date[LANGUAGE_NONE][0] = array(
+    'value' => format_date($item->start, 'custom', 'Y-m-d H:i:s', 'UTC'),
+    'value2' => format_date($item->end, 'custom', 'Y-m-d H:i:s', 'UTC'),
+  );
+  // optional fields
+  $node->body[LANGUAGE_NONE][0]['value'] = $item->description;
+  $node->field_order_id[LANGUAGE_NONE][0]['value'] = isset($item->chargeID) ? $item->chargeID : '';
+  $node->field_user_email[LANGUAGE_NONE][0]['value'] = isset($item->email) ? $item->email : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['name_line'] = isset($item->name) ? $item->name : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['thoroughfare'] = isset($item->address) ? $item->address : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['postal_code'] = isset($item->zip) ? $item->zip : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['locality'] = isset($item->city) ? $item->city : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['country'] = isset($item->countryCode) ? $item->countryCode : '';
+  node_save($node);
+  return $node->nid;
+}
+
+/**
+ * Updates the pending calendar event as successfully booked and optionally
+ * adds some additional data of billing address.
+ *
+ * @param $cal_evt_nid int Calendar event node id.
+ * @param $item object  Optional Item with collected customer information {
+ *              chargeID => id of related \Stripe\Charge object,
+ *              name => customer name (on credit card)
+ *              email => customer email,
+ *              address => street and number
+ *              zip => postal code
+ *              city => city
+ *              countryCode => code of country of address, e.g. CH
+ *              }
+ *
+ * @return bool|mixed|void
+ * @throws \Exception
+ */
+function pxl_availability_calendar_event_successfully_booked($cal_evt_nid, $item = null) {
+  $node = node_load($cal_evt_nid);
+  if ($node->type !== 'calendar_event') return;
+
+  $node->status = 1;
+  $node->title = t('Booked');
+  $node->field_state[LANGUAGE_NONE][0]['tid'] = _pxl_availabilty_calendar_event_state_tid('booked');
+  $node->field_order_id[LANGUAGE_NONE][0]['value'] = isset($item->chargeID) ? $item->chargeID : '';
+  $node->field_user_email[LANGUAGE_NONE][0]['value'] = isset($item->email) ? $item->email : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['name_line'] = isset($item->name) ? $item->name : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['thoroughfare'] = isset($item->address) ? $item->address : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['postal_code'] = isset($item->zip) ? $item->zip : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['locality'] = isset($item->city) ? $item->city : '';
+  $node->field_customer_address[LANGUAGE_NONE][0]['country'] = isset($item->countryCode) ? $item->countryCode : '';
+  node_save($node);
+  return $node;
+}
+
+/**
+ * Checks the availability of the time slot for a given product.
+ *
+ * @param $sku_id  string sku_id of product.
+ * @return bool
+ *    Returns true, if the given time range is still available for the product, false otherwise.
+ */
+function pxl_availability_time_range_check($sku_id, $startDate, $endDate) {
+  //
+  // check if any stored calendar event of the given product (key) intersects with the input time range
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'calendar_event')
+    ->fieldCondition('field_sku_id', 'target_id', $sku_id);
+  $result = $query->execute();
+
+  if (!isset($result['node'])) return true; // no existing calendar events for given product
+
+  // check each existing event against collision with new one
+  // Condition: startDate < node-endDate && endDate < node-startDate => collision
+  foreach ($result['node'] as $nid => $node) {
+    $cal_evt = node_load($nid);
+    $evt_start = new DateTime($cal_evt->field_event_date[LANGUAGE_NONE][0]['value'], new DateTimeZone("UTC"));
+    $evt_start_timestamp = $evt_start->getTimestamp();
+    $evt_end = new DateTime($cal_evt->field_event_date[LANGUAGE_NONE][0]['value2'], new DateTimeZone("UTC"));
+    $evt_end_timestamp = $evt_end->getTimestamp();
+    if ($startDate < $evt_end_timestamp && $endDate > $evt_start_timestamp) return false; // collison with existing calendar event
+  }
+
+  // no collison with any existing node
+  return true;
+}
+
+/**
+ * Cleanup of all pending calendar events created more than an hour ago.
+ * This method is called whenever a availability form is themed and displayed.
+ */
+function pxl_availability_cleanup_pending_calendar_events() {
+  $one_hour_ago = time() - 3600;
+  $tid_pending = _pxl_availabilty_calendar_event_state_tid('pending');
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'calendar_event')
+    ->propertyCondition('created', $one_hour_ago, '<')
+    ->fieldCondition('field_state', 'tid', $tid_pending);
+  $result = $query->execute();
+
+  // cleanup of all pending calendar events created more than an hour ago.
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    try {
+      node_delete_multiple($nids);
+    }
+    catch (Exception $e) {
+      // do nothing, try to delete calendar events next time
+    }
+  }
+}
+
+/**
+ * Helper function
+ * Returns the taxonomy term id (tid) for a given calendar event state name.
+ * @param $name string  Term name.
+ *
+ * @return int|string|null
+ */
+function _pxl_availabilty_calendar_event_state_tid ($name) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'taxonomy_term')
+    ->entityCondition('bundle', 'calendar_event_state')
+    ->propertyCondition('name', $name)
+    ->range(0, 1);
+
+  $result = $query->execute();
+  if (isset($result['taxonomy_term'])) {
+    return key($result['taxonomy_term']);
+  }
+  return 1; // pending
+}

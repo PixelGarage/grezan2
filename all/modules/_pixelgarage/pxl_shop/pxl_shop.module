@@ -16,8 +16,8 @@ define('PXL_SHOP_ADMIN_MENU_PATH', 'admin/pxl_shop');
 require_once 'includes/pxl_shop.cart.inc';
 
 //
-// Loads the sku library
-require_once 'includes/pxl_shop.sku.inc';
+// Loads the product library
+require_once 'includes/pxl_shop.product.inc';
 
 
 /**
@@ -247,109 +247,114 @@ function pxl_shop_block_view($delta = 0) {
 
 
 /* =============================================================================
- *   Stripe button hooks
+ *   Stripe checkout hooks
  * ========================================================================== */
-
 /**
- * Implements hook_stripe_button_charge_completing.
+ * Alters the session parameters with the images of the selected product (apartment)
+ * and the cancel and success redirect urls.
  *
- * Check here again, if the selected time range for each item
- * in the shopping cart is available.
- * Throw an exception when check for an item fails to prevent payment and booking.
+ * Checks, if the selected time range for each item in the shopping cart is available.
+ * Throws an exception when check for an item fails to prevent payment and booking.
+
+ * @param $session_params
  *
- * @param $charge_params
  * @throws \Exception
  */
-function pxl_shop_stripe_button_charge_completing($charge_params) {
+function pxl_shop_stripe_checkout_session_params_alter(&$session_params) {
+  if (!module_exists('pxl_availability')) return;
   //
-  // loop over all cart items, and check availability
+  // it's guaranteed that only one product is in the shopping cart
   foreach (pxl_shop_cart_items() as $key => $item) {
-    if (!_pxl_shop_date_range_available($key, $item->start, $item->end)) {
+    if (!pxl_availability_time_range_check($key, $item->start, $item->end)) {
       // remove item from shopping cart
       pxl_shop_cart_remove_item($key);
 
-      // throw not available exception
-      $startDate = date('j. M y, H:i', $item->start);
-      $endDate = date('j. M y, H:i', $item->end);
-      $msg = t('Sorry! The time range from @start to @end for @name has just been taken by another user.', array(
+      // throw not available exception to stop booking
+      $startDate = date('d-m-Y H:i T', $item->start);
+      $endDate = date('d-m-Y H:i T', $item->end);
+      $msg = t('Sorry! Unfortunately a reservation from @start to @end for @name is pending. Try again in a hour', array(
         '@start' => $startDate,
         '@end' => $endDate,
         '@name' => $item->title,
       ));
       throw new Exception($msg);
     }
-  }
-}
-
-/**
- * @param $key  string
- *    Key of SKU object.
- * @return bool
- *    Returns true, if the given time range is still available for the SKU object.
- */
-function _pxl_shop_date_range_available($key, $startDate, $endDate) {
-  //
-  // check if a calendar event of the given SKU (key) intersects with the given time range
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'calendar_event')
-    ->fieldCondition('field_sku_id', 'target_id', $key)
-    ->fieldCondition('field_event_date', 'value', $endDate, '<')
-    ->fieldCondition('field_event_date', 'value2', $startDate, '>');
-  $result = $query->execute();
-
-  return !isset($result['node']);
-}
-
-
-/**
- * Implements hook_stripe_button_charge_completed.
- * @param $charge_params
- */
-function pxl_shop_stripe_button_charge_completed($charge_params) {
-  //
-  // loop over all cart items, and finish booking
-  if (module_exists('pxl_availability')) {
-    foreach (pxl_shop_cart_items() as $id => $item) {
+    else {
       //
-      // create a calendar event for each item in the shopping cart
-      $item->chargeID = $charge_params['charge_id'];
-      $item->email = $charge_params['user_email'];
-      if (isset($charge_params['arguments'])) {
-        $args = $charge_params['arguments'];
-        $item->name = $args['billing_name'];
-        $item->address = $args['billing_address_line1'];
-        $item->zip = $args['billing_address_zip'];
-        $item->city = $args['billing_address_city'];
-        $item->country = $args['billing_address_country'];
-        $item->countryCode = $args['billing_address_country_code'];
-        $item->state = $args['billing_address_state'];
+      // create a pending calendar event for each item in the shopping cart
+      $cal_evt_id = pxl_availability_create_calendar_event_from_cart_item($item);
+      $session_params['client_reference_id'] = $cal_evt_id;
+      $redirect_url = url('node/' . $key, array('absolute' => TRUE));
+      $session_params['success_url'] = $redirect_url;
+      $session_params['cancel_url'] = $redirect_url;
+
+      // get product
+      $node = node_load($key);
+      if (!$node) return;
+
+      // set description for product
+      $session_params['description'] = t('@name', ['@name' => $node->title]);
+
+      // get first image urls
+      $url = file_create_url($node->field_images[LANGUAGE_NONE][0]['uri']);
+
+      // Localtunnel support, if loacalhost
+      if (strpos($url, 'http://localhost') === 0) {
+        $url = str_replace('http://localhost', 'https://stripe-checkout.localtunnel.me', $url);
       }
-      pxl_availability_create_calendar_event_from_cart_item($item);
-
+      else if (strpos($url, 'https://localhost') === 0) {
+        $url = str_replace('https://localhost', 'https://stripe-checkout.localtunnel.me', $url);
+      }
+      $session_params['images'][] = $url;
     }
-
-    //
-    // send email to admin and customer
-    global $language;
-    $site_mail = variable_get('site_mail');
-    $site = explode('@', $site_mail)[1];
-    $mail_to = array(
-      'admin' => $site_mail,
-      'client' => $charge_params['user_email']
-    );
-    $params['items'] = pxl_shop_cart_items();
-    $params['site'] = $site;
-    $from = 'reservation@' . $site;
-
-    foreach ($mail_to as $key => $to) {
-      drupal_mail('pxl_shop', $key, $to, $language, $params, $from);
-    }
-
-    // reset shopping cart
-    pxl_shop_cart_remove_item('all');
-
   }
+}
+
+/**
+ * Implements checkout_session_finished hook.
+ *
+ * @param $session \Stripe\Checkout\Session
+ *
+ * @throws \Exception
+ */
+function pxl_shop_stripe_checkout_session_finished($session) {
+  if (!module_exists('pxl_availability')) return;
+
+  //
+  // update calendar event as booked
+  $item = new stdClass();
+  if ($charge = $session->payment_intent->charges->data[0]) {
+    $billing_details = $charge->billing_details;
+    $item->chargeID = $charge->id;
+    $item->name = $billing_details->name;
+    $item->email = $billing_details->email;
+    $item->address = $billing_details->address->line1 . ' ' . $billing_details->address->line2;
+    $item->zip = $billing_details->address->postal_code;
+    $item->city = $billing_details->address->city;
+    $item->country_code = $billing_details->address->country;
+    $item->receipt_url = $charge->receipt_url;
+  }
+  $cal_evt_id = $session->client_reference_id;
+  $cal_evt = pxl_availability_calendar_event_successfully_booked($cal_evt_id, $item);
+  $item->description = $cal_evt->body[LANGUAGE_NONE][0]['value'];
+
+  //
+  // send email to admin and customer
+  global $language;
+  $site_mail = variable_get('site_mail');
+  $site = explode('@', $site_mail)[1];
+  $mail_to = array(
+    'admin' => $site_mail,
+    'client' => $item->email
+  );
+  $params['item'] = $item;
+  $params['site'] = $site;
+  $from = 'reservation@' . $site;
+
+  foreach ($mail_to as $key => $to) {
+    drupal_mail('pxl_shop', $key, $to, $language, $params, $from);
+  }
+
 }
 
 /**
@@ -361,37 +366,33 @@ function pxl_shop_stripe_button_charge_completed($charge_params) {
  */
 function pxl_shop_mail($key, &$message, $params) {
   $reservations = array();
-  $first_item = false;
-  foreach ($params['items'] as $item) {
-    if (!$first_item) {
-      $first_item = $item;
-    }
-    $reservations[] = $item->description;
-  }
+  $item = $params['item'];
+  $reservations[] = $item->description;
 
   switch ($key) {
     case 'admin':
-      $message['subject'] = t('Notice of online booking made by !customer ...', array('!customer' => $first_item->name));
+      $message['subject'] = t('Notice of online booking made by !customer ...', array('!customer' => $item->name));
       $body_start = array(
         t('ONLINE BOOKING NOTICE!'),
         t("Booking details:\n")
       );
       $body_end = array(
         t("Customer information:"),
-        $first_item->name . '<br>' . $first_item->address . '<br>' . $first_item->zip . ' ' . $first_item->city . '<br>' . $first_item->country,
-        $first_item->email
+        $item->name . '<br>' . $item->address . '<br>' . $item->zip . ' ' . $item->city . '<br>' . $item->country,
+        $item->email
       );
       $message['body'] = array_merge($body_start, $reservations, $body_end);
       break;
     case 'client':
       $message['subject'] = t('Confirmation of your booking on !site ...', array('!site' => $params['site']));
       $body_start = array(
-        t('Dear !customer', array('!customer' => $first_item->name)),
+        t('Dear !customer', array('!customer' => $item->name)),
         t("you made the following bookings:\n")
       );
       $body_end = array(
+        t("\nYou can download a receipt under the following link: @url ", array('@url' => $item->receipt_url)),
         t("\nSincerly yours"),
-        t('The !site Team', array('!site' => $params['site']))
+        t('The !site Team', array('!site' => $params['site'])),
       );
       $message['body'] = array_merge($body_start, $reservations, $body_end);
       break;
