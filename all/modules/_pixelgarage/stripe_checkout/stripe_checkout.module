@@ -49,7 +49,6 @@ function stripe_checkout_menu() {
     'access callback' => 'user_is_logged_in',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('stripe_checkout_user_subscription_delete_confirm', 2),
-    'file' => 'includes/stripe.lib.inc',
   );
   return $items;
 }
@@ -103,31 +102,39 @@ function stripe_checkout_session_callback() {
 
     //
     // Prepare for a recurring payment
-    // - only registered and logged in users can subscribe for a recurring payment
-    // - each user owns exactly one recurring payment meaning there is exactly
-    //   one Stripe customer with one subscription attached related to the local user.
+    // - anonymous users are identified with the email address
+    // - each user can only own one recurring payment meaning there is exactly
+    //   one Stripe customer with one subscription attached related to the registered or anonymous user (email).
     // - a new recurring payment for a register user deletes the old Stripe customer and its subscription.
-    // - the internal table holds only one entry for each user (automatic cleaning of old entries)
+    // - the internal table holds only one entry for each registered user (automatic cleaning of old entries)
     $subscription_plan = null;
     if ($recurring_billing !== 'one-time') {
       // check if a registered user is logged in and return it
       $registered_user = stripe_checkout_registered_user();
-      $stripe_settings['customer_email'] = $registered_user->mail;
-
-      // get/create the subscription plan for the given periodic payment
-      $subscription_plan = stripe_checkout_subscription_plan($amount, $currency, $recurring_billing);
+      $user_id = $registered_user ? $registered_user->uid : 0;
+      $stripe_settings['customer_email'] = $registered_user ? $registered_user->mail : '';
 
       //
-      // check, if user is already subscribed to a plan.
-      // If yes, delete related customer and subscriptions on Stripe server. Cleanup db.
-      stripe_checkout_delete_subscription_for_user($registered_user);
+      // cleanup not processed internal subscriptions (no related Stripe customer id set)
+      pxl_user_stripe_subscription_cleanup($user_id);
+
+      //
+      // get/create the subscription plan for the given periodic payment
+      $subscription_plan = stripe_checkout_subscription_plan($amount, $currency, $recurring_billing);
 
       //
       // Add a new internal subscription.
       // The user mail address is stored in stripe_evt_id field, allowing to link
       // the customer in the charge.succeeded event. The user mail is stored temporarily
       // in the stripe_evt_id field until the charge.succeeded event is processed.
-      pxl_user_stripe_subscription_add($registered_user->uid, $subscription_plan->id, $registered_user->mail, $stripe_settings['app_fee_percentage']);
+      $time = time();
+      $evt_id = STRIPE_CHECKOUT_INTL_SUBSCR_ID_PREFIX . $time;
+      variable_set('stripe_checkout_subscription_intl_id', $evt_id);
+      pxl_user_stripe_subscription_add($user_id, $subscription_plan->id, $evt_id, $stripe_settings['app_fee_percentage']);
+    }
+    else {
+      // reset subscription event id
+      variable_del('stripe_checkout_subscription_intl_id');
     }
 
     //
@@ -268,7 +275,7 @@ function stripe_checkout_user_subscription_delete_confirm_submit($form, &$form_s
 
   // delete subscription
   if (stripe_checkout_library_loaded ()) {
-    stripe_checkout_delete_subscription_for_user($user);
+    stripe_checkout_delete_subscriptions_for_user($user);
   }
 
   // redirect to pixel structure main config page
