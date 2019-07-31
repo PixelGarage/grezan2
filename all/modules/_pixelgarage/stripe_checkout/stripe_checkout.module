@@ -96,49 +96,56 @@ function stripe_checkout_session_callback() {
 
     //
     // invoke checkout session starting hook for all modules
-    $stripe_settings['stripe_fee'] = stripe_checkout_stripe_fee($amount/100);
+    $stripe_settings['stripe_fee'] = stripe_checkout_stripe_fee($amount)/100;
     $stripe_settings['app_fee_percentage'] = stripe_checkout_app_fee_percentage($button_id);
     module_invoke_all('stripe_checkout_session_starting', $stripe_settings);
 
     //
-    // Prepare for a recurring payment
+    // Prepare for a (recurring) payment
     // - anonymous users are identified with the email address
     // - each user can only own one recurring payment meaning there is exactly
     //   one Stripe customer with one subscription attached related to the registered or anonymous user (email).
     // - a new recurring payment for a register user deletes the old Stripe customer and its subscription.
-    // - the internal table holds only one entry for each registered user (automatic cleaning of old entries)
+    // - the internal table holds only one entry for each stripe customer (automatic cleaning of old entries)
+
+    // check if a registered user is logged in and return it
+    $registered_user = stripe_checkout_registered_user();
+    $user_id = $registered_user ? $registered_user->uid : 0;
+    $stripe_settings['customer_email'] = $registered_user ? $registered_user->mail : '';
+
+    //
+    // cleanup not processed internal subscriptions (no related Stripe customer id set)
+    pxl_user_stripe_subscription_cleanup($user_id);
+
+    //
+    // get/create the subscription plan for the given periodic payment
     $subscription_plan = null;
     if ($recurring_billing !== 'one-time') {
-      // check if a registered user is logged in and return it
-      $registered_user = stripe_checkout_registered_user();
-      $user_id = $registered_user ? $registered_user->uid : 0;
-      $stripe_settings['customer_email'] = $registered_user ? $registered_user->mail : '';
-
-      //
-      // cleanup not processed internal subscriptions (no related Stripe customer id set)
-      pxl_user_stripe_subscription_cleanup($user_id);
-
-      //
-      // get/create the subscription plan for the given periodic payment
       $subscription_plan = stripe_checkout_subscription_plan($amount, $currency, $recurring_billing);
-
-      //
-      // Add a new internal subscription.
-      // The user mail address is stored in stripe_evt_id field, allowing to link
-      // the customer in the charge.succeeded event. The user mail is stored temporarily
-      // in the stripe_evt_id field until the charge.succeeded event is processed.
-      $time = time();
-      $evt_id = STRIPE_CHECKOUT_INTL_SUBSCR_ID_PREFIX . $time;
-      variable_set('stripe_checkout_subscription_intl_id', $evt_id);
-      pxl_user_stripe_subscription_add($user_id, $subscription_plan->id, $evt_id, $stripe_settings['app_fee_percentage']);
-    }
-    else {
-      // reset subscription event id
-      variable_del('stripe_checkout_subscription_intl_id');
     }
 
     //
+    // Add a new payment or subscription to the db.
+    // A unique event id is stored in stripe_evt_id field, allowing to update
+    // this internal subscription in the checkout.session.completed webhook event
+    // with the Stripe customer id. This allows to retrieve the app fee for all periodic subscription payments.
+    // The unique event id is transferred in the session's client_reference_id field.
+    $time = microtime(TRUE);
+    $subscr_intl_id = STRIPE_CHECKOUT_INTL_SUBSCR_ID_PREFIX . $time;
+    pxl_user_stripe_subscription_add(
+      $user_id,
+      $subscription_plan ? $subscription_plan->id : '',
+      $subscr_intl_id,
+      $stripe_settings['app_fee_percentage']
+    );
+
+    //
     // create session
+    $combined_reference_id['subscr_intl_id'] = $subscr_intl_id;
+    if ($stripe_settings['client_reference_id']) {
+      $combined_reference_id['client_reference_id'] = $stripe_settings['client_reference_id'];
+    }
+    $stripe_settings['client_reference_id'] = json_encode($combined_reference_id);
     $session = stripe_checkout_create_session($stripe_settings, $subscription_plan);
     $response['session_id'] = $session->id;
 
@@ -179,18 +186,10 @@ function stripe_checkout_custom_form_callback () {
   $new_amount = $_POST['newAmount'];
   $stripe_settings = &stripe_checkout_session_data()[$button_id];
   $currency = $stripe_settings['currency'];
+  $stripe_settings['amount'] = (int)($new_amount*100);
 
   // check user input
-  $input_error = false;
-  if (!empty($new_amount) && is_numeric($new_amount)) {
-    if (floatval($new_amount) < 1.0) {
-      $input_error = true;
-    }
-  }
-  else {
-    $input_error = true;
-    $stripe_settings['amount'] = $new_amount;
-  }
+  $input_error =  (empty($new_amount) || !is_numeric($new_amount) || floatval($new_amount) < 1.0);
 
   // create fixed value stripe button with the new user amount
   if ($input_error) {
@@ -200,7 +199,7 @@ function stripe_checkout_custom_form_callback () {
       '#button_id' => $button_id,
       '#box_title' => t('Incorrect amount'),
       '#box_text' => t('Please correct your input'),
-      '#amount' => $stripe_settings['amount'],
+      '#amount' => $new_amount,
       '#currency' => $currency,
       '#stripe_settings' => $stripe_settings,
       '#message' => t('Number must be greater or equal 1.00'),
@@ -214,7 +213,7 @@ function stripe_checkout_custom_form_callback () {
       '#button_id' => $button_id,
       '#box_title' => t('Amount to pay'),
       '#box_text' => t('Press button to complete payment'),
-      '#amount' => $stripe_settings['amount'],
+      '#amount' => $new_amount,
       '#currency' => $currency,
       '#stripe_settings' => $stripe_settings,
       '#hide-container' => true,
@@ -236,7 +235,7 @@ function stripe_checkout_fee_callback() {
   // update the selected application fee percentage in session data
   $fee_button_id = $_POST['feeButtonID'];
   $selected_fee_percentage = floatval($_POST['selectedFeePercentage']);
-  $session_data = &stripe_button_session_data();
+  $session_data = &stripe_checkout_session_data();
   $session_data['fee_buttons'][$fee_button_id] = $selected_fee_percentage;
 
   // create feedbacks
@@ -449,7 +448,7 @@ function template_preprocess_stripe_checkout_button_custom(&$variables) {
   //
   // add js settings
   $custom_buttons = [$button_id => $button_id];
-  _add_stripe_checkout_js([], $custom_buttons);
+  _add_stripe_checkout_js($custom_buttons, $custom_buttons);
 }
 
 /**
@@ -467,7 +466,7 @@ function theme_stripe_checkout_button_custom($variables) {
   $output .= '<div class="stripe-button-title">' . $variables['box_title'] . '</div>' .
     '<div class="stripe-button-text">' . $variables['box_text'] . '</div>' .
     drupal_render($variables['button_form']);
-  $output .= !empty($variables['message']) ? '<div class="stripe-button-error">' . t($variables['message']) . '</div>' : '</div>';
+  $output .= !empty($variables['message']) ? '<div class="stripe-button-error">' . $variables['message'] . '</div>' : '</div>';
 
   return $output;
 }
@@ -513,7 +512,7 @@ function stripe_checkout_button_custom_form($form, &$form_state) {
  */
 function _prepare_stripe_checkout_settings($settings, $given_amount) {
   // Stripe needs cents (Rappen) as value
-  $amount = (int)$given_amount*100;
+  $amount = (int)($given_amount*100);
 
   // submit type
   $submit_type = (isset($settings['submit_type']) && !empty($settings['submit_type'])) ? t($settings['submit_type']) : 'auto';
@@ -565,8 +564,8 @@ function _prepare_stripe_checkout_settings($settings, $given_amount) {
 
   $stripe_settings = [
     'recurring_billing' => $recurring_billing,
-    'name' => isset($settings['name']) && !empty($settings['name']) ? t($settings['name']) : variable_get('site_name'),
-    'description' => isset($settings['description']) && !empty($settings['description']) ? t($settings['description']) : $description,
+    'name' => isset($settings['name']) && !empty($settings['name']) ? $settings['name'] : variable_get('site_name'),
+    'description' => isset($settings['description']) && !empty($settings['description']) ? $settings['description'] : $description,
     'currency' => isset($settings['currency']) && !empty($settings['currency']) ? strtoupper($settings['currency']) : 'CHF',
     'amount' => $amount,
     'submit_type' => $submit_type,
@@ -597,8 +596,8 @@ function _cleanup_button_variables(&$variables, &$stripe_settings) {
   $variables['amount'] = $variables['amount'] * 100 / 100; // no decimal value if not needed
   $variables['recurring_billing'] = $stripe_settings['recurring_billing'];
 
-  $variables['box_title'] = $variables['box_title'] ? t($variables['box_title']) : $stripe_settings['submit_text'];
-  $box_text = $variables['box_text'] ? t($variables['box_text']) : t('Pay the following amount');
+  $variables['box_title'] = $variables['box_title'] ? $variables['box_title'] : $stripe_settings['submit_text'];
+  $box_text = $variables['box_text'] ? $variables['box_text'] : t('Pay the following amount');
   if ($variables['amount'] > 0) {
     switch ($stripe_settings['recurring_billing']) {
       case 'one-time':

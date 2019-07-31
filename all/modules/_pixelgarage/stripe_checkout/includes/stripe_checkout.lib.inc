@@ -49,7 +49,7 @@ function stripe_checkout_app_fee_percentage($button_id) {
     $len = strpos($button_id, '--');
     $stripe_button_name = substr($button_id, 0, $len);
     $fee_button_name = $stripe_button_relations[$stripe_button_name];
-    $app_fee_percentages = &stripe_button_session_data()['fee_buttons'];
+    $app_fee_percentages = &stripe_checkout_session_data()['fee_buttons'];
     $app_fee_percentage = $app_fee_percentages[$fee_button_name];
   }
   return $app_fee_percentage;
@@ -71,17 +71,21 @@ function stripe_checkout_registered_user() {
 
 
 /**
- * Deletes the Stripe customers with the given email address and all its Stripe subscriptions.
- * All related internal subscriptions of the Stripe customers are also deleted.
- * This method guarantees, that only one Stripe customer with the given email address exists
- * containing exactly one subscription.
+ * Deletes the Stripe customers with the given email address and all its Stripe
+ * subscriptions. All related internal subscriptions of the Stripe customers
+ * are also deleted. This method guarantees, that only one Stripe customer with
+ * the given email address exists containing exactly one subscription.
  *
- * @param $email string  The email address of a user
- * @param $excl_cust_id  string  A Stripe customer id, which will be excluded from deletion.
+ * @param $email         string  The email address of a user
+ * @param $excl_cust_id  string  A Stripe customer id, which will be excluded
+ *                       from deletion.
+ *
+ * @return int  Number of deleted customers with subscriptions.
  */
 function stripe_checkout_delete_subscriptions_for_email($email, $excl_cust_id = '') {
-  if (!$email) return;
+  if (!$email) return 0;
   try {
+    $deleted = 0;
     $customers = \Stripe\Customer::all(["email" => $email])->data;
     foreach ($customers as $customer) {
       if ($excl_cust_id === $customer->id) continue;
@@ -89,11 +93,12 @@ function stripe_checkout_delete_subscriptions_for_email($email, $excl_cust_id = 
         // deletes the customer and its subscriptions on the Stripe server
         $customer->delete();
       }
-      pxl_user_stripe_subscription_delete($customer->id);
+      $deleted += pxl_user_stripe_subscription_delete($customer->id);
     }
+    return $deleted;
   }
   catch (Exception $e) {
-    watchdog('stripe_checkout', 'No Stripe customer with @cust_email found', array('@cust_email' => $new_cust_id), WATCHDOG_ERROR);
+    watchdog('stripe_checkout', 'No Stripe customer with @cust_email found', array('@cust_email' => $email), WATCHDOG_ERROR);
   }
 }
 
@@ -113,7 +118,11 @@ function stripe_checkout_delete_subscriptions_for_user($registered_user) {
   if (!$registered_user) return;
 
   // delete related customer and its subscriptions
-  stripe_checkout_delete_subscriptions_for_email($registered_user->mail);
+  $deleted = stripe_checkout_delete_subscriptions_for_email($registered_user->mail);
+  if ($deleted) {
+    // inform other modules about new subscription
+    module_invoke_all('stripe_checkout_user_unsubscribed', $registered_user);
+  }
 }
 
 
@@ -189,7 +198,6 @@ function stripe_checkout_create_session($stripe_settings, $subscription_plan) {
     "success_url" => $stripe_settings['success_url'],
     "cancel_url" => $stripe_settings['cancel_url'],
     "payment_method_types" => $stripe_settings['payment_method_types'],
-    "submit_type" =>  $stripe_settings['submit_type'],
     "billing_address_collection" => $stripe_settings['billing_address'],
     "client_reference_id" => $stripe_settings['client_reference_id'],
   ];
@@ -207,6 +215,8 @@ function stripe_checkout_create_session($stripe_settings, $subscription_plan) {
       'currency' => $currency,
       'quantity' => 1
     ]];
+    $session_params["submit_type"] =  $stripe_settings['submit_type'];
+
   }
   else if ($subscription_plan) {
     //
@@ -259,18 +269,15 @@ function stripe_checkout_stripe_api_webhook_charge_succeeded($data, \Stripe\Even
     $stripe_cust_id = $charge->customer;
     try {
       $customer = \Stripe\Customer::retrieve($stripe_cust_id);
-      $customer_mail = $customer->email;
       $charge->customer = $customer;
     }
     catch (Exception $e) {
       // should never happen, email is asked by checkout dialog
-      $customer_mail = '';
     }
 
     //
     // update internal subscription, if any
-    $subscr_intl_id = variable_get('stripe_checkout_subscription_intl_id', '');
-    if ($subscription = pxl_user_stripe_subscription_get_subscription($stripe_cust_id, $subscr_intl_id)) {
+    if ($subscription = pxl_user_stripe_subscription_get_subscription($stripe_cust_id)) {
       //
       // check if incoming event has been processed already (idempotency)
       $evt_id = $subscription['stripe_evt_id'];
@@ -279,27 +286,10 @@ function stripe_checkout_stripe_api_webhook_charge_succeeded($data, \Stripe\Even
         watchdog('stripe_checkout', 'Webhook charge.succeeded event: @msg', array('@msg' => $message), WATCHDOG_DEBUG);
         return;
       }
-      else if ($evt_id === $subscr_intl_id) {
-        //
-        // delete all Stripe customers with the same email as the anonymous/registered user
-        // and its subscriptions
-        stripe_checkout_delete_subscriptions_for_email($customer_mail, $stripe_cust_id);
-        variable_del('stripe_checkout_subscription_intl_id');
-
-        //
-        // successful new Stripe subscription created for registered or anonymous user,
-        $registered_user = $subscription['user_id'] ? user_load($subscription['user_id']) : false;
-        if ($registered_user) {
-          // Registered user
-          // inform other modules about new subscription
-          $params = _stripe_checkout_get_params_from_subscription($subscription);
-          module_invoke_all('stripe_checkout_user_subscribed', $registered_user, $params);
-        }
-      }
 
       //
-      // update the subscription with the new Stripe customer id and the event id
-      pxl_user_stripe_subscription_update_subscription($stripe_cust_id, $subscr_intl_id, $stripe_evt_id);
+      // update the internal subscription of customer with the new Stripe event id
+      pxl_user_stripe_subscription_update_subscription($stripe_cust_id, $stripe_evt_id);
 
       //
       // calculate app_fee from subscription
@@ -310,11 +300,11 @@ function stripe_checkout_stripe_api_webhook_charge_succeeded($data, \Stripe\Even
     //
     // Inform all charge.succeeded hooks about subscription charge
     // get charge parameters
-    $amount = $charge->amount/100;
+    $amount = $charge->amount;
     $params['stripe_api_mode'] = strtolower(variable_get('stripe_api_mode', 'test'));
     $params['plan_id'] = $plan_id;
-    $params['stripe_fee'] = stripe_checkout_stripe_fee($amount);
-    $params['app_fee'] = $amount * $app_fee_percentage;
+    $params['stripe_fee'] = stripe_checkout_stripe_fee($amount)/100;
+    $params['app_fee'] = $amount * $app_fee_percentage/100;
     module_invoke_all('stripe_checkout_charge_completed', $charge, $params);
 
   }
@@ -343,25 +333,79 @@ function stripe_checkout_stripe_api_webhook_checkout_session_completed($data, St
   // Process checkout.session.completed event initialized on Strip.
   $session = $data->object;
   if ($session->object === 'checkout.session' && stripe_checkout_library_loaded()) {
-    // expand customer and payment
+    //
+    // expand customer, payment and client_reference_id in session
+    $subscr_intl_id = false;
     try {
       $pay_id = $session->payment_intent;
       $billing_details = null;
       if ($pay_id) {
         $payment = \Stripe\PaymentIntent::retrieve($pay_id);
-        $session->payment_intent = $payment;
         $charge = $payment->charges->data[0];
+        $amount = $charge->amount;
         $billing_details = $charge ? $charge->billing_details : null;
+        $payment->metadata = [
+          'stripe_api_mode' => strtolower(variable_get('stripe_api_mode', 'test')),
+          'plan_id' => null,
+          'stripe_fee' => stripe_checkout_stripe_fee($amount)/100,
+          'app_fee' => 0
+        ];
+        $session->payment_intent = $payment;
       }
-      $cust_id = $session->customer;
-      if ($cust_id) {
-        $customer = \Stripe\Customer::retrieve($cust_id);
+      $stripe_cust_id = $session->customer;
+      if ($stripe_cust_id) {
+        $customer = \Stripe\Customer::retrieve($stripe_cust_id);
+        $customer_mail = $customer->email;
         $customer->metadata = $billing_details;
         $session->customer = $customer;
+      }
+
+      // unpack client reference id
+      if ($session->client_reference_id) {
+        $combined_reference_id =  json_decode($session->client_reference_id);
+        $session->client_reference_id = isset($combined_reference_id->client_reference_id) ?
+          $combined_reference_id->client_reference_id : null;
+        $subscr_intl_id = $combined_reference_id->subscr_intl_id ? $combined_reference_id->subscr_intl_id : false;
       }
     }
     catch (Exception $e) {
       // do nothing
+      $customer_mail = '';
+    }
+
+    //
+    // New subscription for a customer: delete all old subscriptions for this customer
+    // and update internal subscription with customer id
+    if ($subscr_intl_id && $subscription = pxl_user_stripe_subscription_get_subscription($stripe_cust_id, $subscr_intl_id)) {
+      //
+      // single payment: update application fee
+      if ($pay_id) {
+        $amount = $payment->amount;
+        $session->payment_intent->metadata['app_fee'] = $amount * $subscription['app_fee_percentage']/100;
+      }
+      else {
+        //
+        // Subscriptions:
+        // update the internal subscription with the customer id and the new Stripe event id
+        $stripe_evt_id = $event ? $event->id : 'evt_' . drupal_hash_base64($time);  // create test event id in TEST mode, always perform event
+        pxl_user_stripe_subscription_update_subscription($stripe_cust_id, $stripe_evt_id, $subscr_intl_id);
+
+        //
+        // delete all Stripe customers with the same email as the anonymous/registered user
+        // and its subscriptions
+        stripe_checkout_delete_subscriptions_for_email($customer_mail, $stripe_cust_id);
+
+        //
+        // successful new Stripe subscription created for registered or anonymous user,
+        $registered_user = $subscription['user_id'] ? user_load($subscription['user_id']) : false;
+        if ($registered_user) {
+          // Registered user
+          // inform other modules about new subscription
+          $params = _stripe_checkout_get_params_from_subscription($subscription);
+          module_invoke_all('stripe_checkout_user_subscribed', $registered_user, $params);
+        }
+      }
+
     }
 
     // inform all subscribed hooks about the completed checkout session

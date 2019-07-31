@@ -54,7 +54,8 @@ function pxl_user_stripe_subscription_get_subscriptions($uid) {
 
 /**
  * Cleanup the internal subscriptions for the given user (anonymous or registered).
- * All entries with an empty stripe customer are deleted.
+ * All entries with an empty stripe customer are deleted when they belong to a
+ * registered user or are older than 24 hours (anonymous).
  *
  * @param $user_id int Internal user ID (uid)
  *
@@ -73,7 +74,7 @@ function pxl_user_stripe_subscription_cleanup($user_id) {
   }
   else {
     //
-    // delete all internal anonymous user subscription older than 24 hours and
+    // delete all internal anonymous user payments and subscription older than 24 hours and
     // without any related stripe customer
     $a_day_ago = time() - 86400;
     $subscriptions = pxl_user_stripe_subscription_get_subscriptions(0);
@@ -105,19 +106,20 @@ function pxl_user_stripe_subscription_cleanup($user_id) {
  * @param $subscr_intl_id  string  Internal subscription id
  * @return mixed  Associative array with subscription parameters, false otherwise.
  */
-function pxl_user_stripe_subscription_get_subscription($cust_id, $subscr_intl_id) {
+function pxl_user_stripe_subscription_get_subscription($cust_id, $subscr_intl_id = '') {
+  if ($subscr_intl_id) {
+    // occurs only for new subscriptions: get the internal subscription with the given internal subscription id
+    $result = db_select('pxl_user_stripe_subscription', 'p')
+      ->fields('p', array('stripe_cust_id', 'user_id', 'app_fee_percentage', 'stripe_plan_id', 'stripe_evt_id'))
+      ->condition('stripe_evt_id', $subscr_intl_id)
+      ->execute()
+      ->fetchAssoc();
+    return $result;
+  }
   // get the subscription for the given stripe customer
   $result = db_select('pxl_user_stripe_subscription', 'p')
     ->fields('p', array('stripe_cust_id', 'user_id', 'app_fee_percentage', 'stripe_plan_id', 'stripe_evt_id'))
     ->condition('stripe_cust_id', $cust_id)
-    ->execute()
-    ->fetchAssoc();
-  if ($result) return $result;
-
-  // occurs only for new subscriptions: get the internal subscription with the given internal subscription id
-  $result = db_select('pxl_user_stripe_subscription', 'p')
-    ->fields('p', array('stripe_cust_id', 'user_id', 'app_fee_percentage', 'stripe_plan_id', 'stripe_evt_id'))
-    ->condition('stripe_evt_id', $subscr_intl_id)
     ->execute()
     ->fetchAssoc();
   return $result;
@@ -131,24 +133,26 @@ function pxl_user_stripe_subscription_get_subscription($cust_id, $subscr_intl_id
  * in a subscription
  *
  * @param $cust_id        string    The Stripe customer id.
- * @param $subscr_intl_id string    Internal subscription id
  * @param $evt_id         string    The Stripe event id.
+ * @param $subscr_intl_id string    Internal subscription id
  */
-function pxl_user_stripe_subscription_update_subscription($cust_id, $subscr_intl_id, $evt_id) {
+function pxl_user_stripe_subscription_update_subscription($cust_id, $evt_id, $subscr_intl_id = '') {
   $fields = array(
     'stripe_cust_id' => $cust_id,
     'stripe_evt_id' => $evt_id,
   );
-  if ($cust_id) {
-    db_update('pxl_user_stripe_subscription')
-      ->fields($fields)
-      ->condition('stripe_cust_id', $cust_id)
-      ->execute();
-  }
-  else if ($subscr_intl_id) {
+  if ($subscr_intl_id) {
+    // in this case cust_id is not yet updated in subscription
     db_update('pxl_user_stripe_subscription')
       ->fields($fields)
       ->condition('stripe_evt_id', $subscr_intl_id)
+      ->execute();
+  }
+  else {
+    // cust_id is already updated in subscription
+    db_update('pxl_user_stripe_subscription')
+      ->fields($fields)
+      ->condition('stripe_cust_id', $cust_id)
       ->execute();
   }
 }

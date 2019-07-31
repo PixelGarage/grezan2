@@ -146,11 +146,8 @@ function hook_stripe_checkout_user_subscribed($user, $params) {
  * This hook is called after the recurring payment subscription (Stripe) of the user has been deleted.
  * @param $user object
  *    The subscribed user object.
- * @param $params  mixed
- *    An associative array with the charge parameters (see hook_stripe_button_user_subscribed)
- *    or false, if no parameters are available anymore.
  */
-function hook_stripe_checkout_user_unsubscribed($user, $params) {
+function hook_stripe_checkout_user_unsubscribed($user) {
   // update user after subscription, if needed
 }
 
