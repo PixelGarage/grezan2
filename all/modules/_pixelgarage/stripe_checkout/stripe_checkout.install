@@ -49,7 +49,6 @@ function stripe_checkout_schema() {
         'description' => 'Stripe charge.succeeded event id used to assure idempotency of incoming charge events',
       ),
     ),
-    'primary key' => array('stripe_cust_id'),
   );
   return $schema;
 }

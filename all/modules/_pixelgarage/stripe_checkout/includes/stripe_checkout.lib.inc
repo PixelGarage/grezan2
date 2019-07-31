@@ -201,7 +201,7 @@ function stripe_checkout_create_session($stripe_settings, $subscription_plan) {
     "billing_address_collection" => $stripe_settings['billing_address'],
     "client_reference_id" => $stripe_settings['client_reference_id'],
   ];
-  if (isset($stripe_settings['customer_email'])) {
+  if (isset($stripe_settings['customer_email']) && !empty($stripe_settings['customer_email'])) {
     $session_params["customer_email"] = $stripe_settings['customer_email'];
   }
   if ($recurring_billing === 'one-time') {

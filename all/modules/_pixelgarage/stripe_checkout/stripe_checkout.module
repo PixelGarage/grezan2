@@ -111,7 +111,7 @@ function stripe_checkout_session_callback() {
     // check if a registered user is logged in and return it
     $registered_user = stripe_checkout_registered_user();
     $user_id = $registered_user ? $registered_user->uid : 0;
-    $stripe_settings['customer_email'] = $registered_user ? $registered_user->mail : '';
+    $stripe_settings['customer_email'] = $registered_user ? $registered_user->mail : null;
 
     //
     // cleanup not processed internal subscriptions (no related Stripe customer id set)
