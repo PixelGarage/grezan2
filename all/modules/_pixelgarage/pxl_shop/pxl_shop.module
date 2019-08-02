@@ -322,6 +322,8 @@ function pxl_shop_stripe_checkout_session_finished($session) {
 
   //
   // update calendar event as booked
+  if (!$session->client_reference_id) return;
+
   $item = new stdClass();
   if ($charge = $session->payment_intent->charges->data[0]) {
     $billing_details = $charge->billing_details;
